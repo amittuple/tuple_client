@@ -1,0 +1,123 @@
+{% extends "user_profile/base.html" %}
+{% load i18n %}
+{% block content %}
+{% load static %}
+
+   <style>
+        .border {
+            border: 1px solid black;
+        }
+        .list-group {
+            margin-top: 60px;
+        }
+        .box {
+            min-height: 50px;
+         }
+    </style>
+<script>
+    window.onload = function() {
+        list = document.getElementsByTagName('span');
+        for(i=0;i<list.length;i++) {
+            list[i].setAttribute('draggable', true);
+        };
+        var dragSource = document.getElementsByClassName('drag');
+        for(i=0;i<dragSource.length;i++) {
+            dragSource[i].ondragstart = function(event) {
+                console.log(this);
+                var dataToCopy = event.target.innerText;
+                event.dataTransfer.setData('Text', dataToCopy);
+                event.dataTransfer.setData('Origin', this);
+                return true;
+            };
+        }
+        var dropTarget = document.getElementsByClassName('drop');
+        for(i=0;i<dropTarget.length;i++) {
+            dropTarget[i].ondrop = function(event) {
+                this.setAttribute('value', event.dataTransfer.getData('Text'));
+                console.log(event);
+                return false;
+            };
+            dropTarget[i].ondragover = function(event) {
+                event.preventDefault();
+                return false;
+            };
+            dropTarget[i].ondragend = function(event) {
+                event.preventDefault();
+                return false;
+            };
+        }
+    }
+
+</script>
+    <form method="post" class="container-fluid">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-lg-3 border" style="z-index:99;">
+                <div class="page-header">
+                  <h3>Client Tables</h3>
+                </div>
+                <div class="col-lg-10 col-lg-offset-1">
+                    <button class="btn btn-block btn-md btn-primary">
+                        Sync Table Names
+                    </button>
+                </div>
+                <ul class="list-group">
+                    {% for item in list_of_tables %}
+                    <li class="list-group-item">
+                        <span class="drag">{{item}}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-lg-3 border">
+                <div class="page-header">
+                  <h3>System Tables</h3>
+                </div>
+                <ul class="list-group">
+                    {% for heading in list_of_headings %}
+                      <li class="list-group-item">
+                        <div class="row">
+                            <a>{{ heading }}</a>
+                            <input name="{{heading}}" type="text" class="drop" readonly>
+                          </div>
+                      </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-lg-6 border">
+                <div class="page-header">
+                  <h1>Table Preview</h1>
+                </div>
+                <div class="page-header">
+                  <h4>This is How Your Customer Master Table Will Look Like</h4>
+                </div>
+                <table class="table">
+                    <th>
+                        <td>Customer Id</td>
+                        <td>Customer Name</td>
+                        <td>Phone Number</td>
+                    </th>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Adnan</td>
+                            <td>8090******</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Dipali</td>
+                            <td>1234******</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Vikas</td>
+                            <td>9876******</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form>
+
+{% endblock %}

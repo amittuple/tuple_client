@@ -1,0 +1,90 @@
+{% extends "user_profile/base.html" %}
+{% load i18n %}
+{% block content %}
+{% load static %}
+
+<style>
+    input {
+        min-height: 100px;
+    }
+</style>
+<script>
+    window.onload = function() {
+        list = document.getElementsByTagName('span');
+        for(i=0;i<list.length;i++) {
+            list[i].setAttribute('draggable', true);
+        };
+        var dragSource = document.getElementsByClassName('drag');
+        for(i=0;i<dragSource.length;i++) {
+            dragSource[i].ondragstart = function(event) {
+                console.log(this);
+                var dataToCopy = event.target.innerText;
+                event.dataTransfer.setData('Text', dataToCopy);
+                event.dataTransfer.setData('Origin', this);
+                return true;
+            };
+        }
+        var dropTarget = document.getElementsByClassName('drop');
+        for(i=0;i<dropTarget.length;i++) {
+            dropTarget[i].ondrop = function(event) {
+                this.setAttribute('value', event.dataTransfer.getData('Text'));
+                console.log(event);
+                return false;
+            };
+            dropTarget[i].ondragover = function(event) {
+                event.preventDefault();
+                return false;
+            };
+            dropTarget[i].ondragend = function(event) {
+                event.preventDefault();
+                return false;
+            };
+        }
+    }
+</script>
+    <form method="post" class="panel-group" id="accordion" role="tablist">
+        {% csrf_token %}
+        {% for our_table_name, our_column_list in our_model.iteritems %}
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{our_table_name}}" aria-expanded="true" aria-controls="{{our_table_name}}">
+                  {{our_table_name}}
+                </a>
+              </h4>
+            </div>
+            <div id="{{our_table_name}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{our_table_name}}">
+              <div class="panel-body">
+                    <div class="row">
+                        {% with client_table_name=table_map|get_item:our_table_name%}
+                        <div class="col-lg-6">
+                            <ul class="list-group">
+                                <h3>{{client_table_name}}</h3>
+                                {% for client_column_name in client_table_and_column_with_type|get_item:client_table_name %}
+                                <li class="list-group-item">
+                                    <span class="drag">{{client_column_name}}</span>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endwith %}
+                        <div class="col-lg-6">
+                            <ul>
+                                <h3>{{our_table_name}}</h3>
+                                {% for our_column_name in our_column_list %}
+                                    <li>
+                                        <h4>{{our_column_name}}</h4>
+                                        <input name="{{our_table_name}}.{{our_column_name}}" type="text" class="drop" readonly>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <button class="btn btn-primary btn-block btn-lg" type="submit">Submit</button>+
+    </form>
+
+{% endblock %}

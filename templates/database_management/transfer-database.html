@@ -1,0 +1,27 @@
+{% extends "user_profile/base.html" %}
+{% load i18n %}
+{% block content %}
+{% load static %}
+
+<form action="." method="post" class="container">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 text-center">
+            <h3>Table Transfer Started</h3>
+            <p>Database Transfer Will Take Sometime. You Will Be Notified When The Process Completes.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <button type="submit" class="btn btn-block btn-primary">
+                Go To Your Dashboard
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 text-center">
+            <p>{{temp}}</p>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

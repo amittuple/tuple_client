@@ -1,0 +1,17 @@
+{% extends "user_profile/base.html" %}
+{% load i18n %}
+{% block content %}
+{% load static %}
+
+<form action="." method="post" class="container">
+    {% csrf_token %}
+    <div class="row">
+        {{ column_map }}
+    </div>
+    <div class="col-lg-offset-4 col-lg-4">
+        <a class="btn btn-sm btn-default" href="{% url 'table_mapping' %}">Go Back To Change Mapping</a>
+        <button class="btn btn-sm btn-primary" type="submit">Start Database Transfer</button>
+    </div>
+</form>
+
+{% endblock %}
