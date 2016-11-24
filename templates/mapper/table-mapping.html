@@ -3,7 +3,7 @@
 {% block content %}
 {% load static %}
 
-   <style>
+<style>
         .border {
             border: 1px solid black;
         }
@@ -49,75 +49,87 @@
     }
 
 </script>
-    <form method="post" class="container-fluid">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col-lg-3 border" style="z-index:99;">
-                <div class="page-header">
-                  <h3>Client Tables</h3>
-                </div>
-                <div class="col-lg-10 col-lg-offset-1">
-                    <button class="btn btn-block btn-md btn-primary">
-                        Sync Table Names
-                    </button>
-                </div>
-                <ul class="list-group">
-                    {% for item in list_of_tables %}
-                    <li class="list-group-item">
-                        <span class="drag">{{item}}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
+<form name="table_mapping_form" method="post" class="container-fluid">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-lg-2 border" style="z-index:99;">
+            <div class="page-header">
+                <h3>Client Tables</h3>
             </div>
-            <div class="col-lg-3 border">
-                <div class="page-header">
-                  <h3>System Tables</h3>
-                </div>
-                <ul class="list-group">
-                    {% for heading in list_of_headings %}
-                      <li class="list-group-item">
-                        <div class="row">
-                            <a>{{ heading }}</a>
-                            <input name="{{heading}}" type="text" class="drop" readonly>
-                          </div>
-                      </li>
-                    {% endfor %}
-                </ul>
+            <div class="col-lg-10 col-lg-offset-1">
+                <button class="btn btn-block btn-md btn-primary">
+                    Sync Table Names
+                </button>
             </div>
-            <div class="col-lg-6 border">
-                <div class="page-header">
-                  <h1>Table Preview</h1>
-                </div>
-                <div class="page-header">
-                  <h4>This is How Your Customer Master Table Will Look Like</h4>
-                </div>
-                <table class="table">
-                    <th>
-                        <td>Customer Id</td>
-                        <td>Customer Name</td>
-                        <td>Phone Number</td>
-                    </th>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Adnan</td>
-                            <td>8090******</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Dipali</td>
-                            <td>1234******</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Vikas</td>
-                            <td>9876******</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <ul class="list-group">
+                {% for item in list_of_tables %}
+                <li class="list-group-item">
+                    <span class="drag">{{item}}</span>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-    </form>
+        <div class="col-lg-4 border">
+            <div class="page-header">
+                <h3>System Tables</h3>
+            </div>
+            <div class="col-lg-10 col-lg-offset-1">
+                <button type="reset" class="btn btn-block btn-md btn-primary">
+                    Clear Selections
+                </button>
+            </div>
+            <ul class="list-group">
+                {% for heading in list_of_headings %}
+                <li class="list-group-item">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon" id="sizing-addon3">
+                            {{ heading }}
+                            {% if is_table_name_mandatory|get_item:heading %}
+                                <i style="color: red">*</i>
+                            {% endif %}
+                        </span>
+                        <input name="{{heading}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-lg-6 border">
+            <div class="page-header">
+                <h1>Table Preview</h1>
+            </div>
+            <div class="page-header">
+                <h4>This is How Your Customer Master Table Will Look Like</h4>
+            </div>
+            <table class="table">
+                <th>
+                <td>Customer Id</td>
+                <td>Customer Name</td>
+                <td>Phone Number</td>
+                </th>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Adnan</td>
+                    <td>8090******</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Dipali</td>
+                    <td>1234******</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Vikas</td>
+                    <td>9876******</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="position: fixed; right: 15px; bottom: 15px; display: sticky; width: 200px">
+        <button class="btn btn-md btn-primary btn-block" type="submit">Submit</button>
+    </div>
+</form>
 
 {% endblock %}

@@ -58,11 +58,52 @@ def get_table_name_model_pair():
     }
     return table_name_model_pair
 
+# Returns Dict Of System Table Name With Whether They Are Mandatory
+def is_table_name_mandatory():
+    return {
+        'CUSTOMER_CONTACT': False,
+        'CUSTOMER_MASTER': False,
+        'EVENT_LOG': False,
+        'EVENT_MASTER': False,
+        'PRODUCT_MASTER': False,
+        'TRANSACTION_MASTER': True
+    }
+
+# Returns Dict Of System Table Name With Which Column Names Are Mandatory
+def is_column_name_mandatory(table_map):
+    our_model = prepare_our_model(table_map)
+    to_return = {}
+    for our_table_name in our_model:
+        to_return[our_table_name] = {}
+        for our_column_name in our_model[our_table_name]:
+            to_return[our_table_name][our_column_name] = False
+
+    if to_return.has_key('TRANSACTION_MASTER'):
+        to_return['TRANSACTION_MASTER']['cust_id'] = True
+        to_return['TRANSACTION_MASTER']['product_id'] = True
+        to_return['TRANSACTION_MASTER']['timestamp'] = True
+        to_return['TRANSACTION_MASTER']['revenue'] = True
+
+    if to_return.has_key('CUSTOMER_MASTER'):
+        to_return['CUSTOMER_MASTER']['customer_id'] = True
+
+    if to_return.has_key('EVENT_LOG'):
+        to_return['EVENT_LOG']['cust_id'] = True
+        to_return['EVENT_LOG']['product_id'] = True
+        to_return['EVENT_LOG']['timestamp'] = True
+
+    if to_return.has_key('CUSTOMER_CONTACT'):
+        to_return['CUSTOMER_CONTACT']['cust_id'] = True
+        to_return['CUSTOMER_CONTACT']['email_id'] = True
+
+    return to_return
+
+
 
 # Append Column List To Respective Client table And Create Map
 def prepare_our_model(table_map):
     our_model = {}
-    #   For Customer Contact
+
     table_name_model_pair = get_table_name_model_pair()
 
     for key, value in table_name_model_pair.iteritems():
@@ -86,20 +127,28 @@ def prepare_our_model(table_map):
 # request will be deprecated in next fix
 def prepare_final_model(table_map, client_table_and_column_with_type, our_model, request):
     column_map = {}
-    for key, value in our_model.iteritems():
+    for our_table_name, our_column_list in our_model.iteritems():
         temp = {}
-        column_map[key] = {}
-        for item in value:
-            temp[item] = {}
-            if request.POST[key+'.'+item] == u'':
-                temp[item] = None
+        column_map[our_table_name] = {}
+        for our_column_name in our_column_list:
+            temp[our_column_name] = {}
+            if request.POST[our_table_name+'.'+our_column_name] == u'':
+                temp[our_column_name] = None
             else:
-                temp[item][request.POST[key+'.'+item]] = {}
-                temp[item][request.POST[key+'.'+item]] = {
-                    'type': client_table_and_column_with_type[table_map[key]][request.POST[key+'.'+item]]['type']
+                temp[our_column_name][request.POST[our_table_name+'.'+our_column_name]] = {}
+                if request.POST.has_key(our_table_name+'.'+our_column_name+'.is_factor'):
+                    if request.POST[our_table_name+'.'+our_column_name+'.is_factor'] == 'on':
+                        is_factor = True
+                    else:
+                        is_factor = False
+                else:
+                    is_factor = False
+                temp[our_column_name][request.POST[our_table_name+'.'+our_column_name]] = {
+                    'type': client_table_and_column_with_type[table_map[our_table_name]][request.POST[our_table_name+'.'+our_column_name]]['type'],
+                    'is_factor': is_factor
                 }
-        column_map[key][table_map[key]] = {}
-        column_map[key][table_map[key]] = temp
+        column_map[our_table_name][table_map[our_table_name]] = {}
+        column_map[our_table_name][table_map[our_table_name]] = temp
     return column_map
 
 
@@ -111,32 +160,43 @@ def column_mapping(request):
     obj = connect_to_client_database(user)
     try:
         table_map = request.session['table_map']
+        for item in table_map:
+            if is_table_name_mandatory()[item]:
+                if table_map[item] == '' or table_map[item] == None:
+                    print 'Please Fill Mandatory Fields First'
+                    return HttpResponseRedirect(reverse('table_mapping'))
+    except Exception as e:
+        print e
+        print 'No Table Map Found'
+        return HttpResponseRedirect(reverse('table_mapping'))
+    try:
         client_table_and_column_with_type = attach_column_list_to_every_client_table(obj.cur, table_map)
-        print 'client_table_and_column_with_type'
-        print client_table_and_column_with_type
     #   Now For Our Database
         our_model = prepare_our_model(table_map)
-        print 'our_model'
-        print our_model
     except KeyError as e:
         if e.message.__contains__('table_map'):
             print 'Table Mapping Should Be Done First'
             return HttpResponseRedirect(reverse('table_mapping'))
     except Exception as e:
         print e
-
+    mandatory_columns = is_column_name_mandatory(table_map)
     if request.method == 'POST':
-        print request.POST
+        for our_table_name in mandatory_columns:
+            for our_column_name in mandatory_columns[our_table_name]:
+                if mandatory_columns[our_table_name][our_column_name]:
+                    if request.POST[our_table_name+'.'+our_column_name] == None or request.POST[our_table_name+'.'+our_column_name] == '':
+                        print 'Not All Mandatory Columns Are Submitted'
+                        return HttpResponseRedirect(reverse('column_mapping'))
         column_map = prepare_final_model(table_map, client_table_and_column_with_type, our_model, request)
         request.session['column_map'] = column_map
-        print column_map
         return HttpResponseRedirect(reverse('mapping_review'))
 
     return render(request, 'mapper/column-mapping.html', {
         'client_table_and_column_with_type': client_table_and_column_with_type,
         'our_model': our_model,
         'table_map': table_map,
-        'get_item': get_item
+        'get_item': get_item,
+        'is_column_name_mandatory': mandatory_columns,
     })
 
 
@@ -167,15 +227,19 @@ def table_mapping(request):
     if request.method == 'POST':
         table_map = {}
         for item in list_of_headings:
-                table_map[str(item)] = str(request.POST[item])
+            if is_table_name_mandatory()[item]:
+                if request.POST[item] == None or request.POST[item] == '':
+                    print 'Mandatory Fields Are Not Filled'
+                    return HttpResponseRedirect(reverse('table_mapping'))
+            table_map[str(item)] = str(request.POST[item])
         request.session['table_map'] = table_map
-        print 'table_map'
-        print table_map
         return HttpResponseRedirect(reverse('column_mapping'))
 
     return render(request, 'mapper/table-mapping.html', {
         'list_of_tables': list_of_tables,
         'list_of_headings': list_of_headings,
+        'is_table_name_mandatory': is_table_name_mandatory(),
+        'get_item': get_item
     })
 
 # Save Mapping Into Model

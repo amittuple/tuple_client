@@ -5,4 +5,7 @@ def dashboard(request):
     print 'Start of Dashoard View'
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login'))
+
+    # Code here
+
     return render(request, 'user_profile/dashboard.html', {})

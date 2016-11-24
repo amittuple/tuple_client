@@ -45,8 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # CELERY
     'django_celery_results',
-    # RowsTextIO
-    'rowstextio',
 ]
 
 MIDDLEWARE = [

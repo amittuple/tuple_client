@@ -3,11 +3,6 @@
 {% block content %}
 {% load static %}
 
-<style>
-    input {
-        min-height: 100px;
-    }
-</style>
 <script>
     window.onload = function() {
         list = document.getElementsByTagName('span');
@@ -43,48 +38,66 @@
     }
 </script>
     <form method="post" class="panel-group" id="accordion" role="tablist">
-        {% csrf_token %}
-        {% for our_table_name, our_column_list in our_model.iteritems %}
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{our_table_name}}" aria-expanded="true" aria-controls="{{our_table_name}}">
-                  {{our_table_name}}
-                </a>
-              </h4>
-            </div>
-            <div id="{{our_table_name}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{our_table_name}}">
-              <div class="panel-body">
-                    <div class="row">
-                        {% with client_table_name=table_map|get_item:our_table_name%}
-                        <div class="col-lg-6">
-                            <ul class="list-group">
-                                <h3>{{client_table_name}}</h3>
-                                {% for client_column_name in client_table_and_column_with_type|get_item:client_table_name %}
-                                <li class="list-group-item">
-                                    <span class="drag">{{client_column_name}}</span>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        {% endwith %}
-                        <div class="col-lg-6">
-                            <ul>
-                                <h3>{{our_table_name}}</h3>
-                                {% for our_column_name in our_column_list %}
-                                    <li>
-                                        <h4>{{our_column_name}}</h4>
-                                        <input name="{{our_table_name}}.{{our_column_name}}" type="text" class="drop" readonly>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
+        <div class="row" style="margin-top:50px;">
+            <div class="container">
+                {% csrf_token %}
+                {% for our_table_name, our_column_list in our_model.iteritems %}
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{our_table_name}}" aria-expanded="true" aria-controls="{{our_table_name}}">
+                          {{our_table_name}}
+                        </a>
+                      </h4>
                     </div>
-              </div>
+                    <div id="{{our_table_name}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{our_table_name}}">
+                      <div class="panel-body">
+                            <div class="row">
+                                {% with client_table_name=table_map|get_item:our_table_name%}
+                                <div class="col-lg-6">
+                                    <ul class="list-group">
+                                        <h3>{{client_table_name}}</h3>
+                                        {% for client_column_name in client_table_and_column_with_type|get_item:client_table_name %}
+                                        <li class="list-group-item">
+                                            <span class="drag">{{client_column_name}}</span>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                {% endwith %}
+                                <div class="col-lg-6">
+                                    <ul class="list-group">
+                                        <h3>{{our_table_name}}</h3>
+                                        {% for our_column_name in our_column_list %}
+                                            {% with is_column=is_column_name_mandatory|get_item:our_table_name %}
+                                            <li class="list-group-item">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-addon" id="sizing-addon3">
+                                                        {{our_column_name}}
+                                                        {% if is_column|get_item:our_column_name %}
+                                                            <i style="color: red">*</i>
+                                                        {% endif %}
+                                                    </span>
+                                                    <input name="{{our_table_name}}.{{our_column_name}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly required aria-required="true">
+                                                    <span class="input-group-addon">
+                                                        <input name="{{our_table_name}}.{{our_column_name}}.is_factor" type="checkbox">
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            {% endwith %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
             </div>
-          </div>
-        {% endfor %}
-        <button class="btn btn-primary btn-block btn-lg" type="submit">Submit</button>+
+        </div>
+        <div style="position: fixed; right: 15px; bottom: 15px; display: sticky; width: 200px">
+            <button class="btn btn-md btn-primary btn-block" type="submit">Submit</button>
+        </div>
     </form>
 
 {% endblock %}

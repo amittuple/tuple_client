@@ -2,7 +2,6 @@ from celery import shared_task, task
 from ConnectDatabase import connect_to_client_database
 from psycopg2.extensions import ISOLATION_LEVEL_SERIALIZABLE
 from django.contrib.auth.models import User
-from rowstextio.rowstextio import RowsTextIO
 import StringIO
 # app = Celery('tasks', broker='pyamqp://guest@localhost//')
 
