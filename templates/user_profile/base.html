@@ -33,6 +33,7 @@
             {% if request.user.is_authenticated %}
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li class="active"><a href="{% url 'connect_client_db' %}">Connect Database</a></li>
                 <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
                 <li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
                 <li><a href="{% url 'mapping_review' %}">Mapping Review</a></li>

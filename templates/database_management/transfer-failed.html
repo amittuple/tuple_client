@@ -1,0 +1,22 @@
+{% extends 'user_profile/base.html' %}
+{% load i18n %}
+{% block content %}
+{% load static %}
+
+
+<div class="col-lg-4 col-lg-offset-4" style="margin-top: 50px;">
+
+    <div class="row" style="margin-top: 50px;">
+        <div>
+            <h1 class="text-center">Database Transfer Failed</h1>
+        </div>
+        <div class="row text-center">
+            <a class="btn btn-md btn-primary" href="{% url 'mapping_review' %}">Go Back</a>
+            <a class="btn btn-md btn-danger">Report Administrator</a>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

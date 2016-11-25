@@ -1,5 +1,5 @@
 from celery import shared_task, task
-from ConnectDatabase import connect_to_client_database
+from ConnectDatabase import connect_to_client_database, connect_to_this_database
 from psycopg2.extensions import ISOLATION_LEVEL_SERIALIZABLE
 from django.contrib.auth.models import User
 import StringIO
@@ -201,7 +201,8 @@ def add(x,y):
 def database_migration(queries, user):
     user = User.objects.filter(username=user)
     from_table = connect_to_client_database(user)
-    to_table = connect_to_client_database(user)
+    # psycopg2
+    to_table = connect_to_this_database()
     success_fail_arr = []
     for item in queries:
         try:

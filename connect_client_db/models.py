@@ -1,10 +1,7 @@
-from django.contrib.auth.models import User
 from django.db import models
 
 
 class ClientDbModel(models.Model):
-
-    client = models.OneToOneField(User)
     database_name = models.CharField(max_length=50, null = True, blank=True)
     database_type = models.CharField(max_length=200, null = True, blank=True)
     host = models.CharField(max_length=200, null = True, blank=True)

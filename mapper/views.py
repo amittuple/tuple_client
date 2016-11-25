@@ -3,7 +3,9 @@ from django.shortcuts import render, HttpResponseRedirect
 
 from database_management.ConnectDatabase import connect_to_client_database
 from .filters import get_item
-from .models import CustomerContactMappingModel, CustomerMasterMappingModel, ProductMasterMappingModel, EventLogMappingModel, EventMasterMappingModel, TransactionMasterMappingModel
+from .models import *
+
+from connect_client_db.views import client_has_db_config
 
 
 # api functions
@@ -58,6 +60,16 @@ def get_table_name_model_pair():
     }
     return table_name_model_pair
 
+def get_table_name_model_meta_pair():
+    return {
+        'CUSTOMER_CONTACT': CustomerContactMappingMetaModel,
+        'CUSTOMER_MASTER': CustomerMasterMappingMetaModel,
+        'EVENT_LOG': EventLogMappingMetaModel,
+        'EVENT_MASTER': EventMasterMappingMetaModel,
+        'PRODUCT_MASTER': ProductMasterMappingMetaModel,
+        'TRANSACTION_MASTER': TransactionMasterMappingMetaModel
+    }
+
 # Returns Dict Of System Table Name With Whether They Are Mandatory
 def is_table_name_mandatory():
     return {
@@ -98,22 +110,20 @@ def is_column_name_mandatory(table_map):
 
     return to_return
 
-
-
 # Append Column List To Respective Client table And Create Map
 def prepare_our_model(table_map):
     our_model = {}
 
     table_name_model_pair = get_table_name_model_pair()
 
-    for key, value in table_name_model_pair.iteritems():
-        if not table_map[key] == '':
-            temporary_value = value._meta.get_fields()
-            mapping_name = key
+    for our_table_name, table_model in table_name_model_pair.iteritems():
+        if not table_map[our_table_name] == '':
+            temporary_value = table_model._meta.get_fields()
+            mapping_name = our_table_name
             our_model[mapping_name] = []
             for item in temporary_value:
                 # To Exclude Id, Client, Client Table Name From Client HTML Page
-                if item.name != 'client' and item.name !='client_table_name' and item.name != 'id':
+                if not str(item.name).__contains__('metamodel') and item.name !='client_table_name' and item.name != 'id':
                     our_model[mapping_name].append(item.name)
     return our_model
 
@@ -247,27 +257,47 @@ def table_mapping(request):
 # table_name_model_pair = Includes Client Db Model And Its Mapping
 # column_map = Final Mapping Dictionary Of User Custom Mapping
 # user = SimpleLazyObject of request.user
-def save_mapping_into_model(table_name_model_pair, column_map, user):
+def save_mapping_into_model(table_name_model_pair, column_map):
+    table_name_model_meta_pair=get_table_name_model_meta_pair()
     for our_table_name, client_table_list in column_map.iteritems():
-        obj = table_name_model_pair[our_table_name]()
+        mapping_model_obj = table_name_model_pair[our_table_name]()
         for our_column_name, client_column_list in column_map[our_table_name][client_table_list.keys()[0]].iteritems():
             # print our_column_name
             if client_column_list is not None:
                 # print client_column_list.keys()[0]
-                setattr(obj, our_column_name, client_column_list.keys()[0])
+                setattr(mapping_model_obj, our_column_name, client_column_list.keys()[0])
         # Not To Be Inputted By Client
-        setattr(obj, 'client', user)
-        setattr(obj, 'client_table_name', client_table_list.keys()[0])
+        # setattr(obj, 'client', user)
+        setattr(mapping_model_obj, 'client_table_name', client_table_list.keys()[0])
         try:
-            if table_name_model_pair[our_table_name].objects.get(client=user):
+            if table_name_model_pair[our_table_name].objects.all().exists():
                 print our_table_name + ' Mapping Already Exists'
                 print 'Skip'
             else:
-                obj.save()
+                mapping_model_obj.save()
+                save_mapping_meta_into_model(table_name_model_meta_pair, column_map, mapping_model_obj)
         except Exception as e:
-            if e.message.__contains__('matching query'):
-                obj.save()
+            print e
+            # if e.message.__contains__('matching query'):
+            #     obj.save()
+            #     save_mapping_meta_into_model(table_name_model_meta_pair, column_map, obj.id)
 
+# Store Model Mapping Meta In Database
+def save_mapping_meta_into_model(table_name_model_meta_pair, column_map, mapping_obj):
+    for our_table_name, client_table_list in column_map.iteritems():
+        try:
+            if table_name_model_meta_pair[our_table_name].objects.filter(mapping = mapping_obj).exists():
+                print 'mapping meta already exists for this mapping'
+                return None
+        except Exception as e:
+            print e
+        for our_column_name, client_column_list in column_map[our_table_name][client_table_list.keys()[0]].iteritems():
+            if client_column_list is not None:
+                obj = table_name_model_meta_pair[our_table_name]()
+                setattr(obj,'mapping', mapping_obj)
+                setattr(obj,'column_name', client_column_list.keys()[0])
+                setattr(obj, 'is_factor', client_column_list[client_column_list.keys()[0]]['is_factor'])
+                obj.save()
 
 # Mapping Review View
 def mapping_review(request):
@@ -281,8 +311,8 @@ def mapping_review(request):
     user = request.user
     if request.method == 'POST':
         table_name_model_pair = get_table_name_model_pair()
-        # print table_name_model_pair
-        save_mapping_into_model(table_name_model_pair, column_map, user)
+        table_name_model_meta_pair = get_table_name_model_meta_pair()
+        save_mapping_into_model(table_name_model_pair, column_map)
         request.session['transfer_database_flag'] = True
         return HttpResponseRedirect(reverse('transfer_database'))
     return render(request, 'mapper/mapping-review.html', {

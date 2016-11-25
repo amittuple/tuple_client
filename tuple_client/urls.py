@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'', include('login.urls')),
     url(r'', include('mapper.urls')),
     url(r'', include('database_management.urls')),
+    url(r'^connect-client-db/', include('connect_client_db.urls')),
     url(r'^user-profile/', include('user_profile.urls')),
 
 ]

@@ -83,7 +83,6 @@ class OtherRouter(object):
         'admin',
         'contenttypes',
         'sessions',
-        'connect_client_db',
     ]
     """
     A router to control all database operations on models in the
@@ -126,7 +125,8 @@ class OtherRouter(object):
 
 class DefaultRouter(object):
     default_db_apps = [
-        'mapper'
+        'mapper',
+        'connect_client_db',
     ]
     """
     A router to control all database operations on models in the

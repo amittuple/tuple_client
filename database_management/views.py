@@ -17,8 +17,8 @@ def create_queries_pool(column_map):
         for client_table_name, our_column_dict in column_map[our_table_name].iteritems():
             # These Query Will be Executed Once As This For Loop Will Be Executed Once
             # There Is A Fix To Remove For Loop
-            create_query = 'CREATE TABLE ' + 'temp' + client_table_name + ' ( '
-            insert_query = 'INSERT INTO ' + 'temp' + client_table_name + '('
+            create_query = 'CREATE TABLE ' + client_table_name + ' ( '
+            insert_query = 'INSERT INTO ' + client_table_name + '('
             columns = ()
             for our_column_name, client_column_dict in our_column_dict.iteritems():
                 if client_column_dict != None:
@@ -84,7 +84,9 @@ def transfer_database(request):
     user = request.user
     try:
         d = celery_and_rabbit_server_check()
-        print d
+        if d.has_key('ERROR'):
+            print d['ERROR']
+            return HttpResponseRedirect(reverse('transfer_failed'))
         column_map = request.session['column_map']
         # first create list of queries
         # transfer database for each query
@@ -101,3 +103,8 @@ def transfer_database(request):
     if request.method == 'POST':
         return HttpResponseRedirect(reverse('dashboard'))
     return render(request, 'database_management/transfer-database.html', {})
+
+
+
+def transfer_failed(request):
+    return render(request, 'database_management/transfer-failed.html', {})

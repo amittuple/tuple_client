@@ -1,0 +1,53 @@
+{% extends 'user_profile/base.html' %}
+{% load i18n %}
+{% block content %}
+{% load static %}
+
+<div class="col-lg-4 col-lg-offset-4" style="margin-top: 50px;">
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="{% url 'connect_client_db' %}">Database Connection Form</a></li>
+            <li role="presentation"><a href="#">Database Connection Result</a></li>
+        </ul>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+        <form action="." method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-primary btn-block" type="submit">Submit</button>
+        </form>
+        <!--<form>-->
+            <!--<div class="form-group">-->
+                <!--<label>Database Name</label>-->
+                <!--{{form.database_name}}-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="{{form.database_name}}">Database Type</label>-->
+                <!--<input type="text" class="form-control" name="{{form.database_type}}" placeholder="Database Name">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="{{form.username}}">Username</label>-->
+                <!--<input id="{{form.username}}" type="text" class="form-control" name="{{form.username}}" placeholder="Database Name">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="{{form.password}}">Password</label>-->
+                <!--<input id="{{form.password}}" type="password" class="form-control" name="{{form.password}}" placeholder="Database Name">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="{{form.host}}">Host</label>-->
+                <!--<input id="{{form.host}}" type="text" class="form-control" name="{{form.host}}" placeholder="Database Name">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="{{form.port}}">Port</label>-->
+                <!--<input id="{{form.port}}" type="text" class="form-control" name="{{form.port}}" placeholder="Database Name">-->
+            <!--</div>-->
+            <!--<div class="checkbox">-->
+                <!--<label>-->
+                    <!--<input type="checkbox"> License Agreement-->
+                <!--</label>-->
+            <!--</div>-->
+            <!--<button type="submit" class="btn btn-default">Submit</button>-->
+        <!--</form>-->
+    </div>
+</div>
+{% endblock %}
