@@ -2,54 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a247cd03-d2f8-46e8-9dee-c995748544a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/images/desert.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/images/desktop.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/images/jumbotron.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/images/landscape3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/images/profile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/images/room-laptop.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/images/table.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/bootstrap/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/custom/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/custom/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/jquery/jquery-1.12.4.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/tether/tether.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/assets/tether/tether.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connect_client_db/views.py" afterPath="$PROJECT_DIR$/connect_client_db/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_management/ConnectDatabase.py" afterPath="$PROJECT_DIR$/database_management/ConnectDatabase.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MappingBuffer.yml" afterPath="$PROJECT_DIR$/MappingBuffer.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_management/tasks.py" afterPath="$PROJECT_DIR$/database_management/tasks.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_management/views.py" afterPath="$PROJECT_DIR$/database_management/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapper/models.py" afterPath="$PROJECT_DIR$/mapper/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapper/views.py" afterPath="$PROJECT_DIR$/mapper/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/custom/app.js" afterPath="$PROJECT_DIR$/static/assets/custom/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/custom/style.css" afterPath="$PROJECT_DIR$/static/assets/custom/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/connect_client_db/connected.html" afterPath="$PROJECT_DIR$/templates/connect_client_db/connected.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/connect_client_db/failed.html" afterPath="$PROJECT_DIR$/templates/connect_client_db/failed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/connect_client_db/form.html" afterPath="$PROJECT_DIR$/templates/connect_client_db/form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/database_management/transfer-database.html" afterPath="$PROJECT_DIR$/templates/database_management/transfer-database.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/database_management/transfer-failed.html" afterPath="$PROJECT_DIR$/templates/database_management/transfer-failed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/column-mapping.html" afterPath="$PROJECT_DIR$/templates/mapper/column-mapping.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/mapping-review.html" afterPath="$PROJECT_DIR$/templates/mapper/mapping-review.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/table-mapping.html" afterPath="$PROJECT_DIR$/templates/mapper/table-mapping.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user_profile/base.html" afterPath="$PROJECT_DIR$/templates/user_profile/base.html" />
     </list>
     <ignored path="tuple_client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,28 +26,7 @@
     <favorites_list name="tuple_client" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/user_profile/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tuple_client/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="144" column="30" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,10 +69,7 @@
         <option value="$PROJECT_DIR$/mapper/TableMapper.py" />
         <option value="$PROJECT_DIR$/mapper/Mapper.py" />
         <option value="$PROJECT_DIR$/MappingBuffer.yml" />
-        <option value="$PROJECT_DIR$/mapper/views.py" />
         <option value="$PROJECT_DIR$/mapper/models.py" />
-        <option value="$PROJECT_DIR$/database_management/tasks.py" />
-        <option value="$PROJECT_DIR$/database_management/views.py" />
         <option value="$PROJECT_DIR$/templates/connect_client_db/failed.html" />
         <option value="$PROJECT_DIR$/templates/connect_client_db/connected.html" />
         <option value="$PROJECT_DIR$/templates/connect_client_db/form.html" />
@@ -147,6 +81,9 @@
         <option value="$PROJECT_DIR$/templates/user_profile/base.html" />
         <option value="$PROJECT_DIR$/templates/database_management/transfer-failed.html" />
         <option value="$PROJECT_DIR$/tuple_client/settings.py" />
+        <option value="$PROJECT_DIR$/mapper/views.py" />
+        <option value="$PROJECT_DIR$/database_management/tasks.py" />
+        <option value="$PROJECT_DIR$/database_management/views.py" />
       </list>
     </option>
   </component>
@@ -180,7 +117,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -213,12 +149,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database_management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tuple_common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="CommandLine" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -457,9 +422,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1366" height="734" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21522693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21522693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -488,7 +453,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="48" />
+      <option name="time" value="51" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -656,14 +621,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MappingBuffer.buffer" />
-    <entry file="file://$PROJECT_DIR$/database_management/ConnectDatabase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/connect_client_db/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -696,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,24 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="41" column="11" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="11" />
-          <folding>
-            <element signature="e#98#322#0" expanded="false" />
-            <element signature="e#349#767#0" expanded="false" />
-            <element signature="e#799#1244#0" expanded="false" />
-            <element signature="e#1281#1554#0" expanded="false" />
-            <element signature="e#1640#1662#0" expanded="false" />
-            <element signature="e#1856#2064#0" expanded="false" />
-            <marker date="1480400824378" expanded="false" signature="1690:1726" ph="..." />
-            <marker date="1480400824378" expanded="false" signature="1759:1800" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database_management/tasks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -737,40 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="130" column="54" selection-start-line="130" selection-start-column="54" selection-end-line="130" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database_management/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-301">
-          <caret line="94" column="42" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#90#0" expanded="true" />
-            <element signature="e#504#2603#0" expanded="false" />
-            <element signature="e#2647#3228#0" expanded="false" />
-            <element signature="e#4662#4732#0" expanded="false" />
-            <element signature="e#7700#8290#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mapper/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2751">
-          <caret line="69" column="63" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <element signature="e#465#1055#0" expanded="false" />
-            <element signature="e#1136#1427#0" expanded="false" />
-            <element signature="e#1547#1909#0" expanded="false" />
-            <element signature="e#2011#2454#0" expanded="false" />
-            <element signature="e#3091#3339#0" expanded="false" />
-            <element signature="e#3460#4589#0" expanded="false" />
-            <element signature="e#4692#5358#0" expanded="false" />
-            <element signature="e#5854#7791#0" expanded="false" />
-            <element signature="e#10066#11785#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -778,9 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,9 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,7 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,7 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="88" column="75" selection-start-line="88" selection-start-column="75" selection-end-line="88" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -814,9 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -824,9 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -834,15 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="59" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -850,9 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,9 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -870,10 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
           <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,15 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user_profile/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,14 +758,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_management/ConnectDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapper/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="405" column="13" selection-start-line="405" selection-start-column="8" selection-end-line="405" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#1136#1427#0" expanded="false" />
+            <element signature="e#2011#2454#0" expanded="false" />
+            <element signature="e#2566#2986#0" expanded="false" />
+            <element signature="e#3091#3339#0" expanded="false" />
+            <element signature="e#3460#4589#0" expanded="false" />
+            <element signature="e#4692#5358#0" expanded="false" />
+            <element signature="e#5854#7708#0" expanded="false" />
+            <element signature="e#11991#13602#0" expanded="false" />
+            <element signature="e#13748#14807#0" expanded="false" />
+            <element signature="e#16182#16476#0" expanded="false" />
+            <element signature="e#16518#16648#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tuple_client/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
+        <state relative-caret-position="1077">
           <caret line="144" column="30" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_management/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#90#0" expanded="true" />
+            <element signature="e#2871#3452#0" expanded="false" />
+            <element signature="e#4888#4958#0" expanded="false" />
+            <element signature="e#4981#6578#0" expanded="false" />
+            <element signature="e#7926#8516#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_management/tasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user_profile/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
           <folding />
         </state>
       </provider>

@@ -164,7 +164,6 @@ def prepare_final_model(table_map, client_table_and_column_with_type, our_model,
                     'type': client_table_and_column_with_type[table_map[our_table_name]][request.POST[our_table_name+'.'+our_column_name]]['type'],
                     # 'is_factor': is_factor
                 }
-                print client_table_and_column_with_type[table_map[our_table_name]]
         column_map[our_table_name][table_map[our_table_name]] = {}
         column_map[our_table_name][table_map[our_table_name]] = temp
         # factor list
@@ -306,17 +305,13 @@ def save_mapping_into_model(table_name_model_pair, column_map):
 
 # Store Model Mapping Meta In Database
 def save_mapping_meta_into_model(our_table_name, table_name_model_meta_pair, column_map, mapping_obj):
-    print our_table_name
-    print mapping_obj
     try:
         if table_name_model_meta_pair[our_table_name].objects.filter(mapping = mapping_obj).exists():
             print 'mapping meta already exists for this mapping'
             return None
     except Exception as e:
-        print 'hello'
         print e
     for client_column_name, is_factor in column_map[our_table_name]['is_factor'].iteritems():
-        print client_column_name
         obj = table_name_model_meta_pair[our_table_name]()
         setattr(obj,'mapping', mapping_obj)
         setattr(obj,'column_name', client_column_name)
@@ -343,6 +338,11 @@ def mapping_review(request):
     if mapping_exists() is None:
         return HttpResponse('Bad Mapping Config')
     if request.method == 'POST':
+        response = True
+        if mapping_exists():
+            response = clear_client_database(user)
+        if not response:
+            return HttpResponse('Not Able To Clear Database')
         mapping_clear = clear_mapping_model()
         if not mapping_clear:
             print 'Not Able To Clear Mapping Model. Please Contact Admin'
@@ -386,6 +386,21 @@ def clear_mapping_model():
             table_obj = our_table_meta_model.objects.all()
             if len(table_obj) != 0:
                 table_obj.delete()
+        return True
+    except Exception as e:
+        print e
+        return False
+
+
+def clear_client_database(user):
+    try:
+        for our_table_name, our_table_model in get_table_name_model_pair().iteritems():
+            table_obj = our_table_model.objects.all()
+            if len(table_obj) != 0:
+                client_table_name = table_obj[0].client_table_name
+                table = connect_to_client_database(user)
+                table.cur.execute('DROP TABLE IF EXISTS '+ client_table_name)
+                table.conn.commit()
         return True
     except Exception as e:
         print e

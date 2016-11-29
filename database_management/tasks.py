@@ -36,11 +36,6 @@ def database_migration(queries, user):
                 'reason': 'none'
             })
             print success_fail_arr
-            # if not f.closed:
-            #     f.seek(0)
-            #     f.truncate()
-            #     f.close()
-            # print 'END'
         except Exception as e:
             print e
             to_table.conn.rollback()
@@ -49,10 +44,6 @@ def database_migration(queries, user):
                 'result': 'fail',
                 'reason': e.message
             })
-            # if not f.closed:
-            #     f.seek(0)
-            #     f.truncate()
-            #     f.close()
             continue
 
     from_table.cur.close()

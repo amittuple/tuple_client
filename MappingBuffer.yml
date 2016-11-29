@@ -2,10 +2,10 @@ column_map:
   CUSTOMER_CONTACT:
     cust_id: user_id
     email_id: email
-    facebook_id: sent
+    facebook_id: null
     phone_number: null
   CUSTOMER_MASTER:
-    customer_id: personal_id
+    customer_id: id
   CUSTOMER_SECONDARY:
     cust_id: id
   EVENT_LOG:
@@ -13,44 +13,21 @@ column_map:
     cust_id: from_id
     product_id: to_id
     timestamp: timestamp
-  EVENT_MASTER:
-    action_category_id: id
-    action_category_name: value
-    action_name: profile
-    action_type: personal_id
-  PRODUCT_MASTER:
-    category_id: gender
-    category_name: name
-    product_id: cu_id
-    product_name: name
-    subcategory_id: gender
-    subcategory_name: name
   TRANSACTION_MASTER:
     cust_id: userid
     product_id: product_id
     revenue: revenue
     timestamp: purchase_date
 is_factor:
-  CUSTOMER_CONTACT:
-  - sent
-  CUSTOMER_MASTER: []
-  CUSTOMER_SECONDARY:
-  - mutual
+  CUSTOMER_CONTACT: []
+  CUSTOMER_MASTER:
+  - gender
+  CUSTOMER_SECONDARY: []
   EVENT_LOG: []
-  EVENT_MASTER:
-  - cltv
-  - engagement
-  - churn
-  - high_converter
-  PRODUCT_MASTER:
-  - country
-  - age
   TRANSACTION_MASTER: []
 table_map:
   CUSTOMER_CONTACT: contact
-  CUSTOMER_MASTER: customer_master
+  CUSTOMER_MASTER: users
   CUSTOMER_SECONDARY: fb
   EVENT_LOG: event
-  EVENT_MASTER: master_view
-  PRODUCT_MASTER: team_personal
-  TRANSACTION_MASTER: transaction_master
+  TRANSACTION_MASTER: trans

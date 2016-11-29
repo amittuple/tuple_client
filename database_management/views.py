@@ -13,26 +13,30 @@ from mapper.views import get_table_name_model_pair, get_table_name_model_meta_pa
 def create_queries_pool(column_map):
     queries = []
     for our_table_name in column_map:
-        print
         select_query = 'SELECT '
         counter = 0
         insert_placeholder = ''
-        for client_table_name, our_column_dict in column_map[our_table_name].iteritems():
+        if column_map[our_table_name].keys()[0] == 'is_factor':
+            client_table_name = column_map[our_table_name].keys()[1]
+        else:
+            client_table_name = column_map[our_table_name].keys()[0]
+        our_column_dict = column_map[our_table_name][client_table_name]
+        # for client_table_name, our_column_dict in column_map[our_table_name].iteritems():
             # These Query Will be Executed Once As This For Loop Will Be Executed Once
             # There Is A Fix To Remove For Loop
-            create_query = 'CREATE TABLE ' + client_table_name + ' ( '
-            insert_query = 'INSERT INTO ' + client_table_name + '('
-            columns = ()
-            for our_column_name, client_column_dict in our_column_dict.iteritems():
-                if client_column_dict != None:
-                    for client_column_name in client_column_dict:
-                        print client_column_name
-                        columns = columns + (str(client_column_name),)
-                        counter += 1
-                        select_query = select_query + client_column_name + ','
-                        create_query = create_query + ' ' + client_column_name + ' ' + client_column_dict[client_column_name]['type'] + ','
-                        insert_query = insert_query + client_column_name + ','
-                        insert_placeholder += '%s,'
+        create_query = 'CREATE TABLE ' + client_table_name + ' ( '
+        insert_query = 'INSERT INTO ' + client_table_name + '('
+        columns = ()
+        for our_column_name, client_column_dict in our_column_dict.iteritems():
+            if client_column_dict != None:
+                for client_column_name in client_column_dict:
+                    print client_column_name
+                    columns = columns + (str(client_column_name),)
+                    counter += 1
+                    select_query = select_query + client_column_name + ','
+                    create_query = create_query + ' ' + client_column_name + ' ' + client_column_dict[client_column_name]['type'] + ','
+                    insert_query = insert_query + client_column_name + ','
+                    insert_placeholder += '%s,'
         select_query = select_query[:-1]
         create_query = create_query[:-1]
         insert_query = insert_query[:-1]
@@ -96,7 +100,7 @@ def transfer_database(request):
         queries_pool = create_queries_pool(column_map)
         database_migration.delay(queries_pool, str(user))
         make_yml()
-        clear_mapping_session(request)
+        # clear_mapping_session(request)
     except KeyError as e:
         print e
         print 'No Mapping Found Please Do Mapping Before'
