@@ -3,6 +3,15 @@
 {% block content %}
 {% load static %}
 
+<div class="col-lg-10 col-lg-offset-1" style="margin-top: 10px;">
+    <ol class="breadcrumb">
+        <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
+        <li class="active">Column Mapping</li>
+        <li class="active">Mapping Review</li>
+        <li class="active">Transfer Database</li>
+    </ol>
+</div>
+
 <form action="." method="post" class="container">
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4 text-center">

@@ -78,6 +78,7 @@ def index(request):
                         return HttpResponseRedirect(reverse('connection_successfull'))
                     else:
                         print 'Connection Failed'
+                        return HttpResponseRedirect(reverse('connection_failed'))
                 except Exception as e:
                     if e.message.__contains__('UNIQUE constraint failed'):
                         print 'Database Connection Details Already Exists'
@@ -85,6 +86,7 @@ def index(request):
                         print 'Key Value Missing'
                     print e
                     print "Error In Connection"
+                    return HttpResponseRedirect(reverse('connection_failed'))
             else:
                 # Other Type Of Database
                 pass

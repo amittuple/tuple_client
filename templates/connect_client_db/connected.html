@@ -3,7 +3,14 @@
 {% block content %}
 {% load static %}
 
-<div class="col-lg-4 col-lg-offset-4" style="margin-top: 50px;">
+<div class="col-lg-10 col-lg-offset-1" style="margin-top: 50px;">
+    <ol class="breadcrumb">
+        <li class="active">Connect Database</li>
+        <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
+    </ol>
+</div>
+
+<div class="col-lg-4 col-lg-offset-4">
     <div class="row">
         <ul class="nav nav-tabs">
             <li role="presentation"><a href="{% url 'connect_client_db' %}">Database Connection Form</a></li>

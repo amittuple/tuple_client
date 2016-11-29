@@ -40,7 +40,7 @@ class connect_to_client_database:
 
 
 class connect_to_this_database:
-    def __init__(self, user):
+    def __init__(self):
         self.conn = None
         self.cur = None
         try:

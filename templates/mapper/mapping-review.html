@@ -3,10 +3,30 @@
 {% block content %}
 {% load static %}
 
+<div class="col-lg-10 col-lg-offset-1" style="margin-top: 10px;">
+    <ol class="breadcrumb">
+        <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
+        <li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
+        <li class="active">Mapping Review</li>
+        <li><a href="{% url 'transfer_database' %}">Transfer Database</a></li>
+    </ol>
+</div>
+
 <form action="." method="post" class="container">
     {% csrf_token %}
     <div class="row">
         {{ column_map }}
+    </div>
+    <div class="row" style="margin-top: 15px;">
+        {% if mapping_exists %}
+        <div class="col-lg-offset-4 col-lg-4 alert alert-danger">
+            <p>Previous Mapping Found, Forwarding Will Delete Previous Mapping Set</p>
+        </div>
+        {% else %}
+        <div class="col-lg-offset-4 col-lg-4 alert alert-warning">
+            <p>No Mapping Found, This Will Create A New Mapping Set.</p>
+        </div>
+        {% endif %}
     </div>
     <div class="col-lg-offset-4 col-lg-4">
         <a class="btn btn-sm btn-default" href="{% url 'table_mapping' %}">Go Back To Change Mapping</a>

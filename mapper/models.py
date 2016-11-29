@@ -119,3 +119,19 @@ class CustomerContactMappingMetaModel(models.Model):
 
     def __unicode__(self):
         return 'Customer Contact Mapping Meta Table'
+
+class CustomerSecondaryMappingModel(models.Model):
+    client_table_name = models.CharField(max_length=50, null = True, blank=True)
+
+    def __unicode__(self):
+        return 'Customer Secondary Mapping Table'
+    cust_id = models.CharField(max_length=50, null = True, blank=True)
+
+
+class CustomerSecondaryMappingMetaModel(models.Model):
+    mapping = models.ForeignKey(CustomerSecondaryMappingModel)
+    column_name = models.CharField(max_length=50, null = True, blank=True)
+    is_factor = models.CharField(max_length=50, null = True, blank=True)
+
+    def __unicode__(self):
+        return 'Customer Secondary Mapping Meta Table'

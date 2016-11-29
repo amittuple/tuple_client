@@ -4,16 +4,16 @@
 {% load static %}
 
 <style>
-        .border {
-            border: 1px solid black;
-        }
-        .list-group {
-            margin-top: 60px;
-        }
-        .box {
-            min-height: 50px;
-         }
-    </style>
+    .border {
+        border: 1px solid black;
+    }
+    .list-group {
+        margin-top: 60px;
+    }
+    .box {
+        min-height: 50px;
+     }
+</style>
 <script>
     window.onload = function() {
         list = document.getElementsByTagName('span');
@@ -49,10 +49,20 @@
     }
 
 </script>
+
+<div class="col-lg-10 col-lg-offset-1" style="margin-top: 10px;">
+    <ol class="breadcrumb">
+        <li class="active">Table Mapping</li>
+        <li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
+        <li><a href="{% url 'mapping_review' %}">Mapping Review</a></li>
+        <li><a href="{% url 'transfer_database' %}">Transfer Database</a></li>
+    </ol>
+</div>
+
 <form name="table_mapping_form" method="post" class="container-fluid">
     {% csrf_token %}
     <div class="row">
-        <div class="col-lg-2 border" style="z-index:99;">
+        <div class="col-lg-2" style="z-index: 99; max-height: 500px; overflow-y: scroll;">
             <div class="page-header">
                 <h3>Client Tables</h3>
             </div>
@@ -69,7 +79,7 @@
                 {% endfor %}
             </ul>
         </div>
-        <div class="col-lg-4 border">
+        <div class="col-lg-4" style="max-height: 500px; overflow-y: scroll;">
             <div class="page-header">
                 <h3>System Tables</h3>
             </div>
@@ -94,7 +104,7 @@
                 {% endfor %}
             </ul>
         </div>
-        <div class="col-lg-6 border">
+        <div class="col-lg-6" style="max-height: 500px; overflow-y: scroll;">
             <div class="page-header">
                 <h1>Table Preview</h1>
             </div>

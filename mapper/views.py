@@ -1,5 +1,5 @@
 from django.core.urlresolvers import reverse
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 
 from database_management.ConnectDatabase import connect_to_client_database
 from .filters import get_item
@@ -26,7 +26,6 @@ def attach_column_list_to_every_client_table(cursor, table_map):
                 }
     return client_table_and_column_with_type
 
-
 # Extract Table Names From Client Database
 def extract_table_name(cursor):
     list_of_tables = []
@@ -37,7 +36,6 @@ def extract_table_name(cursor):
             list_of_tables.append(item)
     return list_of_tables
 
-
 # Extract Column Name List Of A Particular Table Of Client
 def extract_column_name_list_of_table(cur, tablename):
     # tablename should be a tuple or list of element one
@@ -47,7 +45,6 @@ def extract_column_name_list_of_table(cur, tablename):
     column_name_list = cur.fetchall()
     return column_name_list
 
-
 # Returns Client Db Model Names And Their Corresponding Models
 def get_table_name_model_pair():
     table_name_model_pair = {
@@ -56,10 +53,12 @@ def get_table_name_model_pair():
         'EVENT_LOG': EventLogMappingModel,
         'EVENT_MASTER': EventMasterMappingModel,
         'PRODUCT_MASTER': ProductMasterMappingModel,
-        'TRANSACTION_MASTER': TransactionMasterMappingModel
+        'TRANSACTION_MASTER': TransactionMasterMappingModel,
+        'CUSTOMER_SECONDARY': CustomerSecondaryMappingModel,
     }
     return table_name_model_pair
 
+# Returns Client Db Model Names And Their Corresponding Meta Models
 def get_table_name_model_meta_pair():
     return {
         'CUSTOMER_CONTACT': CustomerContactMappingMetaModel,
@@ -67,7 +66,8 @@ def get_table_name_model_meta_pair():
         'EVENT_LOG': EventLogMappingMetaModel,
         'EVENT_MASTER': EventMasterMappingMetaModel,
         'PRODUCT_MASTER': ProductMasterMappingMetaModel,
-        'TRANSACTION_MASTER': TransactionMasterMappingMetaModel
+        'TRANSACTION_MASTER': TransactionMasterMappingMetaModel,
+        'CUSTOMER_SECONDARY': CustomerSecondaryMappingMetaModel
     }
 
 # Returns Dict Of System Table Name With Whether They Are Mandatory
@@ -78,7 +78,8 @@ def is_table_name_mandatory():
         'EVENT_LOG': False,
         'EVENT_MASTER': False,
         'PRODUCT_MASTER': False,
-        'TRANSACTION_MASTER': True
+        'TRANSACTION_MASTER': True,
+        'CUSTOMER_SECONDARY': False,
     }
 
 # Returns Dict Of System Table Name With Which Column Names Are Mandatory
@@ -108,6 +109,10 @@ def is_column_name_mandatory(table_map):
         to_return['CUSTOMER_CONTACT']['cust_id'] = True
         to_return['CUSTOMER_CONTACT']['email_id'] = True
 
+    if to_return.has_key('CUSTOMER_SECONDARY'):
+        to_return['CUSTOMER_SECONDARY']['cust_id'] = True
+
+
     return to_return
 
 # Append Column List To Respective Client table And Create Map
@@ -128,6 +133,8 @@ def prepare_our_model(table_map):
     return our_model
 
 
+
+
 # Input Includes
 # table_map = Mapping Of Our Table wrt To Client Table
 # client_table_and_column_with_type = Mapping Of Client Table and Column List Along With There Data Types
@@ -146,19 +153,27 @@ def prepare_final_model(table_map, client_table_and_column_with_type, our_model,
                 temp[our_column_name] = None
             else:
                 temp[our_column_name][request.POST[our_table_name+'.'+our_column_name]] = {}
-                if request.POST.has_key(our_table_name+'.'+our_column_name+'.is_factor'):
-                    if request.POST[our_table_name+'.'+our_column_name+'.is_factor'] == 'on':
-                        is_factor = True
-                    else:
-                        is_factor = False
-                else:
-                    is_factor = False
+                # if request.POST.has_key(our_table_name+'.'+our_column_name+'.is_factor'):
+                #     if request.POST[our_table_name+'.'+our_column_name+'.is_factor'] == 'on':
+                #         is_factor = True
+                #     else:
+                #         is_factor = False
+                # else:
+                #     is_factor = False
                 temp[our_column_name][request.POST[our_table_name+'.'+our_column_name]] = {
                     'type': client_table_and_column_with_type[table_map[our_table_name]][request.POST[our_table_name+'.'+our_column_name]]['type'],
-                    'is_factor': is_factor
+                    # 'is_factor': is_factor
                 }
+                print client_table_and_column_with_type[table_map[our_table_name]]
         column_map[our_table_name][table_map[our_table_name]] = {}
         column_map[our_table_name][table_map[our_table_name]] = temp
+        # factor list
+        column_map[our_table_name]['is_factor'] = {}
+        if client_table_and_column_with_type.has_key(table_map[our_table_name]):
+            for client_column_name in client_table_and_column_with_type[table_map[our_table_name]].keys():
+                if request.POST.has_key(table_map[our_table_name]+'.'+'is_factor'+'.'+client_column_name):
+                    if request.POST[table_map[our_table_name]+'.'+'is_factor'+'.'+client_column_name] == 'on':
+                        column_map[our_table_name]['is_factor'][client_column_name] = True
     return column_map
 
 
@@ -214,11 +229,13 @@ def column_mapping(request):
 def table_mapping(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login'))
-    list_of_headings = []
-    for item in get_table_name_model_pair():
-        list_of_headings.append(item)
-    # list_of_headings = ['TRANSACTION_MASTER', 'PRODUCT_MASTER', 'EVENT_MASTER', 'CUSTOMER_CONTACT', 'EVENT_LOG', 'CUSTOMER_MASTER']
     user = request.user
+    obj = connect_to_client_database(user)
+    if not obj.isConnected():
+        return HttpResponse('Client Database Connection Configuration Missing.')
+    list_of_our_tables = []
+    for item in get_table_name_model_pair():
+        list_of_our_tables.append(item)
     list_of_tables = []
     try:
         list_of_tables = request.session['list_of_tables']
@@ -236,7 +253,7 @@ def table_mapping(request):
 
     if request.method == 'POST':
         table_map = {}
-        for item in list_of_headings:
+        for item in list_of_our_tables:
             if is_table_name_mandatory()[item]:
                 if request.POST[item] == None or request.POST[item] == '':
                     print 'Mandatory Fields Are Not Filled'
@@ -247,7 +264,7 @@ def table_mapping(request):
 
     return render(request, 'mapper/table-mapping.html', {
         'list_of_tables': list_of_tables,
-        'list_of_headings': list_of_headings,
+        'list_of_headings': list_of_our_tables,
         'is_table_name_mandatory': is_table_name_mandatory(),
         'get_item': get_item
     })
@@ -260,44 +277,58 @@ def table_mapping(request):
 def save_mapping_into_model(table_name_model_pair, column_map):
     table_name_model_meta_pair=get_table_name_model_meta_pair()
     for our_table_name, client_table_list in column_map.iteritems():
-        mapping_model_obj = table_name_model_pair[our_table_name]()
-        for our_column_name, client_column_list in column_map[our_table_name][client_table_list.keys()[0]].iteritems():
-            # print our_column_name
-            if client_column_list is not None:
-                # print client_column_list.keys()[0]
-                setattr(mapping_model_obj, our_column_name, client_column_list.keys()[0])
-        # Not To Be Inputted By Client
-        # setattr(obj, 'client', user)
-        setattr(mapping_model_obj, 'client_table_name', client_table_list.keys()[0])
-        try:
-            if table_name_model_pair[our_table_name].objects.all().exists():
-                print our_table_name + ' Mapping Already Exists'
-                print 'Skip'
+        if client_table_list.has_key:
+            if client_table_list.keys()[0] == 'is_factor':
+                client_table_name = client_table_list.keys()[1]
             else:
-                mapping_model_obj.save()
-                save_mapping_meta_into_model(table_name_model_meta_pair, column_map, mapping_model_obj)
-        except Exception as e:
-            print e
-            # if e.message.__contains__('matching query'):
-            #     obj.save()
-            #     save_mapping_meta_into_model(table_name_model_meta_pair, column_map, obj.id)
+                client_table_name = client_table_list.keys()[0]
+            mapping_model_obj = table_name_model_pair[our_table_name]()
+            for our_column_name, client_column_list in column_map[our_table_name][client_table_name].iteritems():
+                # print our_column_name
+                if client_column_list is not None:
+                    # print client_column_list.keys()[0]
+                    setattr(mapping_model_obj, our_column_name, client_column_list.keys()[0])
+            # Not To Be Inputted By Client
+            # setattr(obj, 'client', user)
+            setattr(mapping_model_obj, 'client_table_name', client_table_name)
+            try:
+                if table_name_model_pair[our_table_name].objects.all().exists():
+                    print our_table_name + ' Mapping Already Exists'
+                    print 'Skip'
+                else:
+                    mapping_model_obj.save()
+                    save_mapping_meta_into_model(our_table_name, table_name_model_meta_pair, column_map, mapping_model_obj)
+            except Exception as e:
+                print e
+                # if e.message.__contains__('matching query'):
+                #     obj.save()
+                #     save_mapping_meta_into_model(table_name_model_meta_pair, column_map, obj.id)
 
 # Store Model Mapping Meta In Database
-def save_mapping_meta_into_model(table_name_model_meta_pair, column_map, mapping_obj):
-    for our_table_name, client_table_list in column_map.iteritems():
-        try:
-            if table_name_model_meta_pair[our_table_name].objects.filter(mapping = mapping_obj).exists():
-                print 'mapping meta already exists for this mapping'
-                return None
-        except Exception as e:
-            print e
-        for our_column_name, client_column_list in column_map[our_table_name][client_table_list.keys()[0]].iteritems():
-            if client_column_list is not None:
-                obj = table_name_model_meta_pair[our_table_name]()
-                setattr(obj,'mapping', mapping_obj)
-                setattr(obj,'column_name', client_column_list.keys()[0])
-                setattr(obj, 'is_factor', client_column_list[client_column_list.keys()[0]]['is_factor'])
-                obj.save()
+def save_mapping_meta_into_model(our_table_name, table_name_model_meta_pair, column_map, mapping_obj):
+    print our_table_name
+    print mapping_obj
+    try:
+        if table_name_model_meta_pair[our_table_name].objects.filter(mapping = mapping_obj).exists():
+            print 'mapping meta already exists for this mapping'
+            return None
+    except Exception as e:
+        print 'hello'
+        print e
+    for client_column_name, is_factor in column_map[our_table_name]['is_factor'].iteritems():
+        print client_column_name
+        obj = table_name_model_meta_pair[our_table_name]()
+        setattr(obj,'mapping', mapping_obj)
+        setattr(obj,'column_name', client_column_name)
+        setattr(obj, 'is_factor', is_factor)
+        obj.save()
+        # for our_column_name, client_column_list in column_map[our_table_name][client_table_list.keys()[0]].iteritems():
+        #     if client_column_list is not None:
+        #         obj = table_name_model_meta_pair[our_table_name]()
+        #         setattr(obj,'mapping', mapping_obj)
+        #         setattr(obj,'column_name', client_column_list.keys()[0])
+        #         setattr(obj, 'is_factor', client_column_list[client_column_list.keys()[0]]['is_factor'])
+        #         obj.save()
 
 # Mapping Review View
 def mapping_review(request):
@@ -309,13 +340,53 @@ def mapping_review(request):
         print 'No Mapping Defined Please Do Mapping Before'
         return HttpResponseRedirect(reverse('column_mapping'))
     user = request.user
+    if mapping_exists() is None:
+        return HttpResponse('Bad Mapping Config')
     if request.method == 'POST':
+        mapping_clear = clear_mapping_model()
+        if not mapping_clear:
+            print 'Not Able To Clear Mapping Model. Please Contact Admin'
+            return
         table_name_model_pair = get_table_name_model_pair()
-        table_name_model_meta_pair = get_table_name_model_meta_pair()
+        # table_name_model_meta_pair = get_table_name_model_meta_pair()
         save_mapping_into_model(table_name_model_pair, column_map)
         request.session['transfer_database_flag'] = True
         return HttpResponseRedirect(reverse('transfer_database'))
     return render(request, 'mapper/mapping-review.html', {
         'column_map': column_map,
-        'get_item': get_item
+        'get_item': get_item,
+        'mapping_exists': mapping_exists()
     })
+
+def mapping_exists():
+    try:
+        for our_table_name, our_table_model in get_table_name_model_pair().iteritems():
+            table_obj = our_table_model.objects.all()
+            if len(table_obj) != 0:
+                return True
+        return False
+    except Exception as e:
+        print e
+        return None
+
+def clear_mapping_session(request):
+    try:
+        del request.session['table_map']
+        del request.session['column_map']
+    except Exception as e:
+        print e
+
+def clear_mapping_model():
+    try:
+        for our_table_name, our_table_model in get_table_name_model_pair().iteritems():
+            table_obj = our_table_model.objects.all()
+            if len(table_obj) != 0:
+                table_obj.delete()
+        for our_table_name, our_table_meta_model in get_table_name_model_meta_pair().iteritems():
+            table_obj = our_table_meta_model.objects.all()
+            if len(table_obj) != 0:
+                table_obj.delete()
+        return True
+    except Exception as e:
+        print e
+        return False
