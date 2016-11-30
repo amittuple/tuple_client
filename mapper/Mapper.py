@@ -4,23 +4,41 @@ from mapper.TableMapper import TableMapper
 
 class Mapper(TableMapper):
     def __init__(self):
-        self.TableMapper = TableMapper()
+        temp = TableMapper(self)
+        print temp.tables()
 
-    def extract_table_names_from_client_database(self, cursor):
-        list_of_tables = []
-        cursor.execute("SELECT table_name FROM information_schema.tables where table_schema='public'")
-        list_of_tables_temp = cursor.fetchall()
-        for temp in list_of_tables_temp:
-            for item in temp:
-                list_of_tables.append(item)
-        return list_of_tables
+    def mapping_exists(self):
+        pass
+
+    def clear_mapping_models(self):
+        pass
+
+    def clear_mapping_session(self):
+        pass
+
+    def columns_in_tables(self):
+        pass
 
     def prepare_our_model(self):
-        return self.TableMapper.tables()
+        pass
+
+    def prepare_client_model(self):
+        pass
+
+    def map(self):
+        pass
+
+
+    # def mapping_exists(self):
+    #     try:
+    #         for our_table_name, our_table_model in get_table_name_model_pair().iteritems():
+    #             table_obj = our_table_model.objects.all()
+    #             if len(table_obj) != 0:
+    #                 return True
+    #         return False
+    #     except Exception as e:
+    #         print e
+    #         return None
 
 
 
-
-
-
-temp = Mapper()

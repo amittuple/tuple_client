@@ -95,7 +95,7 @@ def transfer_database(request):
             print d['ERROR']
             return HttpResponseRedirect(reverse('transfer_failed'))
         column_map = request.session['column_map']
-        # first create list of queries
+        # first create m of queries
         # transfer database for each query
         queries_pool = create_queries_pool(column_map)
         database_migration.delay(queries_pool, str(user))

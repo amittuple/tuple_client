@@ -1,7 +1,7 @@
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 
-from database_management.ConnectDatabase import connect_to_client_database
+from database_management.ConnectDatabase import connect_to_client_database, connect_to_this_database
 from .filters import get_item
 from .models import *
 
@@ -235,20 +235,28 @@ def table_mapping(request):
     list_of_our_tables = []
     for item in get_table_name_model_pair():
         list_of_our_tables.append(item)
-    list_of_tables = []
-    try:
-        list_of_tables = request.session['list_of_tables']
-    except KeyError as e:
-        if e.message.__contains__('list_of_tables'):
-            obj = connect_to_client_database(user)
-            if not obj.isConnected():
-                raise Exception('Client Database Connection Configuration Missing.')
-            list_of_tables = extract_table_name(obj.cur)
-            obj.cur.close()
-            obj.conn.close()
-            request.session['list_of_tables'] = list_of_tables
-    except Exception as e:
-        print e
+    list_of_tables = extract_table_name(obj.cur)
+    obj.cur.close()
+    obj.conn.close()
+    if len(list_of_tables) == 0 or list_of_tables is None:
+        return HttpResponse('No Tables Found In Database')
+    # request.session['list_of_tables'] = list_of_tables
+
+    # CODE TO SESSION TABLES LIST UNLESS AND UNTIL THE USER LOGIN AGAIN
+
+    # try:
+    #     list_of_tables = request.session['list_of_tables']
+    # except KeyError as e:
+    #     if e.message.__contains__('list_of_tables'):
+    #         obj = connect_to_client_database(user)
+    #         if not obj.isConnected():
+    #             raise Exception('Client Database Connection Configuration Missing.')
+    #         list_of_tables = extract_table_name(obj.cur)
+    #         obj.cur.close()
+    #         obj.conn.close()
+    #         request.session['list_of_tables'] = list_of_tables
+    # except Exception as e:
+    #     print e
 
     if request.method == 'POST':
         table_map = {}
@@ -398,7 +406,7 @@ def clear_client_database(user):
             table_obj = our_table_model.objects.all()
             if len(table_obj) != 0:
                 client_table_name = table_obj[0].client_table_name
-                table = connect_to_client_database(user)
+                table = connect_to_this_database()
                 table.cur.execute('DROP TABLE IF EXISTS '+ client_table_name)
                 table.conn.commit()
         return True

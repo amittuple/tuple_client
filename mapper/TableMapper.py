@@ -58,3 +58,7 @@ class TableMapper:
             print e
             print 'No Such '+ table_name + ' Table Found In Dictionary'
             return None
+
+    def is_table_empty(self):
+        pass
+
