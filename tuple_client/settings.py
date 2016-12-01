@@ -55,6 +55,17 @@ INSTALLED_APPS = [
     'django_celery_results',
 ]
 
+
+MIDDLEWARE_CLASSES = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -91,7 +102,7 @@ WSGI_APPLICATION = 'tuple_client.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres_db',
         'HOST': 'localhost',
         'PORT': '5432',
@@ -99,7 +110,7 @@ DATABASES = {
         'PASSWORD': 'admin'
     },
     'common': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tuple_common_db',
         'HOST': 'tuple-common-server-db.c3yxphqgag3s.ap-southeast-1.rds.amazonaws.com',
         'PORT': '5432',
