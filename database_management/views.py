@@ -10,33 +10,31 @@ import json
 from mapper.views import get_table_name_model_pair, get_table_name_model_meta_pair, clear_mapping_session
 
 
-def create_queries_pool(column_map):
+def create_queries_pool(column_map, client_table_structure):
     queries = []
-    for our_table_name in column_map:
-        select_query = 'SELECT '
-        counter = 0
-        insert_placeholder = ''
+    reverse_table_map = {}
+    for our_table_name in column_map.keys():
         if column_map[our_table_name].keys()[0] == 'is_factor':
             client_table_name = column_map[our_table_name].keys()[1]
         else:
             client_table_name = column_map[our_table_name].keys()[0]
-        our_column_dict = column_map[our_table_name][client_table_name]
-        # for client_table_name, our_column_dict in column_map[our_table_name].iteritems():
-            # These Query Will be Executed Once As This For Loop Will Be Executed Once
-            # There Is A Fix To Remove For Loop
+        reverse_table_map[client_table_name] = our_table_name
+
+    for client_table_name, client_column_dict in client_table_structure.iteritems():
+        select_query = 'SELECT '
+        counter = 0
+        insert_placeholder = ''
         create_query = 'CREATE TABLE ' + client_table_name + ' ( '
-        insert_query = 'INSERT INTO ' + client_table_name + '('
+        insert_query = 'INSERT INTO ' + client_table_name + ' ( '
         columns = ()
-        for our_column_name, client_column_dict in our_column_dict.iteritems():
-            if client_column_dict != None:
-                for client_column_name in client_column_dict:
-                    print client_column_name
-                    columns = columns + (str(client_column_name),)
-                    counter += 1
-                    select_query = select_query + client_column_name + ','
-                    create_query = create_query + ' ' + client_column_name + ' ' + client_column_dict[client_column_name]['type'] + ','
-                    insert_query = insert_query + client_column_name + ','
-                    insert_placeholder += '%s,'
+        if client_column_dict is not None:
+            for client_column_name in client_column_dict:
+                create_query = create_query + ' ' + client_column_name + ' ' + client_column_dict[client_column_name]['type'] + ','
+                columns = columns + (str(client_column_name),)
+                counter += 1
+                select_query = select_query + client_column_name + ','
+                insert_query = insert_query + client_column_name + ','
+                insert_placeholder += '%s,'
         select_query = select_query[:-1]
         create_query = create_query[:-1]
         insert_query = insert_query[:-1]
@@ -46,11 +44,12 @@ def create_queries_pool(column_map):
             select_query = select_query + ' FROM ' + client_table_name
             create_query += ' )'
             insert_query = insert_query + ') VALUES ( ' + insert_placeholder + ' ) RETURNING *'
+            print reverse_table_map[client_table_name]
             print select_query
             print create_query
             print insert_query
             queries.append({
-                'our_table_name': our_table_name,
+                'our_table_name': reverse_table_map[client_table_name],
                 'client_table_name': client_table_name,
                 'select_query': select_query,
                 'create_query': create_query,
@@ -58,6 +57,64 @@ def create_queries_pool(column_map):
                 'columns': columns
             })
     return queries
+
+# def create_queries_pool(column_map, client_table_structure):
+#     queries = []
+#     for our_table_name in column_map:
+#         select_query = 'SELECT '
+#         counter = 0
+#         insert_placeholder = ''
+#         if column_map[our_table_name].keys()[0] == 'is_factor':
+#             client_table_name = column_map[our_table_name].keys()[1]
+#         else:
+#             client_table_name = column_map[our_table_name].keys()[0]
+#         our_column_dict = column_map[our_table_name][client_table_name]
+#         create_query = 'CREATE TABLE ' + client_table_name + ' ( '
+#         insert_query = 'INSERT INTO ' + client_table_name + ' ( '
+#         columns = ()
+#
+#         # new create query
+#
+#         for client_table_name, client_column_dict in client_table_structure.iteritems():
+#             if client_column_dict is not None:
+#                 for client_column_name in client_column_dict:
+#                     create_query = create_query + ' ' + client_column_name + ' ' + client_column_dict[client_column_name]['type'] + ','
+#                     columns = columns + (str(client_column_name),)
+#                     counter += 1
+#                     select_query = select_query + client_column_name + ','
+#                     insert_query = insert_query + client_column_name + ','
+#                     insert_placeholder += '%s,'
+#
+#         # for our_column_name, client_column_dict in our_column_dict.iteritems():
+#         #     if client_column_dict != None:
+#         #         for client_column_name in client_column_dict:
+#         #             columns = columns + (str(client_column_name),)
+#         #             counter += 1
+#         #             select_query = select_query + client_column_name + ','
+#         #             create_query = create_query + ' ' + client_column_name + ' ' + client_column_dict[client_column_name]['type'] + ','
+#         #             insert_query = insert_query + client_column_name + ','
+#         #             insert_placeholder += '%s,'
+#         select_query = select_query[:-1]
+#         create_query = create_query[:-1]
+#         insert_query = insert_query[:-1]
+#         print columns
+#         insert_placeholder = insert_placeholder[:-1]
+#         if counter > 0:
+#             select_query = select_query + ' FROM ' + client_table_name
+#             create_query += ' )'
+#             insert_query = insert_query + ') VALUES ( ' + insert_placeholder + ' ) RETURNING *'
+#             print select_query
+#             print create_query
+#             print insert_query
+#             queries.append({
+#                 'our_table_name': our_table_name,
+#                 'client_table_name': client_table_name,
+#                 'select_query': select_query,
+#                 'create_query': create_query,
+#                 'insert_query': insert_query,
+#                 'columns': columns
+#             })
+#     return queries
 
 def celery_and_rabbit_server_check():
     ERROR_KEY = "ERROR"
@@ -82,6 +139,7 @@ def transfer_database(request):
         return HttpResponseRedirect(reverse('login'))
     try:
         transfer_database_flag = request.session['transfer_database_flag']
+        client_table_structure = request.session['client_table_structure']
         if not transfer_database_flag:
             raise KeyError
     except KeyError as e:
@@ -95,9 +153,7 @@ def transfer_database(request):
             print d['ERROR']
             return HttpResponseRedirect(reverse('transfer_failed'))
         column_map = request.session['column_map']
-        # first create m of queries
-        # transfer database for each query
-        queries_pool = create_queries_pool(column_map)
+        queries_pool = create_queries_pool(column_map, client_table_structure)
         database_migration.delay(queries_pool, str(user))
         make_yml()
         # clear_mapping_session(request)

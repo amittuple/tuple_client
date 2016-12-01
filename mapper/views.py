@@ -195,6 +195,8 @@ def column_mapping(request):
         return HttpResponseRedirect(reverse('table_mapping'))
     try:
         client_table_and_column_with_type = attach_column_list_to_every_client_table(obj.cur, table_map)
+        print client_table_and_column_with_type
+        request.session['client_table_structure'] = client_table_and_column_with_type
     #   Now For Our Database
         our_model = prepare_our_model(table_map)
     except KeyError as e:
@@ -398,7 +400,6 @@ def clear_mapping_model():
     except Exception as e:
         print e
         return False
-
 
 def clear_client_database(user):
     try:

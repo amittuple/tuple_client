@@ -1,11 +1,16 @@
 column_map:
+  CUSTOMER_SECONDARY:
+    cust_id: id
   TRANSACTION_MASTER:
-    cust_id: from_id
-    product_id: to_id
-    revenue: actiontype
-    timestamp: timestamp
+    cust_id: userid
+    product_id: product_id
+    revenue: revenue
+    timestamp: purchase_date
 is_factor:
+  CUSTOMER_SECONDARY:
+  - mutual
   TRANSACTION_MASTER:
-  - actiontype
+  - platform
 table_map:
-  TRANSACTION_MASTER: event
+  CUSTOMER_SECONDARY: fb
+  TRANSACTION_MASTER: trans

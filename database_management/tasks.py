@@ -38,7 +38,9 @@ def database_migration(queries, user):
             print success_fail_arr
         except Exception as e:
             print e
+            # if e.message.__contains__('current transaction is aborted, commands ignored until end of transaction block'):
             to_table.conn.rollback()
+            from_table.conn.rollback()
             success_fail_arr.append({
                 'table_name': item['our_table_name'],
                 'result': 'fail',
