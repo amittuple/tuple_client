@@ -25,10 +25,10 @@ def database_migration(queries, user):
             print item['select_query']
 
             with open('TableBuffer.buffer', 'w+') as f:
-                from_table.cur.copy_to(f, item['client_table_name'])
+                from_table.cur.copy_to(f, item['client_table_name'], columns=item['columns'])
                 f.seek(0)
                 to_table.cur.execute(item['create_query'])
-                to_table.cur.copy_from(f, item['client_table_name'])
+                to_table.cur.copy_from(f, item['client_table_name'], columns=item['columns'])
                 to_table.conn.commit()
             success_fail_arr.append({
                 'table_name': item['our_table_name'],
