@@ -1,4 +1,4 @@
-{% extends "user_profile/base.html" %}
+{% extends "dashboard/base.html" %}
 {% load i18n %}
 {% block content %}
 {% load static %}
@@ -30,8 +30,14 @@
     </div>
     <div class="col-lg-offset-4 col-lg-4">
         <a class="btn btn-sm btn-default" href="{% url 'table_mapping' %}">Go Back To Change Mapping</a>
-        <button class="btn btn-sm btn-primary" type="submit">Start Database Transfer</button>
+        <button id="transferButton" data-loading-text="Transferring..." class="btn btn-sm btn-primary" type="submit">Start Database Transfer</button>
     </div>
 </form>
+
+<script>
+    $('#transferButton').on('click', function(){
+        $(this).button('loading')
+    });
+</script>
 
 {% endblock %}

@@ -1,0 +1,16 @@
+DATABASE:
+  HOST: localhost
+  NAME: postgres_db
+  PASSWORD: admin
+  PORT: '5432'
+  USER: postgres_user
+column_map:
+  TRANSACTION_MASTER:
+    cust_id: userid
+    product_id: product_id
+    revenue: revenue
+    timestamp: purchase_date
+is_factor:
+  TRANSACTION_MASTER: []
+table_map:
+  TRANSACTION_MASTER: trans

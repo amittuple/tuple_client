@@ -3,12 +3,12 @@ from connect_client_db import models
 import psycopg2
 from ConnectDatabase import connect_to_client_database
 from django.core.urlresolvers import reverse
-from .tasks import add, database_migration
+from .tasks import database_migration, r_process
 from django.contrib.auth.models import User
 import yaml
 import json
 from mapper.views import get_table_name_model_pair, get_table_name_model_meta_pair, clear_mapping_session
-
+import os
 
 def create_queries_pool(column_map, client_table_structure):
     queries = []
@@ -58,63 +58,6 @@ def create_queries_pool(column_map, client_table_structure):
             })
     return queries
 
-# def create_queries_pool(column_map, client_table_structure):
-#     queries = []
-#     for our_table_name in column_map:
-#         select_query = 'SELECT '
-#         counter = 0
-#         insert_placeholder = ''
-#         if column_map[our_table_name].keys()[0] == 'is_factor':
-#             client_table_name = column_map[our_table_name].keys()[1]
-#         else:
-#             client_table_name = column_map[our_table_name].keys()[0]
-#         our_column_dict = column_map[our_table_name][client_table_name]
-#         create_query = 'CREATE TABLE ' + client_table_name + ' ( '
-#         insert_query = 'INSERT INTO ' + client_table_name + ' ( '
-#         columns = ()
-#
-#         # new create query
-#
-#         for client_table_name, client_column_dict in client_table_structure.iteritems():
-#             if client_column_dict is not None:
-#                 for client_column_name in client_column_dict:
-#                     create_query = create_query + ' ' + client_column_name + ' ' + client_column_dict[client_column_name]['type'] + ','
-#                     columns = columns + (str(client_column_name),)
-#                     counter += 1
-#                     select_query = select_query + client_column_name + ','
-#                     insert_query = insert_query + client_column_name + ','
-#                     insert_placeholder += '%s,'
-#
-#         # for our_column_name, client_column_dict in our_column_dict.iteritems():
-#         #     if client_column_dict != None:
-#         #         for client_column_name in client_column_dict:
-#         #             columns = columns + (str(client_column_name),)
-#         #             counter += 1
-#         #             select_query = select_query + client_column_name + ','
-#         #             create_query = create_query + ' ' + client_column_name + ' ' + client_column_dict[client_column_name]['type'] + ','
-#         #             insert_query = insert_query + client_column_name + ','
-#         #             insert_placeholder += '%s,'
-#         select_query = select_query[:-1]
-#         create_query = create_query[:-1]
-#         insert_query = insert_query[:-1]
-#         print columns
-#         insert_placeholder = insert_placeholder[:-1]
-#         if counter > 0:
-#             select_query = select_query + ' FROM ' + client_table_name
-#             create_query += ' )'
-#             insert_query = insert_query + ') VALUES ( ' + insert_placeholder + ' ) RETURNING *'
-#             print select_query
-#             print create_query
-#             print insert_query
-#             queries.append({
-#                 'our_table_name': our_table_name,
-#                 'client_table_name': client_table_name,
-#                 'select_query': select_query,
-#                 'create_query': create_query,
-#                 'insert_query': insert_query,
-#                 'columns': columns
-#             })
-#     return queries
 
 def celery_and_rabbit_server_check():
     ERROR_KEY = "ERROR"
@@ -154,8 +97,9 @@ def transfer_database(request):
             return HttpResponseRedirect(reverse('transfer_failed'))
         column_map = request.session['column_map']
         queries_pool = create_queries_pool(column_map, client_table_structure)
-        database_migration.delay(queries_pool, str(user))
-        make_yml()
+        task_id = database_migration.delay(queries_pool, str(user))
+        r_process.delay(str(task_id))
+        # make_yml()
         # clear_mapping_session(request)
     except KeyError as e:
         print e
@@ -174,12 +118,19 @@ def transfer_failed(request):
     return render(request, 'database_management/transfer-failed.html', {})
 
 
-def make_yml():
+def make_yml(file_url):
     try:
         final_map = {}
         final_map['table_map'] = {}
         final_map['column_map'] = {}
         final_map['is_factor'] = {}
+        final_map['DATABASE'] = {
+            'NAME': 'postgres_db',
+            'HOST': 'localhost',
+            'USER': 'postgres_user',
+            'PASSWORD': 'admin',
+            'PORT': '5432'
+        }
         mapping_id = None
         for table_name, table_model in get_table_name_model_pair().iteritems():
             table_obj = table_model.objects.all()
@@ -195,7 +146,6 @@ def make_yml():
                         final_map['column_map'][table_name][item.name] = getattr(table_obj, item.name)
 
 
-
                 final_map['is_factor'][table_name] = []
                 table_meta_model = get_table_name_model_meta_pair()[table_name]
                 table_meta_obj = table_meta_model.objects.filter(mapping_id=mapping_id)
@@ -205,42 +155,14 @@ def make_yml():
                             final_map['is_factor'][table_name].append(row.column_name)
 
 
-        with open('MappingBuffer.yml', 'w+') as yml_file:
+        with open(os.path.join(file_url, 'MappingBuffer.yml'), 'w+') as yml_file:
             yaml.safe_dump(final_map, yml_file, default_flow_style=False)
+        return True
     except Exception as e:
         print e
+        return False
 
 
-
-# def make_yml(_table_mapping, _column_mapping):
-#     try:
-#         _table_map = _table_mapping
-#         _column_map = _column_mapping
-#         final_map = {}
-#         print prepare_all_model(table_map)
-#         final_map['table_map'] = _table_map
-#         # for item in _table_map:
-#         #     final_map['table_map'] = {
-#         #         item: _table_map[item]
-#         #     }
-#         final_map['column_map'] = {}
-#         final_map['is_factor'] = {}
-#         for our_table_name in _column_map:
-#             final_map['column_map'][our_table_name] = {}
-#             for our_column_name, client_column_dict in _column_map[our_table_name][_column_map[our_table_name].keys()[0]].iteritems():
-#                 final_map['column_map'][our_table_name][our_column_name] = client_column_dict.keys()[0]
-#         for our_table_name in _column_map:
-#             final_map['is_factor'] = {
-#                 our_table_name: _column_map[our_table_name][_column_map[our_table_name].keys()[1]]
-#             }
-#         with open('MappingBuffer.yml', 'w+') as yml_file:
-#             yaml.safe_dump(final_map, yml_file, default_flow_style=False)
-#         del _table_mapping
-#         del _column_mapping
-#         return True
-#     except Exception as e:
-#         print e
-#         return False
 
 
 def prepare_all_model(table_map):

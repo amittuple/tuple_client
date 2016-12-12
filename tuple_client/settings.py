@@ -53,18 +53,25 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # CELERY
     'django_celery_results',
+    # chatbot here
+    'team',
+    'banana_py',
+    'rest_framework',
+    'build_mailchimp',
+    # slack coading here
+    'slack_bot',
 ]
 
 
-MIDDLEWARE_CLASSES = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+# MIDDLEWARE_CLASSES = [
+#     'django.middleware.security.SecurityMiddleware',
+#     'django.contrib.sessions.middleware.SessionMiddleware',
+#     'django.middleware.common.CommonMiddleware',
+#     'django.middleware.csrf.CsrfViewMiddleware',
+#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#     'django.contrib.messages.middleware.MessageMiddleware',
+#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+# ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -157,14 +164,23 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
+CELERY_RESULT_BACKEND = 'django-db'
+
+MAILCHIMP_CLIENT_ID = '301551589835'
+MAILCHIMP_CLIENT_SECRET = '07a893f0cbb38592b226e95a4f490ad0'
+MAILCHIMP_REDIRECT_URI = 'http://127.0.0.1:8000/bananas/ripe/'
+MAILCHIMP_COMPLETE_URI = 'http://127.0.0.1:8000/build-mailchimp/complete/'
+
 
 # CELERY DATABASE
 CELERY_RESULT_BACKEND = 'django-db'
+#  slack key and secrate key
 
+CLIENT_ID = "14632386742.108610646339"
+CLIENT_SECRET = "c5b02a54bd14ef5fc528e91536fc5c21"

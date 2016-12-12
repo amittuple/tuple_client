@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from .views import fildb
+from .views import filpro
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -22,5 +24,14 @@ urlpatterns = [
     url(r'', include('mapper.urls')),
     url(r'', include('database_management.urls')),
     url(r'^connect-client-db/', include('connect_client_db.urls')),
-    url(r'^user-profile/', include('user_profile.urls')),
+    # url(r'^user-profile/', include('user_profile.urls')),
+    url(r'^connect-client-db/', include('connect_client_db.urls')),
+    url(r'^dashboard/', include('dashboard.urls')),
+    url(r'', include('banana_py.urls')),
+    url(r'^bananas/ripe/', include('build_mailchimp.urls')),
+    url(r'^build-mailchimp/complete/', include('build_mailchimp.urls')),
+    url(r'^am/', include('team.urls')),
+    url(r'^slack/', include("slack_bot.urls")),
+    # url(r'^fill/',fildb),
+    # url(r'^filled/',filpro),
 ]
