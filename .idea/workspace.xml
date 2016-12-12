@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a247cd03-d2f8-46e8-9dee-c995748544a6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/tuple_client.iml" afterPath="$PROJECT_DIR$/.idea/tuple_client.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_management/tasks.py" afterPath="$PROJECT_DIR$/database_management/tasks.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_management/views.py" afterPath="$PROJECT_DIR$/database_management/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/req.txt" afterPath="$PROJECT_DIR$/req.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/connect_client_db/connected.html" afterPath="$PROJECT_DIR$/templates/connect_client_db/connected.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/connect_client_db/failed.html" afterPath="$PROJECT_DIR$/templates/connect_client_db/failed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/connect_client_db/form.html" afterPath="$PROJECT_DIR$/templates/connect_client_db/form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/database_management/transfer-database.html" afterPath="$PROJECT_DIR$/templates/database_management/transfer-database.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/database_management/transfer-failed.html" afterPath="$PROJECT_DIR$/templates/database_management/transfer-failed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login/index.html" afterPath="$PROJECT_DIR$/templates/login/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/column-mapping.html" afterPath="$PROJECT_DIR$/templates/mapper/column-mapping.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/mapping-review.html" afterPath="$PROJECT_DIR$/templates/mapper/mapping-review.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/table-mapping.html" afterPath="$PROJECT_DIR$/templates/mapper/table-mapping.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user_profile/base.html" afterPath="$PROJECT_DIR$/templates/user_profile/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tuple_client/settings.py" afterPath="$PROJECT_DIR$/tuple_client/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tuple_client/urls.py" afterPath="$PROJECT_DIR$/tuple_client/urls.py" />
-    </list>
+    <list default="true" id="a247cd03-d2f8-46e8-9dee-c995748544a6" name="Default" comment="" />
     <ignored path="tuple_client.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -44,8 +24,8 @@
       <file leaf-file-name="tasks.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database_management/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
+            <state relative-caret-position="161">
+              <caret line="124" column="18" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -899,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database_management/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
+        <state relative-caret-position="161">
+          <caret line="124" column="18" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
           <folding />
         </state>
       </provider>
