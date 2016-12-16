@@ -8,6 +8,7 @@
 #' new_query <- variableSQL("SELECT $col_name FROM $table",
 #'                          col_name ="customer_key",
 #'                          table = "sales.item_fact")
+print ("utils.R")
 
 variableSQL <- function(query, ...) {
   

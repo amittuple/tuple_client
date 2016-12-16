@@ -26,7 +26,14 @@ def dashboard(request):
             print e
             print 'All'
             x = master_table.objects.all()[:30]
-            return render(request, 'dashboard/dashboard.html', {'table':x})
+            # adnan code
+            warning = False
+            if len(x) == 0:
+                warning = True
+            return render(request, 'dashboard/dashboard.html', {
+                'table':x,
+                'warning': warning
+            })
 
 def index(request):
     client_id = settings.CLIENT_ID

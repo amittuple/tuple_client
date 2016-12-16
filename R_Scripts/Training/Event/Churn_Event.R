@@ -1,19 +1,5 @@
-source('~/tuple_client/R_Scripts/Connection.R')
-############################################
-#
-# INSTALL AND LOAD NEEDED PACKAGES
-#
-############################################
-Sys.time()
 print ('Churn_Event')
-
-toInstallCandidates <- c("BTYD", "data.table", "RPostgreSQL", "Matrix", "gsl", "zoo", "dplyr")
-# check if pkgs are already present
-toInstall <- toInstallCandidates[!toInstallCandidates%in%library()$results[,1]] 
-if(length(toInstall)!=0)
-{install.packages(toInstall, repos = "http://cran.r-project.org")}
-# load pkgs
-lapply(toInstallCandidates, library, character.only = TRUE)
+print(Sys.time())
 
 ################################## 
 #
@@ -29,8 +15,8 @@ event <- as.data.table(dbGetQuery(conn,
 trans <- as.data.table(dbGetQuery(conn, 
                                   variableSQL("SELECT * from $trans.table", trans.table, stringsAsFactors = FALSE)))
 
-head(event)
-head(trans)
+print(head(event))
+print(head(trans))
 
 colnames(event)[which(colnames(event)== yml.params$column_map$EVENT_LOG$cust_id)] = 'cust_id'
 colnames(event)[which(colnames(event)== yml.params$column_map$EVENT_LOG$action_type)] = 'action_type'
@@ -42,8 +28,8 @@ colnames(trans)[which(colnames(trans)== yml.params$column_map$TRANSACTION_MASTER
 colnames(trans)[which(colnames(trans)== yml.params$column_map$TRANSACTION_MASTER$prod_id)] = 'prod_id'
 colnames(trans)[which(colnames(trans)== yml.params$column_map$TRANSACTION_MASTER$timestamp)] = 'timestamp'
 
-head(event)
-head(trans)
+print(head(event))
+print(head(trans))
 
 
 ############################################# BTYD ##########################################
@@ -53,11 +39,11 @@ trans.load$date = as.Date(trans.load$timestamp)
 trans.load$sales = 0
 trans.load = trans.load[,c('cust_id','date','sales'), with = FALSE]
 
-head(trans.load)
+print(head(trans.load))
 
 names(trans.load) = c('cust', 'date', 'sales')
 
-head(trans.load)
+print(head(trans.load))
 
 cust.rev = trans %>%
   group_by(cust_id) %>%
@@ -108,7 +94,7 @@ cust.lapsed = cust.ltd %>%
   group_by(diff) %>%
   summarise(cust = length(unique(cust)), rev = sum(revenue))
 
-head(cust.lapsed)
+print(head(cust.lapsed))
 
 cust.lapsed = cust.lapsed %>%
   mutate(cum_cust = cumsum(cust), cum_rev = cumsum(rev))
@@ -124,7 +110,7 @@ elog = trans.load %>%
   group_by(cust, date) %>%
   summarise(sales = sum(sales))
 
-head(elog)
+print(head(elog))
 
 elog$cust = as.integer(elog$cust)
 
@@ -187,7 +173,7 @@ last.dates <- split.data$cust.data[order(as.numeric(split.data$cust.data$cust)),
 cal.cbs.dates = data.frame(birth.periods, last.dates, end.of.cal.period)
 cal.cbs = dc.BuildCBSFromCBTAndDates(cal.cbt, cal.cbs.dates, per = 'day')
 
-head(as.data.frame(cal.cbs))
+print(head(as.data.frame(cal.cbs)))
 
 ###################################
 
@@ -227,7 +213,7 @@ for (j in 1:nrow(cal.cbs))
 pred.fin = cbind(cal.cbs1[, 'rn', with = FALSE], pred.tran)
 colnames(pred.fin) = c('cust', 'pred.tran', 'prob.alive')
 
-head(pred.fin,10)
+print(head(pred.fin,10))
 
 elog.val = subset(elog, date > end.of.cal.period)
 
@@ -248,7 +234,7 @@ setkeyv(cust.val2, keycols)
 
 pred.val = merge(cust.val, cust.val2, all.x=TRUE)
 
-head(pred.val)
+print(head(pred.val))
 
 pred.val$cust = as.character(pred.val$cust)
 
@@ -268,7 +254,7 @@ pred.val = f_rep(pred.val)
 pred.val$pred.tran = floor(pred.val$pred.tran)
 pred.val[pred.val$pred.tran == 0,]$prob.alive = 0
 
-head(pred.val, 20)
+print(head(pred.val, 20))
 cor(pred.val$visits.y, pred.val$pred.tran)
 
 rm(list = c('cal.cbs', 'cal.cbs.dates', 'cal.cbs1', 'cal.cbt', 'clean.elog', 'cust.lapsed', 'cust.ltd', 'cust.rev', 'cust.sltd', 'cust.val', 'cust.val2', 'elog', 'elog.cal', 'elog.val', 'event', 'p.matrix', 'pred.fin', 'pred.tran', 'trans', 'trans.date', 'trans.load', 'freq.cbt', 'split.data', 'tot.cbt'))

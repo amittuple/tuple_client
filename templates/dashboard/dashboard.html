@@ -3,52 +3,61 @@
 {% block content %}
 {% load static %}
 <div class="container">
-	<div class="row">
-		<div class="col-sm-2">
-			cltv
-		</div>
-		<div class="col-sm-2">
-			churn
-		</div>
-		<div class="col-sm-2">
-			high_converter
-		</div>
-		<div class="col-sm-2">
-			value
-		</div>
-		<div class="col-sm-2">
-			profile
-		</div>
-		<div class="col-sm-2">
-			engagement
-		</div>
-	</div>
-	<div id="master_table">
-		{% for tab1 in table %}
-		<div  class="row">
-		<div class="col-sm-2">
-			{{tab1.cltv}}
-		</div>
-		<div class="col-sm-2">
-			{{tab1.churn}}
-		</div>
-		<div class="col-sm-2">
-			{{tab1.high_converter}}
-		</div>
-		<div class="col-sm-2">
-			{{tab1.value}}
-		</div>
-		<div class="col-sm-2">
-			{{tab1.profile}}
-		</div>
-		<div class="col-sm-2">
-			{{tab1.engagement}}
-		</div>
-			</div>
+    {{warning}}
+    {% if warning %}
+    <div class="row">
+        <div class="alert alert-warning">
+            <p>Database Transfer And Calculations Take Some Time. Please Check This Page After Sometime</p>
+        </div>
+    </div>
+    {% else %}
+    <div class="row">
+        <div class="col-sm-2">
+            cltv
+        </div>
+        <div class="col-sm-2">
+            churn
+        </div>
+        <div class="col-sm-2">
+            high_converter
+        </div>
+        <div class="col-sm-2">
+            value
+        </div>
+        <div class="col-sm-2">
+            profile
+        </div>
+        <div class="col-sm-2">
+            engagement
+        </div>
+    </div>
+    <div id="master_table">
+        {% for tab1 in table %}
+        <div  class="row">
+            <div class="col-sm-2">
+                {{tab1.cltv}}
+            </div>
+            <div class="col-sm-2">
+                {{tab1.churn}}
+            </div>
+            <div class="col-sm-2">
+                {{tab1.high_converter}}
+            </div>
+            <div class="col-sm-2">
+                {{tab1.value}}
+            </div>
+            <div class="col-sm-2">
+                {{tab1.profile}}
+            </div>
+            <div class="col-sm-2">
+                {{tab1.engagement}}
+            </div>
+        </div>
 
 
-		{% endfor %}
+        {% endfor %}
 
-	</div>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

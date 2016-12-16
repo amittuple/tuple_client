@@ -5,12 +5,43 @@ DATABASE:
   PORT: '5432'
   USER: postgres_user
 column_map:
+  CUSTOMER_CONTACT:
+    cust_id: user_id
+    email_id: email
+    facebook_id: sent
+    phone_number: null
+  CUSTOMER_MASTER:
+    customer_id: id
+  CUSTOMER_SECONDARY:
+    cust_id: id
+  EVENT_LOG:
+    action_type: actiontype
+    cust_id: from_id
+    product_id: to_id
+    timestamp: timestamp
   TRANSACTION_MASTER:
     cust_id: userid
     product_id: product_id
     revenue: revenue
     timestamp: purchase_date
 is_factor:
+  CUSTOMER_CONTACT:
+  - sent
+  CUSTOMER_MASTER:
+  - gender
+  - age
+  - job
+  - country_code
+  - facebook_id
+  - os_type
+  - education
+  - client_version
+  CUSTOMER_SECONDARY: []
+  EVENT_LOG: []
   TRANSACTION_MASTER: []
 table_map:
+  CUSTOMER_CONTACT: contact
+  CUSTOMER_MASTER: users
+  CUSTOMER_SECONDARY: fb
+  EVENT_LOG: event
   TRANSACTION_MASTER: trans

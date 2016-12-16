@@ -1,18 +1,5 @@
-source('~/tuple_client/R_Scripts/Connection.R')
-############################################
-#
-# INSTALL AND LOAD NEEDED PACKAGES
-#
-############################################
+print ('CLTV Final Event Score')
 Sys.time()
-
-toInstallCandidates <- c("BTYD", "data.table", "RPostgreSQL", "Matrix", "gsl", "zoo", "dplyr")
-# check if pkgs are already present
-toInstall <- toInstallCandidates[!toInstallCandidates%in%library()$results[,1]] 
-if(length(toInstall)!=0)
-{install.packages(toInstall, repos = "http://cran.r-project.org")}
-# load pkgs
-lapply(toInstallCandidates, library, character.only = TRUE)
 
 ################################## 
 #
@@ -28,8 +15,8 @@ event <- as.data.table(dbGetQuery(conn,
 trans <- as.data.table(dbGetQuery(conn, 
                                   variableSQL("SELECT * from $trans.table", trans.table, stringsAsFactors = FALSE)))
 
-head(event)
-head(trans)
+print(head(event))
+print(head(trans))
 
 colnames(event)[which(colnames(event)== yml.params$column_map$EVENT_LOG$cust_id)] = 'cust_id'
 colnames(event)[which(colnames(event)== yml.params$column_map$EVENT_LOG$action_type)] = 'action_type'
@@ -41,8 +28,8 @@ colnames(trans)[which(colnames(trans)== yml.params$column_map$TRANSACTION_MASTER
 colnames(trans)[which(colnames(trans)== yml.params$column_map$TRANSACTION_MASTER$prod_id)] = 'prod_id'
 colnames(trans)[which(colnames(trans)== yml.params$column_map$TRANSACTION_MASTER$timestamp)] = 'timestamp'
 
-head(event)
-head(trans)
+print(head(event))
+print(head(trans))
 
 
 ############################################# BTYD ##########################################
@@ -52,7 +39,7 @@ trans.load$date = as.Date(trans.load$timestamp)
 trans.load$sales = 0
 trans.load = trans.load[,c('cust_id','date','sales'), with = FALSE]
 
-head(trans.load)
+print(head(trans.load))
 
 names(trans.load) = c('cust', 'date', 'sales')
 
@@ -63,7 +50,7 @@ trans.merge$cust = as.integer(trans.merge$cust)
 
 trans.load = rbind(trans.load, trans.merge)
 
-head(trans.load)
+print(head(trans.load))
 
 
 trans.load[, sales := mean(sales, na.rm=TRUE), by = list(cust, date)]
@@ -135,7 +122,7 @@ for (j in 1:nrow(nowd.cal.spend))
 pred.cltv = cbind(cal.cbs1[, 'cust', with = FALSE], pred.cltv)
 colnames(pred.cltv) = c('cust', 'cltv')
 
-head(pred.cltv,10)
+print(head(pred.cltv,10))
 
 pred.cltv$cltv = ifelse(pred.cltv$cltv < 1, 0, pred.cltv$cltv)
 
@@ -151,7 +138,7 @@ setkeyv(pred.cltv, keycols)
 
 cltv.value = merge(cust.val, pred.cltv, all.x=TRUE)
 
-head(cltv.value)
+print(head(cltv.value))
 
 cltv.value = f_rep(cltv.value)
 
@@ -168,7 +155,7 @@ cltv.value = as.data.table(cltv.value)
 cltv.value$cust = as.integer(cltv.value$cust)
 
 
-head(cltv.value)
+print(head(cltv.value))
 
 cltv.value = cltv.value[,c(1,3,4), with = FALSE]
 

@@ -109,6 +109,7 @@ def r_execute(task_id):
         if not status:
             return None
 
+
         # R Program
         is_event_log = False
         is_customer_master = False
@@ -119,56 +120,46 @@ def r_execute(task_id):
                 if table['table_name'] == 'CUSTOMER_MASTER' and table['result'] == 'success':
                     is_customer_master = True
 
-        command = ['Rscript', os.path.join(script_path, 'Connection.R')]
+
+        with open(os.path.join(script_path, 'RScript.R'), 'w+') as f:
+
+            f.writelines('source("'+str(os.path.join(script_path, 'packages.R'))+'")\n')
+            f.writelines('source("'+str(os.path.join(script_path, 'utils.R'))+'")\n')
+            f.writelines('source("'+str(os.path.join(script_path, 'yml.R'))+'")\n')
+            f.writelines('source("'+str(os.path.join(script_path, 'Connection.R'))+'")\n')
+
+            # Training
+            if is_event_log:
+                f.writelines('source("'+str(os.path.join(script_path, 'Training/Event/CLTV_Final_Event.R'))+'")\n')
+                f.writelines('source("'+str(os.path.join(script_path, 'Training/Event/Churn_Event.R'))+'")\n')
+                if is_customer_master:
+                    f.writelines('source("'+str(os.path.join(script_path, 'Training/Event/Customer/High_Convertors_Primary.R'))+'")\n')
+                    f.writelines('source("'+str(os.path.join(script_path, 'Training/Event/Customer/High_Convertors_Secondary.R'))+'")\n')
+                    f.writelines('source("'+str(os.path.join(script_path, 'Training/Event/Customer/Clustering_H2O.R'))+'")\n')
+            else:
+                f.writelines('source("'+str(os.path.join(script_path, 'Training/Trans/CLTV_Final_Trans.R'))+'")\n')
+                f.writelines('source("'+str(os.path.join(script_path, 'Training/Trans/Churn_Trans.R'))+'")\n')
+                if is_customer_master:
+                    f.writelines('source("'+str(os.path.join(script_path, 'Training/Trans/Customer/High_Convertors_Primary.R'))+'")\n')
+                    f.writelines('source("'+str(os.path.join(script_path, 'Training/Trans/Customer/High_Convertors_Secondary.R'))+'")\n')
+                    f.writelines('source("'+str(os.path.join(script_path, 'Training/Trans/Customer/Clustering_H2O.R'))+'")\n')
+                    
+            # Scoring
+            if is_event_log:
+                f.writelines('source("'+str(os.path.join(script_path, 'Scoring/Event/CLTV_Final_Event_Score.R'))+'")\n')
+                f.writelines('source("'+str(os.path.join(script_path, 'Scoring/Event/Churn_Event_Score.R'))+'")\n')
+                if is_customer_master:
+                    f.writelines('source("'+str(os.path.join(script_path, 'Scoring/Event/Customer/High_Convertors_Scoring.R'))+'")\n')
+                    f.writelines('source("'+str(os.path.join(script_path, 'Scoring/Event/Customer/Clustering_H2O_Scoring.R'))+'")\n')
+            else:
+                f.writelines('source("'+str(os.path.join(script_path, 'Scoring/Trans/CLTV_Final_Trans_Score.R'))+'")\n')
+                f.writelines('source("'+str(os.path.join(script_path, 'Scoring/Trans/Churn_Trans_Score.R'))+'")\n')
+                if is_customer_master:
+                    f.writelines('source("'+str(os.path.join(script_path, 'Scoring/Trans/Customer/High_Convertors_Scoring.R'))+'")\n')
+                    f.writelines('source("'+str(os.path.join(script_path, 'Scoring/Trans/Customer/Clustering_H2O_Scoring.R'))+'")\n')
+
+        command = ['Rscript', os.path.join(script_path, 'RScript.R')]
         subprocess.call(command, universal_newlines=True)
-
-        # Training
-        if is_event_log:
-            command = ['Rscript', os.path.join(script_path, 'Training/Event/CLTV_Final_Event.R')]
-            subprocess.call(command, universal_newlines=True)
-            command = ['Rscript', os.path.join(script_path, 'Training/Event/Churn_Event.R')]
-            subprocess.call(command, universal_newlines=True)
-            if is_customer_master:
-                command = ['Rscript', os.path.join(script_path, 'Training/Event/Customer/High_Convertors_Primary.R')]
-                subprocess.call(command, universal_newlines=True)
-                command = ['Rscript', os.path.join(script_path, 'Training/Event/Customer/High_Convertors_Secondary.R')]
-                subprocess.call(command, universal_newlines=True)
-                command = ['Rscript', os.path.join(script_path, 'Training/Event/Customer/Clustering_H2O.R')]
-                subprocess.call(command, universal_newlines=True)
-        else:
-            command = ['Rscript', os.path.join(script_path, 'Training/Trans/CLTV_Final_Trans.R')]
-            subprocess.call(command, universal_newlines=True)
-            command = ['Rscript', os.path.join(script_path, 'Training/Trans/Churn_Trans.R')]
-            subprocess.call(command, universal_newlines=True)
-            if is_customer_master:
-                command = ['Rscript', os.path.join(script_path, 'Training/Trans/Customer/High_Convertors_Primary.R')]
-                subprocess.call(command, universal_newlines=True)
-                command = ['Rscript', os.path.join(script_path, 'Training/Trans/Customer/High_Convertors_Secondary.R')]
-                subprocess.call(command, universal_newlines=True)
-                command = ['Rscript', os.path.join(script_path, 'Training/Trans/Customer/Clustering_H2O.R')]
-                subprocess.call(command, universal_newlines=True)
-
-        # Scoring
-        if is_event_log:
-            command = ['Rscript', os.path.join(script_path, 'Scoring/Event/CLTV_Final_Event_Score.R')]
-            subprocess.call(command, universal_newlines=True)
-            command = ['Rscript', os.path.join(script_path, 'Scoring/Event/Churn_Event_Score.R')]
-            subprocess.call(command, universal_newlines=True)
-            if is_customer_master:
-                command = ['Rscript', os.path.join(script_path, 'Scoring/Event/Customer/High_Convertors_Scoring.R')]
-                subprocess.call(command, universal_newlines=True)
-                command = ['Rscript', os.path.join(script_path, 'Scoring/Event/Customer/Clustering_H2O_Scoring.R')]
-                subprocess.call(command, universal_newlines=True)
-        else:
-            command = ['Rscript', os.path.join(script_path, 'Scoring/Trans/CLTV_Final_Trans_Score.R')]
-            subprocess.call(command, universal_newlines=True)
-            command = ['Rscript', os.path.join(script_path, 'Scoring/Trans/Churn_Trans_Score.R')]
-            subprocess.call(command, universal_newlines=True)
-            if is_customer_master:
-                command = ['Rscript', os.path.join(script_path, 'Scoring/Trans/Customer/High_Convertors_Scoring.R')]
-                subprocess.call(command, universal_newlines=True)
-                command = ['Rscript', os.path.join(script_path, 'Scoring/Trans/Customer/Clustering_H2O_Scoring.R')]
-                subprocess.call(command, universal_newlines=True)
         return 'SUCCESS'
     except Exception as e:
         print e

@@ -1,19 +1,5 @@
-source('~/tuple_client/R_Scripts/Connection.R')
-print('eventhcp')
-############################################
-#
-# INSTALL AND LOAD NEEDED PACKAGES
-#
-############################################
-Sys.time()
-
-toInstallCandidates <- c("BTYD", "data.table", "RPostgreSQL", "Matrix", "gsl", "zoo")
-# check if pkgs are already present
-toInstall <- toInstallCandidates[!toInstallCandidates%in%library()$results[,1]] 
-if(length(toInstall)!=0)
-{install.packages(toInstall, repos = "http://cran.r-project.org")}
-# load pkgs
-lapply(toInstallCandidates, library, character.only = TRUE)
+print('Event HCP')
+print(Sys.time())
 
 ################################## 
 #
@@ -25,7 +11,7 @@ trans.table = yml.params$table_map$TRANSACTION_MASTER
 customer.table = yml.params$table_map$CUSTOMER_MASTER
 fb.table = yml.params$table_map$CUSTOMER_SECONDARY
 
-event <- as.data.table(dbGetQuery(conn, 
+event <- as.data.table(dbGetQuery(conn,
                                   variableSQL("SELECT * from $event.table", event.table, stringsAsFactors = FALSE)))
 
 trans <- as.data.table(dbGetQuery(conn, 
@@ -38,9 +24,9 @@ fb <- as.data.table(dbGetQuery(conn,
                                   variableSQL("SELECT * from $fb.table", fb.table, stringsAsFactors = FALSE)))
 
 
-head(event)
-head(trans)
-head(users)
+print(head(event))
+print(head(trans))
+print(head(users))
 
 colnames(event)[which(colnames(event)== yml.params$column_map$EVENT_LOG$cust_id)] = 'cust_id'
 colnames(event)[which(colnames(event)== yml.params$column_map$EVENT_LOG$action_type)] = 'action_type'
@@ -56,10 +42,10 @@ colnames(users)[which(colnames(users)== yml.params$column_map$CUSTOMER_MASTER$cu
 
 colnames(fb)[which(colnames(fb)== yml.params$column_map$CUSTOMER_SECONDARY$cust_id)] = 'cust_id'
 
-head(event)
-head(trans)
-head(users)
-head(fb)
+print(head(event))
+print(head(trans))
+print(head(users))
+print(head(fb))
 
 ########################################
 #
@@ -70,7 +56,7 @@ head(fb)
 trans.load = event[,names(event) %in% c('cust_id'), with = FALSE]
 trans.load = unique(trans.load[,c('cust_id'), with = FALSE])
 
-head(trans.load)
+print(head(trans.load))
 
 names(trans.load) = c('cust')
 
@@ -118,14 +104,14 @@ users = Filter(function(x) length(unique(x))*100/data.row < 99, users)
 
 users = cbind(cust_id, users)
 
-head(users)
+print(head(users))
 
 ## This code needs to be changed and proper logic for birthday and create dates should be included
 
 users$birthday = as.Date(users$bdate)
 users$create_date = as.Date(users$cdate)
 
-head(fb)
+print(head(fb))
 
 keycols = c("cust_id")
 setkeyv(users, keycols)
@@ -133,7 +119,7 @@ setkeyv(fb, keycols)
 
 users.fin = merge(users, fb, by="cust_id", all.x=TRUE)
 
-head(users.fin)
+print(head(users.fin))
 
 Sys.Date()
 
@@ -148,7 +134,7 @@ users.fin$create_date = NULL
 
 trans$cust_id = as.integer(trans$cust_id)
 
-head(trans)
+print(head(trans))
 
 trans$convert = 1
 
@@ -156,7 +142,7 @@ trans.dup = trans %>%
   group_by(cust_id) %>%
   summarize(convert = max(convert))
 
-head(trans.dup)
+print(head(trans.dup))
 
 colnames(trans.dup) = c('cust_id', 'convert')
 
@@ -168,7 +154,7 @@ setkeyv(trans.dup, keycols)
 
 users.fin = merge(users.fin, trans.dup, by="cust_id", all.x=TRUE)
 
-head(users.fin)
+print(head(users.fin))
 
 str(users.fin)
 
@@ -355,7 +341,7 @@ h2o.init(nthreads=-1)
 
 df = as.h2o(users.mod)
 dim(df)
-head(df)
+print(head(df))
 tail(df)
 
 names(df) = c(names(df[,-ncol(df)]), 'response')
@@ -466,7 +452,7 @@ final.mod = glm.en.fin
 
 preds <- h2o.predict(final.mod, test)
 
-head(preds)
+print(head(preds))
 final.mod@model$validation_metrics@metrics$max_criteria_and_metric_scores
 
 library(pROC)
@@ -509,5 +495,5 @@ plot(performance(ROCRpred, measure = 'prec', x.measure = 'rec'), type = 'S', col
 
 test = as.h2o(test)
 
-final.mod.path = h2o.saveModel(final.mod, path = '/home/anmol/HighConvertors', force = TRUE)
+final.mod.path = h2o.saveModel(final.mod, path = '/home/ubuntu/HighConvertors', force = TRUE)
 

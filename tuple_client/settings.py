@@ -184,3 +184,12 @@ CELERY_RESULT_BACKEND = 'django-db'
 
 CLIENT_ID = "14632386742.108610646339"
 CLIENT_SECRET = "c5b02a54bd14ef5fc528e91536fc5c21"
+
+
+# R Script Path
+
+SCRIPT_PATH = os.path.join(BASE_DIR, 'R_Scripts')
+Connection_PATH = os.path.join(SCRIPT_PATH, 'Connection.R')
+TRAINING_PATH = os.path.join(SCRIPT_PATH, 'Training')
+SCORING_PATH = os.path.join(SCRIPT_PATH, 'Scoring')
+

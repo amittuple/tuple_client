@@ -1,19 +1,4 @@
-source('~/tuple_client/R_Scripts/Connection.R')
-############################################
-#
-# INSTALL AND LOAD NEEDED PACKAGES
-#
-############################################
-
 print ('CLTV_Final_Trans_Score')
-
-toInstallCandidates <- c("BTYD", "data.table", "RPostgreSQL", "Matrix", "gsl", "zoo", "dplyr")
-# check if pkgs are already present
-toInstall <- toInstallCandidates[!toInstallCandidates%in%library()$results[,1]] 
-if(length(toInstall)!=0)
-{install.packages(toInstall, repos = "http://cran.r-project.org")}
-# load pkgs
-lapply(toInstallCandidates, library, character.only = TRUE)
 
 ################################## 
 #
@@ -26,14 +11,14 @@ trans.table = yml.params$table_map$TRANSACTION_MASTER
 event <- as.data.table(dbGetQuery(conn, 
                                   variableSQL("SELECT * from $trans.table", trans.table, stringsAsFactors = FALSE)))
 
-#head(trans)
+#print(head(trans))
 
 colnames(event)[which(colnames(event)== yml.params$column_map$TRANSACTION_MASTER$cust_id)] = 'cust_id'
 colnames(event)[which(colnames(event)== yml.params$column_map$TRANSACTION_MASTER$revenue)] = 'revenue'
 colnames(event)[which(colnames(event)== yml.params$column_map$TRANSACTION_MASTER$prod_id)] = 'prod_id'
 colnames(event)[which(colnames(event)== yml.params$column_map$TRANSACTION_MASTER$timestamp)] = 'timestamp'
 
-head(event)
+print(head(event))
 
 
 ############################################# BTYD ##########################################
@@ -43,7 +28,7 @@ trans.load$date = as.Date(trans.load$timestamp)
 trans.load$sales = event$revenue
 trans.load = trans.load[,c('cust_id','date','sales'), with = FALSE]
 
-head(trans.load)
+print(head(trans.load))
 
 names(trans.load) = c('cust', 'date', 'sales')
 
@@ -128,7 +113,7 @@ for (j in 1:nrow(nowd.cal.spend))
 pred.cltv = cbind(cal.cbs1[, 'cust', with = FALSE], pred.cltv)
 colnames(pred.cltv) = c('cust', 'cltv')
 
-head(pred.cltv,10)
+print(head(pred.cltv,10))
 
 pred.cltv$cltv = ifelse(pred.cltv$cltv < 1, 0, pred.cltv$cltv)
 
@@ -144,7 +129,7 @@ setkeyv(pred.cltv, keycols)
 
 cltv.value = merge(cust.val, pred.cltv, all.x=TRUE)
 
-head(cltv.value)
+print(head(cltv.value))
 
 cltv.value = f_rep(cltv.value)
 
@@ -161,10 +146,12 @@ cltv.value = as.data.table(cltv.value)
 cltv.value$cust = as.integer(cltv.value$cust)
 
 
-head(cltv.value)
+print(head(cltv.value))
 
 cltv.value = cltv.value[,c(1,3,4), with = FALSE]
 
 dbWriteTable(conn, "cltv_value", cltv.value, overwrite = TRUE, row.names = FALSE)
+
+print(head(cltv.value))
 
 rm(list = c('cal.cbs1', 'cust.rev', 'cust.val', 'event', 'lookup_numeric', 'm.x.value', 'nowd.cal', 'nowd.cal.spend', 'nowd.hold', 'pred.cltv', 'trans.load', 'value.quant', 'x.vector'))

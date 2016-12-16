@@ -1,5 +1,4 @@
-source('~/tuple_client/R_Scripts/Connection.R')
-print('EVENTHcS')
+print('Event HCS')
 gbm1 <- h2o.gbm(x = predictor.fin, y = response, training_frame = train)
 
 ## Show a detailed model summary
@@ -261,7 +260,7 @@ plot(gbm.roc, type = 'S', col = 'firebrick4', legacy.axes = TRUE, main = 'Receiv
 plot(performance(ROCRpred, measure = 'tpr', x.measure = 'fpr'), col = 'orange', main = 'TPR vs. FPR')
 plot(performance(ROCRpred, measure = 'prec', x.measure = 'rec'), type = 'S', col = 'blue', legacy.axes = TRUE, main = 'Precision vs. Recall')
 
-gbm.mod.path = h2o.saveModel(gbm.fin, path = '/home/anmol/HighConvertors/GBM', force = TRUE)
+gbm.mod.path = h2o.saveModel(gbm.fin, path = '/home/ubuntu/HighConvertors/GBM', force = TRUE)
 
 rm(list = c('AUCShuffle', 'd_cor', 'shuffledData', 'users.mod', 'test', 'users.fin'))
 

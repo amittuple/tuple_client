@@ -1,19 +1,4 @@
-source('~/tuple_client/R_Scripts/Connection.R')
-############################################
-#
-# INSTALL AND LOAD NEEDED PACKAGES
-#
-############################################
 print ('Churn_Trans_Score')
-
-
-toInstallCandidates <- c("BTYD", "data.table", "RPostgreSQL", "Matrix", "gsl", "zoo", "dplyr")
-# check if pkgs are already present
-toInstall <- toInstallCandidates[!toInstallCandidates%in%library()$results[,1]] 
-if(length(toInstall)!=0)
-{install.packages(toInstall, repos = "http://cran.r-project.org")}
-# load pkgs
-lapply(toInstallCandidates, library, character.only = TRUE)
 
 ################################## 
 #
@@ -26,14 +11,14 @@ trans.table = yml.params$table_map$TRANSACTION_MASTER
 event <- as.data.table(dbGetQuery(conn, 
                                   variableSQL("SELECT * from $trans.table", trans.table, stringsAsFactors = FALSE)))
 
-#head(trans)
+#print(head(trans))
 
 colnames(event)[which(colnames(event)== yml.params$column_map$TRANSACTION_MASTER$cust_id)] = 'cust_id'
 colnames(event)[which(colnames(event)== yml.params$column_map$TRANSACTION_MASTER$revenue)] = 'revenue'
 colnames(event)[which(colnames(event)== yml.params$column_map$TRANSACTION_MASTER$prod_id)] = 'prod_id'
 colnames(event)[which(colnames(event)== yml.params$column_map$TRANSACTION_MASTER$timestamp)] = 'timestamp'
 
-head(event)
+print(head(event))
 
 
 ############################################# BTYD ##########################################
@@ -43,7 +28,7 @@ trans.load$date = as.Date(trans.load$timestamp)
 trans.load$sales = event$revenue
 trans.load = trans.load[,c('cust_id','date','sales'), with = FALSE]
 
-head(trans.load)
+print(head(trans.load))
 
 names(trans.load) = c('cust', 'date', 'sales')
 
@@ -51,7 +36,7 @@ elog = trans.load %>%
   group_by(cust, date) %>%
   summarise(sales = sum(sales))
 
-head(elog)
+print(head(elog))
 
 elog$cust = as.integer(elog$cust)
 
@@ -120,7 +105,7 @@ last.dates <- split.data$cust.data[order(as.numeric(split.data$cust.data$cust)),
 cal.cbs.dates = data.frame(birth.periods, last.dates, end.of.cal.period)
 cal.cbs = dc.BuildCBSFromCBTAndDates(cal.cbt, cal.cbs.dates, per = 'month')
 
-head(as.data.frame(cal.cbs))
+print(head(as.data.frame(cal.cbs)))
 
 ###################################
 
@@ -160,7 +145,7 @@ for (j in 1:nrow(cal.cbs))
 pred.fin = cbind(cal.cbs1[, 'rn', with = FALSE], pred.tran)
 colnames(pred.fin) = c('cust', 'pred.tran', 'prob.alive')
 
-head(pred.fin,10)
+print(head(pred.fin,10))
 
 pred.fin$pred.tran = floor(pred.fin$pred.tran)
 pred.fin[pred.fin$pred.tran == 0,]$prob.alive = 0
@@ -196,11 +181,14 @@ cust.fin = as.data.table(cust.fin)
 cust.fin$cust = as.integer(cust.fin$cust)
 
 
-head(cust.fin)
+print(head(cust.fin))
 
 churn.engage = cust.fin[,c(1,5,6), with = FALSE]
 
+print(head(churn.engage))
+
 dbWriteTable(conn, "churn_engagement", churn.engage, overwrite = TRUE, row.names = FALSE)
+
 Predict_Period = as.data.frame(predict.period)
 names(Predict_Period) = 'period'
 dbWriteTable(conn, "predict_period", Predict_Period , overwrite = TRUE, row.names = FALSE)

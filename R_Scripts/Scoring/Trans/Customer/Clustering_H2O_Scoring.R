@@ -1,23 +1,6 @@
-source('~/tuple_client/R_Scripts/Connection.R')
-############################################
-#
-# INSTALL AND LOAD NEEDED PACKAGES
-#
-############################################
-
-print ('Clustering H20 Scoring')
+print ('Tran Clustering Scoring')
 
 Sys.time()
-
-
-
-toInstallCandidates <- c("BTYD", "data.table", "RPostgreSQL", "Matrix", "gsl", "zoo", "dplyr")
-# check if pkgs are already present
-toInstall <- toInstallCandidates[!toInstallCandidates%in%library()$results[,1]] 
-if(length(toInstall)!=0)
-{install.packages(toInstall, repos = "http://cran.r-project.org")}
-# load pkgs
-lapply(toInstallCandidates, library, character.only = TRUE)
 
 ################################## 
 #
@@ -34,14 +17,14 @@ fb <- as.data.table(dbGetQuery(conn,
                                variableSQL("SELECT * from $fb.table", fb.table, stringsAsFactors = FALSE)))
 
 
-head(users)
+print(head(users))
 
 colnames(users)[which(colnames(users)== yml.params$column_map$CUSTOMER_MASTER$cust_id)] = 'cust_id'
 
 colnames(fb)[which(colnames(fb)== yml.params$column_map$CUSTOMER_SECONDARY$cust_id)] = 'cust_id'
 
-head(users)
-head(fb)
+print(head(users))
+print(head(fb))
 
 ################################## 
 #
@@ -71,14 +54,14 @@ for (i in 1:(ncol(fb))) {
   } 
 }
 
-head(users)
+print(head(users))
 
 ## This code needs to be changed and proper logic for birthday and create dates should be included
 
 users$birthday = as.Date(users$bdate)
 users$create_date = as.Date(users$cdate)
 
-head(fb)
+print(head(fb))
 
 keycols = c("cust_id")
 setkeyv(users, keycols)
@@ -86,7 +69,7 @@ setkeyv(fb, keycols)
 
 users.cluster.score.fin = merge(users, fb, by="cust_id", all.x=TRUE)
 
-head(users.cluster.score.fin)
+print(head(users.cluster.score.fin))
 
 users.cluster.score.fin$age = round(as.vector((Sys.Date() - users.cluster.score.fin$birthday)/365),0)
 
@@ -203,7 +186,7 @@ users.cluster.score.mod = as.h2o(users.cluster.score.mod)
 
 users.cluster.score.mod$cluster = h2o.predict(final.clust, users.cluster.score.mod)
 
-head(users.cluster.score.mod)
+print(head(users.cluster.score.mod))
 
 profile_clusters = as.data.frame(users.cluster.score.mod[,c('cust_id', 'cluster')])
 

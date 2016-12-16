@@ -1,18 +1,5 @@
-source('~/tuple_client/R_Scripts/Connection.R')
-############################################
-#
-# INSTALL AND LOAD NEEDED PACKAGES
-#
-############################################
+print ('Event HC Scoring')
 Sys.time()
-
-toInstallCandidates <- c("BTYD", "data.table", "RPostgreSQL", "Matrix", "gsl", "zoo", "dplyr")
-# check if pkgs are already present
-toInstall <- toInstallCandidates[!toInstallCandidates%in%library()$results[,1]] 
-if(length(toInstall)!=0)
-{install.packages(toInstall, repos = "http://cran.r-project.org")}
-# load pkgs
-lapply(toInstallCandidates, library, character.only = TRUE)
 
 ################################## 
 #
@@ -30,14 +17,14 @@ fb <- as.data.table(dbGetQuery(conn,
 
 
 
-head(users)
+print(head(users))
 
 colnames(users)[which(colnames(users)== yml.params$column_map$CUSTOMER_MASTER$cust_id)] = 'cust_id'
 
 colnames(fb)[which(colnames(fb)== yml.params$column_map$CUSTOMER_SECONDARY$cust_id)] = 'cust_id'
 
-head(users)
-head(fb)
+print(head(users))
+print(head(fb))
 
 
 ################################## 
@@ -74,7 +61,7 @@ for (i in 1:(ncol(fb))) {
 users$birthday = as.Date(users$bdate)
 users$create_date = as.Date(users$cdate)
 
-head(fb)
+print(head(fb))
 
 keycols = c("cust_id")
 setkeyv(users, keycols)
@@ -82,7 +69,7 @@ setkeyv(fb, keycols)
 
 users.fin.score = merge(users, fb, by="cust_id", all.x=TRUE)
 
-head(users.fin.score)
+print(head(users.fin.score))
 
 Sys.Date()
 
@@ -241,7 +228,7 @@ users.mod.score = as.h2o(users.mod.score)
 
 score.preds <- h2o.predict(score.model, users.mod.score)
 
-head(score.preds)
+print(head(score.preds))
 
 users.mod.score = as.data.table(users.mod.score)
 
