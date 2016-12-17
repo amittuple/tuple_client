@@ -8,7 +8,7 @@ from django.db import models
 class CustomerMasterMappingModel(models.Model):
     
     client_table_name = models.CharField(max_length=50, null = True, blank=True)
-    customer_id = models.CharField(max_length=50, null = True, blank=True)
+    cust_id = models.CharField(max_length=50, null = True, blank=True)
 
     def __unicode__(self):
         return 'Customer Master Mapping Table'

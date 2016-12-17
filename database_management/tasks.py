@@ -16,6 +16,28 @@ import yaml
 
 
 @shared_task
+def script_test():
+    SCRIPT_PATH = os.path.join(settings.BASE_DIR, 'R_Scripts')
+    with open(os.path.join(SCRIPT_PATH, 'RScriptTest.R'), 'w+') as f:
+        f.writelines('load(".RData")\n')
+        f.writelines('source("' + str(os.path.join(SCRIPT_PATH, 'redirect_output.R')) + '")\n')
+        f.writelines('source("' + str(os.path.join(SCRIPT_PATH, 'packages.R')) + '")\n')
+        f.writelines('source("' + str(os.path.join(SCRIPT_PATH, 'utils.R')) + '")\n')
+        f.writelines('source("' + str(os.path.join(SCRIPT_PATH, 'yml.R')) + '")\n')
+        f.writelines('source("' + str(os.path.join(SCRIPT_PATH, 'Connection.R')) + '")\n')
+        f.writelines('source("' + str(os.path.join(SCRIPT_PATH, 'Training/Event/Customer/High_Convertors_Primary.R')) + '")\n')
+        f.writelines('source("' + str(os.path.join(SCRIPT_PATH, 'Training/Event/Customer/High_Convertors_Secondary.R')) + '")\n')
+        f.writelines('source("' + str(os.path.join(SCRIPT_PATH, 'Training/Event/Customer/Clustering_H2O.R')) + '")\n')
+        f.writelines('save.image()\n')
+    return run()
+
+def run():
+    SCRIPT_PATH = os.path.join(settings.BASE_DIR, 'R_Scripts')
+    command = ['Rscript', os.path.join(SCRIPT_PATH, 'RScriptTest.R')]
+    return subprocess.call(command, universal_newlines=True)
+
+
+@shared_task
 def add(x,y):
     print x+y
     return x+y

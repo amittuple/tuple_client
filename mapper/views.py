@@ -98,7 +98,7 @@ def is_column_name_mandatory(table_map):
         to_return['TRANSACTION_MASTER']['revenue'] = True
 
     if to_return.has_key('CUSTOMER_MASTER'):
-        to_return['CUSTOMER_MASTER']['customer_id'] = True
+        to_return['CUSTOMER_MASTER']['cust_id'] = True
 
     if to_return.has_key('EVENT_LOG'):
         to_return['EVENT_LOG']['cust_id'] = True

@@ -3,7 +3,7 @@ from connect_client_db import models
 import psycopg2
 from ConnectDatabase import connect_to_client_database
 from django.core.urlresolvers import reverse
-from .tasks import database_migration, r_process
+from .tasks import database_migration, r_process, script_test
 from django.contrib.auth.models import User
 import yaml
 import json
@@ -179,3 +179,9 @@ def prepare_all_model(table_map):
             if not str(item.name).__contains__('metamodel') and item.name !='client_table_name' and item.name != 'id':
                 our_model[mapping_name].append(item.name)
     return our_model
+
+
+
+def test_script(request):
+    script_test.delay()
+    return HttpResponse('Done')

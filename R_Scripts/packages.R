@@ -3,10 +3,12 @@
 # INSTALL AND LOAD NEEDED PACKAGES
 #
 ############################################
-zz <- file('~/R_Logs/R_Log.txt', open = "wt")
-sink(zz)
-sink(zz, type = "message")
-toInstallCandidates <- c("data.table", "RPostgreSQL", "yaml", "BTYD", "Matrix", "gsl", "zoo", "magrittr", "dplyr")
+
+# install gsl library
+# install lubridate library
+# install h2o library
+# install java jre for h2o library
+toInstallCandidates <- c("data.table", "RPostgreSQL", "yaml", "BTYD", "Matrix", "gsl", "zoo", "magrittr", "dplyr", "lubridate", "h2o", "pROC", "caret", "ade4")
 # check if pkgs are already present
 toInstall <- toInstallCandidates[!toInstallCandidates%in%library()$results[,1]]
 if(length(toInstall)!=0)

@@ -11,7 +11,7 @@ column_map:
     facebook_id: sent
     phone_number: null
   CUSTOMER_MASTER:
-    customer_id: id
+    cust_id: id
   CUSTOMER_SECONDARY:
     cust_id: id
   EVENT_LOG:
