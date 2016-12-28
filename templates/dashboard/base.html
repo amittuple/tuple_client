@@ -13,10 +13,33 @@
     <title>Client Tuple</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/material/css/bootstrap-material-design.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/material/css/ripples.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/circle-progress/style.css' %}" rel="stylesheet">
     <link href="{% static 'assets/custom/style.css' %}" rel="stylesheet">
-    <link href="{% static 'tuple_mia/css/index.css' %}" rel="stylesheet">
-    <!--<link href="{% static 'tuple_mia/css/reset.css' %}" rel="stylesheet">-->
+    <link href="{% static 'assets/chatbot/css/chatbot.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/custom/overrides.css' %}" rel="stylesheet">
+
+
+    <!-- JS -->
+
+    <!-- Frameworks And Libraries-->
+    <script src="{% static 'assets/jquery/jquery-1.12.4.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/material/js/material.js'%}"></script>
+    <script src="{% static 'assets/material/js/ripples.js'%}"></script>
+    <script src="{% static 'assets/circle-progress/app.js' %}"></script>
+    <script>
+        $.material.init();
+    </script>
+
+
+    <!-- Custom Code -->
+    <script src="{% static 'assets/custom/app.js' %}"></script>
+    <script src="{% static 'assets/chatbot/js/chatbot.js' %}"></script>
+    <script src="{% static 'assets/chatbot/js/chatbot-function.js' %}"></script>
+
 
 </head>
 
@@ -30,54 +53,57 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">Tuple MIA</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             {% if request.user.is_authenticated %}
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{% url 'dashboard' %}">Dashboard</a></li>
                 <li><a href="{% url 'connect_client_db' %}">Connect Database</a></li>
-
-                <!--<li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>-->
-                <!--<li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>-->
-                <!--<li><a href="{% url 'mapping_review' %}">Mapping Review</a></li>-->
-                <!--<li><a href="{% url 'transfer_database' %}">Transfer Database</a></li>-->
                 <li><a href="#">Database Sync(Coming Soon)</a></li>
-            </ul>
-            {% endif %}
-            {% if not request.user.is_authenticated %}
-            <ul class="nav navbar-nav navbar-right">
-                <a href="#" class="btn btn-default navbar-btn">Sign In</a>
-                <a href="#" class="btn btn-danger navbar-btn">Sign Up</a>
-            </ul>
-            {% else %}
-            <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-bell" style="font-size: 20px;"></span>
-                        <span class="badge">4</span>
-                    </a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Integrations<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Notification 1</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Notification 2</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Notification 3</a></li>
+                        <li>
+                            <a class="list-group-item" href="https://slack.com/oauth/authorize?scope=bot&client_id=14632386742.108610646339">
+                                <div class="row-picture">
+                                    <img class="circle" src="{% static 'assets/images/slack_image.png' %}" alt="icon">
+                                </div>
+                                <div class="row-content">
+                                    <p class="list-group-item-text">Slack Integration</p>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
                 </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li class="dropdown">-->
+                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">-->
+                <!--<span class="glyphicon glyphicon-bell" style="font-size: 20px;"></span>-->
+                <!--<span class="badge">4</span>-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu">-->
+                <!--<li><a href="#">Notification 1</a></li>-->
+                <!--<li role="separator" class="divider"></li>-->
+                <!--<li><a href="#">Notification 2</a></li>-->
+                <!--<li role="separator" class="divider"></li>-->
+                <!--<li><a href="#">Notification 3</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
 
                 <li><p class="navbar-text navbar-right">Signed in as&nbsp&nbsp&nbsp&nbsp&nbsp</p></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{request.user}}<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                  </ul>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{request.user}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                    </ul>
                 </li>
             </ul>
             {% endif %}
@@ -86,44 +112,16 @@
 </nav>
 {% block content %}
 {% endblock %}
-<!--chat-bot here..............-->
-		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
-<div class="container">
-			<div id ='foo'>
-				<div class="panel-heading text-center">
-					<button class="title" href="javascript:;" onclick=show_1() >chat with tuple-mia</button>
-							</div>
-						<div id="expand">
-						<div class="chat"></div>
-						<div class="busy"></div>
-						<div class="input">
-							<input type="text" placeholder="Chat with me!" >
-							<a >Send</a>
-							{% load banana_tags %}
-							<div style="display: none">
-							<form action="/am/mailchimp/" method="GET">
-    							<input type="submit" type="hidden" value="Go to mailchimp" id="demo1" />
-							</form>
-								<form action="/dashboard/" method="GET">
-    							<input type="submit" type="hidden" id="demo2"/>
-							</form>
-								</div>
-							</div>
-						</div>
-				</div>
-			</div>
-		</div>
 
-<!-- java script file link here from your application -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/index.js"></script>
-<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'assets/custom/app.js' %}"></script>
-<script src="{% static 'tuple_mia/java_script/index.js' %}"></script>
-<script src="{% static 'tuple_mia/java_script/chat-bot.js' %}"></script>
-<script src="{% static 'tuple_mia/java_script/jquery-1.7.2.js' %}"></script>
-<script src="{% static 'tuple_mia/java_script/expand_div.js' %}"></script>
 
+<!-- Chatbot -->
+
+{% if request.user.is_authenticated %}
+
+{% include 'chatbot/index.html' %}
+
+{% endif %}
 </body>
+
+
 </html>

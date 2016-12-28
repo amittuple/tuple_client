@@ -38,7 +38,7 @@
     }
 </script>
 
-<div class="col-lg-10 col-lg-offset-1" style="margin-top: 10px;">
+<div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">
     <ol class="breadcrumb">
         <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
         <li class="active">Column Mapping</li>
@@ -47,38 +47,44 @@
     </ol>
 </div>
 
-<form method="post" class="panel-group" id="accordion" role="tablist">
-    <div class="row" style="margin-top:50px;">
-        <div class="container">
+<form method="post" class="panel-group" id="accordion" role="tablist" onsubmit="return validate();">
+        <div class="row" style="padding-top:50px;">
+        <div class="col col-lg-10 col-lg-offset-1">
             {% csrf_token %}
             {% for our_table_name, our_column_list in our_model.iteritems %}
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
+            <div class="panel panel-default" style="max-height: 450px;">
+                <div class="panel-heading" role="tab" id="heading-{{our_table_name}}">
                     <h4 class="panel-title">
                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{our_table_name}}" aria-expanded="true" aria-controls="{{our_table_name}}">
                             {{our_table_name}}
                         </a>
                     </h4>
                 </div>
-                <div id="{{our_table_name}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{our_table_name}}">
+                <div id="{{our_table_name}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{our_table_name}}">
                     <div class="panel-body">
+
                         <div class="row">
                             {% with client_table_name=table_map|get_item:our_table_name%}
-                            <div class="col-lg-6">
-                                <ul class="list-group">
+                            <div class="col col-lg-6" style="max-height: 400px; overflow-y: scroll;">
+                                <div class="list-group">
                                     <h3>{{client_table_name}}</h3>
                                     {% for client_column_name in client_table_and_column_with_type|get_item:client_table_name %}
-                                    <li class="list-group-item">
-                                        <span class="drag">{{client_column_name}}</span>
-                                        <div draggable="false" style="float: right;">
-                                            <input name="{{client_table_name}}.is_factor.{{client_column_name}}" type="checkbox">
+                                    <div class="list-group-item">
+                                        <div class="row-content">
+                                            <span class="list-group-item-heading drag">{{client_column_name}}</span>
+                                            <div draggable="false" style="float:right;" class="checkbox">
+                                                <label>
+                                                    <input name="{{client_table_name}}.is_factor.{{client_column_name}}" type="checkbox">
+                                                </label>
+                                            </div>
                                         </div>
-                                    </li>
+                                    </div>
                                     {% endfor %}
-                                </ul>
+                                </div>
                             </div>
                             {% endwith %}
-                            <div class="col-lg-6">
+
+                            <div class="col-lg-6" style="max-height: 400px; overflow-y: scroll;">
                                 <ul class="list-group">
                                     <h3>{{our_table_name}}</h3>
                                     {% for our_column_name in our_column_list %}
@@ -91,23 +97,96 @@
                                                         <i style="color: red">*</i>
                                                     {% endif %}
                                                 </span>
-                                            <input name="{{our_table_name}}.{{our_column_name}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly required aria-required="true">
+                                            {% if is_column|get_item:our_column_name %}
+                                                <input name="{{our_table_name}}.{{our_column_name}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly required aria-required="true">
+                                            {% else %}
+                                                <input name="{{our_table_name}}.{{our_column_name}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly>
+                                            {% endif %}
+                                            <span style="display: none;" class="btn-danger">This Field Is Mandatory</span>
                                         </div>
                                     </li>
                                     {% endwith %}
                                     {% endfor %}
                                 </ul>
                             </div>
+
                         </div>
+
+                        <!--<div class="row">-->
+                        <!--{% with client_table_name=table_map|get_item:our_table_name%}-->
+                        <!--<div class="col-lg-6">-->
+                        <!--<ul class="list-group">-->
+                        <!--<h3>{{client_table_name}}</h3>-->
+                        <!--{% for client_column_name in client_table_and_column_with_type|get_item:client_table_name %}-->
+                        <!--<li class="list-group-item">-->
+                        <!--<span class="drag">{{client_column_name}}</span>-->
+                        <!--<div draggable="false" style="float: right;">-->
+                        <!--<input name="{{client_table_name}}.is_factor.{{client_column_name}}" type="checkbox">-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--{% endfor %}-->
+                        <!--</ul>-->
+                        <!--</div>-->
+                        <!--{% endwith %}-->
+                        <!--<div class="col-lg-6">-->
+                        <!--<ul class="list-group">-->
+                        <!--<h3>{{our_table_name}}</h3>-->
+                        <!--{% for our_column_name in our_column_list %}-->
+                        <!--{% with is_column=is_column_name_mandatory|get_item:our_table_name %}-->
+                        <!--<li class="list-group-item">-->
+                        <!--<div class="input-group input-group-sm">-->
+                        <!--<span class="input-group-addon" id="sizing-addon3">-->
+                        <!--{{our_column_name}}-->
+                        <!--{% if is_column|get_item:our_column_name %}-->
+                        <!--<i style="color: red">*</i>-->
+                        <!--{% endif %}-->
+                        <!--</span>-->
+                        <!--<input name="{{our_table_name}}.{{our_column_name}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly required aria-required="true">-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--{% endwith %}-->
+                        <!--{% endfor %}-->
+                        <!--</ul>-->
+                        <!--</div>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
-    <div style="position: fixed; right: 15px; top: 60px; display: sticky; width: 200px">
-        <button class="btn btn-md btn-primary btn-block" type="submit">Submit</button>
+    <div style="position: fixed; right: -10px; top: 45%;">
+        <button class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;" type="submit">Next</button>
+    </div>
+    <div style="position: fixed; left: -10px; top: 45%;">
+        <a href="{% url 'table_mapping' %}" class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;">Back</a>
     </div>
 </form>
+
+<script>
+    function validate() {
+        var form = $('form');
+        var inputs = $(':input');
+        alert(inputs.length);
+        alert(inputs);
+        alert(inputs[0]);
+        alert(inputs[0].id);
+        for(var i=0; i < inputs.length; i++) {
+            if(inputs[i].hasAttribute('required')) {
+                if(inputs[i].value == '' || inputs[i].value == null) {
+                    alert(inputs[i].get(0).id);
+                    console.log(inputs[i].attr('id'));
+                    $('#' + inputs[i].attr('id')) .siblings[0].show();
+                    return false;
+                }
+                else {
+                    $('#' + inputs[i].attr('id')).siblings()[0].hide();
+                }
+            }
+        }
+        return true;
+    }
+</script>
+
 
 {% endblock %}

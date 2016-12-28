@@ -2,62 +2,91 @@
 {% load i18n %}
 {% block content %}
 {% load static %}
-<div class="container">
-    {{warning}}
-    {% if warning %}
-    <div class="row">
-        <div class="alert alert-warning">
-            <p>Database Transfer And Calculations Take Some Time. Please Check This Page After Sometime</p>
-        </div>
-    </div>
-    {% else %}
-    <div class="row">
-        <div class="col-sm-2">
-            cltv
-        </div>
-        <div class="col-sm-2">
-            churn
-        </div>
-        <div class="col-sm-2">
-            high_converter
-        </div>
-        <div class="col-sm-2">
-            value
-        </div>
-        <div class="col-sm-2">
-            profile
-        </div>
-        <div class="col-sm-2">
-            engagement
-        </div>
-    </div>
-    <div id="master_table">
-        {% for tab1 in table %}
-        <div  class="row">
-            <div class="col-sm-2">
-                {{tab1.cltv}}
-            </div>
-            <div class="col-sm-2">
-                {{tab1.churn}}
-            </div>
-            <div class="col-sm-2">
-                {{tab1.high_converter}}
-            </div>
-            <div class="col-sm-2">
-                {{tab1.value}}
-            </div>
-            <div class="col-sm-2">
-                {{tab1.profile}}
-            </div>
-            <div class="col-sm-2">
-                {{tab1.engagement}}
-            </div>
-        </div>
 
 
-        {% endfor %}
+<input type="button" id="btnChange" value="  Change ID " style ="display:none;"/>
+<input type="button" id="btncircle" value="CircleFill" style="display: none;"/>
 
+
+<div class="container" style="padding-top: 50px;">
+
+    <!--<div class="panel-panel-default">-->
+        <!--<div class="panel-body">-->
+            <!--<div class="row">-->
+                <!--<div class="col col-lg-6 col-lg-offset-3 text-center">-->
+                    <!--<p class="absolute-text">-->
+                        <!--<a class="btn btn-primary" href="https://slack.com/oauth/authorize?scope=bot&client_id=14632386742.108610646339">-->
+                            <!--<img src="{% static 'assets/images/slack_image.png' %} " border="0" class="img-responsive img-circle" style="height: 100px;width:100px;">-->
+                            <!--Slack Integration-->
+                        <!--</a>-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="panel-heading">
+        <div class="row" style="font-size: 16px;text-align: center; background-color: #545454; color: white;">
+            <div class="col-sm-2">
+                CLTV
+            </div>
+            <div class="col-sm-2">
+                CHURN
+            </div>
+            <div class="col-sm-2">
+                HIGH CONVERTOR
+            </div>
+            <div class="col-sm-2">
+                VALUE
+            </div>
+            <div class="col-sm-2">
+                CLUSTER
+            </div>
+            <div class="col-sm-2">
+                ENGAGEMENT
+            </div>
+        </div>
     </div>
-    {% endif %}
+    <div id="master_table" class="well">
+        {% include 'dashboard/dashboard-table.html' %}
+    </div>
 </div>
+
+
+<!--<div class="container" style="padding-top: 50px;">-->
+<!--{% if warning %}-->
+<!--<div class="row">-->
+<!--<div class="alert alert-warning">-->
+<!--<p>Database Transfer And Calculations Take Some Time. Please Check This Page After Sometime</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--{% else %}-->
+<!--<div id="master_table2">-->
+<!--{% for tab1 in table %}-->
+<!--<div  class="row">-->
+<!--<div class="col-sm-2 text-center">-->
+<!--{{tab1.cltv}}-->
+<!--</div>-->
+<!--<div class="col-sm-2 text-center">-->
+<!--{{tab1.churn}}-->
+<!--</div>-->
+<!--<div class="col-sm-2 text-center">-->
+<!--{{tab1.high_convertor}}-->
+<!--</div>-->
+<!--<div class="col-sm-2 text-center">-->
+<!--{{tab1.value}}-->
+<!--</div>-->
+<!--<div class="col-sm-2 text-center">-->
+<!--{{tab1.cluster}}-->
+<!--</div>-->
+<!--<div class="col-sm-2 text-center">-->
+<!--{{tab1.engagement}}-->
+<!--</div>-->
+<!--</div>-->
+<!--{% endfor %}-->
+
+<!--</div>-->
+<!--{% endif %}-->
+<!--</div>-->
+
 {% endblock %}

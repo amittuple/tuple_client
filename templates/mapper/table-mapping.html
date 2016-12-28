@@ -12,7 +12,7 @@
     }
     .box {
         min-height: 50px;
-     }
+    }
 </style>
 <script>
     window.onload = function() {
@@ -48,9 +48,12 @@
         }
     }
 
+
+
+
 </script>
 
-<div class="col-lg-10 col-lg-offset-1" style="margin-top: 10px;">
+<div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">
     <ol class="breadcrumb">
         <li class="active">Table Mapping</li>
         <li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
@@ -59,87 +62,131 @@
     </ol>
 </div>
 
-<form name="table_mapping_form" method="post" class="container-fluid">
+<form name="table_mapping_form" method="post" class="container-fluid" onsubmit="return validate();">
     {% csrf_token %}
-    <div class="row">
-        <div class="col-lg-2" style="z-index: 99; max-height: 500px; overflow-y: scroll;">
+    <div class="row well">
+        <div class="col-lg-3" style="z-index: 99; max-height: 500px; overflow-y: scroll;">
             <div class="page-header">
                 <h3>Client Tables</h3>
             </div>
-            <div class="col-lg-10 col-lg-offset-1">
-                <button class="btn btn-block btn-md btn-primary">
-                    Sync Table Names
-                </button>
+            <div class="row">
+                <div class="col-lg-12">
+                    <a class="btn btn-block btn-md btn-primary">
+                        Sync Table Names
+                    </a>
+                </div>
             </div>
-            <ul class="list-group">
-                {% for item in list_of_tables %}
-                <li class="list-group-item">
-                    <span class="drag">{{item}}</span>
-                </li>
-                {% endfor %}
-            </ul>
+
+            <div class="row">
+                <div class="list-group">
+                    {% for item in list_of_tables %}
+                    <div class="list-group-item border">
+                        <div class="row-content">
+                            <span class="list-group-item-heading drag">{{item}}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
         <div class="col-lg-4" style="max-height: 500px; overflow-y: scroll;">
             <div class="page-header">
                 <h3>System Tables</h3>
             </div>
-            <div class="col-lg-10 col-lg-offset-1">
-                <button type="reset" class="btn btn-block btn-md btn-primary">
+            <div class="col-lg-12">
+                <a onclick="clearFields(event)" class="btn btn-block btn-md btn-primary">
                     Clear Selections
-                </button>
+                </a>
             </div>
-            <ul class="list-group">
-                {% for heading in list_of_headings %}
-                <li class="list-group-item">
-                    <div class="input-group input-group-sm">
-                        <span class="input-group-addon" id="sizing-addon3">
-                            {{ heading }}
+            <div class="row">
+                <div class="list-group">
+                    {% for heading in list_of_headings %}
+                    <div class="list-group-item" onmouseover="showTable('{{heading}}')">
+                        <div class="form-group">
+                            <label for="{{heading}}" class="col-md-5 control-label" style=" color: black;">
+                                {{heading}}
+                            </label>
                             {% if is_table_name_mandatory|get_item:heading %}
                                 <i style="color: red">*</i>
                             {% endif %}
-                        </span>
-                        <input name="{{heading}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly>
+                            <div class="col-md-7">
+                                {% if is_table_name_mandatory|get_item:heading %}
+                                    <input id="{{heading}}" name="{{heading}}" type="text" class="form-control drop" readonly required>
+                                {% else %}
+                                    <input id="{{heading}}" name="{{heading}}" type="text" class="form-control drop" readonly>
+                                {% endif %}
+                                <span id="{{heading}}-error" style="display: none;" class="btn-danger">This Field Is Mandatory</span>
+                            </div>
+                        </div>
                     </div>
-                </li>
-                {% endfor %}
-            </ul>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6" style="max-height: 500px; overflow-y: scroll;">
-            <div class="page-header">
-                <h1>Table Preview</h1>
+        <div class="col-lg-5" style="max-height: 500px; overflow-y: scroll;">
+            <div>
+                <img id="preview-transaction_master" src="{% static 'assets/images/table-preview/transaction_master.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
+                <img id="preview-customer_master" src="{% static 'assets/images/table-preview/customer_master.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
+                <img id="preview-customer_secondary" src="{% static 'assets/images/table-preview/customer_secondary.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
+                <img id="preview-customer_contact" src="{% static 'assets/images/table-preview/customer_contact.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
+                <img id="preview-event_log" src="{% static 'assets/images/table-preview/event_log.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
+                <img id="preview-event_master" src="{% static 'assets/images/table-preview/event_master.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
+                <img id="preview-product_master" src="{% static 'assets/images/table-preview/product_master.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
             </div>
-            <div class="page-header">
-                <h4>This is How Your Customer Master Table Will Look Like</h4>
-            </div>
-            <table class="table">
-                <th>
-                <td>Customer Id</td>
-                <td>Customer Name</td>
-                <td>Phone Number</td>
-                </th>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Adnan</td>
-                    <td>8090******</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Dipali</td>
-                    <td>1234******</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Vikas</td>
-                    <td>9876******</td>
-                </tr>
-                </tbody>
-            </table>
         </div>
     </div>
-    <div style="position: fixed; right: 15px; top: 60px; display: sticky; width: 200px">
-        <button class="btn btn-md btn-primary btn-block" type="submit">Submit</button>
+    <div style="position: fixed; right: -10px; top: 45%;">
+        <button class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;" type="submit">Next</button>
     </div>
 </form>
+
+
+<script>
+    function tableNames() {
+        return [
+            'CUSTOMER_MASTER',
+            'TRANSACTION_MASTER',
+            'CUSTOMER_SECONDARY',
+            'PRODUCT_MASTER',
+            'CUSTOMER_CONTACT',
+            'EVENT_LOG',
+            'EVENT_MASTER'
+        ];
+    }
+    function showTable(name) {
+        var tables = tableNames();
+        for(var i=0; i<tables.length; i++) {
+            id = 'preview-' + tables[i].toLowerCase();
+            if(name.toLowerCase() == tables[i].toLowerCase()) {
+                $('#'+id).show();
+            }
+            else {
+                $('#'+id).hide();
+            }
+        }
+    }
+    function clearFields(e) {
+        console.log(e);
+        temp = tableNames();
+        for(item in temp) {
+            console.log(item);
+            console.log(temp[item]);
+            var el = document.getElementById(temp[item]);
+            console.log(el);
+            el.setAttribute('value', '')
+        }
+    }
+    function validate() {
+        var transactionMaster = $('#TRANSACTION_MASTER');
+        if( transactionMaster.val() == '' || transactionMaster.val() == null) {
+            $('#TRANSACTION_MASTER-error').show();
+            return false;
+        }
+        else {
+            $('#TRANSACTION_MASTER-error').hide();
+            return true;
+        }
+    }
+</script>
 
 {% endblock %}

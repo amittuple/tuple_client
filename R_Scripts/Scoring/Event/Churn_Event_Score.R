@@ -139,6 +139,11 @@ rownames(p.matrix) = 1:3
 
 p.matrix
 
+print(p.matrix)
+
+print(predict.period)
+print(as.vector(predict.period))
+
 bgnbd.Expectation(params, t = as.vector(predict.period))
 
 bgnbd.ConditionalExpectedTransactions(params, T.star = as.vector(predict.period), x, t.x, T.cal)
@@ -200,9 +205,9 @@ print(head(cust.fin))
 
 churn.engage = cust.fin[,c(1,5,6), with = FALSE]
 
-dbWriteTable(conn, "Churn_Engagement", churn.engage, overwrite = TRUE, row.names = FALSE)
+dbWriteTable(conn, "churn_engagement", churn.engage, overwrite = TRUE, row.names = FALSE)
 Predict_Period = as.data.frame(predict.period)
 names(Predict_Period) = 'period'
-dbWriteTable(conn, "Predict_Period", Predict_Period , overwrite = TRUE, row.names = FALSE)
+dbWriteTable(conn, "predict_period", Predict_Period , overwrite = TRUE, row.names = FALSE)
 
 rm(list = c('cal.cbs', 'cal.cbs.dates', 'cal.cbs1', 'cal.cbt', 'churn.engage', 'clean.elog', 'cust.fin', 'elog', 'elog.cal','engage.quant', 'event', 'p.matrix', 'pred.fin', 'pred.tran', 'trans.load', 'birth.periods', 'end.of.cal.period', 'freq.cbt', 'i', 'j', 'keycols', "last.dates", 'LL', 'multiplot', 'p.matrix.row', 'params', 'split.data', 'T.cal', 't.x', 'toInstall', 'toInstallCandidates', 'tot.cbt', 'x', 'Predict_Period', 'trans'))

@@ -5,36 +5,117 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a247cd03-d2f8-46e8-9dee-c995748544a6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TableBuffer.buffer" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/custom_library/CreateQuery.py" afterPath="$PROJECT_DIR$/custom_library/BuildQuery.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/chatbot/js/chatbot-function.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap-theme.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/css/bootstrap.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/bootstrap/js/npm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/custom/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/custom/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/images/desert.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/images/desktop.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/images/jumbotron.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/images/landscape3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/images/profile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/images/room-laptop.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/images/table.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/jquery/jquery-1.12.4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/tether/tether.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_static/assets/tether/tether.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/r_process/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/r_process/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/r_process/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/r_process/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/r_process/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/r_process/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/r_process/urls.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/r_process/views.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slack_bot/migrations/0001_initial.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slack_bot/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/tuple_mia/java_script/chat-bot.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/tuple_mia/java_script/expand_div.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/team/function_for_slack.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/team/migrations/0001_initial.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/team/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/chat_bot/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/user_profile/base.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/user_profile/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tuple_client.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/user_profile/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/user_profile/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/user_profile/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/user_profile/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/user_profile/urls.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/user_profile/views.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/tuple_mia/css/index.css" afterPath="$PROJECT_DIR$/static/assets/chatbot/css/index.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/tuple_mia/css/reset.css" afterPath="$PROJECT_DIR$/static/assets/chatbot/css/reset.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/tuple_mia/java_script/index.js" afterPath="$PROJECT_DIR$/static/assets/chatbot/js/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/tuple_mia/java_script/jquery-1.7.2.js" afterPath="$PROJECT_DIR$/static/assets/jquery/jquery-1.7.2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.RData" afterPath="$PROJECT_DIR$/.RData" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/tuple_client.iml" afterPath="$PROJECT_DIR$/.idea/tuple_client.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Connection.R" afterPath="$PROJECT_DIR$/R_Scripts/Connection.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Event/CLTV_Final_Event_Score.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Event/CLTV_Final_Event_Score.R" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MailChimp/MailChimp.py" afterPath="$PROJECT_DIR$/MailChimp/MailChimp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Logs/R_Log.txt" afterPath="$PROJECT_DIR$/R_Logs/R_Log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/RScriptTest.R" afterPath="$PROJECT_DIR$/R_Scripts/RScriptTest.R" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Event/Churn_Event_Score.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Event/Churn_Event_Score.R" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Event/Customer/Clustering_H2O_Scoring.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Event/Customer/Clustering_H2O_Scoring.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Event/Customer/High_Convertors_Scoring.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Event/Customer/High_Convertors_Scoring.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/CLTV_Final_Trans_Score.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/CLTV_Final_Trans_Score.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Churn_Trans_Score.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Churn_Trans_Score.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Customer/Clustering_H2O_Scoring.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Customer/Clustering_H2O_Scoring.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Customer/High_Convertors_Scoring.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Customer/High_Convertors_Scoring.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Training/Event/CLTV_Final_Event.R" afterPath="$PROJECT_DIR$/R_Scripts/Training/Event/CLTV_Final_Event.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Training/Event/Churn_Event.R" afterPath="$PROJECT_DIR$/R_Scripts/Training/Event/Churn_Event.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Training/Event/Customer/Clustering_H2O.R" afterPath="$PROJECT_DIR$/R_Scripts/Training/Event/Customer/Clustering_H2O.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Training/Event/Customer/High_Convertors_Primary.R" afterPath="$PROJECT_DIR$/R_Scripts/Training/Event/Customer/High_Convertors_Primary.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Training/Event/Customer/High_Convertors_Secondary.R" afterPath="$PROJECT_DIR$/R_Scripts/Training/Event/Customer/High_Convertors_Secondary.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Training/Trans/CLTV_Final_Trans.R" afterPath="$PROJECT_DIR$/R_Scripts/Training/Trans/CLTV_Final_Trans.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Training/Trans/Churn_Trans.R" afterPath="$PROJECT_DIR$/R_Scripts/Training/Trans/Churn_Trans.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/Clustering_H2O.R" afterPath="$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/Clustering_H2O.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/High_Convertors_Primary.R" afterPath="$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/High_Convertors_Primary.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/High_Convertors_Secondary.R" afterPath="$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/High_Convertors_Secondary.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/utils.R" afterPath="$PROJECT_DIR$/R_Scripts/utils.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/yml.R" afterPath="$PROJECT_DIR$/R_Scripts/yml.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/custom_library/MailChimp.py" afterPath="$PROJECT_DIR$/custom_library/MailChimp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/packages.R" afterPath="$PROJECT_DIR$/R_Scripts/packages.R" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/redirect_output.R" afterPath="$PROJECT_DIR$/R_Scripts/redirect_output.R" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_mailchimp/views.py" afterPath="$PROJECT_DIR$/build_mailchimp/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/custom_library/RScript.py" afterPath="$PROJECT_DIR$/custom_library/RScript.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/custom_library/__init__.py" afterPath="$PROJECT_DIR$/custom_library/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/views.py" afterPath="$PROJECT_DIR$/dashboard/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_management/RScript.py" afterPath="$PROJECT_DIR$/database_management/RScript.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_management/tasks.py" afterPath="$PROJECT_DIR$/database_management/tasks.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_management/urls.py" afterPath="$PROJECT_DIR$/database_management/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_management/views.py" afterPath="$PROJECT_DIR$/database_management/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapper/migrations/0002_auto_20161216_0827.py" afterPath="$PROJECT_DIR$/mapper/migrations/0002_auto_20161216_0827.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapper/models.py" afterPath="$PROJECT_DIR$/mapper/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapper/views.py" afterPath="$PROJECT_DIR$/mapper/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/admin.py" afterPath="$PROJECT_DIR$/slack_bot/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/apps.py" afterPath="$PROJECT_DIR$/slack_bot/apps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/models.py" afterPath="$PROJECT_DIR$/slack_bot/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/tests.py" afterPath="$PROJECT_DIR$/slack_bot/tests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/urls.py" afterPath="$PROJECT_DIR$/slack_bot/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/views.py" afterPath="$PROJECT_DIR$/slack_bot/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/custom/style.css" afterPath="$PROJECT_DIR$/static/assets/custom/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/Universal_function_master.py" afterPath="$PROJECT_DIR$/team/Universal_function_master.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/Universal_function_personal.py" afterPath="$PROJECT_DIR$/team/Universal_function_personal.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/admin.py" afterPath="$PROJECT_DIR$/team/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/filter_amit.py" afterPath="$PROJECT_DIR$/team/filter_amit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/function_input.py" afterPath="$PROJECT_DIR$/team/function_input.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/function_two_table.py" afterPath="$PROJECT_DIR$/team/function_two_table.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/models.py" afterPath="$PROJECT_DIR$/team/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/regular_part.py" afterPath="$PROJECT_DIR$/team/regular_part.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/urls.py" afterPath="$PROJECT_DIR$/team/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/views.py" afterPath="$PROJECT_DIR$/team/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/connect_client_db/form.html" afterPath="$PROJECT_DIR$/templates/connect_client_db/form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard/base.html" afterPath="$PROJECT_DIR$/templates/dashboard/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard/dashboard-table.html" afterPath="$PROJECT_DIR$/templates/dashboard/dashboard-table.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard/dashboard.html" afterPath="$PROJECT_DIR$/templates/dashboard/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/database_management/transfer-database.html" afterPath="$PROJECT_DIR$/templates/database_management/transfer-database.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/database_management/transfer-failed.html" afterPath="$PROJECT_DIR$/templates/database_management/transfer-failed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login/index.html" afterPath="$PROJECT_DIR$/templates/login/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/column-mapping.html" afterPath="$PROJECT_DIR$/templates/mapper/column-mapping.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/mapping-review.html" afterPath="$PROJECT_DIR$/templates/mapper/mapping-review.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/table-mapping.html" afterPath="$PROJECT_DIR$/templates/mapper/table-mapping.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ScriptTest.py" afterPath="$PROJECT_DIR$/test/ScriptTest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tuple_client/settings.py" afterPath="$PROJECT_DIR$/tuple_client/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tuple_client/urls.py" afterPath="$PROJECT_DIR$/tuple_client/urls.py" />
     </list>
     <ignored path="tuple_client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,69 +127,176 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/tuple_client$RScript__1_.coverage" NAME="RScript (1) Coverage Results" MODIFIED="1481910641692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
+    <SUITE FILE_PATH="coverage/tuple_client$LaunchInstance.coverage" NAME="LaunchInstance Coverage Results" MODIFIED="1482475188810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/tuple_common/create_server" />
+    <SUITE FILE_PATH="coverage/tuple_client$AddSubdomainInParentZone.coverage" NAME="AddSubdomainInParentZone Coverage Results" MODIFIED="1482488033343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/tuple_common/create_server" />
+    <SUITE FILE_PATH="coverage/tuple_client$AddSubdomainInHostedZone.coverage" NAME="AddSubdomainInHostedZone Coverage Results" MODIFIED="1482488680658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/tuple_common/create_server" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="LocalDatabase" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="LocalDatabase" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="tuple_client" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="tasks.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database_management/tasks.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/chatbot/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-556">
-              <caret line="130" column="42" selection-start-line="130" selection-start-column="42" selection-end-line="130" selection-end-column="42" />
+            <state relative-caret-position="195">
+              <caret line="13" column="84" lean-forward="false" selection-start-line="13" selection-start-column="84" selection-end-line="13" selection-end-column="84" />
               <folding>
-                <element signature="e#2146#2616#0" expanded="false" />
-                <element signature="e#7574#9440#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BuildQuery.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/custom_library/BuildQuery.py">
+      <file leaf-file-name="overrides.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/assets/custom/overrides.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            <state relative-caret-position="45">
+              <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Churn_Trans_Score.R" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/R_Scripts/Scoring/Trans/Churn_Trans_Score.R">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/dashboard/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="315">
+              <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+              <folding>
+                <marker date="1482918109304" expanded="false" signature="4097:4113" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CLTV_Final_Trans_Score.R" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/R_Scripts/Scoring/Trans/CLTV_Final_Trans_Score.R">
+      <file leaf-file-name="slack_master.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/slack_function/slack_master.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="81" />
-              <folding />
+            <state relative-caret-position="534">
+              <caret line="49" column="18" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#214#0" expanded="true" />
+                <marker date="1482917748415" expanded="true" signature="890:947" ph="SELECT * FRO... team_master_table" />
+                <marker date="1482917748415" expanded="true" signature="1223:1267" ph="SELECT * FRO... team_master_table" />
+                <marker date="1482917748415" expanded="true" signature="1373:1421" ph="SELECT * FRO... team_master_table" />
+                <marker date="1482917748415" expanded="true" signature="1536:1592" ph="SELECT * FRO... team_master_table" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database_management/views.py">
+      <file leaf-file-name="dashboard-table.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/dashboard/dashboard-table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1870">
-              <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="162" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="420">
+              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+              <folding>
+                <element signature="n#div#2;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/dashboard/dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="25" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chatbot.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/assets/chatbot/js/chatbot.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>user_profile_obj</find>
+      <find>mapping_review</find>
+      <find>is_factor</find>
+      <find>css</find>
+      <find>user</find>
+      <find>ava</find>
+      <find>tab1.profile</find>
+      <find>tab1.id</find>
+      <find>color</find>
+      <find>e.style</find>
+      <find>image</find>
+      <find>table_mapping</find>
+      <find>get_table_name_model_pair</find>
+      <find>get_our_table_name()</find>
+      <find>action_</find>
+      <find>Factor</find>
+      <find>attr(id</find>
+      <find>attr(id)</find>
+      <find>l</find>
+      <find>blank=True</find>
+      <find>N/A</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>server</replace>
+      <replace>tab1.cluster</replace>
+      <replace>tab1.cust_id</replace>
+      <replace>document.getElementById(id).style</replace>
+      <replace>attr('id')</replace>
+      <replace>max_length=200, blank=True</replace>
+      <replace>NA</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,57 +304,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/connect_client_db/form.html" />
-        <option value="$PROJECT_DIR$/templates/login/index.html" />
+        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Churn_Trans_Score.R" />
+        <option value="dbtable:/4ed8e0da/448c47a2-7cfc-49da-9b20-7df471bdb72f/postgres_db.public.team_master_table" />
+        <option value="dbtable:/4ed8e0da/69a40096-3889-4b84-93de-74afd4993a8d/postgres_db.public.team_master_table" />
+        <option value="&lt;1ea04151-53d9-4d9d-bf79-a05238d80825&gt;/tuple_common/templates/user_profile/profile.html" />
+        <option value="&lt;1ea04151-53d9-4d9d-bf79-a05238d80825&gt;/tuple_common/create_server/tasks.py" />
+        <option value="&lt;1ea04151-53d9-4d9d-bf79-a05238d80825&gt;/tuple_common/create_server/AddSubdomainInHostedZone.py" />
+        <option value="&lt;e69dc430-bd08-4d15-a8df-adabfefdd32c&gt;/tuple_client/templates/mapper/table-mapping.html" />
+        <option value="&lt;1ea04151-53d9-4d9d-bf79-a05238d80825&gt;/tuple_common/user_profile/views.py" />
+        <option value="&lt;1ea04151-53d9-4d9d-bf79-a05238d80825&gt;/tuple_common/tuple_common/settings.py" />
+        <option value="&lt;1ea04151-53d9-4d9d-bf79-a05238d80825&gt;/tuple_common/tuple_common/urls.py" />
+        <option value="&lt;1ea04151-53d9-4d9d-bf79-a05238d80825&gt;/tuple_common/tuple_common/custom_views.py" />
+        <option value="$PROJECT_DIR$/templates/mapper/mapping-review.html" />
+        <option value="$PROJECT_DIR$/templates/database_management/transfer-database.html" />
+        <option value="$PROJECT_DIR$/templates/database_management/transfer-failed.html" />
         <option value="$PROJECT_DIR$/templates/user_profile/base.html" />
-        <option value="$PROJECT_DIR$/team/function_for_slack.py" />
-        <option value="$PROJECT_DIR$/team/function_input.py" />
-        <option value="$PROJECT_DIR$/team/admin.py" />
-        <option value="$PROJECT_DIR$/team/models.py" />
-        <option value="$PROJECT_DIR$/tuple_client/views.py" />
-        <option value="$PROJECT_DIR$/../Envs/envOne/lib/python2.7/site-packages/banana_py/templatetags/banana_tags.py" />
-        <option value="$PROJECT_DIR$/../Envs/envOne/lib/python2.7/site-packages/banana_py/urls.py" />
-        <option value="$PROJECT_DIR$/tuple_client/urls.py" />
-        <option value="$PROJECT_DIR$/r_process/views.py" />
-        <option value="$PROJECT_DIR$/database_management/views.py" />
-        <option value="$PROJECT_DIR$/R_Scripts/MappingBuffer.yml" />
-        <option value="$PROJECT_DIR$/R_Scripts/PACKAGE_TO_INSTALL.txt" />
+        <option value="$PROJECT_DIR$/templates/chat_bot/index.html" />
+        <option value="$PROJECT_DIR$/static/assets/chatbot/css/chatbot.css" />
+        <option value="dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.team_master_table" />
+        <option value="$PROJECT_DIR$/static/assets/jquery/jquery-3.1.0.min.js" />
+        <option value="$PROJECT_DIR$/templates/dashboard/dashboard-temp.html" />
+        <option value="$PROJECT_DIR$/static/assets/circle-progress/app.js" />
+        <option value="$PROJECT_DIR$/templates/login/index.html" />
+        <option value="$PROJECT_DIR$/static/assets/chatbot/js/index.js" />
+        <option value="$PROJECT_DIR$/static/assets/dashboard/styles.css" />
+        <option value="$PROJECT_DIR$/static/assets/dashboard/app.js" />
+        <option value="$PROJECT_DIR$/static/assets/circle-progress/style.css" />
+        <option value="$PROJECT_DIR$/static/assets/chatbot/js/chatbot-function.js" />
+        <option value="$PROJECT_DIR$/mapper/models.py" />
+        <option value="$PROJECT_DIR$/mapper/views.py" />
+        <option value="$PROJECT_DIR$/static/assets/custom/style.css" />
+        <option value="$PROJECT_DIR$/templates/connect_client_db/form.html" />
         <option value="$PROJECT_DIR$/templates/mapper/table-mapping.html" />
         <option value="$PROJECT_DIR$/templates/mapper/column-mapping.html" />
-        <option value="$PROJECT_DIR$/custom_library/CreateQuery.py" />
-        <option value="$PROJECT_DIR$/templates/mapper/mapping-review.html" />
-        <option value="$PROJECT_DIR$/database_management/_tasks.py" />
+        <option value="$PROJECT_DIR$/build_mailchimp/views.py" />
+        <option value="$PROJECT_DIR$/team/models.py" />
         <option value="$PROJECT_DIR$/tuple_client/settings.py" />
-        <option value="$PROJECT_DIR$/custom_library/CombineR.py" />
+        <option value="$PROJECT_DIR$/slack_function/break_in_input_in_slack.py" />
+        <option value="$PROJECT_DIR$/team/function_input.py" />
+        <option value="$PROJECT_DIR$/slack_bot/startbot.py" />
+        <option value="$PROJECT_DIR$/slack_function/function_amit_slack.py" />
+        <option value="$PROJECT_DIR$/team/function_two_table.py" />
+        <option value="$PROJECT_DIR$/tuple_client/urls.py" />
+        <option value="$PROJECT_DIR$/slack_bot/urls.py" />
+        <option value="$PROJECT_DIR$/templates/dashboard/dashboard-table.html" />
         <option value="$PROJECT_DIR$/dashboard/views.py" />
+        <option value="$PROJECT_DIR$/static/assets/chatbot/js/chatbot.js" />
+        <option value="$PROJECT_DIR$/slack_function/slack_master.py" />
         <option value="$PROJECT_DIR$/templates/dashboard/dashboard.html" />
+        <option value="$PROJECT_DIR$/templates/chatbot/index.html" />
+        <option value="$PROJECT_DIR$/static/assets/custom/overrides.css" />
         <option value="$PROJECT_DIR$/templates/dashboard/base.html" />
-        <option value="$PROJECT_DIR$/TableBuffer.buffer" />
-        <option value="$PROJECT_DIR$/R_Scripts/yml.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/utils.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Connection.R" />
-        <option value="$PROJECT_DIR$/database_management/tasks.py" />
-        <option value="$PROJECT_DIR$/R_Scripts/Training/Event/CLTV_Final_Event.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Training/Event/Churn_Event.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/packages.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Training/Event/Customer/High_Convertors_Secondary.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Training/Event/Customer/High_Convertors_Primary.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Training/Event/Customer/Clustering_H2O.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Training/Trans/CLTV_Final_Trans.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Training/Trans/Churn_Trans.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/High_Convertors_Secondary.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/High_Convertors_Primary.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/Clustering_H2O.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Event/CLTV_Final_Event_Score.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Event/Churn_Event_Score.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Event/Customer/High_Convertors_Scoring.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Event/Customer/Clustering_H2O_Scoring.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Trans/CLTV_Final_Trans_Score.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Customer/High_Convertors_Scoring.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Customer/Clustering_H2O_Scoring.R" />
-        <option value="$PROJECT_DIR$/custom_library/MailChimp.py" />
-        <option value="$PROJECT_DIR$/custom_library/BuildQuery.py" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Churn_Trans_Score.R" />
       </list>
     </option>
   </component>
@@ -177,9 +365,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="30" />
+    <option name="y" value="34" />
     <option name="width" value="1366" />
-    <option name="height" value="738" />
+    <option name="height" value="734" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -196,16 +384,6 @@
         </selected-state>
       </profile-state>
     </entry>
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -229,6 +407,10 @@
               <option name="myItemId" value="tuple_client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -239,33 +421,150 @@
               <option name="myItemId" value="tuple_client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chatbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="custom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tuple_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tuple_common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/mapper/mapping-review.html" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="CommandLine" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.quicklists" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
+    <property name="settings.editor.splitter.proportion" value="0.26223093" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/templates/mapper/mapping-review.html" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/assets/images" />
+      <recent name="$PROJECT_DIR$/static/assets/jquery" />
+      <recent name="$PROJECT_DIR$/static/assets" />
       <recent name="$PROJECT_DIR$/rowstextio" />
       <recent name="$PROJECT_DIR$/mapper" />
-      <recent name="$PROJECT_DIR$/database_management" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/assets/images" />
       <recent name="$PROJECT_DIR$/tuple_client" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/connect_client_db" />
       <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/templates/website" />
     </key>
   </component>
   <component name="RunManager" selected="Python.CombineR">
@@ -359,6 +658,74 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuple_client" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuple_client" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tuple_client" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -390,17 +757,20 @@
       <module name="tuple_client" />
       <method />
     </configuration>
-    <configuration default="true" type="ccruntests" factoryName="Run Study Tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
       <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuple_client" />
-      <option name="studyTest" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -547,27 +917,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1366" height="738" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="34" width="1366" height="734" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23603871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24848485" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21060605" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5060606" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26666668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.4939394" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.4939394" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13628319" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.88739496" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273906" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2949757" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,398 +959,489 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="53" />
+      <option name="time" value="58" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/r_process/urls.py">
+    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.churn_engagement">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="ctid" enabled="false" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/custom/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tuple_client/views.py">
+    <entry file="file://$PROJECT_DIR$/static/assets/circle-progress/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        <state relative-caret-position="8385">
+          <caret line="559" column="3" lean-forward="false" selection-start-line="559" selection-start-column="3" selection-end-line="559" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Envs/envOne/lib/python2.7/site-packages/django_celery_results/models.py">
+    <entry file="file://$PROJECT_DIR$/static/assets/dashboard/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/MappingBuffer.yml">
+    <entry file="file://$PROJECT_DIR$/static/assets/images/login.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/chatbot/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="26" selection-end-column="27" />
+        <state relative-caret-position="1160">
+          <caret line="111" column="4" lean-forward="true" selection-start-line="111" selection-start-column="4" selection-end-line="122" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/PACKAGE_TO_INSTALL.txt">
+    <entry file="file://$PROJECT_DIR$/static/assets/dashboard/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="405">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="27" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mapper/column-mapping.html">
+    <entry file="file://$PROJECT_DIR$/static/assets/chatbot/js/chatbot-function.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="107" column="53" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
+        <state relative-caret-position="120">
+          <caret line="36" column="28" lean-forward="false" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mapper/table-mapping.html">
+    <entry file="file://$PROJECT_DIR$/static/assets/circle-progress/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="138" column="10" selection-start-line="138" selection-start-column="10" selection-end-line="139" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/custom_library/ConnectDatabase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/custom_library/QueryCreator.py" />
-    <entry file="file://$PROJECT_DIR$/templates/database_management/transfer-database.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mapper/mapping-review.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database_management/_tasks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tuple_client/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1670">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.Rhistory">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/custom_library/CombineR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="90" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TableBuffer.buffer">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47345">
-          <caret line="5480" column="63" selection-start-line="5480" selection-start-column="63" selection-end-line="5480" selection-end-column="63" />
-          <folding />
+        <state relative-caret-position="300">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mapper/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="409" column="50" selection-start-line="409" selection-start-column="50" selection-end-line="409" selection-end-column="50" />
+        <state relative-caret-position="178">
+          <caret line="49" column="24" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/README.txt">
+    <entry file="file://$PROJECT_DIR$/mapper/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+        <state relative-caret-position="837">
+          <caret line="99" column="56" lean-forward="true" selection-start-line="99" selection-start-column="56" selection-end-line="99" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard/dashboard-table.html">
+    <entry file="file://$PROJECT_DIR$/templates/mapper/mapping-review.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-863">
+          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="27" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/RScript.R">
+    <entry file="file://$PROJECT_DIR$/static/assets/custom/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1575">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/connect_client_db/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mapper/column-mapping.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="172" column="28" lean-forward="false" selection-start-line="172" selection-start-column="28" selection-end-line="172" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+            <marker date="1482904153424" expanded="false" signature="7907:7917" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mapper/table-mapping.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="117" column="82" lean-forward="false" selection-start-line="117" selection-start-column="82" selection-end-line="117" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connect_client_db/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4ed8e0da/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.slack_bot_team_amit">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4ed8e0da/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.django_migrations">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tuple_client/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2244">
+          <caret line="198" column="56" lean-forward="false" selection-start-line="198" selection-start-column="56" selection-end-line="198" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_bot/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build_mailchimp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="33" column="60" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+          <folding>
+            <element signature="e#954#1011#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/function_input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="284" column="29" lean-forward="false" selection-start-line="284" selection-start-column="29" selection-end-line="284" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4ed8e0da/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.team_personal">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="ctid" enabled="false" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/function_two_table.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_function/function_amit_slack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_function/break_in_input_in_slack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_function/function_for_slack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_function/slack_input_check_and_go.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_bot/startbot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="49" column="86" lean-forward="false" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+            <element signature="e#502#515#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/from_view_to_output.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_bot/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tuple_client/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/connect_client_db/connected.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/connect_client_db/failed.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/database_management/transfer-failed.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="24" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="76" column="30" lean-forward="false" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_management/RScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/R_Scripts/Connection.R">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/yml.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/utils.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/R_Scripts/packages.R">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Training/Event/Churn_Event.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Training/Event/Customer/High_Convertors_Primary.R">
+    <entry file="file://$PROJECT_DIR$/R_Scripts/RScript.R">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Training/Event/Customer/High_Convertors_Secondary.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Training/Event/Customer/Clustering_H2O.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Training/Trans/Churn_Trans.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Training/Event/CLTV_Final_Event.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Training/Trans/CLTV_Final_Trans.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/High_Convertors_Secondary.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/High_Convertors_Primary.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Training/Trans/Customer/Clustering_H2O.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Scoring/Event/CLTV_Final_Event_Score.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Scoring/Event/Churn_Event_Score.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Scoring/Event/Customer/High_Convertors_Scoring.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Scoring/Event/Customer/Clustering_H2O_Scoring.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Scoring/Trans/Customer/High_Convertors_Scoring.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Scoring/Trans/Customer/Clustering_H2O_Scoring.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MailChimp/MailChimp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="47" selection-start-line="0" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/custom_library/MailChimp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1224">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/custom_library/Mapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database_management/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="162" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/custom_library/BuildQuery.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Scoring/Trans/CLTV_Final_Trans_Score.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/R_Scripts/Scoring/Trans/Churn_Trans_Score.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database_management/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-556">
-          <caret line="130" column="42" selection-start-line="130" selection-start-column="42" selection-end-line="130" selection-end-column="42" />
+        <state relative-caret-position="-1694">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2146#2616#0" expanded="false" />
-            <element signature="e#7574#9440#0" expanded="false" />
+            <element signature="e#0#30#0" expanded="true" />
+            <marker date="1482369540000" expanded="true" signature="3681:3698" ph="insert into table... " />
+            <marker date="1482369540000" expanded="true" signature="13664:13721" ph="ALTER TABLE &quot;Churn_Engagement&quot;... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/R_Scripts/RScriptTest.R">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="38" lean-forward="true" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/chatbot/js/chatbot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="25" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_function/slack_master.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="49" column="18" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#214#0" expanded="true" />
+            <marker date="1482917748415" expanded="true" signature="890:947" ph="SELECT * FRO... team_master_table" />
+            <marker date="1482917748415" expanded="true" signature="1223:1267" ph="SELECT * FRO... team_master_table" />
+            <marker date="1482917748415" expanded="true" signature="1373:1421" ph="SELECT * FRO... team_master_table" />
+            <marker date="1482917748415" expanded="true" signature="1536:1592" ph="SELECT * FRO... team_master_table" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard/dashboard-table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#2;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/custom/overrides.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/chatbot/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="84" lean-forward="false" selection-start-line="13" selection-start-column="84" selection-end-line="13" selection-end-column="84" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+          <folding>
+            <marker date="1482918109304" expanded="false" signature="4097:4113" ph="..." />
           </folding>
         </state>
       </provider>

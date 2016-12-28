@@ -1,4 +1,3 @@
-import django_filters
 class Filter(object):
     """
     A base filter object from which all other

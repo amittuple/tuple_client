@@ -13,6 +13,7 @@ class Mailchimp:
             self.usern = request.session['mailchimp_details']['login']['login_name']
             self.auth = HTTPBasicAuth(self.usern, self.api_key)
             self.list_url = self.base_url + 'lists'
+            self.campaign_url = self.base_url + 'campaigns'
         except Exception as e:
             print e
             print 'Bad Mailchimp Configuration'
@@ -96,9 +97,30 @@ class Mailchimp:
             for each_member in list:
                 print each_member
                 self.add_member_to_list(list_id, email=each_member, status='subscribed')
+            return res
         except Exception as e:
             print e
 
+    def create_campaign_from_list(self, list_id,sender_name, sender_email):
+        self.campaign_url
+        self.auth
+        try:
+            data = {
+                "recipients": {
+                    "list_id": list_id
+                },
+                "type":"regular",
+                "settings": {
+                    "subject_line": "Subject",
+                    "reply_to": str(sender_email),
+                    "from_name": str(sender_name)
+                }
+            }
+            get_campaign_list_response = requests.post(self.campaign_url, data=json.dumps(data), auth=self.auth)
+            return get_campaign_list_response
+        except Exception as e:
+            print e
+            return None
 
 # # MailChimp Collection
 # def build_mailchimp(request):

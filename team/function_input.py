@@ -1,14 +1,15 @@
+from django.http import HttpResponse
 from team.models import master_table
 from team.models import Personal
-from .regular_part import *
+import re
 
-list_match = ['cltv', 'churn', 'value', 'profile', 'high_converter','name','gender','age','country']
+list_match = ['cltv', 'churn', 'value', 'profile', 'high_converter','name','gender','age','country','send']
 
 # first check the element have more than gt(>),lt(<),eq(=) then convert this to gt,lt,eq ....
 def check_more_than_one_sign_like_greaterthan_lessthan_equal(check_more):
     check=[]
-    print check_more
-    print "check more"
+    # print check_more
+    # print "check more"
 
     for x in check_more:
         if x=='eqeq' or x=='eqeqeq' :
@@ -51,7 +52,8 @@ def convert_unicode_to_string(l):
 def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
     cltv_max = 0
     churn_max = 0
-
+    # print 'adnan'
+    # print high_low_medium
     length_churn=[]
     length_churn_1=[]
     length_churn_2=[]
@@ -241,21 +243,20 @@ def conevert_string_in_integer(a):
 
 # here check the first element is /filter or not....
 def input_comes_from_user(input_comes_fromuser):
-    print "slash check"
+    # print "slash check"
     if input_comes_fromuser[0] == '/filter':
-        print 'first element is slash_filter'
-        return input_comes_fromuser[1:]
+        # print 'first element is slash_filter'
+        return HttpResponse("choose filter: like profile or predictiond")
 
     else:
-        print "first element have not slash_filter"
+        # print "first element have not slash_filter"
 
         return input_comes_fromuser
-
 # here intersect more than one inout like cltv < 1000 churn < 12 comapre here and find the intersection....
 def Standard(stunt):
-    print 'stunt[0]'
-    print stunt
+
     a1=stunt[0]
+    print a1
     try:
         for a in stunt[1:]:
 
@@ -265,7 +266,6 @@ def Standard(stunt):
             pass
 
     b=list(a1)
-
     return b
 
 # find the id of master_table table for intersection....
@@ -282,23 +282,39 @@ def get_cu_id(input):
     list_2=[]
     for x in input:
 
-        list_2.append(x.id)
-    print list_2
-    print 'list2'
+        list_2.append(x.cust_id)
+
     return list_2
 
 # convert the list from id and cu_id to email_id....
 def email_id_list(input):
-
     list_email=[]
 
     for x in input:
+        try:
+            person1 = Personal.objects.get(cu_id=x)
 
-        person = Personal.objects.get(cu_id=x)
-        print person.email_id
-        print 'person'
-
-        list_email.append(person.email_id)
-    print 'email_list_personal'
-    print list_email
+            list_email.append(person1.email_id)
+        except:
+            pass
     return list_email
+
+def remove_extra_space(space_input):
+    list=[]
+    for x in space_input:
+        if x=='':
+            print "found space"
+        else:
+            list.append(x)
+    return list
+
+remove_element=['is','to','good','best','the','for','some','top']
+def remove_unwanted_keyword(input_keyword):
+    remove_keyword=[]
+    for x in input_keyword:
+        if x in remove_element:
+            print 'remove extra keyword'
+        else:
+            remove_keyword.append(x)
+    return remove_keyword
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="ClientMachineDatabase" uuid="c069f73d-b97a-4ad6-bfac-854c9bb6a7f3">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://54.254.180.50:5432/postgres_db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="TupleCommonDatabase" uuid="6ec29210-e8f2-4624-a55a-c3a3d745aff3">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://tuple-common-server-db.c3yxphqgag3s.ap-southeast-1.rds.amazonaws.com:5432/tuple_common_db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="LocalDatabase" uuid="fd6783f9-bb4f-4e87-bbb7-199fddbcb97f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres_db</jdbc-url>
+    </data-source>
+  </component>
+</project>

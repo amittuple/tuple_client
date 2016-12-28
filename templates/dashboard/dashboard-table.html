@@ -1,20 +1,135 @@
-	{% for tab1 in table %}
-	<div class="col-sm-2">
-		{{tab1.cltv}}
+{% load static %}
+
+{% if warning == 'EMPTY' %}
+
+<div class="alert alert-dismissible alert-info">
+	<!--<button type="button" class="close" data-dismiss="alert">×</button>-->
+	<strong>No Results Found.</strong>
+</div>
+
+
+{% elif warning == True %}
+
+<div class="alert alert-dismissible alert-info">
+	<!--<button type="button" class="close" data-dismiss="alert">×</button>-->
+	<strong>Error ! </strong> Some
+	<a href="#" class="alert-link">Error</a> Occurred. Please Contact Administrator.
+</div>
+
+{% else %}
+
+
+<script src="{% static 'assets/dashboard/app.js' %}"></script>
+{% for tab1 in table %}
+<div class="panel-group" id="{{tab1.cust_id}}-accordion">
+	<div class="panel-heading" >
+		<div class="panel-title">
+			<a style="color: black;" data-toggle="collapse" data-parent="#{{tab1.cust_id}}-accordion" href="#{{tab1.cust_id}}">
+				<div class="row">
+					<div id="{{tab1.cltv}}" class="col-sm-2 text-center cltv-color">
+						{{tab1.cltv}}
+					</div>
+					<div id="{{tab1.churn}}"class = "col-sm-2 text-center churn-color">
+						{{tab1.churn}}
+					</div>
+					<div id="{{tab1.high_convertor}}" class="col-sm-2 text-center high-convertor-color">
+						{{tab1.high_convertor}}
+					</div>
+					<div id="{{ tab1.value }}"  class="col-sm-2 text-center">
+						{{ tab1.value }}
+					</div>
+					<div id="{{tab1.cluster}}" class="col-sm-2 text-center">
+						{{tab1.cluster}}
+					</div>
+					<div id="{{tab1.engagement}}"class="col-sm-2 text-center">
+						{{tab1.engagement}}
+					</div>
+				</div>
+			</a>
+		</div>
 	</div>
-	<div class="col-sm-2">
-		{{tab1.churn}}
+	<div id="{{tab1.cust_id}}" class="panel-body panel-collapse collapse">
+		<div class="row">
+			<div class="col col-lg-2">
+				<img src="{% static 'assets/images/login.png' %}" class="img-responsive img-rounded">
+			</div>
+			<div class="col col-lg-2">
+				<div class="row">
+					<h4>Lifetime Value</h4>
+					<span>84000</span>
+				</div>
+				<div class="row">
+					<h4>CLV Differentiator</h4>
+					<span>84000</span>
+				</div>
+			</div>
+			<div class="col col-lg-8">
+				<div class="row circles">
+					<div class="col col-lg-4">
+						<div id="value-{{tab1.cust_id}}" class="circle text-center"></div>
+						<div class="circle-label text-center">
+							<strong class="value">66%</strong>
+							<span>Value</span>
+						</div>
+					</div>
+					<div class="col col-lg-4">
+						<div id="loyalty-{{tab1.cust_id}}" class="circle text-center"></div>
+						<div class="circle-label text-center">
+							<strong class="loyalty">35%</strong>
+							<span>Loyalty</span>
+						</div>
+					</div>
+					<div class="col col-lg-4">
+						<div id="engagement-{{tab1.cust_id}}" class="circle text-center"></div>
+						<div class="circle-label text-center">
+							<strong class="engagement">56%</strong>
+							<span>Engagement</span>
+						</div>
+					</div>
+				</div>
+				<script>
+                    $(document).ready(function() {
+                        var t= 66;
+                        $('.row').click(function() {
+                            $('#value-{{tab1.cust_id}}').circleProgress({
+                                value: t/100,
+                                fill:  {color: 'red'}
+                            }).on('circle-animation-progress', function(event, progress) {
+                                $(this).find('strong').html(parseInt(66 * progress) + '<i>%</i>');
+                            });
+                        });
+                    });
+                    $(document).ready(function() {
+                        var a = 35;
+                        $('.row').click(function() {
+                            $('#loyalty-{{tab1.cust_id}}').circleProgress({
+                                value: a/100,
+                                fill:{color: 'lightgreen'}
+                            }).on('circle-animation-progress', function(event, progress) {
+                                $(this).find('strong').html(parseInt(35 * progress) + '<i>%</i>');
+                            });
+                        });
+                    });
+
+                    $(document).ready(function() {
+                        var b = 85;
+                        $('.row').click(function() {
+                            $('#engagement-{{tab1.cust_id}}').circleProgress({
+                                value: b/100,
+                                fill: {color:'rgb(255,215,0)', gradientAngle: Math.PI / 4}
+                            }).on('circle-animation-progress', function(event, progress, stepValue) {
+                                $(this).find('strong').html(parseInt(85 * progress));
+                            });
+                        });
+                    });
+				</script>
+			</div>
+		</div>
 	</div>
-	<div class="col-sm-2">
-		{{tab1.high_converter}}
-	</div>
-	<div class="col-sm-2">
-		{{tab1.value}}
-	</div>
-	<div class="col-sm-2">
-		{{tab1.profile}}
-	</div>
-	<div class="col-sm-2">
-		{{tab1.engagement}}
-	</div>
-	{% endfor %}
+</div>
+
+
+{% endfor %}
+
+
+{% endif %}

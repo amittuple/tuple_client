@@ -1,0 +1,34 @@
+.circles{
+    border-bottom: dashed;
+    color: #C7C7C7;
+}
+
+.circles .circle-label {
+    position: relative;
+    top: -78px;
+}
+
+.circles .circle-label strong {
+    color: #ff8000;
+    display: block;
+    font-size: 20px;
+}
+
+.circles .circle-label span {
+    display: block;
+    font-size: 12px;
+    font-weight: 100;
+    color: #3c3c3c;
+}
+
+.circles .circle-label strong.value {
+    color: #ff8000;
+}
+
+.circles .circle-label strong.loyalty {
+    color: #ff8000;
+}
+
+.circles .circle-label strong.engagement {
+    color: #ff8000;
+}

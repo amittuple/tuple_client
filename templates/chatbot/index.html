@@ -1,0 +1,57 @@
+{% load static %}
+
+<div class="container">
+    <div class="row chat-window col-xs-6 col-md-4" id="chat_window_1" style="position: fixed; right: 0px; bottom: 0px;">
+        <div class="col-xs-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading top-bar">
+                    <div class="col-md-8 col-xs-8">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span>&nbsp;Tuple MIA</h3>
+                    </div>
+                    <div class="col-md-4 col-xs-4" style="text-align: right; float: right;">
+                        <div class="row">
+                            <!--<a href="#"><span>Slackbot Integration</span></a>-->
+                            <a href="#"><span id="minim_chat_window" class="glyph   icon glyphicon-minus icon_minim"></span></a>
+                            <!--<a id="close" href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body msg_container_base">
+                    <!-- Placeholder For Messages -->
+                </div>
+                <div class="panel-footer">
+
+                    <div class="form-group">
+                        <div class="input input-group">
+                            <input id="btn-input" type="text" id="addon1" class="form-control input-md chat_input" placeholder="Write Something Here...">
+                            <span class="input-group-btn">
+                            <a class="btn btn-primary" type="button" id="btn-chat">Send</a>
+                            {% load banana_tags %}
+                            <div style="display: none">
+                                <form action="/am/mailchimp/" method="GET">
+                                    <input type="submit" type="hidden" value="Go to mailchimp" id="demo1" />
+                                </form>
+                                <form action="/dashboard/" method="GET">
+                                    <input type="submit" type="hidden" id="demo2"/>
+                                </form>
+                            </div>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<a id="chat_button" data-id="chat_window_1" style="position: fixed; bottom: 5px; right: 5px; display: none;" href="#" class="btn btn-primary btn-fab">MIA</a>
+
+
+<script>
+    $(document).on('click', '#chat_button', function(e) {
+        console.log(e);
+        $("#chat_window_1").show();
+        $('#chat_button').hide();
+    });
+</script>

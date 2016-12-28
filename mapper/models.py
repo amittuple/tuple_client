@@ -9,6 +9,8 @@ class CustomerMasterMappingModel(models.Model):
     
     client_table_name = models.CharField(max_length=50, null = True, blank=True)
     cust_id = models.CharField(max_length=50, null = True, blank=True)
+    create_date = models.CharField(max_length=50, null = True, blank=True)
+    birthday = models.CharField(max_length=50, null = True, blank=True)
 
     def __unicode__(self):
         return 'Customer Master Mapping Table'
@@ -32,6 +34,8 @@ class TransactionMasterMappingModel(models.Model):
     product_id = models.CharField(max_length=50, null = True, blank=True)
     timestamp = models.CharField(max_length=50, null = True, blank=True)
     revenue = models.CharField(max_length=50, null = True, blank=True)
+    quantity = models.CharField(max_length=50, null = True, blank=True)
+    renewal = models.CharField(max_length=50, null = True, blank=True)
 
 class TransactionMasterMappingMetaModel(models.Model):
     mapping = models.ForeignKey(TransactionMasterMappingModel)

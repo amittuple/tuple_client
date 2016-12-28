@@ -4,7 +4,7 @@
 {% load static %}
 
 
-<div class="col-lg-10 col-lg-offset-1" style="margin-top: 10px;">
+<div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">
     <ol class="breadcrumb">
         <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
         <li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
@@ -13,16 +13,22 @@
     </ol>
 </div>
 
-<div class="col-lg-4 col-lg-offset-4" style="margin-top: 50px;">
+<div class="col-lg-6 col-lg-offset-3" style="margin-top: 50px;">
 
     <div class="row" style="margin-top: 50px;">
-        <div>
+        <div class="col col-lg-12 well well-lg">
             <h1 class="text-center">Database Transfer Failed</h1>
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>ERROR !</strong> Some Error Occured
+                <a href="#" class="alert-link">ERROR_INFO</a>, Please Try Again Or Contact <a href="#" class="alert-link">Admininstrator</a>.
+            </div>
+            <div class="text-center">
+                <a class="btn btn-md btn-primary" href="{% url 'mapping_review' %}">Go Back</a>
+                <a class="btn btn-md btn-danger">Report Administrator</a>
+            </div>
         </div>
-        <div class="row text-center">
-            <a class="btn btn-md btn-primary" href="{% url 'mapping_review' %}">Go Back</a>
-            <a class="btn btn-md btn-danger">Report Administrator</a>
-        </div>
+
     </div>
 
 </div>

@@ -41,7 +41,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'login',
-    'user_profile',
     'mapper',
     'connect_client_db',
     'database_management',
@@ -174,8 +173,8 @@ CELERY_RESULT_BACKEND = 'django-db'
 
 MAILCHIMP_CLIENT_ID = '301551589835'
 MAILCHIMP_CLIENT_SECRET = '07a893f0cbb38592b226e95a4f490ad0'
-MAILCHIMP_REDIRECT_URI = 'http://127.0.0.1:8000/bananas/ripe/'
-MAILCHIMP_COMPLETE_URI = 'http://127.0.0.1:8000/build-mailchimp/complete/'
+MAILCHIMP_REDIRECT_URI = 'http://54.254.180.50:8080/bananas/ripe/'
+MAILCHIMP_COMPLETE_URI = 'http://54.254.180.50:8080/build-mailchimp/complete/'
 
 
 # CELERY DATABASE
@@ -193,3 +192,8 @@ Connection_PATH = os.path.join(SCRIPT_PATH, 'Connection.R')
 TRAINING_PATH = os.path.join(SCRIPT_PATH, 'Training')
 SCORING_PATH = os.path.join(SCRIPT_PATH, 'Scoring')
 
+
+#  slack key and secrate key
+# for slack
+SLACK_CLIENT_ID = "14632386742.108610646339"
+SLACK_CLIENT_SECRET = "c946d916b4ac9578993e0a1f77858b3a"

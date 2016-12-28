@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, HttpResponse
 from connect_client_db import models
 import psycopg2
-from ConnectDatabase import connect_to_client_database
+from ConnectDatabase import connect_to_client_database, connect_to_this_database
 from django.core.urlresolvers import reverse
-from .tasks import database_migration, r_process, script_test
+from .tasks import database_migration, r_process, script_test, test_combine
 from django.contrib.auth.models import User
 import yaml
 import json
@@ -185,3 +185,8 @@ def prepare_all_model(table_map):
 def test_script(request):
     script_test.delay()
     return HttpResponse('Done')
+
+
+def test_table_merge(request):
+    temp = test_combine.delay()
+    return HttpResponse(temp)

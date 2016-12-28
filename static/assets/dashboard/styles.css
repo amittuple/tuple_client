@@ -1,0 +1,44 @@
+/* Canvas */
+.canvas {
+    position: absolute;
+    top: 20%;
+    z-index: 15;
+}
+canvas {
+    display: block;
+}
+canvas#canvas-html, canvas#canvas-html-bottom {
+    position: absolute;
+    top: 20%;
+    z-index: 50;
+}
+
+
+
+.circle{
+    margin: 0px 0px 0px 32px;
+}
+
+.circles{
+    padding-right: 308px;
+    margin:0px 0px 0px 37px;
+    padding-top: 25px;
+    padding-bottom: 0px;
+    border-bottom: dashed;
+    color: #C7C7C7;
+}
+
+.circle canvas {
+    vertical-align: top;
+}
+
+
+.circle strong {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+}

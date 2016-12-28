@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="ClientMachineDatabase" uuid="c069f73d-b97a-4ad6-bfac-854c9bb6a7f3">
+      <database-info product="PostgreSQL" version="9.5.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres_user</user-name>
+      <resolve-scope>postgres_db:postgres_user,public</resolve-scope>
+    </data-source>
+    <data-source name="TupleCommonDatabase" uuid="6ec29210-e8f2-4624-a55a-c3a3d745aff3">
+      <database-info product="PostgreSQL" version="9.6.1" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>tuplecommon1</user-name>
+      <resolve-scope>tuple_common_db:public,tuplecommon1</resolve-scope>
+    </data-source>
+    <data-source name="LocalDatabase" uuid="fd6783f9-bb4f-4e87-bbb7-199fddbcb97f">
+      <database-info product="PostgreSQL" version="9.5.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres_user</user-name>
+      <resolve-scope>postgres_db:postgres_user,public</resolve-scope>
+    </data-source>
+  </component>
+</project>

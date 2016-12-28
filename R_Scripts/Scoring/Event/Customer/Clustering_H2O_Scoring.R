@@ -191,4 +191,4 @@ h2o.shutdown(prompt = FALSE)
 
 dbWriteTable(conn, "profile_clusters", profile_clusters, overwrite = TRUE, row.names = FALSE)
 
-rm(list = c(fb', 'profile_clusters', 'users.cluster.fac.score', 'users.cluster.num.score', 'users.cluster.score.fin'))
+rm(list = c('fb', 'profile_clusters', 'users.cluster.fac.score', 'users.cluster.num.score', 'users.cluster.score.fin'))

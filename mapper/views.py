@@ -46,40 +46,52 @@ def extract_column_name_list_of_table(cur, tablename):
     return column_name_list
 
 # Returns Client Db Model Names And Their Corresponding Models
+
+def get_our_table_name():
+    return [
+        'TRANSACTION_MASTER',
+        'CUSTOMER_MASTER',
+        'CUSTOMER_SECONDARY',
+        'CUSTOMER_CONTACT',
+        'EVENT_LOG',
+        'EVENT_MASTER',
+        'PRODUCT_MASTER'
+    ]
+
 def get_table_name_model_pair():
     table_name_model_pair = {
-        'CUSTOMER_CONTACT': CustomerContactMappingModel,
+        'TRANSACTION_MASTER': TransactionMasterMappingModel,
         'CUSTOMER_MASTER': CustomerMasterMappingModel,
+        'CUSTOMER_SECONDARY': CustomerSecondaryMappingModel,
+        'CUSTOMER_CONTACT': CustomerContactMappingModel,
         'EVENT_LOG': EventLogMappingModel,
         'EVENT_MASTER': EventMasterMappingModel,
         'PRODUCT_MASTER': ProductMasterMappingModel,
-        'TRANSACTION_MASTER': TransactionMasterMappingModel,
-        'CUSTOMER_SECONDARY': CustomerSecondaryMappingModel,
     }
     return table_name_model_pair
 
 # Returns Client Db Model Names And Their Corresponding Meta Models
 def get_table_name_model_meta_pair():
     return {
-        'CUSTOMER_CONTACT': CustomerContactMappingMetaModel,
+        'TRANSACTION_MASTER': TransactionMasterMappingMetaModel,
         'CUSTOMER_MASTER': CustomerMasterMappingMetaModel,
+        'CUSTOMER_SECONDARY': CustomerSecondaryMappingMetaModel,
+        'CUSTOMER_CONTACT': CustomerContactMappingMetaModel,
         'EVENT_LOG': EventLogMappingMetaModel,
         'EVENT_MASTER': EventMasterMappingMetaModel,
         'PRODUCT_MASTER': ProductMasterMappingMetaModel,
-        'TRANSACTION_MASTER': TransactionMasterMappingMetaModel,
-        'CUSTOMER_SECONDARY': CustomerSecondaryMappingMetaModel
     }
 
 # Returns Dict Of System Table Name With Whether They Are Mandatory
 def is_table_name_mandatory():
     return {
-        'CUSTOMER_CONTACT': False,
+        'TRANSACTION_MASTER': True,
         'CUSTOMER_MASTER': False,
+        'CUSTOMER_SECONDARY': False,
+        'CUSTOMER_CONTACT': False,
         'EVENT_LOG': False,
         'EVENT_MASTER': False,
         'PRODUCT_MASTER': False,
-        'TRANSACTION_MASTER': True,
-        'CUSTOMER_SECONDARY': False,
     }
 
 # Returns Dict Of System Table Name With Which Column Names Are Mandatory
@@ -108,6 +120,7 @@ def is_column_name_mandatory(table_map):
     if to_return.has_key('CUSTOMER_CONTACT'):
         to_return['CUSTOMER_CONTACT']['cust_id'] = True
         to_return['CUSTOMER_CONTACT']['email_id'] = True
+        to_return['CUSTOMER_CONTACT']['phone_number'] = True
 
     if to_return.has_key('CUSTOMER_SECONDARY'):
         to_return['CUSTOMER_SECONDARY']['cust_id'] = True
@@ -234,9 +247,9 @@ def table_mapping(request):
     obj = connect_to_client_database(user)
     if not obj.isConnected():
         return HttpResponse('Client Database Connection Configuration Missing.')
-    list_of_our_tables = []
-    for item in get_table_name_model_pair():
-        list_of_our_tables.append(item)
+    list_of_our_tables = get_our_table_name()
+    # for item in get_table_name_model_pair():
+    #     list_of_our_tables.append(item)
     list_of_tables = extract_table_name(obj.cur)
     obj.cur.close()
     obj.conn.close()

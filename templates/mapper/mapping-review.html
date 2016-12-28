@@ -3,7 +3,7 @@
 {% block content %}
 {% load static %}
 
-<div class="col-lg-10 col-lg-offset-1" style="margin-top: 10px;">
+<div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">
     <ol class="breadcrumb">
         <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
         <li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
@@ -12,29 +12,126 @@
     </ol>
 </div>
 
-<form action="." method="post" class="container">
-    {% csrf_token %}
-    <div class="row">
-        {{ column_map }}
-    </div>
+<form action="." method="post" class="panel-group" id="accordion" role="tablist">
+
     <div class="row" style="margin-top: 15px;">
         {% if mapping_exists %}
-        <div class="col-lg-offset-4 col-lg-4 alert alert-danger">
-            <p>Previous Mapping Found, Forwarding Will Delete Previous Mapping Set</p>
+        <div class="col col-lg-6 col-lg-offset-3">
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Warning !</strong> Previous
+                <a href="#" class="alert-link">Mapping Set</a>, Forwarding Will Delete Previous Mapping Set And Your Previous Model.<br>Proceed With Caution.
+                <br>This Action Will.
+                <br><a href="#" class="alert-link">1: Update Your Mapping Set.</a>
+                <br><a href="#" class="alert-link">2: Retransfer Database.</a>
+                <br><a href="#" class="alert-link">3: Recalculate CLTV & Churn.</a>
+            </div>
+            {% else %}
+            <div class="alert alert-dismissible alert-info">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Info !</strong> No Mapping Found, Following Events Will Take Place When You Will Proceed.
+                <br><a href="#" class="alert-link">1: Creation Of Mapping Set</a>
+                <br><a href="#" class="alert-link">2: Transfer Of Database</a>
+                <br><a href="#" class="alert-link">3: CLTV & Churn Calculations</a>
+            </div>
+            {% endif %}
         </div>
-        {% else %}
-        <div class="col-lg-offset-4 col-lg-4 alert alert-warning">
-            <p>No Mapping Found, This Will Create A New Mapping Set.</p>
+    </div>
+
+
+    {% csrf_token %}
+    <div class="row">
+        <div class="col col-lg-10 col-lg-offset-1">
+            {% for our_table_name, client_column_list in column_map.iteritems %}
+            <div class="panel panel-default" style="max-height: 450px;">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ our_table_name }}" aria-expanded="true" aria-controls="{{ our_table_name }}">
+                            {{ our_table_name }}
+                        </a>
+                    </h4>
+                </div>
+                <div id="{{our_table_name}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{our_table_name}}">
+                    <div class="panel-body">
+                        <div class="row">
+                            {% for client_table_name, our_column_list in client_column_list.iteritems %}
+                            {% if client_table_name != 'is_factor' %}
+                            <div class="col col-lg-4" style="max-height: 400px; overflow-y: scroll;">
+                                <div class="list-group">
+                                    <h3>{{our_table_name}}</h3>
+                                    {% for our_column_name, client_column_dict in our_column_list.iteritems %}
+                                    <div class="list-group-item border">
+                                        <div class="row-content">
+                                            <span class="list-group-item-heading">{{our_column_name}}</span>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="col col-lg-4" style="max-height: 400px; overflow-y: scroll;">
+                                <div class="list-group">
+                                    <h3>{{client_table_name}}</h3>
+                                    {% for our_column_name, client_column_dict in our_column_list.iteritems %}
+                                    <div class="list-group-item border">
+                                        <div class="row-content">
+                                            <span class="list-group-item-heading">{{our_column_name}}</span>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% else %}
+                            <div class="col col-lg-4" style="max-height: 400px; overflow-y: scroll;">
+                                <div class="list-group">
+                                    <h3>List Of Columns As Factor</h3>
+                                    {% for client_column_name, boolean_value in our_column_list.iteritems %}
+                                    <div class="list-group-item border">
+                                        <div class="row-content">
+                                            <span class="list-group-item-heading">{{client_column_name}}</span>
+                                            <div draggable="false" style="float: right;" class="checkbox">
+                                                <label>
+                                                    {% if boolean_value %}
+                                                    <input checked type="checkbox" disabled>
+                                                    {% else %}
+                                                    <input type="checkbox" disabled>
+                                                    {% endif %}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        {% endif %}
     </div>
-    <div class="col-lg-offset-4 col-lg-4">
-        <a class="btn btn-sm btn-default" href="{% url 'table_mapping' %}">Go Back To Change Mapping</a>
-        <button id="transferButton" data-loading-text="Transferring..." class="btn btn-sm btn-primary" type="submit">Start Database Transfer</button>
+
+    <div style="position: fixed; right: -10px; top: 45%;">
+        <button class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;" type="submit">Start</button>
     </div>
-    <div class="col-lg-offset-4 col-lg-4">
-        <a class="btn btn-sm btn-danger" href="{% url 'test_script' %}">Test Script</a>
+    <div style="position: fixed; left: -10px; top: 45%;">
+        <a href="{% url 'table_mapping' %}" class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;">Go Back</a>
     </div>
+
+
+    <!--<div class="col-lg-offset-4 col-lg-4">-->
+        <!--<a class="btn btn-sm btn-default" href="{% url 'table_mapping' %}">Go Back To Change Mapping</a>-->
+        <!--<button id="transferButton" data-loading-text="Transferring..." class="btn btn-sm btn-primary" type="submit">Start Database Transfer</button>-->
+    <!--</div>-->
+    <!--<div class="col-lg-offset-4 col-lg-4">-->
+        <!--<a class="btn btn-sm btn-danger" href="{% url 'test_script' %}">Test Script</a>-->
+    <!--</div>-->
+    <!--<div class="col-lg-offset-4 col-lg-4">-->
+        <!--<a class="btn btn-sm btn-danger" href="{% url 'test_table_merge' %}">Test Table Merge</a>-->
+    <!--</div>-->
+
 </form>
 
 <script>

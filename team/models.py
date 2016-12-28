@@ -1,28 +1,34 @@
 from django.db import models
-from django.core.validators import MaxValueValidator
-class Personal(models.Model):
-    cu_id=models.AutoField(primary_key=True)
-    name = models.CharField(max_length=50)
-    gender = models.CharField(max_length=1)
-    age=models.IntegerField()
-    country=models.CharField(max_length=20)
-    email_id=models.CharField(max_length=100)
 
+
+class Personal(models.Model):
+    cu_id = models.IntegerField(primary_key=True)
+    gender = models.CharField(max_length=200, blank=True, null=True)
+    age = models.IntegerField(max_length=200, blank=True, null=True)
+    country = models.TextField(max_length=200, blank=True, null=True)
+    name = models.CharField(max_length=200, blank=True, null=True)
+    email_id = models.CharField(max_length=200, blank=True, null=True)
     def __unicode__(self):
-        return self.name
+        return str(self.cu_id)
+    class Meta:
+        managed = False
+        db_table = 'team_personal'
+
+
+
 
 class master_table(models.Model):
-    cltv=models.IntegerField(null=True,blank=True)
-    value=models.CharField(max_length=100,null=True,blank=True)
-    engagement=models.CharField(max_length=100,null=True,blank=True)
-    profile=models.CharField(max_length=100,null=True,blank=True)
-    high_converter=models.PositiveIntegerField(validators=[MaxValueValidator(100),],null=True,blank=True)
-    churn=models.PositiveIntegerField(validators=[MaxValueValidator(100),],null=True,blank=True)
-    personal=models.ForeignKey(Personal,on_delete=models.CASCADE)
-
-
-
-
+    cust_id = models.IntegerField(primary_key=True)
+    churn = models.FloatField(max_length=200, blank=True, null=True)
+    engagement = models.TextField(max_length=200, blank=True, null=True)
+    cltv = models.FloatField(max_length=200, blank=True, null=True)
+    value = models.TextField(max_length=200, blank=True, null=True)
+    high_convertor = models.TextField(max_length=200, blank=True, null=True)
+    cluster = models.IntegerField(max_length=200, blank=True, null=True)
 
     def __unicode__(self):
-        return self.personal.name
+        return str(self.cust_id)
+
+    class Meta:
+        managed = False
+        db_table = 'team_master_table'

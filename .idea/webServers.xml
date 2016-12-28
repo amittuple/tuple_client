@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e69dc430-bd08-4d15-a8df-adabfefdd32c" name="ClientMachineImage" url="http://54.254.180.50">
+        <fileTransfer host="54.254.180.50" port="22" privateKey="$USER_HOME$/tuple-client-server-key.pem" rootFolder="/home/ubuntu" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="1ea04151-53d9-4d9d-bf79-a05238d80825" name="TupleCommonServer" url="http://54.169.236.93">
+        <fileTransfer host="54.169.236.93" port="22" privateKey="$USER_HOME$/tuple-common-server-key.pem" rootFolder="/home/ubuntu/" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
