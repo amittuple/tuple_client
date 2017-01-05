@@ -25,23 +25,38 @@
 	<div class="panel-heading" >
 		<div class="panel-title">
 			<a style="color: black;" data-toggle="collapse" data-parent="#{{tab1.cust_id}}-accordion" href="#{{tab1.cust_id}}">
-				<div class="row">
-					<div id="{{tab1.cltv}}" class="col-sm-2 text-center cltv-color">
-						{{tab1.cltv}}
+				<div class="row seven-cols">
+					<div id="{{tab1.name}}" class="col-lg-1 text-center">
+						{{tab1.name}}
 					</div>
-					<div id="{{tab1.churn}}"class = "col-sm-2 text-center churn-color">
-						{{tab1.churn}}
+					<div id="{{tab1.cltv}}" class="col-lg-1 text-center cltv-color">
+						{% if tab1.cltv is None %}
+						None
+						{% else %}
+						{{tab1.cltv|floatformat:2}}
+						{% endif %}
 					</div>
-					<div id="{{tab1.high_convertor}}" class="col-sm-2 text-center high-convertor-color">
+					<div id="{{tab1.churn}}"class = "col-lg-1 text-center churn-color">
+						{% if tab1.churn is None %}
+						None
+						{% else %}
+						{{tab1.churn|floatformat:2}}
+						{% endif %}
+					</div>
+					<div id="{{tab1.high_convertor}}" class="col-lg-1 text-center high-convertor-color">
 						{{tab1.high_convertor}}
 					</div>
-					<div id="{{ tab1.value }}"  class="col-sm-2 text-center">
+					<div id="{{ tab1.value }}"  class="col-lg-1 text-center">
 						{{ tab1.value }}
 					</div>
-					<div id="{{tab1.cluster}}" class="col-sm-2 text-center">
-						{{tab1.cluster}}
+					<div id="{{tab1.cluster}}" class="col-lg-1 text-center">
+						{% if tab1.cluster is None %}
+						None
+						{% else %}
+						{{tab1.cluster|floatformat:2}}
+						{% endif %}
 					</div>
-					<div id="{{tab1.engagement}}"class="col-sm-2 text-center">
+					<div id="{{tab1.engagement}}"class="col-lg-1 text-center">
 						{{tab1.engagement}}
 					</div>
 				</div>
@@ -56,11 +71,15 @@
 			<div class="col col-lg-2">
 				<div class="row">
 					<h4>Lifetime Value</h4>
-					<span>84000</span>
+					{% if tab1.cltv is None %}
+					<span>N/A</span>
+					{% else %}
+					<span>{{tab1.cltv|floatformat:2}}</span>
+					{% endif %}
 				</div>
 				<div class="row">
 					<h4>CLV Differentiator</h4>
-					<span>84000</span>
+					<span>0</span>
 				</div>
 			</div>
 			<div class="col col-lg-8">
@@ -68,57 +87,88 @@
 					<div class="col col-lg-4">
 						<div id="value-{{tab1.cust_id}}" class="circle text-center"></div>
 						<div class="circle-label text-center">
-							<strong class="value">66%</strong>
+							{% if tab1.percent_cltv is None %}
+							<strong class="value"></strong>
+							<span>N/A</span>
+							{% else %}
+							<strong class="value">{{tab1.percent_cltv|floatformat:2}}%</strong>
 							<span>Value</span>
+							{% endif %}
 						</div>
 					</div>
 					<div class="col col-lg-4">
 						<div id="loyalty-{{tab1.cust_id}}" class="circle text-center"></div>
 						<div class="circle-label text-center">
-							<strong class="loyalty">35%</strong>
+							{% if tab1.percent_churn is None or tab1.percent_cltv is None %}
+							<strong class="value"></strong>
+							<span>N/A</span>
+							{% else %}
+							<strong class="loyalty">{% widthratio tab1.percent_cltv|add:tab1.percent_churn 2 1 %} %</strong>
 							<span>Loyalty</span>
+							{% endif %}
 						</div>
 					</div>
 					<div class="col col-lg-4">
 						<div id="engagement-{{tab1.cust_id}}" class="circle text-center"></div>
 						<div class="circle-label text-center">
-							<strong class="engagement">56%</strong>
+							{% if tab1.percent_churn is None %}
+							<strong class="value"></strong>
+							<span>N/A</span>
+							{% else %}
+							<strong class="value">{{tab1.percent_churn|floatformat:2}}%</strong>
 							<span>Engagement</span>
+							{% endif %}
 						</div>
 					</div>
 				</div>
 				<script>
+                    $(document).on('click', '.panel-title > a > .row', function(event) {
+                        $('.panel-title > a > .row').css('background-color', 'white');
+                        $(this).css('background-color', 'lightgray');
+                    });
                     $(document).ready(function() {
-                        var t= 66;
+                        {% if tab1.percent_cltv is None %}
+						var t = 0;
+						{% else %}
+                        var t= {{tab1.percent_cltv}};
+						{% endif %}
                         $('.row').click(function() {
                             $('#value-{{tab1.cust_id}}').circleProgress({
                                 value: t/100,
                                 fill:  {color: 'red'}
                             }).on('circle-animation-progress', function(event, progress) {
-                                $(this).find('strong').html(parseInt(66 * progress) + '<i>%</i>');
+                                $(this).find('strong').html(parseInt(t * progress) + '<i>%</i>');
                             });
                         });
                     });
                     $(document).ready(function() {
-                        var a = 35;
+						{% if tab1.percent_cltv is None or tab1.percent_churn is None %}
+						var a = 0;
+						{% else %}
+                        var a = {% widthratio tab1.percent_cltv|add:tab1.percent_churn 2 1 %};
+						{% endif %}
                         $('.row').click(function() {
                             $('#loyalty-{{tab1.cust_id}}').circleProgress({
                                 value: a/100,
                                 fill:{color: 'lightgreen'}
                             }).on('circle-animation-progress', function(event, progress) {
-                                $(this).find('strong').html(parseInt(35 * progress) + '<i>%</i>');
+                                $(this).find('strong').html(parseInt(a * progress) + '<i>%</i>');
                             });
                         });
                     });
 
                     $(document).ready(function() {
-                        var b = 85;
+                        {% if tab1.percent_churn is None %}
+						var b = 0;
+						{% else %}
+                        var b = {{tab1.percent_churn}};
+						{% endif %}
                         $('.row').click(function() {
                             $('#engagement-{{tab1.cust_id}}').circleProgress({
                                 value: b/100,
                                 fill: {color:'rgb(255,215,0)', gradientAngle: Math.PI / 4}
                             }).on('circle-animation-progress', function(event, progress, stepValue) {
-                                $(this).find('strong').html(parseInt(85 * progress));
+                                $(this).find('strong').html(parseInt(b * progress));
                             });
                         });
                     });

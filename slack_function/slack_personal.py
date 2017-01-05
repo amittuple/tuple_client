@@ -5,7 +5,7 @@ from .function_amit_slack import convert_str_to_int,changetoint,convert_unicode_
 from team.models import Personal
 
 def slack_function_Personal(change_high_x):
-    print "enter into personal slack funciton"
+    print "enter into personal slack funciton personal table"
 
     change_high = convert_high_low_medium_value(change_high_x)
 

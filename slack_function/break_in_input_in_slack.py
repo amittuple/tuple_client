@@ -6,16 +6,8 @@ from team.models import master_table
 def A12_slack(input_come):
 
     list_match = []
-    personal_list = []
-    for column_name in Personal._meta.get_fields():
-        if column_name.name != 'id' and column_name.name != 'cu_id':
-            personal_list.append(column_name.name)
-            list_match.append(column_name.name)
-
-    master_list = []
     for column_name in master_table._meta.get_fields():
         if column_name.name != 'id' and column_name.name != 'cust_id':
-            master_list.append(column_name.name)
             list_match.append(column_name.name)
 
     print list_match

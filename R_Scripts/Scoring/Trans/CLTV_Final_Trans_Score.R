@@ -148,10 +148,35 @@ cltv.value$cust = as.integer(cltv.value$cust)
 
 print(head(cltv.value))
 
-cltv.value = cltv.value[,c(1,3,4), with = FALSE]
+##-----------------CLTV_Percentile-----------------------##
+
+##mutate is often useful to add new columns that are functions of existing columns
+##It creates only one new column while all the other columns continue to point at their original locations
+##library(dplyr)
+
+cltv.value=cltv.value %>%
+  mutate(percent_cltv=percent_rank(cltv)*100)
+
+cltv.value = as.data.table(cltv.value)
+
+#-----------------summary of cltv load into data_frame---------------------##
+summary_cltv <- summary(cltv.value$cltv)
+cltv_summary <- matrix(summary_cltv, nrow = 1, ncol = 6)
+colnames(cltv_summary) <- c('Min.', '1st Qu.', 'Median', 'Mean', '3rd Qu.', 'Max.')
+rownames(cltv_summary)<- c("summary")
+cltv_summary = as.data.table(cltv_summary)
+dbWriteTable(conn, "cltv_summary", cltv_summary, overwrite = TRUE, row.names = FALSE)
+
+#---------------------------------------------------------------------------
+
+print(head(cltv.value))
+print(head(cltv.summ))
+
+cltv.value = cltv.value[,c(1,3,4,5), with = FALSE]
 
 dbWriteTable(conn, "cltv_value", cltv.value, overwrite = TRUE, row.names = FALSE)
 
 print(head(cltv.value))
 
-rm(list = c('cal.cbs1', 'cust.rev', 'cust.val', 'event', 'lookup_numeric', 'm.x.value', 'nowd.cal', 'nowd.cal.spend', 'nowd.hold', 'pred.cltv', 'trans.load', 'value.quant', 'x.vector'))
+rm(list = c('cal.cbs1','cust.rev', 'cust.val', 'event', 'lookup_numeric', 'm.x.value', 'nowd.cal', 'nowd.cal.spend', 'cltv.val', 'nowd.hold', 'pred.cltv', 'trans.load', 'value.quant', 'x.vector'))
+

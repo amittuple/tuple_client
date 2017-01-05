@@ -1,0 +1,140 @@
+.navbar-default {
+    background-color: white;
+}
+body {
+    padding-top: 40px;
+    font: 15px/1.3 Arial, sans-serif;
+    text-align: center;
+    color: #0f0f0f;
+    background-color: white;
+    background-size:cover;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    background-color:  #545454;
+    color: white;
+}
+
+.navbar-default .navbar-brand {
+    color: #000000;
+}
+.logo img{
+    width: 100px;
+    height: 60px;
+    margin-top: -15px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.navbar-nav > li > a {
+    margin: 5px 20px 0px 20px;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    max-height: 50px;
+}
+.navbar-nav > li {
+    float: left;
+    /*background-color: #FFFBE5;*/
+}
+.navbar-default .navbar-nav > li > a {
+    color: #777;
+
+}
+.navbar-text {
+    /*float: left;*/
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.glyphicon {
+    /*position: relative;*/
+    top: 1px;
+    /*display: inline-block;*/
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    /*line-height: 1;*/
+    /*-webkit-font-smoothing: antialiased;*/
+    /*-moz-osx-font-smoothing: grayscale;*/
+}
+.glyphicon-dashboard{
+    padding: 5px;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;
+    margin-right: 10px;
+    padding: 0px;
+}
+.navbar .navbar-text {
+    color: inherit;
+    margin-bottom: 10px;
+}
+.breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+.btn, .input-group-btn .btn{
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    padding: 8px 40px;
+    margin: 10px -3px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    will-change: box-shadow, transform;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.thumbnail {
+    display: block;
+    /*padding: 4px;*/
+    /*margin-bottom: 20px;*/
+    line-height: 1.42857143;
+    border-radius: 30px;
+    transition: border .2s ease-in-out;
+    /*margin-top: 70px;*/
+    /*width: 75%;*/
+    height: 400px;
+
+    position: relative;
+    width: 400px;
+    margin: 100px auto;
+    background: rgba(130,130,130,.3);
+    padding: 20px 22px;
+    border: 1px solid;
+    border-top-color: rgba(255,255,255,.4);
+    border-left-color: rgba(255,255,255,.4);
+    border-bottom-color: rgba(60,60,60,.4);
+    border-right-color: rgba(60,60,60,.4);
+}
+.btn.btn-raised.btn-danger{
+    background-color: #ffa05d;
+    color: rgba(255,255,255, 0.84);
+}
+label {
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: black;
+    font-weight: 400;
+}
+.btn.btn-raised.btn-danger:focus:not(.btn-link){
+    background-color: #fc9e5c!important;
+}
+.navbar, .navbar.navbar-default {
+    background-color: rgba(255, 160, 93,0);
+    /*color: #ffa05d;*/
+    color: #ff8000;
+}
+.c-icon {
+    text-shadow:2px 2px 4px #fff; display: block;
+}

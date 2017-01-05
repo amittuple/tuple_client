@@ -3,16 +3,16 @@
 <div class="container">
     <div class="row chat-window col-xs-6 col-md-4" id="chat_window_1" style="position: fixed; right: 0px; bottom: 0px;">
         <div class="col-xs-12 col-md-12">
-            <div class="panel panel-default">
+            <div class="panel panel-success">
                 <div class="panel-heading top-bar">
                     <div class="col-md-8 col-xs-8">
-                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span>&nbsp;Tuple MIA</h3>
+                        <h3 class="panel-title">
+                            <strong>MIA</strong>
+                        </h3>
                     </div>
                     <div class="col-md-4 col-xs-4" style="text-align: right; float: right;">
                         <div class="row">
-                            <!--<a href="#"><span>Slackbot Integration</span></a>-->
-                            <a href="#"><span id="minim_chat_window" class="glyph   icon glyphicon-minus icon_minim"></span></a>
-                            <!--<a id="close" href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>-->
+                            <a href="#" style="color: white;"><span id="minim_chat_window" class="glyphicon glyphicon-menu-down icon_minim"></span></a>
                         </div>
                     </div>
                 </div>
@@ -20,12 +20,32 @@
                     <!-- Placeholder For Messages -->
                 </div>
                 <div class="panel-footer">
-
+                    <div id='loading_id' style="float:right; display: none;">
+                        <p class="text-success">
+                            MIA is typing...
+                        </p>
+                    </div>
                     <div class="form-group">
                         <div class="input input-group">
-                            <input id="btn-input" type="text" id="addon1" class="form-control input-md chat_input" placeholder="Write Something Here...">
+                            <input list="tags" id="btn-input" type="text" class="form-control input-md chat_input" placeholder="Write Something Here...">
+                            <datalist id="tags">
+                                <option value="cltv">
+                                <option value="profile">
+                                <option value="predictions">
+                                <option value="churn">
+                                <option value="name">
+                                <option value="country">
+                                <option value="gender">
+                                <option value="age">
+                                <option value="value">
+                                <option value="/send">
+                                <option value="send">
+                                <option value="/filter">
+                                <option value="/help">
+                                <option value="personal">
+                            </datalist>
                             <span class="input-group-btn">
-                            <a class="btn btn-primary" type="button" id="btn-chat">Send</a>
+                            <!--<a class="btn btn-primary" type="button" id="btn-chat">Send</a>-->
                             {% load banana_tags %}
                             <div style="display: none">
                                 <form action="/am/mailchimp/" method="GET">
@@ -45,7 +65,9 @@
 </div>
 
 
-<a id="chat_button" data-id="chat_window_1" style="position: fixed; bottom: 5px; right: 5px; display: none;" href="#" class="btn btn-primary btn-fab">MIA</a>
+<a id="chat_button" data-id="chat_window_1" style="position: fixed; bottom: 15px; right: 15px; display: none;" href="#" class="btn btn-success btn-fab">
+    <i class="glyphicon glyphicon-send" style="padding-top: 13px; padding-right: 5px;"></i>
+</a>
 
 
 <script>
@@ -53,5 +75,8 @@
         console.log(e);
         $("#chat_window_1").show();
         $('#chat_button').hide();
+        $(".msg_container_base").animate({
+            scrollTop: $('.msg_container_base').get(0).scrollHeight
+        }, 1000);
     });
 </script>

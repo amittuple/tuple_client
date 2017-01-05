@@ -1,3 +1,5 @@
+load("/home/ubuntu/.RData")
+source("/home/ubuntu/tuple_client/R_Scripts/redirect_output.R")
 source("/home/ubuntu/tuple_client/R_Scripts/packages.R")
 source("/home/ubuntu/tuple_client/R_Scripts/utils.R")
 source("/home/ubuntu/tuple_client/R_Scripts/yml.R")
@@ -9,5 +11,6 @@ source("/home/ubuntu/tuple_client/R_Scripts/Training/Event/Customer/High_Convert
 source("/home/ubuntu/tuple_client/R_Scripts/Training/Event/Customer/Clustering_H2O.R")
 source("/home/ubuntu/tuple_client/R_Scripts/Scoring/Event/CLTV_Final_Event_Score.R")
 source("/home/ubuntu/tuple_client/R_Scripts/Scoring/Event/Churn_Event_Score.R")
-source("/home/ubuntu/tuple_client/R_Scripts/Scoring/Event/Customer/High_Convertors_Scoring.R")
 source("/home/ubuntu/tuple_client/R_Scripts/Scoring/Event/Customer/Clustering_H2O_Scoring.R")
+source("/home/ubuntu/tuple_client/R_Scripts/Scoring/Event/Customer/High_Convertors_Scoring.R")
+save.image("/home/ubuntu/.RData")

@@ -3,21 +3,10 @@
 {% block content %}
 {% load static %}
 
-
-<div class="col-lg-10 col-lg-offset-1" style="margin-top: 50px;">
-    <ol class="breadcrumb">
-        <li class="active">Connect Database</li>
-        <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
-    </ol>
-</div>
 <div class="col-lg-6 col-lg-offset-3">
-    <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="{% url 'connect_client_db' %}">Database Connection Form</a></li>
-        <li role="presentation"><a href="#">Database Connection Result</a></li>
-    </ul>
     <div class="row" style="margin-top: 50px;">
         <div class="col col-lg-12">
-            <div class="well">
+            <div class="well well-custom-default">
                 <form action="." method="post">
                     {% csrf_token %}
                     <div class="form-group">
@@ -44,11 +33,11 @@
                         <label for="port">Port</label>
                         <input id="port" type="text" class="form-control" name="port"  value="{{form.port.value}}">
                     </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> License Agreement
-                        </label>
-                    </div>
+                    <!--<div class="checkbox">-->
+                        <!--<label>-->
+                            <!--<input type="checkbox"> License Agreement-->
+                        <!--</label>-->
+                    <!--</div>-->
                     <button type="submit" class="btn btn-primary btn-block">Submit</button>
                 </form>
             </div>

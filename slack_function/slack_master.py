@@ -7,7 +7,7 @@ from team.models import master_table
 
 def slack_master_input(inputLack_A13):
 
-    print "enter into master slack funciton"
+    print "enter into master slack funciton master table"
 
     input_slack_4=convert_high_low_medium_value(inputLack_A13)
 

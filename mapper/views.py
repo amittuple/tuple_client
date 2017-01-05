@@ -370,6 +370,10 @@ def mapping_review(request):
         if not mapping_clear:
             print 'Not Able To Clear Mapping Model. Please Contact Admin'
             return
+        r_tables = clear_r_tables()
+        if not r_tables:
+            print 'Error Deleting R Tables'
+            return
         table_name_model_pair = get_table_name_model_pair()
         # table_name_model_meta_pair = get_table_name_model_meta_pair()
         save_mapping_into_model(table_name_model_pair, column_map)
@@ -423,6 +427,18 @@ def clear_client_database(user):
                 table = connect_to_this_database()
                 table.cur.execute('DROP TABLE IF EXISTS '+ client_table_name)
                 table.conn.commit()
+        return True
+    except Exception as e:
+        print e
+        return False
+
+def clear_r_tables():
+    try:
+        table_obj = connect_to_this_database()
+        tables = ['churn_engagement', 'high_conv', 'cltv_value', 'predict_period', 'profile_clusters']
+        for table in tables:
+            table_obj.cur.execute('DROP TABLE IF EXISTS '+ str(table))
+            table_obj.conn.commit()
         return True
     except Exception as e:
         print e

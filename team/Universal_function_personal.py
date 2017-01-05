@@ -6,7 +6,7 @@ from .function_input import replace_operator_like_gt_lt_eq_in_standard_format
 from team.models import Personal
 
 def Universal_function_Personal(change_high_x):
-    print "enter into personal funciton"
+    print "enter into personal funciton personal"
     check_for_more_gt_lt_eq = check_more_than_one_sign_like_greaterthan_lessthan_equal(change_high_x)
 
     change_into_lower_case = convert_all_string_to_lower_case(check_for_more_gt_lt_eq)

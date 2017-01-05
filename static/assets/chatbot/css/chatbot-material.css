@@ -1,0 +1,48 @@
+.chat-window .panel .panel-body {
+    min-height: 200px;
+    background-color: white;
+}
+
+.chat-window .panel .panel-footer {
+    height: 100px;
+    background-color: white;
+    border: none;
+}
+
+
+.msg_container_base::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.msg_container > div {
+    padding: 5px;
+}
+
+.msg_container .messages {
+    border-radius: 5px;
+}
+
+.msg_container .messages > p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.msg_container .messages > time {
+    color: white;
+}
+
+
+.msg_container .messages.msg_sent {
+    padding-left: 10px;
+    text-align: left;
+    background-color: #993333;
+}
+
+.msg_container .messages.msg_receive {
+    padding-right: 10px;
+    text-align: right;
+    background-color: #4286f9;
+}

@@ -8,67 +8,119 @@ from .models import Team_amit
 
 
 def handle_command(command_1, channel,slack_client,token,command):
-    if type(command_1)!=type([1,2,3]):
-        # for image
-        print command_1
+    var_check=0
+    var_check_1=0
+    if command=='help':
         slack_client.api_call("chat.postMessage", channel=channel, as_user=True, attachments=[{
-            "title": "click bellow and go to mailchimp",
-            "text": command_1
+            "color": "#581845",
+            "title": "To filter the master view for campaigns",
+            "text": "```Command: @tuplemia filter```",
+            "mrkdwn_in": ["text"]
+
         }])
-        #  for button
-        # slack_client.api_call("chat.postMessage", channel=channel, as_user=True, text= "",attachments= [
-        #
-        # {
-        #
-        #     "fallback": "",
-        #     "callback_id": "wopr_game",
-        #     "color": "#3AA3E3",
-        #     "attachment_type": "default",
-        #     "actions": [
-        #
-        #         {
-        #             "name": "maze",
-        #             "text": "Falken's Maze",
-        #             "type": "button",
-        #             "value": command_1
-        #         }
-        #     ]
-        # }
-        # ]
-        #
-        # )
-    else:
-        from team.models import Personal
-        personal_client=Personal._meta.get_fields()
-        list_table=[]
-        for x in personal_client:
-            list_table.append(x.name)
-        print list_table
-        print 'amit_table'
-        with open('output_amit.csv', "wb") as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow([list_table[4], list_table[2], list_table[3], list_table[5]])
-            writer.writerows(command_1)
+        slack_client.api_call("chat.postMessage", channel=channel, as_user=True, attachments=[{
+            "color": "#581845",
+            "title": "To choose filter - Select Profile or Predictions",
+            "text": "```Example \n TupleMIA - Choose Filter: Profile or Predictions \n User - @tuplemia Profile```",
+            "mrkdwn_in": ["text"]
 
-        with open('output_amit.csv', 'rb') as fin, \
-                open('foutput.txt', 'wb') as fout:
-            reader = csv.DictReader(fin)
-            writer = csv.DictWriter(fout, reader.fieldnames, delimiter='|')
-            writer.writeheader()
-            writer.writerows(reader)
-        import subprocess
-        input_slack_01 = command.strip(" ")
-        input_slack_1 = input_slack_01.split(" ")
-        voice=0
-        for x in input_slack_1:
+        }])
+        slack_client.api_call("chat.postMessage", channel=channel, as_user=True, attachments=[{
+            "color": "#581845",
+            "title": "To choose filter levels - Select appropriate column from data",
+            "text": "```Example \n TupleMIA - Choose Filter Level: Churn or CLTV or High Converter or Value or Engagement or Bio \n User - @tuplemia Churn```",
+            "mrkdwn_in": ["text"]
 
-            if x=='csv' or x=='excel' or x=='sheet':
-                args_amit=['curl', '-F', 'file=@output_amit.csv', '-F', "channels="+ channel, '-F', 'token='+token, 'https://slack.com/api/files.upload']
-                subprocess.call(args_amit)
-                voice=1
-        if voice==0:
-            args_amit=['curl', '-F', 'file=@foutput.txt', '-F', "channels="+ channel, '-F', 'token='+token, 'https://slack.com/api/files.upload']
-            subprocess.call(args_amit)
+        }])
+        slack_client.api_call("chat.postMessage", channel=channel, as_user=True, attachments=[{
+            "color": "#581845",
+            "title": "To apply appropriate filters - Enter required value",
+            "text": "```Example \n TupleMIA - Enter Value like (  churn = high OR churn = low OR churn = medium  OR  churn > 10 < 20 OR churn < 20) \n User - @tuplemia churn = high```",
+            "mrkdwn_in": ["text"]
+
+        }])
+        slack_client.api_call("chat.postMessage", channel=channel, as_user=True, attachments=[{
+            "color": "#581845",
+            "title": "To send the data for campaigns - Choose Platform",
+            "text": "```Example \n TupleMIA - Select Platform: Mailchimp or Facebook or Adwords or Twitter or LinkedIn \n User - @tuplemia MailChimp```",
+            "mrkdwn_in": ["text"]
+
+        }])
+        var_check_1=1
+    if var_check_1==0:
+    # if command=='cltv' or command=='help':
+        if command=="cltv" or command=="send" or command=='churn'or command=="profile" or command=="predictions" or command=='value'or command=='name'or command=='age'or command=='high_converter'or command=='country'or command=='filter'or command=='help':
+            print "test"
+            slack_client.api_call("chat.postMessage", channel=channel, as_user=True, text=command_1)
+            var_check = 1
+        if var_check == 0:
+            if type(command_1)!=type([1,2,3]):
+                # for image
+                print "amit"
+                print command_1
+                slack_client.api_call("chat.postMessage", channel=channel, as_user=True,attachments=[{
+                    "title": "click below and go to mailchimp",
+                    "text": command_1
+                }])
+
+                #  for button
+                # slack_client.api_call("chat.postMessage", channel=channel, as_user=True, text= "",attachments= [
+                #
+                # {
+                #
+                #     "fallback": "",
+                #     "callback_id": "wopr_game",
+                #     "color": "#3AA3E3",
+                #     "attachment_type": "default",
+                #     "actions": [
+                #
+                #         {
+                #             "name": "maze",
+                #             "text": "Falken's Maze",
+                #             "type": "button",
+                #             "value": command_1
+                #         }
+                #     ]
+                # }
+                # ]
+                #
+                # )
+            else:
+                voice_0 = 0
+                if command_1 ==[]:
+                    slack_client.api_call("chat.postMessage", channel=channel, as_user=True, text="no record found")
+                    voice_0=1
+                if voice_0==0:
+
+                    from team.models import Personal
+                    personal_client=Personal._meta.get_fields()
+                    list_table=[]
+                    for x in personal_client:
+                        list_table.append(x.name)
+                    with open('output_amit.csv', "wb") as csvfile:
+                        writer = csv.writer(csvfile)
+                        writer.writerow([list_table[2], list_table[4], list_table[5], list_table[6]])
+                        writer.writerows(command_1)
+
+                    with open('output_amit.csv', 'rb') as fin, \
+                            open('foutput.txt', 'wb') as fout:
+                        reader = csv.DictReader(fin)
+                        writer = csv.DictWriter(fout, reader.fieldnames, delimiter='|')
+                        writer.writeheader()
+                        writer.writerows(reader)
+                    import subprocess
+                    input_slack_01 = command.strip(" ")
+                    input_slack_1 = input_slack_01.split(" ")
+                    voice=0
+                    for x in input_slack_1:
+
+                        if x=='csv' or x=='excel' or x=='sheet':
+                            args_amit=['curl', '-F', 'file=@output_amit.csv', '-F', "channels="+ channel, '-F', 'token='+token, 'https://slack.com/api/files.upload']
+                            subprocess.call(args_amit)
+                            voice=1
+                    if voice==0:
+                        args_amit=['curl', '-F', 'file=@foutput.txt', '-F', "channels="+ channel, '-F', 'token='+token, 'https://slack.com/api/files.upload']
+                        subprocess.call(args_amit)
 
 def parse_slack_output(slack_rtm_output,AT_BOT):
     output_list = slack_rtm_output

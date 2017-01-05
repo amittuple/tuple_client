@@ -3,23 +3,12 @@
 {% block content %}
 {% load static %}
 
-<div class="col-lg-10 col-lg-offset-1" style="margin-top: 50px;">
-    <ol class="breadcrumb">
-        <li class="active">Connect Database</li>
-        <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
-    </ol>
-</div>
-
-<div class="col-lg-4 col-lg-offset-4">
+<div class="col-lg-4 col-lg-offset-4" style="margin-top: 50px;">
     <div class="row">
-        <ul class="nav nav-tabs">
-            <li role="presentation"><a href="{% url 'connect_client_db' %}">Database Connection Form</a></li>
-            <li role="presentation" class="active"><a href="#">Database Connection Result</a></li>
-        </ul>
-    </div>
-    <div class="row" style="margin-top: 50px;">
-        <h1 class="text-center">Successfully Connected</h1>
-        <a class="btn btn-md btn-primary btn-block" href="{% url 'table_mapping' %}">Go To Mapping</a>
+        <div class="well well-custom-default">
+            <h1 class="text-center">Successfully Connected</h1>
+            <a class="btn btn-md btn-success btn-block" href="{% url 'table_mapping' %}">Go To Mapping</a>
+        </div>
     </div>
 </div>
 

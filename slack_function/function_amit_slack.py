@@ -14,13 +14,6 @@ for column_name in master_table._meta.get_fields():
         master_list.append(column_name.name)
         list_match.append(column_name.name)
 
-
-print list_match
-
-# list_match = [personal_list, master_list]
-
-# list_match = [list_table1[1],list_table1[2],list_table1[3],list_table1[4],list_table1[5],list_table1[6],list_table[1],list_table[2],list_table[3],list_table[4],list_table[5]]
-
 def from_master_table_id_to_find_personal_object(input_object):
 
     list_extra_large = []

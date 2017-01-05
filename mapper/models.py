@@ -114,6 +114,8 @@ class CustomerContactMappingModel(models.Model):
     email_id = models.CharField(max_length=50, null = True, blank=True)
     facebook_id = models.CharField(max_length=50, null = True, blank=True)
     phone_number = models.CharField(max_length=50, null = True, blank=True)
+    firstname = models.CharField(max_length=50, null = True, blank=True)
+    lastname = models.CharField(max_length=50, null = True, blank=True)
 
 
 class CustomerContactMappingMetaModel(models.Model):

@@ -183,7 +183,13 @@ cust.fin$cust = as.integer(cust.fin$cust)
 
 print(head(cust.fin))
 
-churn.engage = cust.fin[,c(1,5,6), with = FALSE]
+#-------------------Percentile-------------------------#
+
+cust.fin = cust.fin %>%
+  mutate(percent_churn = percent_rank(cust.fin$pred.tran))
+
+#-------------------------------------------------------
+churn.engage = cust.fin[,c(1,5,6,7)]
 
 print(head(churn.engage))
 
@@ -194,3 +200,4 @@ names(Predict_Period) = 'period'
 dbWriteTable(conn, "predict_period", Predict_Period , overwrite = TRUE, row.names = FALSE)
 
 rm(list = c('cal.cbs', 'cal.cbs.dates', 'cal.cbs1', 'cal.cbt', 'churn.engage', 'clean.elog', 'cust.fin', 'elog', 'elog.cal','engage.quant', 'event', 'p.matrix', 'pred.fin', 'pred.tran', 'trans.load', 'birth.periods', 'end.of.cal.period', 'freq.cbt', 'i', 'j', 'keycols', "last.dates", 'LL', 'p.matrix.row', 'params', 'split.data', 'T.cal', 't.x', 'toInstall', 'toInstallCandidates', 'tot.cbt', 'x', 'Predict_Period'))
+

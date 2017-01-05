@@ -19,11 +19,8 @@ import yaml
 def test_combine():
     table = connect_to_this_database()
     try:
-        query = create_fix_queries()
-        print query
-        table.cur.execute(query)
-        table.conn.commit()
-        return "SUCCESS"
+        result = combine()
+        return result
     except Exception as e:
         print e
         table.conn.rollback()
@@ -209,10 +206,12 @@ def r_execute(task_id):
                     f.writelines('source("' + str(os.path.join(SCRIPT_PATH, 'Scoring/Trans/Customer/High_Convertors_Scoring.R')) + '")\n')
             f.writelines('save.image("/home/ubuntu/.RData")\n')
 
-        command = ['Rscript', os.path.join(script_path, 'RScript.R')]
-        return subprocess.call(command, universal_newlines=True)
+        command = ['Rscript', os.path.join(SCRIPT_PATH, 'RScript.R')]
+        subprocess.call(command, universal_newlines=True)
+        return combine()
     except Exception as e:
         print e
+        print 'here'
         return None
 
 
@@ -261,42 +260,28 @@ def make_yml(file_url):
         return False
 
 
-@shared_task
-def combine_tables_when_r_finishes(task_id):
-    status = TaskResult.objects.get_task(task_id)
-    if status is None:
-        return None
-    print status.status
-    try:
-        if str(status.status) == 'PENDING':
-            time.sleep(3600)
-            combine_tables_when_r_finishes(task_id)
-        elif str(status.status) == 'FAILURE':
-            return None
-        elif str(status.status) == 'SUCCESS':
-            return combine()
-    except Exception as e:
-        print e
-        time.sleep(3600)
-        combine_tables_when_r_finishes(task_id)
+# @shared_task
+# def combine_tables_when_r_finishes(task_id):
+#     status = TaskResult.objects.get_task(task_id)
+#     if status is None:
+#         return None
+#     print status.status
+#     try:
+#         if str(status.status) == 'PENDING':
+#             time.sleep(3600)
+#             combine_tables_when_r_finishes(task_id)
+#         elif str(status.status) == 'FAILURE':
+#             return None
+#         elif str(status.status) == 'SUCCESS':
+#             return combine()
+#     except Exception as e:
+#         print e
+#         time.sleep(3600)
+#         combine_tables_when_r_finishes(task_id)
 
 
 def combine():
     table = connect_to_this_database()
-    table_names = ['"Churn_Engagement"', 'cltv_value', 'high_conv', '"Predict_Period"', 'profile_clusters']
-    try:
-        for name in table_names:
-            table.cur().execute('SELECT * FROM' + name + ' LIMIT 1')
-    except Exception as e:
-        print e
-        if e.message.__contains__('relation'):
-            table.conn.rollback()
-            return 'SCRIPTS_RUN_TABLE_NONE'
-        else:
-            table.conn.rollback()
-            return 'UNHANDLED_EXCEPTION'
-    # This Means That All Tables Exists
-    # now create master_view
     try:
         query = create_fix_queries()
         print query
@@ -309,66 +294,230 @@ def combine():
         return None
 
 
-
 def create_fix_queries():
     try:
-        customer_master_mapping_obj = CustomerMasterMappingModel.objects.all()[0]
+        customer_master_mapping_obj = CustomerMasterMappingModel.objects.all()
+        if len(customer_master_mapping_obj) != 0:
+            customer_master_mapping_obj = CustomerMasterMappingModel.objects.all()[0]
+            if customer_master_mapping_obj.cust_id == '' or customer_master_mapping_obj.cust_id == None:
+                customer_master_mapping_obj = TransactionMasterMappingModel.objects.all()[0]
+            else:
+                customer_master_mapping_obj = CustomerMasterMappingModel.objects.all()[0]
+        else:
+            customer_master_mapping_obj = TransactionMasterMappingModel.objects.all()[0]
+
         customer_master = str(customer_master_mapping_obj.client_table_name)
         customer_master_cust_id = str(customer_master_mapping_obj.cust_id)
 
-        customer_contact_mapping_obj = CustomerContactMappingModel.objects.all()[0]
+        customer_contact_mapping_obj = CustomerContactMappingModel.objects.all()
+        if len(customer_contact_mapping_obj) != 0:
+            customer_contact_mapping_obj = CustomerContactMappingModel.objects.all()[0]
+            if customer_contact_mapping_obj.cust_id == '' or customer_contact_mapping_obj.cust_id == None:
+                customer_contact_mapping_obj = TransactionMasterMappingModel.objects.all()[0]
+                customer_contact_email_id = None
+                customer_contact_phone_number = None
+                customer_contact_firstname = None
+                customer_contact_lastname = None
+            else:
+                customer_contact_mapping_obj = CustomerContactMappingModel.objects.all()[0]
+                customer_contact_phone_number = str(customer_contact_mapping_obj.phone_number)
+                customer_contact_email_id = str(customer_contact_mapping_obj.email_id)
+
+                if customer_contact_mapping_obj.firstname == '' or customer_contact_mapping_obj.firstname == None:
+                    customer_contact_firstname = None
+                else:
+                    customer_contact_firstname = customer_contact_mapping_obj.firstname
+
+
+                if customer_contact_mapping_obj.lastname == '' or customer_contact_mapping_obj.lastname == None:
+                    customer_contact_lastname = None
+                else:
+                    customer_contact_lastname = customer_contact_mapping_obj.lastname
+        else:
+            customer_contact_mapping_obj = TransactionMasterMappingModel.objects.all()[0]
+            customer_contact_email_id = None
+            customer_contact_phone_number = None
+            customer_contact_firstname = None
+            customer_contact_lastname = None
+
         customer_contact = str(customer_contact_mapping_obj.client_table_name)
         customer_contact_cust_id = str(customer_contact_mapping_obj.cust_id)
-        customer_contact_email_id = str(customer_contact_mapping_obj.email_id)
+
+        customer_master_obj = {
+            'customer_master': customer_master,
+            'cust_id': customer_master_cust_id,
+        }
+        customer_contact_obj = {
+            'customer_contact': customer_contact,
+            'cust_id': customer_contact_cust_id,
+            'email_id': customer_contact_email_id,
+            'phone_number': customer_contact_phone_number,
+            'firstname': customer_contact_firstname,
+            'lastname': customer_contact_lastname
+        }
+
     except Exception as e:
         print e
         return None
 
-    # FIX 0 Convert Churn_Engagement to churn_engagement To Remove Quotes Problem
-    query = 'ALTER TABLE "Churn_Engagement" RENAME TO churn_engagement;'
+    # FIX 0 Create Empty R Tables If Tables Are Not Already There
+    create_r_tables(customer_master, customer_master_cust_id)
 
     # FIX 1 If Team Master Already Exists Drop It
-    query = query + "DROP TABLE IF EXISTS team_master_table;"
+    query = "DROP TABLE IF EXISTS team_master_table;"
+
 
     # FIX 2 Create Master Table By Merging All Output Of Scoring + IDs From Customer Master Table
     query = query + "CREATE TABLE team_master_table AS"
-    query = query + " (SELECT A."+customer_master_cust_id+", B.churn , B.engagement , C.cltv , C.value , D.high_conv , E.cluster"
+    query = query + " (SELECT A."+customer_master_cust_id+", B.churn , B.engagement, B.percent_churn, C.cltv , C.value, C.percent_cltv, D.high_conv , E.cluster"
     query = query + " FROM((SELECT "+customer_master_cust_id+" FROM "+customer_master+") A"
-    query = query + " LEFT OUTER JOIN (SELECT cust,churn,engagement FROM churn_engagement) B ON B.cust = A."+customer_master_cust_id
-    query = query + " LEFT OUTER JOIN (SELECT cust,cltv,value FROM cltv_value) C ON C.cust = A."+customer_master_cust_id
+    query = query + " LEFT OUTER JOIN (SELECT cust,churn,engagement,percent_churn FROM churn_engagement) B ON B.cust = A."+customer_master_cust_id
+    query = query + " LEFT OUTER JOIN (SELECT cust,cltv,value,percent_cltv FROM cltv_value) C ON C.cust = A."+customer_master_cust_id
     query = query + " LEFT OUTER JOIN (SELECT cust,high_conv FROM high_conv) D ON D.cust = A."+customer_master_cust_id
-    query = query + " LEFT OUTER JOIN (SELECT cust_id,CLUSTER FROM profile_clusters) E ON E.cust_id = A."+customer_master_cust_id+"));"
+    query = query + " LEFT OUTER JOIN (SELECT cust_id,cluster FROM profile_clusters) E ON E.cust_id = A."+customer_master_cust_id+"));"
 
     # FIX 3 Change high_conv to high_convertor To Get Compatible With Personal
     query = query + 'ALTER TABLE team_master_table RENAME COLUMN high_conv to high_convertor;'
 
     # FIX 4 Change id to cust_id To Get Compatible With Personal
-    query = query + 'ALTER TABLE team_master_table RENAME COLUMN id to cust_id;'
+    query = query + 'ALTER TABLE team_master_table RENAME COLUMN ' + customer_master_cust_id + ' to cust_id;'
+
+    # FIX 4.1 Change Type Of id TO TEXT
+    query = query + 'ALTER TABLE team_master_table ALTER COLUMN cust_id TYPE TEXT USING cust_id::TEXT;'
+
 
     # Now Create Personal Table
+    query = query + create_personal_table(customer_master_obj, customer_contact_obj)
+
     # FIX 5
-    query = query + 'DROP TABLE IF EXISTS team_personal;'
+    # query = query + 'DROP TABLE IF EXISTS team_personal;'
 
     # FIX 6 Change user_id data type to numeric because it will compared later with integer columns
-    query = query + "ALTER TABLE contact ALTER COLUMN user_id TYPE NUMERIC USING user_id::NUMERIC;"
+    # query = query + "ALTER TABLE contact ALTER COLUMN user_id TYPE NUMERIC USING user_id::NUMERIC;"
 
     # FIX 7 Create Personal Table By Merging Contact And Users
-    query = query + "CREATE TABLE team_personal AS"
-    query = query + " SELECT A."+customer_master_cust_id+", A.gender, A.age, A.country_code, B."+customer_contact_cust_id+", B."+customer_contact_email_id
-    query = query + " FROM ((SELECT DISTINCT ON("+customer_master_cust_id+") "+customer_master_cust_id+", gender, AGE, country_code FROM "+customer_master+") A"
-    query = query + " FULL OUTER JOIN (SELECT DISTINCT ON("+customer_contact_cust_id+") "+customer_contact_cust_id+", "+customer_contact_email_id+" FROM "+customer_contact+" where "+customer_contact_email_id+" <> '') B ON B."+customer_contact_cust_id+" = A."+customer_master_cust_id+");"
+    # query = query + "CREATE TABLE team_personal AS"
+    # query = query + " SELECT A."+customer_master_cust_id+", A.gender, A.age, A.country_code, B."+customer_contact_cust_id+", B."+customer_contact_email_id
+    # query = query + " FROM ((SELECT DISTINCT ON("+customer_master_cust_id+") "+customer_master_cust_id+", gender, AGE, country_code FROM "+customer_master+") A"
+    # query = query + " FULL OUTER JOIN (SELECT DISTINCT ON("+customer_contact_cust_id+") "+customer_contact_cust_id+", "+customer_contact_email_id+" FROM "+customer_contact+" where "+customer_contact_email_id+" <> '') B ON B."+customer_contact_cust_id+" = A."+customer_master_cust_id+");"
 
     # FIX 8 Change id to cu_id To Get Compatible With Amit's Code
-    query = query + 'ALTER TABLE team_personal RENAME COLUMN id TO cu_id;'
+    # query = query + 'ALTER TABLE team_personal RENAME COLUMN id TO cu_id;'
 
     # FIX 9 Change country_code To country To Get Compatible With Amit's Code
-    query = query + 'ALTER TABLE team_personal RENAME COLUMN country_code TO country;'
+    # query = query + 'ALTER TABLE team_personal RENAME COLUMN country_code TO country;'
 
     # FIX 10 Change email to email_id To Get Compatible With Amit's Code
-    query = query + 'ALTER TABLE team_personal RENAME COLUMN email TO email_id;'
+    # query = query + 'ALTER TABLE team_personal RENAME COLUMN email TO email_id;'
 
     # FIX 11 Change user_id to name Because No Name Is Found( Remove Later Because Name Is Mandatory)
-    query = query + 'ALTER TABLE team_personal RENAME COLUMN user_id TO name;'
+    # query = query + 'ALTER TABLE team_personal RENAME COLUMN user_id TO name;'
 
 
     return query
+
+
+def create_r_tables(customer_master, customer_master_cust_id):
+    table_obj = connect_to_this_database()
+    table_names = ['churn_engagement', 'cltv_value', 'high_conv', 'profile_clusters']
+    for table in table_names:
+        try:
+            table_obj.cur.execute("SELECT EXISTS(SELECT * FROM " + str(table))
+        except Exception as e:
+            table_obj.conn.rollback()
+            if e.message.__contains__("relation"):
+                query = None
+                if str(table) == 'churn_engagement':
+                    query = str('CREATE TABLE IF NOT EXISTS churn_engagement ( cust INTEGER DEFAULT NULL, churn DOUBLE PRECISION DEFAULT NULL, engagement TEXT DEFAULT NULL percent_churn DOUBLE PRECISION DEFAULT NULL, );')
+                    query = query + str('INSERT INTO churn_engagement ( SELECT ' + customer_master_cust_id + ' FROM ' + customer_master + ' as cust);')
+                elif str(table) == 'cltv_value':
+                    query = str('CREATE TABLE IF NOT EXISTS cltv_value ( cust INTEGER DEFAULT NULL, cltv DOUBLE PRECISION DEFAULT NULL, value TEXT DEFAULT NULL percent_cltv DOUBLE PRECISION DEFAULT NULL, );')
+                    query = query + str('INSERT INTO cltv_value ( SELECT ' + customer_master_cust_id + ' FROM ' + customer_master + ' as cust);')
+                elif str(table) == 'high_conv':
+                    query = str('CREATE TABLE IF NOT EXISTS high_conv ( cust INTEGER DEFAULT NULL, high_conv TEXT DEFAULT NULL );')
+                    query = query + str('INSERT INTO high_conv ( SELECT ' + customer_master_cust_id + ' FROM ' + customer_master + ' as cust);')
+                elif str(table) == 'profile_clusters':
+                    query = str('CREATE TABLE IF NOT EXISTS profile_clusters ( cust_id INTEGER DEFAULT NULL, cluster INTEGER DEFAULT NULL );')
+                    query = query + str('INSERT INTO profile_clusters ( SELECT ' + customer_master_cust_id + ' FROM ' + customer_master + ' as cust_id);')
+                if query is not None:
+                    table_obj.cur.execute(query)
+                    table_obj.conn.commit()
+
+
+def create_master_table():
+    pass
+
+
+# def create_personal_table():
+#     query = 'DROP TABLE IF EXISTS team_personal;'
+#     query = query + 'CREATE TABLE IF NOT EXISTS team_personal (cust_id TEXT DEFAULT NULL, gender TEXT DEFAULT NULL, age INTEGER DEFAULT NULL, country TEXT DEFAULT NULL, firstname TEXT DEFAULT NULL, lastname TEXT DEFAULT NULL, email_id TEXT DEFAULT NULL );'
+#     query = query + 'INSERT INTO team_personal ( SELECT ' + customer_master_cust_id + ' FROM ' + customer_master + ' AS cust_id );'
+#
+#     if customer_contact_phone_number != None and customer_contact_email_id != None:
+#         # contact - name, phone, email TO personal
+#         query = query + 'UPDATE team_personal SET '
+#         query = query + 'phone_number = A.' + customer_contact_phone_number + ','
+#         if customer_contact_firstname == None and customer_contact_lastname == None:
+#             query = query + 'email_id = A.' + customer_contact_email_id
+#         elif customer_contact_firstname != None and customer_contact_lastname == None:
+#             query = query + 'email_id = A.' + customer_contact_email_id + ','
+#             query = query + 'firstname = A.' + customer_contact_firstname
+#         elif customer_contact_lastname != None and customer_contact_firstname == None:
+#             query = query + 'email_id = A.' + customer_contact_email_id + ','
+#             query = query + 'lastname = A.' + customer_contact_lastname
+#         else:
+#             query = query + 'email_id = A.' + customer_contact_email_id + ','
+#             query = query + 'firstname = A.' + customer_contact_firstname + ','
+#             query = query + 'lastname = A.' + customer_contact_lastname
+#         query = query + ' FROM ' + customer_contact
+#         query = query + ' A WHERE team_personal.cust_id = '
+#         query = query + customer_contact + '.' + customer_contact.customer_contact_cust_id + ';'
+#
+#     return query
+
+
+def create_personal_table(customer_master_obj, customer_contact_obj):
+    query = 'DROP TABLE IF EXISTS team_personal;'
+    query = query + 'CREATE TABLE IF NOT EXISTS team_personal AS ( SELECT * FROM '+ customer_master_obj['customer_master'] +' );'
+    query = query + 'ALTER TABLE team_personal ALTER COLUMN ' + customer_master_obj['cust_id'] + ' TYPE TEXT USING ' + customer_master_obj['cust_id'] + '::TEXT ;'
+
+    if customer_contact_obj['customer_contact'] != None:
+        # ALTER TABLE team_personal ADD COLUMN email_id TEXT;
+        # UPDATE team_personal SET email_id = contact.email FROM contact WHERE id = contact.user_id;
+        query = query + 'ALTER TABLE team_personal ADD COLUMN email_id TEXT;'
+        query = query + 'UPDATE team_personal SET email_id = '
+        query = query + customer_contact_obj['customer_contact'] + '.' + customer_contact_obj['email_id'] + ' FROM '
+        query = query + customer_contact_obj['customer_contact'] + ' WHERE ' + customer_master_obj['cust_id'] + ' = '
+        query = query + customer_contact_obj['customer_contact'] + '.' + customer_contact_obj['cust_id'] + ';'
+
+        # ALTER TABLE team_personal ADD COLUMN phone_number INTEGER;
+        # UPDATE team_personal SET phone_number = contact.phone_number FROM contact WHERE id = contact.user_id;
+        query = query + 'ALTER TABLE team_personal ADD COLUMN phone_number TEXT;'
+        query = query + 'UPDATE team_personal SET phone_number = '
+        query = query + customer_contact_obj['customer_contact'] + '.' + customer_contact_obj['phone_number'] + ' FROM '
+        query = query + customer_contact_obj['customer_contact'] + ' WHERE ' + customer_master_obj['cust_id'] + ' = '
+        query = query + customer_contact_obj['customer_contact'] + '.' + customer_contact_obj['cust_id'] + ';'
+
+        query = query + 'ALTER TABLE team_personal ADD COLUMN firstname TEXT DEFAULT NULL;'
+        if customer_contact_obj['firstname'] != None:
+            # ALTER TABLE team_personal ADD COLUMN firstname TEXT;
+            # UPDATE team_personal SET firstname = contact.firstname FROM contact WHERE id = contact.user_id;
+            query = query + 'UPDATE team_personal SET firstname = '
+            query = query + customer_contact_obj['customer_contact'] + '.' + customer_contact_obj['firstname'] + ' FROM '
+            query = query + customer_contact_obj['customer_contact'] + ' WHERE ' + customer_master_obj['cust_id'] + ' = '
+            query = query + customer_contact_obj['customer_contact'] + '.' + customer_contact_obj['cust_id'] + ';'
+
+        query = query + 'ALTER TABLE team_personal ADD COLUMN lastname TEXT DEFAULT NULL;'
+        if customer_contact_obj['lastname'] != None:
+            # ALTER TABLE team_personal ADD COLUMN lastname TEXT;
+            # UPDATE team_personal SET lastname = contact.lastname FROM contact WHERE id = contact.user_id;
+            query = query + 'UPDATE team_personal SET lastname = '
+            query = query + customer_contact_obj['customer_contact'] + '.' + customer_contact_obj['lastname'] + ' FROM '
+            query = query + customer_contact_obj['customer_contact'] + ' WHERE ' + customer_master_obj['cust_id'] + ' = '
+            query = query + customer_contact_obj['customer_contact'] + '.' + customer_contact_obj['cust_id'] + ';'
+
+    query = query + 'ALTER TABLE team_personal RENAME COLUMN ' + customer_master_obj['cust_id'] + ' TO cu_id;'
+    return query
+
+
+

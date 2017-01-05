@@ -48,7 +48,23 @@
 </div>
 
 <form method="post" class="panel-group" id="accordion" role="tablist" onsubmit="return validate();">
-        <div class="row" style="padding-top:50px;">
+    <div class="row" style="padding-top:50px;">
+        <div class="col col-lg-10 col-lg-offset-1">
+            <div class="alert alert-info">
+                <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
+                <h4>Here Is Some Info!</h4>
+                <p>1: Select Checkbox Corresponding To Every Column To Determine Whether The Column Is A
+                    <a href="#" class="alert-link" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right">
+                        Factor.
+                    </a>
+                </p>
+                <p>2: Map Any Column By Dragging And Dropping On The Right Side.</p>
+                <p>3: Mandatory Columns Are Marked With Asterisk (*) Mark And You Should Map All Of Them.</p>
+                <p>4: Be Sure To Map All Mandatory Columns Before Proceeding Else The Page Will Reset And You Will Lose All Column Mapping Done So Far.</p>
+                <p>5: After Successfull Submit, Column Mapping Will Be Temporary Stored For Convenience Until You Transfer Your Database.</p>
+
+            </div>
+        </div>
         <div class="col col-lg-10 col-lg-offset-1">
             {% csrf_token %}
             {% for our_table_name, our_column_list in our_model.iteritems %}
@@ -72,11 +88,15 @@
                                     <div class="list-group-item">
                                         <div class="row-content">
                                             <span class="list-group-item-heading drag">{{client_column_name}}</span>
-                                            <div draggable="false" style="float:right;" class="checkbox">
-                                                <label>
-                                                    <input name="{{client_table_name}}.is_factor.{{client_column_name}}" type="checkbox">
-                                                </label>
+                                            <div draggable="false" style="float: right;">
+                                                <input name="{{client_table_name}}.is_factor.{{client_column_name}}" type="checkbox">
+                                                <label>Is Factor ?</label>
                                             </div>
+                                            <!--<div draggable="false" style="float:right;" class="checkbox">-->
+                                            <!--<label>-->
+                                            <!--<input name="{{client_table_name}}.is_factor.{{client_column_name}}" type="checkbox">-->
+                                            <!--</label>-->
+                                            <!--</div>-->
                                         </div>
                                     </div>
                                     {% endfor %}
@@ -90,7 +110,7 @@
                                     {% for our_column_name in our_column_list %}
                                     {% with is_column=is_column_name_mandatory|get_item:our_table_name %}
                                     <li class="list-group-item">
-                                        <div class="input-group input-group-sm">
+                                        <div class="input-group input-group-lg">
                                                 <span class="input-group-addon" id="sizing-addon3">
                                                     {{our_column_name}}
                                                     {% if is_column|get_item:our_column_name %}
@@ -98,9 +118,9 @@
                                                     {% endif %}
                                                 </span>
                                             {% if is_column|get_item:our_column_name %}
-                                                <input name="{{our_table_name}}.{{our_column_name}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly required aria-required="true">
+                                            <input name="{{our_table_name}}.{{our_column_name}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly required aria-required="true">
                                             {% else %}
-                                                <input name="{{our_table_name}}.{{our_column_name}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly>
+                                            <input name="{{our_table_name}}.{{our_column_name}}" type="text" class="form-control drop" aria-describedby="sizing-addon3" readonly>
                                             {% endif %}
                                             <span style="display: none;" class="btn-danger">This Field Is Mandatory</span>
                                         </div>
@@ -165,25 +185,25 @@
 
 <script>
     function validate() {
-        var form = $('form');
-        var inputs = $(':input');
-        alert(inputs.length);
-        alert(inputs);
-        alert(inputs[0]);
-        alert(inputs[0].id);
-        for(var i=0; i < inputs.length; i++) {
-            if(inputs[i].hasAttribute('required')) {
-                if(inputs[i].value == '' || inputs[i].value == null) {
-                    alert(inputs[i].get(0).id);
-                    console.log(inputs[i].attr('id'));
-                    $('#' + inputs[i].attr('id')) .siblings[0].show();
-                    return false;
-                }
-                else {
-                    $('#' + inputs[i].attr('id')).siblings()[0].hide();
-                }
-            }
-        }
+//        var form = $('form');
+//        var inputs = $(':input');
+//        alert(inputs.length);
+//        alert(inputs);
+//        alert(inputs[0]);
+//        alert(inputs[0].id);
+//        for(var i=0; i < inputs.length; i++) {
+//            if(inputs[i].hasAttribute('required')) {
+//                if(inputs[i].value == '' || inputs[i].value == null) {
+//                    alert(inputs[i].get(0).id);
+//                    console.log(inputs[i].attr('id'));
+//                    $('#' + inputs[i].attr('id')) .siblings[0].show();
+//                    return false;
+//                }
+//                else {
+//                    $('#' + inputs[i].attr('id')).siblings()[0].hide();
+//                }
+//            }
+//        }
         return true;
     }
 </script>

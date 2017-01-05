@@ -3,27 +3,17 @@
 {% block content %}
 {% load static %}
 
-<div class="col-lg-10 col-lg-offset-1" style="margin-top: 50px;">
-    <ol class="breadcrumb">
-        <li class="active">Connect Database</li>
-        <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
-    </ol>
-</div>
 
-<div class="col-lg-4 col-lg-offset-4">
+<div class="col-lg-4 col-lg-offset-4" style="margin-top: 50px;">
     <div class="row">
-        <ul class="nav nav-tabs">
-            <li role="presentation"><a href="{% url 'connect_client_db' %}">Database Connection Form</a></li>
-            <li role="presentation" class="active"><a href="#">Database Connection Result</a></li>
-        </ul>
-    </div>
-    <div class="row" style="margin-top: 50px;">
-        <div>
-            <h1 class="text-center">Operation Failed</h1>
-        </div>
-        <div class="row text-center">
-            <a class="btn btn-md btn-primary" href="{% url 'connect_client_db' %}">Go Back</a>
-            <a class="btn btn-md btn-danger">Report Administrator</a>
+        <div class="well well-custom-default">
+            <div>
+                <h1 class="text-center">Operation Failed</h1>
+            </div>
+            <div class="row text-center">
+                <a class="btn btn-md btn-info" href="{% url 'connect_client_db' %}">Go Back</a>
+                <a class="btn btn-md btn-danger">Report Administrator</a>
+            </div>
         </div>
     </div>
 </div>

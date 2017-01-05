@@ -1,5 +1,16 @@
-from .models import master_table
-list_match = ['cltv', 'churn', 'value', 'profile', 'high_converter','name','gender','age','country']
+from .models import master_table,Personal
+list_match = []
+personal_list = []
+for column_name in Personal._meta.get_fields():
+    if column_name.name != 'id' and column_name.name != 'cu_id':
+        personal_list.append(column_name.name)
+        list_match.append(column_name.name)
+
+master_list = []
+for column_name in master_table._meta.get_fields():
+    if column_name.name != 'id' and column_name.name != 'cust_id':
+        master_list.append(column_name.name)
+        list_match.append(column_name.name)
 
 def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
 

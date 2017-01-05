@@ -64,8 +64,8 @@
 
 <form name="table_mapping_form" method="post" class="container-fluid" onsubmit="return validate();">
     {% csrf_token %}
-    <div class="row well">
-        <div class="col-lg-3" style="z-index: 99; max-height: 500px; overflow-y: scroll;">
+    <div class="row well well-custom-default">
+        <div class="col-lg-3 custom-scrollbar" style="z-index: 99; max-height: 500px; overflow-y: scroll;">
             <div class="page-header">
                 <h3>Client Tables</h3>
             </div>
@@ -89,7 +89,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4" style="max-height: 500px; overflow-y: scroll;">
+        <div class="col-lg-4 custom-scrollbar" style="max-height: 500px; overflow-y: scroll;">
             <div class="page-header">
                 <h3>System Tables</h3>
             </div>
@@ -123,8 +123,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-5" style="max-height: 500px; overflow-y: scroll;">
-            <div>
+        <div class="col-lg-5 custom-scrollbar" style="max-height: 500px; overflow-y: scroll;">
+            <div id="preview-section">
                 <img id="preview-transaction_master" src="{% static 'assets/images/table-preview/transaction_master.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
                 <img id="preview-customer_master" src="{% static 'assets/images/table-preview/customer_master.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
                 <img id="preview-customer_secondary" src="{% static 'assets/images/table-preview/customer_secondary.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
@@ -154,16 +154,18 @@
         ];
     }
     function showTable(name) {
-        var tables = tableNames();
-        for(var i=0; i<tables.length; i++) {
-            id = 'preview-' + tables[i].toLowerCase();
-            if(name.toLowerCase() == tables[i].toLowerCase()) {
-                $('#'+id).show();
-            }
-            else {
-                $('#'+id).hide();
-            }
-        }
+        $('#preview-section > img').hide();
+        $('#'+'preview-'+name.toLowerCase()).show();
+//        var tables = tableNames();
+//        for(var i=0; i<tables.length; i++) {
+//            id = 'preview-' + tables[i].toLowerCase();
+//            if(name.toLowerCase() == tables[i].toLowerCase()) {
+//                $('#'+id).show();
+//            }
+//            else {
+//                $('#'+id).hide();
+//            }
+//        }
     }
     function clearFields(e) {
         console.log(e);

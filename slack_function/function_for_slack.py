@@ -17,7 +17,7 @@ def for_slack(input_slack):
         else:
             remove_extra_space_from_input.append(x)
 
-    if remove_extra_space_from_input == [u'send',u'mailchimp']:
+    if remove_extra_space_from_input == [u'mailchimp']:
         return (u'%s' % (Bananas_OAuth().authorize_url()))
 
 

@@ -3,7 +3,18 @@ from team.models import master_table
 from team.models import Personal
 import re
 
-list_match = ['cltv', 'churn', 'value', 'profile', 'high_converter','name','gender','age','country','send']
+list_match = []
+personal_list = []
+for column_name in Personal._meta.get_fields():
+    if column_name.name != 'id' and column_name.name != 'cu_id':
+        personal_list.append(column_name.name)
+        list_match.append(column_name.name)
+
+master_list = []
+for column_name in master_table._meta.get_fields():
+    if column_name.name != 'id' and column_name.name != 'cust_id':
+        master_list.append(column_name.name)
+        list_match.append(column_name.name)
 
 # first check the element have more than gt(>),lt(<),eq(=) then convert this to gt,lt,eq ....
 def check_more_than_one_sign_like_greaterthan_lessthan_equal(check_more):
@@ -52,8 +63,7 @@ def convert_unicode_to_string(l):
 def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
     cltv_max = 0
     churn_max = 0
-    # print 'adnan'
-    # print high_low_medium
+    cluster_max = 0
     length_churn=[]
     length_churn_1=[]
     length_churn_2=[]
@@ -62,10 +72,15 @@ def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
     length_cltv_2=[]
     master_table_list = master_table.objects.all()
     for row in master_table_list:
-        if row.cltv > cltv_max:
-            cltv_max = row.cltv
-        if row.churn > churn_max:
-            churn_max=row.churn
+        if row.cltv != None:
+            if row.cltv > cltv_max:
+                cltv_max = row.cltv
+        if row.churn != None:
+            if row.churn > churn_max:
+                churn_max=row.churn
+        if row.cluster != None:
+            if row.cluster > cluster_max:
+                cluster_max = row.cluster
     for x in high_low_medium:
 
         if x=='cltv' :
@@ -289,15 +304,15 @@ def get_cu_id(input):
 # convert the list from id and cu_id to email_id....
 def email_id_list(input):
     list_email=[]
-
-    for x in input:
-        try:
+    try:
+        for x in input:
             person1 = Personal.objects.get(cu_id=x)
+            if person1.email_id!=None:
+                    list_email.append(person1.email_id)
+        return list_email
+    except:
+        return None
 
-            list_email.append(person1.email_id)
-        except:
-            pass
-    return list_email
 
 def remove_extra_space(space_input):
     list=[]
@@ -317,4 +332,19 @@ def remove_unwanted_keyword(input_keyword):
         else:
             remove_keyword.append(x)
     return remove_keyword
-
+def name_firstname_lastname(input_name):
+   name=[]
+   for x in input_name:
+       x = str(x)
+       person1 = Personal.objects.get(cu_id=x)
+       fname=person1.firstname
+       lname=person1.lastname
+       if fname!=None and lname==None:
+           name.append(fname)
+       elif fname==None and lname!=None:
+           name.append(lname)
+       elif fname!=None and lname!=None:
+           name.append(fname+' '+lname)
+       elif fname==None and lname==None:
+           name.append(None)
+   return name

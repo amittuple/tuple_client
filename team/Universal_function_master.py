@@ -6,7 +6,7 @@ from .function_input import replace_operator_like_gt_lt_eq_in_standard_format,co
 from .models import master_table
 
 def Universal_function(change_high_x):
-    print 'enter in the Universal_function'
+    print 'enter in the Universal_function master table'
     check_for_more_gt_lt_eq = check_more_than_one_sign_like_greaterthan_lessthan_equal(change_high_x)
 
     change_into_lower_case = convert_all_string_to_lower_case(check_for_more_gt_lt_eq)

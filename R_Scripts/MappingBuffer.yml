@@ -8,9 +8,13 @@ column_map:
   CUSTOMER_CONTACT:
     cust_id: user_id
     email_id: email
-    facebook_id: sent
-    phone_number: null
+    facebook_id: null
+    firstname: null
+    lastname: null
+    phone_number: user_id
   CUSTOMER_MASTER:
+    birthday: birthday
+    create_date: create_date
     cust_id: id
   CUSTOMER_SECONDARY:
     cust_id: id
@@ -22,20 +26,21 @@ column_map:
   TRANSACTION_MASTER:
     cust_id: userid
     product_id: product_id
+    quantity: quantity
+    renewal: renewal
     revenue: revenue
     timestamp: purchase_date
 is_factor:
   CUSTOMER_CONTACT:
   - sent
   CUSTOMER_MASTER:
-  - gender
-  - age
-  - job
-  - country_code
-  - facebook_id
-  - os_type
   - education
-  - client_version
+  - os_type
+  - facebook_id
+  - country_code
+  - job
+  - age
+  - gender
   CUSTOMER_SECONDARY: []
   EVENT_LOG: []
   TRANSACTION_MASTER: []
