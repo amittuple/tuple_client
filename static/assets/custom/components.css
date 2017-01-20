@@ -12,44 +12,20 @@
 }
 
 @media (min-width: 768px){
-    .seven-cols .col-md-1,
-    .seven-cols .col-sm-1,
-    .seven-cols .col-lg-1  {
-        width: 100%;
-        *width: 100%;
-    }
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
+    width: 100%;
+    *width: 100%;
+  }
 }
 
 
 @media (min-width: 992px) {
-    .seven-cols .col-md-1,
-    .seven-cols .col-sm-1,
-    .seven-cols .col-lg-1 {
-        width: 14.285714285714285714285714285714%;
-        *width: 14.285714285714285714285714285714%;
-    }
-}
-
-
-.well-custom-default, .well-custom-shadow {
-    background-color:#fff;
-    border-bottom-left-radius:2px;
-    border-bottom-right-radius:2px;
-    border-image-width:1;
-    border-top-left-radius:2px;
-    border-top-right-radius:2px;
-}
-
-.well-custom-shadow {
-    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-
-.custom-scrollbar::-webkit-scrollbar {
-    width: 5px;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.65);
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
 }

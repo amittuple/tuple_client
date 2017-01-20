@@ -4,14 +4,25 @@
 {% load static %}
 
 
+<!--<div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">-->
+<!--<ol class="breadcrumb">-->
+<!--<li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>-->
+<!--<li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>-->
+<!--<li><a href="{% url 'mapping_review' %}">Mapping Review</a></li>-->
+<!--<li class="active">Transfer Database</li>-->
+<!--</ol>-->
+<!--</div>-->
+<link href="{% static 'assets/custom/subnav.css' %}" rel="stylesheet">
+
 <div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">
-    <ol class="breadcrumb">
-        <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
-        <li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
-        <li><a href="{% url 'mapping_review' %}">Mapping Review</a></li>
-        <li class="active">Transfer Database</li>
-    </ol>
+    <ul class="subnav" id="mysubnav">
+        <li class="center"><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
+        <li class="center"><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
+        <li class="center"><a href="{% url 'mapping_review' %}">Mapping Review</a></li>
+        <li class="center" id="transfer_failed_active">Transfer Database</li>
+    </ul>
 </div>
+
 
 <div class="col-lg-6 col-lg-offset-3" style="margin-top: 50px;">
 
@@ -33,5 +44,15 @@
 
 </div>
 
-
+<script>
+    $(document).ready(function () {
+        $("#map_active").css("color","#ffa05d");
+        $("#map_active").css('border-bottom','3px solid #ffa05d');
+    })
+</script>
+<script>
+   $(document).ready(function () {
+       $("#transfer_failed_active").addClass("border");
+   })
+</script>
 {% endblock %}

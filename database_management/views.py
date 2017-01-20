@@ -9,6 +9,8 @@ import yaml
 import json
 from mapper.views import get_table_name_model_pair, get_table_name_model_meta_pair, clear_mapping_session
 import os
+from tuple_client.settings import MAPPING_PATH
+
 
 def create_queries_pool(column_map, client_table_structure):
     queries = []
@@ -77,6 +79,7 @@ def celery_and_rabbit_server_check():
         d = { ERROR_KEY: str(e)}
     return d
 
+
 def transfer_database(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login'))
@@ -99,7 +102,7 @@ def transfer_database(request):
         queries_pool = create_queries_pool(column_map, client_table_structure)
         task_id = database_migration.delay(queries_pool, str(user))
         r_process.delay(str(task_id))
-        # make_yml()
+        make_yml(MAPPING_PATH)
         # clear_mapping_session(request)
     except KeyError as e:
         print e
@@ -111,7 +114,6 @@ def transfer_database(request):
     if request.method == 'POST':
         return HttpResponseRedirect(reverse('dashboard'))
     return render(request, 'database_management/transfer-database.html', {})
-
 
 
 def transfer_failed(request):
@@ -163,8 +165,6 @@ def make_yml(file_url):
         return False
 
 
-
-
 def prepare_all_model(table_map):
     our_model = {}
 
@@ -179,7 +179,6 @@ def prepare_all_model(table_map):
             if not str(item.name).__contains__('metamodel') and item.name !='client_table_name' and item.name != 'id':
                 our_model[mapping_name].append(item.name)
     return our_model
-
 
 
 def test_script(request):

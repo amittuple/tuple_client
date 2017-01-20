@@ -3,21 +3,30 @@
 {% block content %}
 {% load static %}
 
-<div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">
-    <ol class="breadcrumb">
-        <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
-        <li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
-        <li class="active">Mapping Review</li>
-        <li><a href="{% url 'transfer_database' %}">Transfer Database</a></li>
-    </ol>
-</div>
+<!--<div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">-->
+    <!--<ol class="breadcrumb">-->
+        <!--<li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>-->
+        <!--<li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>-->
+        <!--<li class="active">Mapping Review</li>-->
+        <!--<li><a href="{% url 'transfer_database' %}">Transfer Database</a></li>-->
+    <!--</ol>-->
+<!--</div>-->
+<link href="{% static 'assets/custom/subnav.css' %}" rel="stylesheet">
 
+<div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">
+   <ul class="subnav" id="mysubnav">
+       <li class="center"><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
+       <li class="center"><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
+       <li class="center" id="review">Mapping Review</li>
+       <li class="center"><a href="{% url 'transfer_database' %}">Transfer Database</a></li>
+   </ul>
+</div>
 <form action="." method="post" class="panel-group" id="accordion" role="tablist">
 
     <div class="row" style="margin-top: 15px;">
         {% if mapping_exists %}
         <div class="col col-lg-6 col-lg-offset-3">
-            <div class="alert alert-dismissible alert-danger">
+            <div class="alert alert-dismissible alert-danger" style="background-color: #1dc8c1">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <strong>Warning !</strong> Previous
                 <a href="#" class="alert-link">Mapping Set</a>, Forwarding Will Delete Previous Mapping Set And Your Previous Model.<br>Proceed With Caution.
@@ -26,6 +35,7 @@
                 <br><a href="#" class="alert-link">2: Retransfer Database.</a>
                 <br><a href="#" class="alert-link">3: Recalculate CLTV & Churn.</a>
             </div>
+
             {% else %}
             <div class="alert alert-dismissible alert-info">
                 <button type="button" class="close" data-dismiss="alert">×</button>
@@ -60,7 +70,7 @@
                                 <div class="list-group">
                                     <h3>{{our_table_name}}</h3>
                                     {% for our_column_name, client_column_dict in our_column_list.iteritems %}
-                                    <div class="list-group-item border">
+                                    <div class="list-group-item">
                                         <div class="row-content">
                                             <span class="list-group-item-heading">{{our_column_name}}</span>
                                         </div>
@@ -72,7 +82,7 @@
                                 <div class="list-group">
                                     <h3>{{client_table_name}}</h3>
                                     {% for our_column_name, client_column_dict in our_column_list.iteritems %}
-                                    <div class="list-group-item border">
+                                    <div class="list-group-item">
                                         <div class="row-content">
                                             <span class="list-group-item-heading">{{our_column_name}}</span>
                                         </div>
@@ -114,10 +124,10 @@
     </div>
 
     <div style="position: fixed; right: -10px; top: 45%;">
-        <button class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;" type="submit">Start</button>
+        <button class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;background-color: #1dc8c1" type="submit">Start</button>
     </div>
     <div style="position: fixed; left: -10px; top: 45%;">
-        <a href="{% url 'table_mapping' %}" class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;">Go Back</a>
+        <a href="{% url 'table_mapping' %}" class="btn btn-md btn-primary btn-raised" style="border-radius: 15px; background-color: #1dc8c1;">Go Back</a>
     </div>
 
 
@@ -139,5 +149,15 @@
         $(this).button('loading')
     });
 </script>
-
+<script>
+   $(document).ready(function () {
+       $("#review").addClass("border");
+   })
+</script>
+<script>
+    $(document).ready(function () {
+        $("#map_active").css("color","#ffa05d");
+        $("#map_active").css('border-bottom','3px solid #ffa05d');
+    })
+</script>
 {% endblock %}

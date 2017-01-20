@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'login',
     'mapper',
     'connect_client_db',
+    'user_profile',
     'database_management',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # CELERY
     'django_celery_results',
+    'django_celery_beat',
     # chatbot here
     'team',
     'banana_py',
@@ -191,6 +193,7 @@ SCRIPT_PATH = os.path.join(BASE_DIR, 'R_Scripts')
 Connection_PATH = os.path.join(SCRIPT_PATH, 'Connection.R')
 TRAINING_PATH = os.path.join(SCRIPT_PATH, 'Training')
 SCORING_PATH = os.path.join(SCRIPT_PATH, 'Scoring')
+MAPPING_PATH = os.path.join(BASE_DIR, 'Mappings')
 
 
 #  slack key and secrate key

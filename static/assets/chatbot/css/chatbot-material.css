@@ -38,11 +38,11 @@
 .msg_container .messages.msg_sent {
     padding-left: 10px;
     text-align: left;
-    background-color: #993333;
+    background-color: #4286f9;
 }
 
 .msg_container .messages.msg_receive {
     padding-right: 10px;
     text-align: right;
-    background-color: #4286f9;
+    background-color: rgb(255, 100, 100);
 }

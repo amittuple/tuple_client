@@ -1,17 +1,17 @@
 from django.http import HttpResponse
-from team.models import master_table
-from team.models import Personal
+from team.models import MasterTable
+from team.models import PersonalTable
 import re
 
 list_match = []
 personal_list = []
-for column_name in Personal._meta.get_fields():
+for column_name in PersonalTable._meta.get_fields():
     if column_name.name != 'id' and column_name.name != 'cu_id':
         personal_list.append(column_name.name)
         list_match.append(column_name.name)
 
 master_list = []
-for column_name in master_table._meta.get_fields():
+for column_name in MasterTable._meta.get_fields():
     if column_name.name != 'id' and column_name.name != 'cust_id':
         master_list.append(column_name.name)
         list_match.append(column_name.name)
@@ -51,16 +51,19 @@ def convert_all_string_to_lower_case(change_lower):
 def convert_unicode_to_string(l):
     s = []
     for x in l:
+
         x1 = r"[a-z]+"
         if re.match(x1, x):
             x = str(x)
             s.append(x)
         else:
             s.append(x)
+
     return s
 
 # convert high, low, medium in to specific value...... acording to attribute....
 def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
+
     cltv_max = 0
     churn_max = 0
     cluster_max = 0
@@ -70,7 +73,8 @@ def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
     length_cltv=[]
     length_cltv_1=[]
     length_cltv_2=[]
-    master_table_list = master_table.objects.all()
+    cluster_length=[]
+    master_table_list = MasterTable.objects.all()
     for row in master_table_list:
         if row.cltv != None:
             if row.cltv > cltv_max:
@@ -99,7 +103,8 @@ def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
 
             return length_cltv
         else:
-             for x1 in high_low_medium:
+
+            for x1 in high_low_medium:
 
                 if x1 == 'cltv':
                     length_cltv_1.append('cltv')
@@ -117,6 +122,7 @@ def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
                     return length_cltv_1
 
                 else:
+
                     for x2 in high_low_medium:
                         if x2 == 'cltv':
                             length_cltv_2.append('cltv')
@@ -132,6 +138,7 @@ def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
 
                             return length_cltv_2
                         else:
+
                             for x3 in high_low_medium:
 
                                 if x3=='churn':
@@ -146,6 +153,7 @@ def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
 
                                     return length_churn
                                 else:
+
                                     for x3 in high_low_medium:
 
                                         if x3 == 'churn':
@@ -159,6 +167,7 @@ def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
                                             return length_churn_1
 
                                         else:
+
                                             for x3 in high_low_medium:
 
                                                 if x3 == 'churn':
@@ -174,7 +183,46 @@ def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
                                                     length_churn_2.append(str(churn_max * 30 / 100))
                                                     return length_churn_2
                                                 else:
-                                                    return high_low_medium
+
+                                                    for x30 in high_low_medium:
+                                                        if x30 == 'cluster':
+                                                            cluster_length.append('cluster')
+                                                        elif x30 == 'eq' or x30 == 'gt':
+                                                            cluster_length.append('gt')
+                                                        elif x30 == 'high':
+                                                            cluster_length.append(cluster_max * 70 / 100)
+                                                            return cluster_length
+                                                        else:
+                                                            for y10 in high_low_medium:
+                                                                if y10 == 'cluster':
+                                                                    cluster_length.append('cluster')
+                                                                elif y10 == 'eq' or y10 == 'lt':
+                                                                    cluster_length.append('lt')
+                                                                elif y10 == 'low':
+                                                                    cluster_length.append(cluster_max * 30 / 100)
+                                                                    return cluster_length
+                                                                else:
+
+                                                                    for z10 in high_low_medium:
+                                                                        if z10 == 'cluster':
+                                                                            cluster_length.append('cluster')
+                                                                        elif z10 == 'eq':
+                                                                            cluster_length.append('gt')
+                                                                        elif z10 == 'low':
+                                                                            cluster_length.append(cluster_max * 30 / 100)
+                                                                            cluster_length.append('lt')
+                                                                            cluster_length.append(cluster_max * 70 / 100)
+                                                                            return cluster_length
+                                                                        else:
+
+                                                                            print high_low_medium
+                                                                            print '### amit ###'
+                                                                            return high_low_medium
+
+
+
+
+                                                    # return high_low_medium
 
 #  convert gt,lt,eq in to >, <, =.....
 def replace_operator_like_gt_lt_eq_in_standard_format(r):
@@ -226,6 +274,7 @@ def get_list(a, b, input_list):
 #  collect integer form the input like cltv < 1000 choose 1000 from the list....
 def changetoint(s):
     a = []
+
     for x in s:
         try:
             x = int(x)
@@ -242,18 +291,17 @@ def conevert_string_in_integer(a):
     for x in a:
         i = i + 1
         if i == 1:
-            if type(x) == int:
-                m1 = m1 + str(x)
-            else:
+            if isinstance(x, str):
                 m1 = m1 + x
+            else:
+                m1 = m1 + str(x)
         else:
-            if type(x) == int:
-
-                m1 = m1 + " "
-                m1 = m1 + str(x)
-            else:
+            if isinstance(x, str):
                 m1 = m1 + " "
                 m1 = m1 + x
+            else:
+                m1 = m1 + " "
+                m1 = m1 + str(x)
     return m1
 
 # here check the first element is /filter or not....
@@ -271,7 +319,6 @@ def input_comes_from_user(input_comes_fromuser):
 def Standard(stunt):
 
     a1=stunt[0]
-    print a1
     try:
         for a in stunt[1:]:
 
@@ -281,6 +328,7 @@ def Standard(stunt):
             pass
 
     b=list(a1)
+
     return b
 
 # find the id of master_table table for intersection....
@@ -306,13 +354,12 @@ def email_id_list(input):
     list_email=[]
     try:
         for x in input:
-            person1 = Personal.objects.get(cu_id=x)
+            person1 = PersonalTable.objects.filter(cu_id=x)[0]
             if person1.email_id!=None:
                     list_email.append(person1.email_id)
         return list_email
     except:
         return None
-
 
 def remove_extra_space(space_input):
     list=[]
@@ -336,7 +383,7 @@ def name_firstname_lastname(input_name):
    name=[]
    for x in input_name:
        x = str(x)
-       person1 = Personal.objects.get(cu_id=x)
+       person1 = PersonalTable.objects.filter(cu_id=x)[0]
        fname=person1.firstname
        lname=person1.lastname
        if fname!=None and lname==None:
@@ -348,3 +395,15 @@ def name_firstname_lastname(input_name):
        elif fname==None and lname==None:
            name.append(None)
    return name
+
+def convert_flot(intput_float):
+    list_float=[]
+
+    for x in intput_float:
+        try:
+            x = float(x)
+            list_float.append(x)
+        except:
+            list_float.append(x)
+
+    return list_float

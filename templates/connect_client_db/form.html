@@ -2,11 +2,35 @@
 {% load i18n %}
 {% block content %}
 {% load static %}
+<style>
+   .nav-tabs{
+       background-color: white;
+       border: 0px solid;
+       color: black!important;
+   }
 
+    .inline_color{
+        font-size: 13px;
+        padding-left: 20px;
+        padding-top: 15px;
+    }
+
+</style>
+<link href="{% static 'assets/custom/subnav.css' %}" rel="stylesheet">
+<div class="col-lg-10 col-lg-offset-1" style="margin-top: 50px;">
+    <!--<ol class="breadcrumb">-->
+        <!--<li class="active">Connect Database</li>-->
+        <!--<li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>-->
+    <!--</ol>-->
+</div>
 <div class="col-lg-6 col-lg-offset-3">
+    <ul class="subnav" id="mysubnav">
+        <li id="form_active" role="presentation" class="active"><a href="{% url 'connect_client_db' %}" style="font-size: 13px;color: white;padding: 0px">Database Connection Form</a></li>
+        <li role="presentation" class="inline_color" >Database Connection Result</a></li>
+    </ul>
     <div class="row" style="margin-top: 50px;">
         <div class="col col-lg-12">
-            <div class="well well-custom-default">
+            <div class="well">
                 <form action="." method="post">
                     {% csrf_token %}
                     <div class="form-group">
@@ -33,15 +57,27 @@
                         <label for="port">Port</label>
                         <input id="port" type="text" class="form-control" name="port"  value="{{form.port.value}}">
                     </div>
-                    <!--<div class="checkbox">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox"> License Agreement-->
-                        <!--</label>-->
-                    <!--</div>-->
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> License Agreement
+                        </label>
+                    </div>
                     <button type="submit" class="btn btn-primary btn-block">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+       $("#data_active").css("color","#ffa05d");
+       $("#data_active").css('border-bottom','3px solid #ffa05d');
+   })
+</script>
+<script>
+   $(document).ready(function () {
+       $("#form_active").addClass("border");
+   })
+</script>
 {% endblock %}
+

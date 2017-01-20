@@ -1,23 +1,25 @@
 import re
-from team.function_input import convert_unicode_to_string, changetoint, conevert_string_in_integer
-from .models import Personal,master_table
+from team.function_input import convert_unicode_to_string, changetoint, conevert_string_in_integer,replace_operator_like_gt_lt_eq_in_standard_format
+from .models import PersonalTable,MasterTable
 def first_it_come_check(input_check):
     change_to_string = convert_unicode_to_string(input_check)
-
-    change_to_int = changetoint(change_to_string)
+    change_to_string1=replace_operator_like_gt_lt_eq_in_standard_format(change_to_string)
+    change_to_int = changetoint(change_to_string1)
 
     mn = conevert_string_in_integer(change_to_int)
 
+    print mn
+    print "mn"
     regular_expression = r"(([a-z][_]?[?]?[ ]?)+)$"
 
     personal_list = []
     m_list = []
 
-    for column_name in Personal._meta.get_fields():
+    for column_name in PersonalTable._meta.get_fields():
         if column_name.name != 'id' and column_name.name != 'cu_id':
             personal_list.append(column_name.name)
 
-    for column_name in master_table._meta.get_fields():
+    for column_name in MasterTable._meta.get_fields():
         if column_name.name != 'id' and column_name.name != 'cust_id':
             m_list.append(column_name.name)
 

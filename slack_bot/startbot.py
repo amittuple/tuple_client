@@ -1,15 +1,15 @@
 import csv
 import time
-
+import re
 from slackclient import SlackClient
 
 from slack_function.function_for_slack import for_slack
 from .models import Team_amit
 
-
 def handle_command(command_1, channel,slack_client,token,command):
     var_check=0
     var_check_1=0
+    regular_expression = r"(([a-z][ ]?)+)$"
     if command=='help':
         slack_client.api_call("chat.postMessage", channel=channel, as_user=True, attachments=[{
             "color": "#581845",
@@ -48,58 +48,40 @@ def handle_command(command_1, channel,slack_client,token,command):
         }])
         var_check_1=1
     if var_check_1==0:
-    # if command=='cltv' or command=='help':
-        if command=="cltv" or command=="send" or command=='churn'or command=="profile" or command=="predictions" or command=='value'or command=='name'or command=='age'or command=='high_converter'or command=='country'or command=='filter'or command=='help':
-            print "test"
+
+        if re.match(regular_expression, command):
+
+            # if command=="cltv" or command=="send" or command=='churn'or command=="profile" or command=="predictions" or command=='value'or command=='name'or command=='age'or command=='high_converter'or command=='country'or command=='filter'or command=='help':
             slack_client.api_call("chat.postMessage", channel=channel, as_user=True, text=command_1)
             var_check = 1
         if var_check == 0:
-            if type(command_1)!=type([1,2,3]):
+            if type(command_1) != type([1, 2, 3]):
                 # for image
-                print "amit"
-                print command_1
-                slack_client.api_call("chat.postMessage", channel=channel, as_user=True,attachments=[{
+
+                slack_client.api_call("chat.postMessage", channel=channel, as_user=True, attachments=[{
                     "title": "click below and go to mailchimp",
                     "text": command_1
                 }])
 
-                #  for button
-                # slack_client.api_call("chat.postMessage", channel=channel, as_user=True, text= "",attachments= [
-                #
-                # {
-                #
-                #     "fallback": "",
-                #     "callback_id": "wopr_game",
-                #     "color": "#3AA3E3",
-                #     "attachment_type": "default",
-                #     "actions": [
-                #
-                #         {
-                #             "name": "maze",
-                #             "text": "Falken's Maze",
-                #             "type": "button",
-                #             "value": command_1
-                #         }
-                #     ]
-                # }
-                # ]
-                #
-                # )
             else:
                 voice_0 = 0
-                if command_1 ==[]:
+                if command_1 == []:
                     slack_client.api_call("chat.postMessage", channel=channel, as_user=True, text="no record found")
-                    voice_0=1
-                if voice_0==0:
+                    voice_0 = 1
+                if voice_0 == 0:
 
-                    from team.models import Personal
-                    personal_client=Personal._meta.get_fields()
-                    list_table=[]
+                    from team.models import PersonalTable
+                    personal_client = PersonalTable._meta.get_fields()
+                    list_table = []
                     for x in personal_client:
                         list_table.append(x.name)
+                    print list_table
+                    print 'table list'
                     with open('output_amit.csv', "wb") as csvfile:
                         writer = csv.writer(csvfile)
-                        writer.writerow([list_table[2], list_table[4], list_table[5], list_table[6]])
+                        writer.writerow([list_table[1], list_table[2], list_table[3]])
+                        print command_1
+                        print 'command_1'
                         writer.writerows(command_1)
 
                     with open('output_amit.csv', 'rb') as fin, \
@@ -111,16 +93,19 @@ def handle_command(command_1, channel,slack_client,token,command):
                     import subprocess
                     input_slack_01 = command.strip(" ")
                     input_slack_1 = input_slack_01.split(" ")
-                    voice=0
+                    voice = 0
                     for x in input_slack_1:
 
-                        if x=='csv' or x=='excel' or x=='sheet':
-                            args_amit=['curl', '-F', 'file=@output_amit.csv', '-F', "channels="+ channel, '-F', 'token='+token, 'https://slack.com/api/files.upload']
+                        if x == 'csv' or x == 'excel' or x == 'sheet':
+                            args_amit = ['curl', '-F', 'file=@output_amit.csv', '-F', "channels=" + channel, '-F',
+                                         'token=' + token, 'https://slack.com/api/files.upload']
                             subprocess.call(args_amit)
-                            voice=1
-                    if voice==0:
-                        args_amit=['curl', '-F', 'file=@foutput.txt', '-F', "channels="+ channel, '-F', 'token='+token, 'https://slack.com/api/files.upload']
+                            voice = 1
+                    if voice == 0:
+                        args_amit = ['curl', '-F', 'file=@foutput.txt', '-F', "channels=" + channel, '-F', 'token=' + token,
+                                     'https://slack.com/api/files.upload']
                         subprocess.call(args_amit)
+
 
 def parse_slack_output(slack_rtm_output,AT_BOT):
     output_list = slack_rtm_output

@@ -3,14 +3,25 @@
 {% block content %}
 {% load static %}
 
-<div class="col-lg-10 col-lg-offset-1" style="margin-top: 10px;">
-    <ol class="breadcrumb">
-        <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
-        <li class="active">Column Mapping</li>
-        <li class="active">Mapping Review</li>
-        <li class="active">Transfer Database</li>
-    </ol>
+<!--<div class="col-lg-10 col-lg-offset-1" style="margin-top: 10px;">-->
+<!--<ol class="breadcrumb">-->
+<!--<li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>-->
+<!--<li class="active">Column Mapping</li>-->
+<!--<li class="active">Mapping Review</li>-->
+<!--<li class="active">Transfer Database</li>-->
+<!--</ol>-->
+<!--</div>-->
+<link href="{% static 'assets/custom/subnav.css' %}" rel="stylesheet">
+
+<div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">
+    <ul class="subnav" id="mysubnav">
+        <li class="center"><a href="{% url 'table_mapping' %}" style="font-size: 13px">Table Mapping</a></li>
+        <li class="center active"><a  href="{% url 'column_mapping' %}" style="font-size: 13px">Column Mapping</a></li>
+        <li class="center active"><a href="{% url 'mapping_review' %}" style="font-size: 13px">Mapping Review</a></li>
+        <li id="transfer_active" class="center"><a href="{% url 'transfer_database' %}" style="font-size: 13px">Transfer Database</a></li>
+    </ul>
 </div>
+
 
 <form action="." method="post" class="container">
     <div class="row">
@@ -30,5 +41,15 @@
         </div>
     </div>
 </form>
-
+<script>
+    $(document).ready(function () {
+        $("#transfer_active").addClass("border");
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $("#map_active").css("color","#ffa05d");
+        $("#map_active").css('border-bottom','3px solid #ffa05d');
+    })
+</script>
 {% endblock %}

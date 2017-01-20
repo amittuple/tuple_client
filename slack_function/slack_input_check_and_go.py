@@ -2,25 +2,24 @@ from slack_function.function_amit_slack import changetoint
 from team.function_input import convert_unicode_to_string, conevert_string_in_integer
 import re
 
-from team.models import Personal,master_table
+from team.models import PersonalTable,MasterTable
 
 
 def first_it_come_slack_check(input_check):
    change_to_string = convert_unicode_to_string(input_check)
 
    change_to_int = changetoint(change_to_string)
-
    mn = conevert_string_in_integer(change_to_int)
    regular_expression = r"(([a-z][ ]?[?]?[_]?)+)$"
 
    personal_list = []
    m_list = []
 
-   for column_name in Personal._meta.get_fields():
+   for column_name in PersonalTable._meta.get_fields():
        if column_name.name != 'id' and column_name.name != 'cu_id':
            personal_list.append(column_name.name)
 
-   for column_name in master_table._meta.get_fields():
+   for column_name in MasterTable._meta.get_fields():
        if column_name.name != 'id' and column_name.name != 'cust_id':
            m_list.append(column_name.name)
 

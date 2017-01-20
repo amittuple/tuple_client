@@ -16,7 +16,39 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 # Load task modules from all registered Django app configs.
 app.autodiscover_tasks()
 
+app.conf.timezone = 'UTC'
+
+app.conf.beat_schedule = {
+    'run-scoring-daily': {
+        'task': 'database_management.scheduled_tasks.scoring',
+        'schedule': 10.0,
+        'args': ()
+    },
+    'run-training-weekly': {
+        'task': 'database_management.scheduled_tasks.training',
+        'schedule': 10.0,
+        'args': ()
+    }
+}
+
+# app.conf.beat_schedule = {
+#     'add-every-30-seconds': {
+#         'task': 'database_management.scheduled_tasks.temporary',
+#         'schedule': 5.0,
+#         'args': (16, 16)
+#     },
+# }
 
 @app.task(bind=True)
 def debug_task(self):
     print('Request: {0!r}'.format(self.request))
+
+
+    # @app.on_after_configure.connect
+    # def setup_periodic_tasks(sender, **kwargs):
+    #     sender.add_periodic_task(5.0, temporary.s(5, 7), name='add every 5 seconds')
+    #
+    # @app.task
+    # def test(arg):
+    #     print(arg)
+    #     return arg

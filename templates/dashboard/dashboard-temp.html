@@ -1,0 +1,145 @@
+<input type="button" id="btnChange" value="  Change ID " style ="display:none;"/>
+<input type="button" id="btncircle" value="CircleFill" style="display: none;"/>
+
+<div class="container container-tbl">
+
+    <div class="panel-heading ">
+        <div class="row" style="font-size: 16px;text-align: center; background-color: #545454; color: white; margin-left: -15px;">
+            <div class="col-sm-2 col-sm-push-0 ">
+                Cltv
+            </div>
+            <div class="col-sm-2 col-sm-push-1">
+                Churn
+            </div>
+            <div class="col-sm-2 col-sm-pull-1">
+                High_converter
+            </div>
+            <div class="col-sm-2 col-sm-pull-0">
+                Value
+            </div>
+            <div class="col-sm-2 col-sm-pull-2 ">
+                Profile
+            </div>
+            <div class="col-sm-2 col-sm-pull-1">
+                Engagement
+            </div>
+        </div>
+    </div>
+
+
+    <div id="master_table" style=" margin-left: -45px;">
+        {% for tab1 in table %}
+
+
+        <div class="panel-group" id="{{tab1.id}}-accordion">
+            <div class="panel-heading" >
+                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#{{tab1.id}}-accordion" href="#{{tab1.id}}">
+                    <div  class="row" >
+                        <div id="cltv-" class="col-sm-2 cltv " >
+                            {{tab1.cltv}}
+                        </div>
+                        <div id="churn-"class = "col-sm-2 churn" >
+                            {{tab1.churn}}
+                        </div>
+                        <div id="high_converter-" class="col-sm-2 converter" >
+                            {{tab1.high_converter}}
+                        </div>
+                        <div id="{{ tab1.value }}"  class="col-sm-2 "  >
+
+                            {{ tab1.value }}
+                        </div>
+                        <div id="{{tab1.profile}}" class="col-sm-2 "  >
+                            {{tab1.profile}}
+                        </div>
+                        <div id="{{tab1.engagement}}"class="col-sm-2 "  >
+                            {{tab1.engagement}}
+                        </div>
+                    </div>
+                </a>
+                </h4>
+                <div id="{{tab1.id}}" class="panel-collapse collapse ">
+                    <div>
+
+                        <img src="{% static 'assets/image1/login.png' %}">
+
+                    </div>
+                    <div class="circles">
+                        <div id="f{{tab1.id}}" class="circle" >
+                            <strong style="color: #ff8000;">{{tab1.cltv}}</strong>
+                            <span >Cltv</span>
+                        </div>
+
+                        <div id="s{{tab1.id}}" class="circle"  >
+                            <strong style="color: lightgreen;">{{tab1.churn}}</strong>
+                            <span>Churn</span>
+                        </div>
+
+                        <div id="t{{tab1.id}}" class="circle"  >
+                            <strong style="color: rgb(255,215,0);">{{tab1.high_converter}}</strong>
+                            <span >High_converter</span>
+                        </div>
+
+                        <div id="v{{tab1.id}}" class="row " >
+                            <div class="col-sm-3 " style=" margin-left: 547px;text-align:center;margin-top: -136px;border-left: dashed;border-color: #C7C7C7;">Value</div>
+                            <div class="col-sm-3" style=" margin-top: -136px; margin-left: 690px;font-style: oblique;">{{tab1.value}}</div>
+                        </div>
+                        <div id="p{{tab1.id}} " class="row">
+                            <div class="col-sm-3 " style=" margin-left: 547px;margin-top: -86px;border-left: dashed;border-color: #C7C7C7;">Profile</div>
+                            <div class="col-sm-3" style="margin-top: -86px;margin-left: 690px;font-style: oblique;">{{tab1.profile}}</div>
+                        </div>
+                        <div id="E{{tab1.id}}" class="row">
+                            <div class="col-sm-3 " style="margin: -36px 0px 0px 547px;border-left: dashed;border-color: #C7C7C7;">Engagement</div>
+                            <div class="col-sm-3" style="margin: -51px 0px 0px 690px;font-style: oblique;">{{tab1.engagement}}</div>
+                            <p style="margin-top: 0px; margin-bottom: 0px; margin-left: -230px; margin-right: 230px;">Name:&nbsp&nbsp;{{tab1.profile}}</p>
+                        </div>
+                        <script>
+                            $(document).ready(function() {
+                                var t= {{tab1.cltv}};
+                                $('.row').click(function() {
+                                    $('#f{{tab1.id}}').circleProgress({
+                                        startAngle: -Math.PI /4 * 3,
+                                        value: t/100000,
+                                        lineCap: 'round',
+                                        fill:  {color: '#ff8000'}
+                                    });
+                                });
+                            });
+                            $(document).ready(function() {
+                                var a = {{tab1.churn}};
+                                $('.row').click(function() {
+                                    $('#s{{tab1.id}}').circleProgress({
+                                        value: a/100,
+                                        fill:{color: 'lightgreen'}
+                                    }).on('circle-animation-progress', function(event, progress) {
+                                        $(this).find('strong').html(parseInt({{tab1.churn}} * progress) + '<i>%</i>');
+                                    });
+                                });
+                            });
+
+                            $(document).ready(function() {
+                                var b = {{tab1.high_converter}};
+                                $('.row').click(function() {
+                                    $('#t{{tab1.id}}').circleProgress({
+                                        value: b/100,
+                                        fill: {color:'rgb(255,215,0)', gradientAngle: Math.PI / 4}
+                                    }).on('circle-animation-progress', function(event, progress, stepValue) {
+                                        $(this).find('strong').html(parseInt({{tab1.high_converter}} * progress));
+                                    });
+                                });
+                            });
+                        </script>
+
+                        <script>
+                            $(document).ready(function() {
+                                $('#btncircle').click();
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>

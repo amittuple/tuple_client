@@ -6,7 +6,7 @@ from .filters import get_item
 from .models import *
 
 from connect_client_db.views import client_has_db_config
-
+from login.views import is_admin
 
 # api functions
 
@@ -231,6 +231,7 @@ def column_mapping(request):
         return HttpResponseRedirect(reverse('mapping_review'))
 
     return render(request, 'mapper/column-mapping.html', {
+        'is_admin': is_admin(user),
         'client_table_and_column_with_type': client_table_and_column_with_type,
         'our_model': our_model,
         'table_map': table_map,
@@ -285,6 +286,7 @@ def table_mapping(request):
         return HttpResponseRedirect(reverse('column_mapping'))
 
     return render(request, 'mapper/table-mapping.html', {
+        'is_admin': is_admin(user),
         'list_of_tables': list_of_tables,
         'list_of_headings': list_of_our_tables,
         'is_table_name_mandatory': is_table_name_mandatory(),

@@ -18,6 +18,8 @@ from django.contrib import admin
 # from .views import fildb
 # from .views import filpro
 
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('login.urls')),

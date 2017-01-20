@@ -1,185 +1,260 @@
 {% load static %}
-
 {% if warning == 'EMPTY' %}
 
 <div class="alert alert-dismissible alert-info">
-	<!--<button type="button" class="close" data-dismiss="alert">×</button>-->
 	<strong>No Results Found.</strong>
 </div>
-
 
 {% elif warning == True %}
 
 <div class="alert alert-dismissible alert-info">
-	<!--<button type="button" class="close" data-dismiss="alert">×</button>-->
 	<strong>Error ! </strong> Some
 	<a href="#" class="alert-link">Error</a> Occurred. Please Contact Administrator.
 </div>
 
 {% else %}
 
+<table class="amit jAccordionTable table table-hover" data-page-size="6" data-page-navigation=".pagination" data-limit-navigation="5" style="border: 3px solid lightseagreen">
 
-<script src="{% static 'assets/dashboard/app.js' %}"></script>
-{% for tab1 in table %}
-<div class="panel-group" id="{{tab1.cust_id}}-accordion">
-	<div class="panel-heading" >
-		<div class="panel-title">
-			<a style="color: black;" data-toggle="collapse" data-parent="#{{tab1.cust_id}}-accordion" href="#{{tab1.cust_id}}">
-				<div class="row seven-cols">
-					<div id="{{tab1.name}}" class="col-lg-1 text-center">
-						{{tab1.name}}
-					</div>
-					<div id="{{tab1.cltv}}" class="col-lg-1 text-center cltv-color">
-						{% if tab1.cltv is None %}
-						None
-						{% else %}
-						{{tab1.cltv|floatformat:2}}
-						{% endif %}
-					</div>
-					<div id="{{tab1.churn}}"class = "col-lg-1 text-center churn-color">
-						{% if tab1.churn is None %}
-						None
-						{% else %}
-						{{tab1.churn|floatformat:2}}
-						{% endif %}
-					</div>
-					<div id="{{tab1.high_convertor}}" class="col-lg-1 text-center high-convertor-color">
-						{{tab1.high_convertor}}
-					</div>
-					<div id="{{ tab1.value }}"  class="col-lg-1 text-center">
-						{{ tab1.value }}
-					</div>
-					<div id="{{tab1.cluster}}" class="col-lg-1 text-center">
-						{% if tab1.cluster is None %}
-						None
-						{% else %}
-						{{tab1.cluster|floatformat:2}}
-						{% endif %}
-					</div>
-					<div id="{{tab1.engagement}}"class="col-lg-1 text-center">
-						{{tab1.engagement}}
-					</div>
-				</div>
+	<thead style="background-color: lightseagreen;color: white">
+	<tr class="row seven-cols">
+		<th class="col-md-1 text-center" data-sort="string"><span>FULLNAME</span></th>
+		<th class="col-md-2 text-center" data-sort="int"><span>CLTV</span></th>
+		<th class="col-md-1 text-center" data-sort="int"><span>CHURN</span></th>
+		<th class="col-md-1 text-center" data-sort="string"><span>HIGH CONV</span></th>
+		<th class="col-md-1 text-center" data-sort="string"><span>VALUE</span></th>
+		<th class="col-md-1 text-center" data-sort="int"><span>BIO</span></th>
+		<th class="col-md-1 text-center" data-sort="string"><span>ENGAGEMENT</span></th>
+	</tr>
+	</thead>
+
+
+	{% for tab1 in table_9 %}
+
+	<tbody>
+
+	<tr class="row seven-cols color-bg">
+		<td id = "{{tab1.fullname}}" class="lalign col-md-1 text-center">
+			<a  data-toggle="collapse" style="color: black;" data-parent="#{{tab1.cust_id}}-accordion" href="#{{tab1.cust_id}}">
+				{{ tab1.name }}
 			</a>
-		</div>
-	</div>
-	<div id="{{tab1.cust_id}}" class="panel-body panel-collapse collapse">
-		<div class="row">
-			<div class="col col-lg-2">
-				<img src="{% static 'assets/images/login.png' %}" class="img-responsive img-rounded">
+		</td>
+		<td id="{{tab1.cltv}}" class="lalign col-md-1 text-center cltv-color">
+			<a  data-toggle="collapse" style="color: black;" data-parent="#{{tab1.cust_id}}-accordion" href="#{{tab1.cust_id}}">
+				{% if tab1.cltv is None %}
+				None
+				{% else %}
+				{{tab1.cltv|floatformat:2}}
+				{% endif %}
+			</a>
+		</td>
+		<td id="{{tab1.churn}}" class="lalign col-md-1 text-center churn-color">
+			<a  data-toggle="collapse" style="color: black;" data-parent="#{{tab1.cust_id}}-accordion" href="#{{tab1.cust_id}}">
+				{% if tab1.churn is None %}
+				None
+				{% else %}
+				{{tab1.churn|floatformat:2}}
+				{% endif %}
+			</a>
+		</td>
+		<td id="{{tab1.high_convertor}}" class="lalign col-md-1 text-center high-convertor-color">
+			<a  data-toggle="collapse" style="color: black;" data-parent="#{{tab1.cust_id}}-accordion" href="#{{tab1.cust_id}}">
+				{{tab1.high_convertor}}
+			</a>
+		</td>
+		<td id="{{ tab1.value }}" class="lalign col-md-1 text-center">
+			<a  data-toggle="collapse" style="color: black;" data-parent="#{{tab1.cust_id}}-accordion" href="#{{tab1.cust_id}}">
+				{{ tab1.value }}
+			</a>
+		</td>
+		<td id="{{tab1.cluster}}" class="lalign col-md-1 text-center">
+			<a  data-toggle="collapse" style="color: black;" data-parent="#{{tab1.cust_id}}-accordion" href="#{{tab1.cust_id}}">
+				{% if tab1.cluster is None %}
+				None
+				{% else %}
+				{{tab1.cluster|floatformat:2}}
+				{% endif %}
+			</a>
+		</td>
+		<td id="{{tab1.engagement}}" class="lalign col-md-1 text-center">
+			<a  data-toggle="collapse" style="color: black;" data-parent="#{{tab1.cust_id}}-accordion" href="#{{tab1.cust_id}}">
+				{{tab1.engagement}}
+			</a>
+		</td>
+	</tr>
+
+	<tr  id="{{tab1.cust_id}}" class="dashboard_row_trans row seven-cols panel-body panel-collapse collapse" style="background: rgba(255,255,255, .4);">
+		<td class="lalign col-md-2">
+			<img src="{% static 'assets/images/login.png' %}" class="img-responsive img-rounded">
+		</td>
+		<td class="lalign col-md-2">
+			<h4>Lifetime Value</h4>
+			{% if tab1.cltv is None %}
+			<span>N/A</span>
+			{% else %}
+			<span>{{tab1.cltv|floatformat:2}}</span>
+			{% endif %}
+			<h4>CLV Differentiator</h4>
+			<span>84000</span>
+		</td>
+		<td id="value-{{tab1.cust_id}}" class="lalign row col col-lg-4 circles circle text-center">
+			<div class="circle-label text-center">
+				{% if tab1.percent_cltv is None %}
+				<strong class="value"></strong>
+				<span>N/A</span>
+				{% else %}
+				{% if tab1.percent_cltv > 50 %}
+				<strong class="value" style="color: lightgreen">{{tab1.percent_cltv|floatformat:2}}%</strong>
+				{% else %}
+				<strong class="value" style="color: red">{{tab1.percent_cltv|floatformat:2}}%</strong>
+				{% endif %}
+				<span>Value</span>
 			</div>
-			<div class="col col-lg-2">
-				<div class="row">
-					<h4>Lifetime Value</h4>
-					{% if tab1.cltv is None %}
-					<span>N/A</span>
-					{% else %}
-					<span>{{tab1.cltv|floatformat:2}}</span>
-					{% endif %}
-				</div>
-				<div class="row">
-					<h4>CLV Differentiator</h4>
-					<span>0</span>
-				</div>
+
+			{% endif %}
+
+		</td>
+
+		<td id="loyalty-{{tab1.cust_id}}" class="lalign row col col-lg-4 circles circle text-center">
+			<div class="circle-label text-center">
+				{% if tab1.percent_churn is None or tab1.percent_cltv is None %}
+				<strong class="value"></strong>
+				<span>N/A</span>
+				{% else %}
+				{% if tab1.percent_churn > 50 or tab1.percent_cltv > 50 %}
+				<strong class="loyalty" style="color: lightgreen">{% widthratio tab1.percent_cltv|add:tab1.percent_churn 2 1 %} %</strong>
+				{% else %}
+				<strong class="loyalty" style="color: red">{% widthratio tab1.percent_cltv|add:tab1.percent_churn 2 1 %} %</strong>
+				{% endif %}
+				<span>Loyalty</span>
+				{% endif %}
 			</div>
-			<div class="col col-lg-8">
-				<div class="row circles">
-					<div class="col col-lg-4">
-						<div id="value-{{tab1.cust_id}}" class="circle text-center"></div>
-						<div class="circle-label text-center">
-							{% if tab1.percent_cltv is None %}
-							<strong class="value"></strong>
-							<span>N/A</span>
-							{% else %}
-							<strong class="value">{{tab1.percent_cltv|floatformat:2}}%</strong>
-							<span>Value</span>
-							{% endif %}
-						</div>
-					</div>
-					<div class="col col-lg-4">
-						<div id="loyalty-{{tab1.cust_id}}" class="circle text-center"></div>
-						<div class="circle-label text-center">
-							{% if tab1.percent_churn is None or tab1.percent_cltv is None %}
-							<strong class="value"></strong>
-							<span>N/A</span>
-							{% else %}
-							<strong class="loyalty">{% widthratio tab1.percent_cltv|add:tab1.percent_churn 2 1 %} %</strong>
-							<span>Loyalty</span>
-							{% endif %}
-						</div>
-					</div>
-					<div class="col col-lg-4">
-						<div id="engagement-{{tab1.cust_id}}" class="circle text-center"></div>
-						<div class="circle-label text-center">
-							{% if tab1.percent_churn is None %}
-							<strong class="value"></strong>
-							<span>N/A</span>
-							{% else %}
-							<strong class="value">{{tab1.percent_churn|floatformat:2}}%</strong>
-							<span>Engagement</span>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-				<script>
-                    $(document).on('click', '.panel-title > a > .row', function(event) {
-                        $('.panel-title > a > .row').css('background-color', 'white');
-                        $(this).css('background-color', 'lightgray');
-                    });
-                    $(document).ready(function() {
-                        {% if tab1.percent_cltv is None %}
-						var t = 0;
-						{% else %}
-                        var t= {{tab1.percent_cltv}};
-						{% endif %}
-                        $('.row').click(function() {
-                            $('#value-{{tab1.cust_id}}').circleProgress({
-                                value: t/100,
-                                fill:  {color: 'red'}
-                            }).on('circle-animation-progress', function(event, progress) {
-                                $(this).find('strong').html(parseInt(t * progress) + '<i>%</i>');
-                            });
-                        });
-                    });
-                    $(document).ready(function() {
-						{% if tab1.percent_cltv is None or tab1.percent_churn is None %}
-						var a = 0;
-						{% else %}
-                        var a = {% widthratio tab1.percent_cltv|add:tab1.percent_churn 2 1 %};
-						{% endif %}
-                        $('.row').click(function() {
-                            $('#loyalty-{{tab1.cust_id}}').circleProgress({
-                                value: a/100,
-                                fill:{color: 'lightgreen'}
-                            }).on('circle-animation-progress', function(event, progress) {
-                                $(this).find('strong').html(parseInt(a * progress) + '<i>%</i>');
-                            });
-                        });
-                    });
 
-                    $(document).ready(function() {
-                        {% if tab1.percent_churn is None %}
-						var b = 0;
-						{% else %}
-                        var b = {{tab1.percent_churn}};
-						{% endif %}
-                        $('.row').click(function() {
-                            $('#engagement-{{tab1.cust_id}}').circleProgress({
-                                value: b/100,
-                                fill: {color:'rgb(255,215,0)', gradientAngle: Math.PI / 4}
-                            }).on('circle-animation-progress', function(event, progress, stepValue) {
-                                $(this).find('strong').html(parseInt(b * progress));
-                            });
-                        });
-                    });
-				</script>
+		</td>
+
+		<td id="engagement-{{tab1.cust_id}}" class="lalign row col col-lg-4 circles circle text-center circle-label text-center">
+			<div class="circle-label text-center">
+				{% if tab1.percent_churn is None %}
+				<strong class="value"></strong>
+				<span>N/A</span>
+				{% else %}
+				{% if tab1.percent_churn > 50 %}
+				<strong class="value" style="color: lightgreen">{{tab1.percent_churn|floatformat:2}}%</strong>
+				{% else %}
+				<strong class="value" style="color: red">{{tab1.percent_churn|floatformat:2}}%</strong>
+				{% endif %}
+				<span>Engagement</span>
+				{% endif %}
 			</div>
-		</div>
-	</div>
-</div>
+		</td>
 
+		<script>
+            $(document).on('click', '.panel-title > a > .row', function(event) {
+                $('.panel-title > a > .row').css('background-color', 'white');
+                $(this).css('background-color', 'lightgray');
+            });
+            $(document).ready(function() {
+                {% if tab1.percent_cltv is None %}
+                var t = 0;
+                {% else %}
+                var t= {{tab1.percent_cltv}};
+                {% endif %}
+                $('.row').click(function() {
+                    $('#value-{{tab1.cust_id}}').circleProgress({
+                        value: t/100,
+                        fill:  {color: 'lightgreen'}
+                    }).on('circle-animation-progress', function(event, progress) {
+                        $(this).find('strong').html(parseInt(t * progress) + '<i>%</i>');
 
-{% endfor %}
+                    });
+                });
+            });
+            $(document).ready(function() {
+                {% if tab1.percent_cltv is None or tab1.percent_churn is None %}
+                var a = 0;
+                {% else %}
+                var a = {% widthratio tab1.percent_cltv|add:tab1.percent_churn 2 1 %};
+                {% endif %}
+                $('.row').click(function() {
+                    $('#loyalty-{{tab1.cust_id}}').circleProgress({
+                        value: a/100,
+                        fill:{color: 'lightgreen'}
+                    }).on('circle-animation-progress', function(event, progress) {
+                        $(this).find('strong').html(parseInt(a * progress) + '<i>%</i>');
+                    });
+                });
+            });
 
+            $(document).ready(function() {
+                {% if tab1.percent_churn is None %}
+                var b = 0;
+                {% else %}
+                var b = {{tab1.percent_churn}};
+                {% endif %}
+                $('.row').click(function() {
+                    $('#engagement-{{tab1.cust_id}}').circleProgress({
+                        value: b/100,
+                        fill: {color:'rgb(255,215,0)', gradientAngle: Math.PI / 4}
+                    }).on('circle-animation-progress', function(event, progress, stepValue) {
+                        $(this).find('strong').html(parseInt(b * progress));
+                    });
+                });
+            });
+		</script>
 
+	</tr>
+
+	</tbody>
+
+	{% endfor %}
+</table>
+
+<script>
+    $( document ).ready(function(){
+        function accordionTable(i,elem) {
+            var table = $(elem),
+                tbody = table.find('tbody'),
+                th_index = 0,
+                th_sortType = "string";
+
+//accordion on tbody > tr
+            tbody.find('tr:first').addClass('table-acc-header');
+            tbody.find('tr:last').addClass('table-acc-body');
+            $('.table-acc-header').click(function() {
+                table.find('.table-acc-body').addClass('collapse');
+                $(this).next('.table-acc-body').removeClass('collapse');
+            });
+
+            function mapTDs(i, elem){
+                var txt = $("td", elem).eq(th_index).text();
+                $(elem).attr("data-sortval", txt);
+            }
+            function sortAsc(a, b){
+                var aData = $(a).attr("data-sortval"),
+                    bData = $(b).attr("data-sortval");
+                if(th_sortType==="int"){
+                    return +bData < +aData ? 1 : -1; // Integer
+                }else{
+                    return  bData <  aData ? 1 : -1; // String or else
+                }
+            }
+
+//header sort
+            table.on("click", "th", function() {
+                th_sortType = $(this).data('sort');
+                th_index = $(this).index();
+                tbody = table.find('tbody').each(mapTDs);
+                tbody.sort(sortAsc).detach().appendTo(table);
+            });
+        }
+
+        $('.jAccordionTable').each(accordionTable);
+
+    });
+
+</script>
+
+<script>
+    $('tbody .color-bg:even').css('background-color', '#fafafa');
+</script>
 {% endif %}

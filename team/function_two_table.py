@@ -1,11 +1,11 @@
 from .Universal_function_master import Universal_function
 from .function_input import get_id, get_cu_id
 from .Universal_function_personal import Universal_function_Personal
-from .models import master_table
+from .models import MasterTable
 
 def A12(input_come):
     list_match = []
-    for column_name in master_table._meta.get_fields():
+    for column_name in MasterTable._meta.get_fields():
         if column_name.name != 'id' and column_name.name != 'cust_id':
             list_match.append(column_name.name)
     list_match_master = list_match

@@ -1,63 +1,19 @@
-from team.models import Personal,master_table
+from team.models import PersonalTable,MasterTable
 import re
 
 list_match = []
 personal_list = []
-for column_name in Personal._meta.get_fields():
+for column_name in PersonalTable._meta.get_fields():
     if column_name.name != 'id' and column_name.name != 'cu_id':
         personal_list.append(column_name.name)
         list_match.append(column_name.name)
 
 master_list = []
-for column_name in master_table._meta.get_fields():
+for column_name in MasterTable._meta.get_fields():
     if column_name.name != 'id' and column_name.name != 'cust_id':
         master_list.append(column_name.name)
         list_match.append(column_name.name)
 
-def from_master_table_id_to_find_personal_object(input_object):
-
-    list_extra_large = []
-    for x in input_object:
-        try:
-            person1 = Personal.objects.get(cu_id=x)
-
-            list_email = []
-            value = person1.name
-            if value == '' or value == None:
-                value = 'NA'
-            list_email.append(value)
-
-            value = person1.age
-            if value == '' or value == None:
-                value = 'NA'
-            list_email.append(value)
-
-            value = person1.country
-            if value == '' or value == None:
-                value = 'NA'
-            list_email.append(value)
-
-            value = person1.email_id
-            if value == '' or value == None:
-                value = 'NA'
-            list_email.append(value)
-
-            list_extra_large.append(list_email)
-        except:
-            pass
-    email_list_1 = []
-
-    from slack_bot.models import email_list_for_slack_1
-    for email_x in list_extra_large:
-        email_list_1.append(email_x[3])
-
-    obj = email_list_for_slack_1()
-    obj.email_list_slack = email_list_1
-    obj.save()
-    return list_extra_large
-
-
-# change gt lt to standard format
 def change_gt_lt_and(input_check_gt):
     l = []
     for x in input_check_gt:
@@ -130,6 +86,7 @@ def Standard1(stunt):
         for a in stunt[1:]:
 
             a1=set(a1).intersection(a)
+
     except:
 
             pass
@@ -148,7 +105,7 @@ def convert_high_low_medium_value(high_low_medium):
     length_cltv=[]
     length_cltv_1=[]
     length_cltv_2=[]
-    master_table_list = master_table.objects.all()
+    master_table_list = MasterTable.objects.all()
     for row in master_table_list:
         if row.cltv > cltv_max:
             cltv_max = row.cltv
@@ -253,7 +210,7 @@ def get_string(input_list):
     for x in input_list:
         b = b + 1
 
-        if x in list_match:
+        if x in personal_list:
             v=get_list(a, b-1, input_list)
             if v!=[]:
                 list1.append(v)
@@ -263,8 +220,7 @@ def get_string(input_list):
             if input_list.index(x) == len(input_list)-1:
                 v2=get_list(a, b, input_list)
                 list1.append(v2)
-
-    return list1[1:]
+    return list1
 def get_list(a, b, input_list):
     list = []
 
@@ -296,8 +252,40 @@ def get_id(input):
 
 def get_cu_id(input):
     list_2=[]
+
     for x in input:
 
         list_2.append(x.cust_id)
 
     return list_2
+
+
+def get_string_0(input_list):
+    list_000=[]
+    a = 0
+    b = -1
+    for x in input_list:
+        b = b + 1
+
+        if x in master_list:
+            v=get_list_0(a, b-1, input_list)
+            if v!=[]:
+                list_000.append(v)
+                a = b
+            continue
+        else:
+            if input_list.index(x) == len(input_list)-1:
+                v2=get_list_0(a, b, input_list)
+                list_000.append(v2)
+    return list_000[1:]
+def get_list_0(a, b, input_list):
+    list00 = []
+
+    if a == 0 and b == -1:
+        return " "
+
+    for x in range(len(input_list)):
+        if x < b + 1 and x > a - 1:
+            list00.append(input_list[x])
+
+    return list00

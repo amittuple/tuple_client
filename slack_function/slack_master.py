@@ -1,65 +1,53 @@
-from .function_amit_slack import convert_high_low_medium_value,convert_unicode_to_string_slack,convert_unicode_to_integer,changetoint,convert_str_to_int, \
-    from_master_table_id_to_find_personal_object,get_cu_id
-
-from team.regular_part import first_regular,second_regular,third_regular,forth_regular
-import re
-from team.models import master_table
+from .function_amit_slack import changetoint,convert_str_to_int,get_cu_id, get_string_0
+from team.regular_part import reg_one
+import re,string
+from team.models import MasterTable
 
 def slack_master_input(inputLack_A13):
+    print "########### enter into master slack funciton master table ##########"
 
-    print "enter into master slack funciton master table"
+    convert_strTo_int = convert_str_to_int(inputLack_A13)
 
-    input_slack_4=convert_high_low_medium_value(inputLack_A13)
+    string_split=convert_strTo_int.split(" ")
+    string_split_break=get_string_0(string_split)
+    convert_STR=[]
+    for x in string_split_break:
+        s=" "
+        for y in x:
+            s=s+" "+y
+        convert_STR.append(s)
 
-    input_slack_5=convert_unicode_to_string_slack(input_slack_4)
+    Str_List=[]
+    for var in convert_STR:
+        if var.find("high"):
+            new_str=string.replace(var,'high',"'High'")
+        elif var.find("low"):
+            new_str=string.replace(var,'low',"'Low'")
+        elif var.find("very low"):
+            new_str=string.replace(var,'very low',"'Very Low'")
+        elif var.find("very high"):
+            new_str=string.replace(var,'very high',"'Very High'")
+        elif var.find("medium"):
+            new_str=string.replace(var,'medium',"'Medium'")
+        Str_List.append(new_str)
+        
 
-    n90=convert_unicode_to_integer(input_slack_5)
+    print Str_List
+    print "******* Str_List )))))))))***********"
+    changeToInt = changetoint(Str_List)
 
-    n9=convert_str_to_int(n90)
+    def ext_my(za):
 
-    split_n9=n9.split(' ')
-
-    n10=changetoint(split_n9)
-
-    def A(za):
-        #  here we use of this sql query for any single domain like (cltv or churn ) and provide here min value and max value
-        v11 = master_table.objects.raw("SELECT * FROM team_master_table WHERE %s %s %d AND %s %s %d  " % (
-            za[0], za[1], za[2], za[0], za[3], za[4]))
+        print "*********** za ******************"
+        v11 = MasterTable.objects.raw("SELECT * FROM master_table WHERE " +' AND '.join(za))
         return v11
 
-    def B(za):
-        #  here we use of this sql query for any single domain like cltv or churn or anything and provide equal value like this churn=0
-        v11 = master_table.objects.raw("SELECT * FROM team_master_table WHERE %s %s %d" % (za[0], za[1], za[2]))
+    if re.match(reg_one,convert_strTo_int ):
+        my_input = ext_my
 
-        return v11
-
-    def C(za):
-
-        v11 = master_table.objects.raw("SELECT * FROM team_master_table WHERE %s %s '%s'" % (za[0], za[1], za[2]))
-        return v11
-
-    def D(za):
-        v11 = master_table.objects.raw(
-            "SELECT * FROM team_master_table WHERE %s %s %d OR %s %s %d " % (za[0], za[1], za[2], za[0], za[4], za[5]))
-
-        return v11
-
-    if re.match(first_regular, n9):
-        my_input = A
-    if re.match(second_regular, n9):
-        my_input = B
-    if re.match(third_regular, n9):
-        my_input = C
-    if re.match(forth_regular, n9):
-        my_input = D
-
-    p = my_input(n10)
-
+    p = my_input(changeToInt)
     master_object = []
-
     for x in p:
         master_object.append(x)
-    cuid=get_cu_id(master_object)
-    master_object_master= from_master_table_id_to_find_personal_object(cuid)
-
-    return master_object_master
+    master_table_cust_id=get_cu_id(master_object)
+    return master_table_cust_id

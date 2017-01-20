@@ -3,13 +3,44 @@
 {% block content %}
 {% load static %}
 
-<div class="col-lg-4 col-lg-offset-4" style="margin-top: 50px;">
-    <div class="row">
-        <div class="well well-custom-default">
-            <h1 class="text-center">Successfully Connected</h1>
-            <a class="btn btn-md btn-success btn-block" href="{% url 'table_mapping' %}">Go To Mapping</a>
-        </div>
+<!--<div class="col-lg-10 col-lg-offset-1" style="margin-top: 50px;">-->
+<!--<ol class="breadcrumb">-->
+<!--<li class="active">Database Connection Form</li>-->
+<!--<li><a href="{% url 'table_mapping' %}">Database Connection Result</a></li>-->
+<!--</ol>-->
+<!--</div>-->
+<link href="{% static 'assets/custom/subnav.css' %}" rel="stylesheet">
+
+<div class="col-lg-4 col-lg-offset-4">
+
+    <div class="row" style="margin-top: 60px;">
+        <!--<ul class="breadcrumb">-->
+
+        <ul class="subnav" id="mysubnav">
+            <li id ='connect' class="active" style="list-style: none">Database Connection Form</li>
+            <li style="list-style: none"><a href="{% url 'table_mapping' %}">Database Connection Result</a></li>
+        </ul>
+    </div>
+    <!--<ul class="nav nav-tabs">-->
+    <!--<li role="presentation"><a href="{% url 'connect_client_db' %}">Database Connection Form</a></li>-->
+    <!--<li role="presentation" class="active"><a href="#">Database Connection Result</a></li>-->
+    <!--</ul>-->
+
+    <div class="row panel panel-default" style="margin-top: 50px;">
+        <h1 class="text-center">Successfully Connected</h1>
+        <a class="btn btn-md btn-primary btn-block" href="{% url 'table_mapping' %}">Go To Mapping</a>
     </div>
 </div>
-
+<script>
+    $(document).ready(function () {
+        $("#connect").addClass("border");
+//        $("#connect").css("color","#009688 ");
+    })
+</script>
+<script>
+    $(document).ready(function () {
+       $("#data_active").css("color","#ffa05d");
+       $("#data_active").css('border-bottom','3px solid #ffa05d');
+   })
+</script>
 {% endblock %}

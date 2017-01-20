@@ -9,7 +9,7 @@
 }
 
 .circles .circle-label strong {
-    color: #ff8000;
+    /*color: #ff8000;*/
     display: block;
     font-size: 20px;
 }
@@ -22,13 +22,13 @@
 }
 
 .circles .circle-label strong.value {
-    color: #ff8000;
+    /*color: #ff8000;*/
 }
 
 .circles .circle-label strong.loyalty {
-    color: #ff8000;
+    /*color: #ff8000;*/
 }
 
 .circles .circle-label strong.engagement {
-    color: #ff8000;
+    /*color: #ff8000;*/
 }

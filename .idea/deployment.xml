@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="ClientMachineImage" />
+  <component name="PublishConfigData" serverName="dmeo">
+    <serverData>
+      <paths name="ClientMachineImage">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$" />
+            <excludedPath path="demo.aituple.com" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="dmeo">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tuple_client" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$" />
+            <excludedPath path="/" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
 </project>

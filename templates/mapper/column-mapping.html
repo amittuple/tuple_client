@@ -2,7 +2,28 @@
 {% load i18n %}
 {% block content %}
 {% load static %}
-
+<script>
+   $(document).on('click', '#p1', function(e) {
+       var time = 1000;
+       var elements = $('#pv1 p');
+       if( $(this).hasClass('shown') ) {
+           $('#'+elements[4].id).delay(time).fadeOut();
+           $('#'+elements[3].id).delay(time*2).fadeOut();
+           $('#'+elements[2].id).delay(time*3).fadeOut();
+           $('#'+elements[1].id).delay(time*4).fadeOut();
+           $('#'+elements[0].id).delay(time*5).fadeOut();
+           $(this).removeClass('shown')
+       }
+       else {
+           $('#'+elements[0].id).delay(time).fadeIn();
+           $('#'+elements[1].id).delay(time*2).fadeIn();
+           $('#'+elements[2].id).delay(time*3).fadeIn();
+           $('#'+elements[3].id).delay(time*4).fadeIn();
+           $('#'+elements[4].id).delay(time*5).fadeIn();
+           $(this).addClass('shown')
+       }
+   });
+</script>
 <script>
     window.onload = function() {
         list = document.getElementsByTagName('span');
@@ -37,34 +58,54 @@
         }
     }
 </script>
+<link href="{% static 'assets/custom/subnav.css' %}" rel="stylesheet">
+<!--<div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">-->
+    <!--<ol class="breadcrumb">-->
+        <!--<li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>-->
+        <!--<li class="active">Column Mapping</li>-->
+        <!--<li><a href="{% url 'mapping_review' %}">Mapping Review</a></li>-->
+        <!--<li><a href="{% url 'transfer_database' %}">Transfer Database</a></li>-->
+    <!--</ol>-->
+<!--</div>-->
 
 <div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">
-    <ol class="breadcrumb">
-        <li><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
-        <li class="active">Column Mapping</li>
-        <li><a href="{% url 'mapping_review' %}">Mapping Review</a></li>
-        <li><a href="{% url 'transfer_database' %}">Transfer Database</a></li>
-    </ol>
+   <ul class="subnav" id="mysubnav">
+       <li class="center"><a href="{% url 'table_mapping' %}">Table Mapping</a></li>
+       <li class="center" id="col_map">Column Mapping</li>
+       <li class="center"><a href="{% url 'mapping_review' %}">Mapping Review</a></li>
+       <li class="center"><a href="{% url 'transfer_database' %}">Transfer Database</a></li>
+   </ul>
 </div>
 
 <form method="post" class="panel-group" id="accordion" role="tablist" onsubmit="return validate();">
     <div class="row" style="padding-top:50px;">
-        <div class="col col-lg-10 col-lg-offset-1">
-            <div class="alert alert-info">
-                <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
-                <h4>Here Is Some Info!</h4>
-                <p>1: Select Checkbox Corresponding To Every Column To Determine Whether The Column Is A
-                    <a href="#" class="alert-link" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right">
-                        Factor.
-                    </a>
-                </p>
-                <p>2: Map Any Column By Dragging And Dropping On The Right Side.</p>
-                <p>3: Mandatory Columns Are Marked With Asterisk (*) Mark And You Should Map All Of Them.</p>
-                <p>4: Be Sure To Map All Mandatory Columns Before Proceeding Else The Page Will Reset And You Will Lose All Column Mapping Done So Far.</p>
-                <p>5: After Successfull Submit, Column Mapping Will Be Temporary Stored For Convenience Until You Transfer Your Database.</p>
+        <!--<div class="col col-lg-10 col-lg-offset-1">-->
+            <!--<div class="alert alert-info" style="background-color: #1dc8c1">-->
+                <!--&lt;!&ndash;<button type="button" class="close" data-dismiss="alert">×</button>&ndash;&gt;-->
+                <!--<h4>Here Is Some Info!</h4>-->
+                <!--<p>1: Select Checkbox Corresponding To Every Column To Determine Whether The Column Is A-->
+                    <!--<a href="#" class="alert-link" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right">-->
+                        <!--Factor.-->
+                    <!--</a>-->
+                <!--</p>-->
+                <!--<p>2: Map Any Column By Dragging And Dropping On The Right Side.</p>-->
+                <!--<p>3: Mandatory Columns Are Marked With Asterisk (*) Mark And You Should Map All Of Them.</p>-->
+                <!--<p>4: Be Sure To Map All Mandatory Columns Before Proceeding Else The Page Will Reset And You Will Lose All Column Mapping Done So Far.</p>-->
+                <!--<p>5: After Successfull Submit, Column Mapping Will Be Temporary Stored For Convenience Until You Transfer Your Database.</p>-->
 
-            </div>
-        </div>
+            <!--</div>-->
+        <!--</div>-->
+        <div class="col col-lg-10 col-lg-offset-1" style="padding: 20px">
+           <a id="p1" class="list-group-item" style="background-color: #ea5395;color: white">Instruction<span class="caret caret-down"></span></a>
+           <div id="pv1" style="display: block;padding: 5px">
+               <p style="display: none" id="list1"><a href="" class="list-group-item">1: Select Checkbox Corresponding To Every Column To Determine Whether The Column Is a factor</a></p>
+               <p style="display: none" id="list2"><a href="" class="list-group-item">2: Map Any Column By Dragging And Dropping On The Right Side.</a></p>
+               <p style="display: none" id="list3"><a href="" class="list-group-item">3:Mandatory Columns Are Marked With Asterisk (*) Mark And You Should Map All Of Them.</a></p>
+               <p style="display: none" id="list4"><a href="" class="list-group-item">4: Be Sure To Map All Mandatory Columns Before Proceeding Else The Page Will Reset And You Will Lose All Column Mapping Done So Far.</a></p>
+               <p style="display: none" id="list5"><a href="" class="list-group-item">5:  After Successfull Submit, Column Mapping Will Be Temporary Stored For Convenience Until You Transfer Your Database.</a></p>
+           </div>
+
+       </div>
         <div class="col col-lg-10 col-lg-offset-1">
             {% csrf_token %}
             {% for our_table_name, our_column_list in our_model.iteritems %}
@@ -77,7 +118,7 @@
                     </h4>
                 </div>
                 <div id="{{our_table_name}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{our_table_name}}">
-                    <div class="panel-body">
+                    <div class="well well-lg">
 
                         <div class="row">
                             {% with client_table_name=table_map|get_item:our_table_name%}
@@ -176,10 +217,10 @@
         </div>
     </div>
     <div style="position: fixed; right: -10px; top: 45%;">
-        <button class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;" type="submit">Next</button>
+        <button class="btn btn-md btn-primary btn-raised" style="border-radius: 15px; background-color: #1dc8c1" type="submit">Next</button>
     </div>
     <div style="position: fixed; left: -10px; top: 45%;">
-        <a href="{% url 'table_mapping' %}" class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;">Back</a>
+        <a href="{% url 'table_mapping' %}" class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;background-color: #1dc8c1;">Back</a>
     </div>
 </form>
 
@@ -208,5 +249,15 @@
     }
 </script>
 
-
+<script>
+    $(document).ready(function () {
+        $("#col_map").addClass("border");
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $("#map_active").css("color","#ffa05d");
+        $("#map_active").css('border-bottom','3px solid #ffa05d');
+    })
+</script>
 {% endblock %}

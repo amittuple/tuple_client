@@ -1,13 +1,13 @@
-from .models import master_table,Personal
+from .models import MasterTable,PersonalTable
 list_match = []
 personal_list = []
-for column_name in Personal._meta.get_fields():
+for column_name in PersonalTable._meta.get_fields():
     if column_name.name != 'id' and column_name.name != 'cu_id':
         personal_list.append(column_name.name)
         list_match.append(column_name.name)
 
 master_list = []
-for column_name in master_table._meta.get_fields():
+for column_name in MasterTable._meta.get_fields():
     if column_name.name != 'id' and column_name.name != 'cust_id':
         master_list.append(column_name.name)
         list_match.append(column_name.name)
@@ -23,7 +23,7 @@ def convert_high_low_medium_into_maximum_min_medium_value(high_low_medium):
     length_cltv=[]
     length_cltv_1=[]
     length_cltv_2=[]
-    master_table_list = master_table.objects.all()
+    master_table_list = MasterTable.objects.all()
     for row in master_table_list:
         if row.cltv > cltv_max:
             cltv_max = row.cltv
@@ -155,5 +155,3 @@ def get_list(a, b, input_list):
             list.append(input_list[x])
 
     return list
-
-

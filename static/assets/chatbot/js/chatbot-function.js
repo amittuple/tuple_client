@@ -1,5 +1,3 @@
-
-
 $(function(){
     var init = 0;
     $('.input').bind('keydown', function (e) {
@@ -67,7 +65,9 @@ $(function(){
         updateChat('user', input);
         submitInput(input);
     };
+
     var submitInput = function (input) {
+
         st = ''
         for (i = 0; i < input.length; i++) {
             if (input[i] == '<')
@@ -81,7 +81,8 @@ $(function(){
             else temp = input[i]
             st = st + temp
         }
-
+        console.log(st);
+        console.log("st+input");
         $.ajax({
             url: '/am/reply/' + st,
             type: 'GET',
@@ -93,9 +94,10 @@ $(function(){
             },
             error: function (e) {
                 console.log(e);
-                $('.msg_container_base').append(bot_msg('Some Error Occured, Please Try Again Later.',response[t].time));
+                // $('.msg_container_base').append(bot_msg('Some Error Occured, Please Try Again Later.'));
                 $('.input input').removeAttr('disabled');
                 $('#loading_id').css({display: "none"});
+                $('.msg_container_base').scrollTop($('.msg_container_base')[0].scrollHeight);
             }
         });
     };
@@ -129,20 +131,19 @@ $(function(){
                         temp = '-'
                     else if (st_1[k1] == 'eq')
                         temp = '-'
-                    else if (st_1[k1] == " ")
-                        temp = ""
                     else
                         temp = st_1[k1]
                     string_st=string_st+temp
                 }
-
+                console.log(string_st);
+                console.log("string");
                 var str = string_st;
                 var patt = new RegExp(/^(\w+)+$/);
                 var res_1 = patt.test(str);
                 // $('#loading_id1').css({display: "none"});
                 if (res_1==true)
                 {
-                    console.log("amit");
+                    console.log("amit009");
                 }
                 else {
                     $('#master_table').html(response);
@@ -152,9 +153,10 @@ $(function(){
             },
             error: function (e) {
                 console.log(e);
-                $('.msg_container_base').append(bot_msg('Some Error Occured, Please Try Again Later.',response[t].time));
+                // $('.msg_container_base').append(bot_msg('Some Error Occured, Please Try Again Later.'));
                 $('.input input').removeAttr('disabled');
                 $('#loading_id').css({display: "none"});
+                $('.msg_container_base').scrollTop($('.msg_container_base')[0].scrollHeight);
             }
         });
 
@@ -182,11 +184,13 @@ $(function(){
             },
             error: function (e) {
                 console.log(e);
-                $('.msg_container_base').append(bot_msg('Some Error Occured, Please Try Again Later.',response[t].time));
+                // $('.msg_container_base').append(bot_msg('Some Error Occured, Please Try Again Later.'));
                 $('.input input').removeAttr('disabled');
                 $('#loading_id').css({display: "none"});
+                $('.msg_container_base').scrollTop($('.msg_container_base')[0].scrollHeight);
             }
         });
+
     };
     chatInitialize();
 });

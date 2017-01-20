@@ -1,102 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/custom_library/CombineR.py" line="74" mnemonic="9" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="a247cd03-d2f8-46e8-9dee-c995748544a6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/_metadata_/metadata.values.at" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/assets/chatbot/css/index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/assets/chatbot/css/reset.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/assets/chatbot/js/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/dashboard/dashboard-temp.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MappingBuffer.yml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/274fa074-fcc0-4fe1-ad0e-cec0029d6cc6/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/274fa074-fcc0-4fe1-ad0e-cec0029d6cc6/_metadata_/metadata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/274fa074-fcc0-4fe1-ad0e-cec0029d6cc6/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/274fa074-fcc0-4fe1-ad0e-cec0029d6cc6/_metadata_/metadata.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata.keystream" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata.keystream.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata_i" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata_i.len" afterPath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3/_metadata_/metadata_i.len" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/_metadata_/metadata" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata.keystream" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata.keystream.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata.len" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata.values.at" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata_i" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata_i.len" afterPath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/_metadata_/metadata_i.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts.zip" afterPath="$PROJECT_DIR$/R_Scripts.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/images/login.png" afterPath="$PROJECT_DIR$/static/assets/images/login.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/images/slack_image.png" afterPath="$PROJECT_DIR$/static/assets/images/slack_image.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/images/table-preview/customer_contact.png" afterPath="$PROJECT_DIR$/static/assets/images/table-preview/customer_contact.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/images/table-preview/customer_master.png" afterPath="$PROJECT_DIR$/static/assets/images/table-preview/customer_master.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/images/table-preview/customer_secondary.png" afterPath="$PROJECT_DIR$/static/assets/images/table-preview/customer_secondary.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/images/table-preview/event_log.png" afterPath="$PROJECT_DIR$/static/assets/images/table-preview/event_log.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/images/table-preview/event_master.png" afterPath="$PROJECT_DIR$/static/assets/images/table-preview/event_master.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/images/table-preview/product_master.png" afterPath="$PROJECT_DIR$/static/assets/images/table-preview/product_master.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/images/table-preview/transaction_master.png" afterPath="$PROJECT_DIR$/static/assets/images/table-preview/transaction_master.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6ec29210-e8f2-4624-a55a-c3a3d745aff3.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/tuple_client.iml" afterPath="$PROJECT_DIR$/.idea/tuple_client.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Logs/R_Log.txt" afterPath="$PROJECT_DIR$/R_Logs/R_Log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/MappingBuffer.yml" afterPath="$PROJECT_DIR$/R_Scripts/MappingBuffer.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/RScript.R" afterPath="$PROJECT_DIR$/R_Scripts/RScript.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Event/CLTV_Final_Event_Score.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Event/CLTV_Final_Event_Score.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Event/Churn_Event_Score.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Event/Churn_Event_Score.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/CLTV_Final_Trans_Score.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/CLTV_Final_Trans_Score.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Churn_Trans_Score.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Churn_Trans_Score.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Customer/Clustering_H2O_Scoring.R" afterPath="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Customer/Clustering_H2O_Scoring.R" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TableBuffer.buffer" afterPath="$PROJECT_DIR$/TableBuffer.buffer" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/views.py" afterPath="$PROJECT_DIR$/dashboard/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_management/tasks.py" afterPath="$PROJECT_DIR$/database_management/tasks.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foutput.txt" afterPath="$PROJECT_DIR$/foutput.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapper/migrations/0003_auto_20161227_1335.py" afterPath="$PROJECT_DIR$/mapper/migrations/0003_auto_20161227_1335.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapper/models.py" afterPath="$PROJECT_DIR$/mapper/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mapper/views.py" afterPath="$PROJECT_DIR$/mapper/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output_amit.csv" afterPath="$PROJECT_DIR$/output_amit.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/admin.py" afterPath="$PROJECT_DIR$/slack_bot/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/apps.py" afterPath="$PROJECT_DIR$/slack_bot/apps.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/slack_bot/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/migrations/__init__.py" afterPath="$PROJECT_DIR$/slack_bot/migrations/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/models.py" afterPath="$PROJECT_DIR$/slack_bot/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/startbot.py" afterPath="$PROJECT_DIR$/slack_bot/startbot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/tests.py" afterPath="$PROJECT_DIR$/slack_bot/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/urls.py" afterPath="$PROJECT_DIR$/slack_bot/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_bot/views.py" afterPath="$PROJECT_DIR$/slack_bot/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_function/__init__.py" afterPath="$PROJECT_DIR$/slack_function/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_function/break_in_input_in_slack.py" afterPath="$PROJECT_DIR$/slack_function/break_in_input_in_slack.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_function/function_amit_slack.py" afterPath="$PROJECT_DIR$/slack_function/function_amit_slack.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_function/function_for_slack.py" afterPath="$PROJECT_DIR$/slack_function/function_for_slack.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_function/slack_input_check_and_go.py" afterPath="$PROJECT_DIR$/slack_function/slack_input_check_and_go.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_function/slack_master.py" afterPath="$PROJECT_DIR$/slack_function/slack_master.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slack_function/slack_personal.py" afterPath="$PROJECT_DIR$/slack_function/slack_personal.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/chatbot/css/chatbot.css" afterPath="$PROJECT_DIR$/static/assets/chatbot/css/chatbot.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/chatbot/js/chatbot-function.js" afterPath="$PROJECT_DIR$/static/assets/chatbot/js/chatbot-function.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/chatbot/js/chatbot.js" afterPath="$PROJECT_DIR$/static/assets/chatbot/js/chatbot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/circle-progress/app.js" afterPath="$PROJECT_DIR$/static/assets/circle-progress/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/circle-progress/style.css" afterPath="$PROJECT_DIR$/static/assets/circle-progress/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/custom/overrides.css" afterPath="$PROJECT_DIR$/static/assets/custom/overrides.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/dashboard/app.js" afterPath="$PROJECT_DIR$/static/assets/dashboard/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/dashboard/styles.css" afterPath="$PROJECT_DIR$/static/assets/dashboard/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/jquery/jquery-3.1.0.min.js" afterPath="$PROJECT_DIR$/static/assets/jquery/jquery-3.1.0.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/material/css/bootstrap-material-design.css.map" afterPath="$PROJECT_DIR$/static/assets/material/css/bootstrap-material-design.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/Universal_function_master.py" afterPath="$PROJECT_DIR$/team/Universal_function_master.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/Universal_function_personal.py" afterPath="$PROJECT_DIR$/team/Universal_function_personal.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/admin.py" afterPath="$PROJECT_DIR$/team/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/check_high_low_medium.py" afterPath="$PROJECT_DIR$/team/check_high_low_medium.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/filter_amit.py" afterPath="$PROJECT_DIR$/team/filter_amit.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/from_view_to_output.py" afterPath="$PROJECT_DIR$/team/from_view_to_output.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/function_input.py" afterPath="$PROJECT_DIR$/team/function_input.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/function_two_table.py" afterPath="$PROJECT_DIR$/team/function_two_table.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/input_check_value.py" afterPath="$PROJECT_DIR$/team/input_check_value.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/models.py" afterPath="$PROJECT_DIR$/team/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/regular_part.py" afterPath="$PROJECT_DIR$/team/regular_part.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/team_input.py" afterPath="$PROJECT_DIR$/team/team_input.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/urls.py" afterPath="$PROJECT_DIR$/team/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/team/views.py" afterPath="$PROJECT_DIR$/team/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/chatbot/index.html" afterPath="$PROJECT_DIR$/templates/chatbot/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/connect_client_db/connected.html" afterPath="$PROJECT_DIR$/templates/connect_client_db/connected.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/connect_client_db/failed.html" afterPath="$PROJECT_DIR$/templates/connect_client_db/failed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/connect_client_db/form.html" afterPath="$PROJECT_DIR$/templates/connect_client_db/form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard/base.html" afterPath="$PROJECT_DIR$/templates/dashboard/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard/dashboard-table.html" afterPath="$PROJECT_DIR$/templates/dashboard/dashboard-table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard/dashboard.html" afterPath="$PROJECT_DIR$/templates/dashboard/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login/index.html" afterPath="$PROJECT_DIR$/templates/login/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/column-mapping.html" afterPath="$PROJECT_DIR$/templates/mapper/column-mapping.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/mapper/table-mapping.html" afterPath="$PROJECT_DIR$/templates/mapper/table-mapping.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/req.txt" afterPath="$PROJECT_DIR$/req.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../nitish/nitish/tuple_client/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/../../nitish/nitish/tuple_client/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../nitish/nitish/tuple_client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../nitish/nitish/tuple_client/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../nitish/nitish/tuple_client/team/views.py" afterPath="$PROJECT_DIR$/../../nitish/nitish/tuple_client/team/views.py" />
     </list>
     <ignored path="tuple_client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,10 +46,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/tuple_client$RScript__1_.coverage" NAME="RScript (1) Coverage Results" MODIFIED="1481910641692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
-    <SUITE FILE_PATH="coverage/tuple_client$LaunchInstance.coverage" NAME="LaunchInstance Coverage Results" MODIFIED="1482475188810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/tuple_common/create_server" />
-    <SUITE FILE_PATH="coverage/tuple_client$AddSubdomainInParentZone.coverage" NAME="AddSubdomainInParentZone Coverage Results" MODIFIED="1482488033343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/tuple_common/create_server" />
+    <SUITE FILE_PATH="coverage/tuple_client$DatabaseSync.coverage" NAME="DatabaseSync Coverage Results" MODIFIED="1483962050421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
+    <SUITE FILE_PATH="coverage/tuple_client$views.coverage" NAME="views Coverage Results" MODIFIED="1483965945384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard" />
+    <SUITE FILE_PATH="coverage/tuple_client$DatabaseTransfer.coverage" NAME="DatabaseTransfer Coverage Results" MODIFIED="1483962020738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
+    <SUITE FILE_PATH="coverage/tuple_client$RScript.coverage" NAME="RScript Coverage Results" MODIFIED="1484029078478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
+    <SUITE FILE_PATH="coverage/tuple_client$LaunchInstance.coverage" NAME="LaunchInstance Coverage Results" MODIFIED="1483855565842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/" />
+    <SUITE FILE_PATH="coverage/tuple_client$run.coverage" NAME="run Coverage Results" MODIFIED="1484026187507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
+    <SUITE FILE_PATH="coverage/tuple_client$DatabaseConnect.coverage" NAME="DatabaseConnect Coverage Results" MODIFIED="1483956997163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
     <SUITE FILE_PATH="coverage/tuple_client$AddSubdomainInHostedZone.coverage" NAME="AddSubdomainInHostedZone Coverage Results" MODIFIED="1482488680658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/tuple_common/create_server" />
+    <SUITE FILE_PATH="coverage/tuple_client$RScript__1_.coverage" NAME="RScript (1) Coverage Results" MODIFIED="1481910641692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
+    <SUITE FILE_PATH="coverage/tuple_client$MasterPersonalCreator.coverage" NAME="MasterPersonalCreator Coverage Results" MODIFIED="1483963020901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
+    <SUITE FILE_PATH="coverage/tuple_client$MasterPersonal.coverage" NAME="MasterPersonal Coverage Results" MODIFIED="1484109479966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
+    <SUITE FILE_PATH="coverage/tuple_client$MappingBuffer.coverage" NAME="MappingBuffer Coverage Results" MODIFIED="1484046916034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/custom_library" />
+    <SUITE FILE_PATH="coverage/tuple_client$AddSubdomainInParentZone.coverage" NAME="AddSubdomainInParentZone Coverage Results" MODIFIED="1482488033343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/tuple_common/create_server" />
+    <SUITE FILE_PATH="coverage/tuple_client$celery.coverage" NAME="celery Coverage Results" MODIFIED="1484041360256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tuple_client" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -130,7 +77,7 @@
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="TupleCommonDatabase" />
+        <option name="myItemId" value="LocalDatabase" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -140,17 +87,7 @@
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="ClientMachineDatabase" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ClientMachineDatabase" />
+        <option name="myItemId" value="LocalDatabase" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
@@ -164,40 +101,101 @@
     <favorites_list name="tuple_client" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="slack_master.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/slack_function/slack_master.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#87#0" expanded="true" />
+                <marker date="1484899727902" expanded="true" signature="1365:1398" ph="SELECT * FRO... master_table" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="convert_string.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/custom_class/convert_string.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="37" column="52" lean-forward="false" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
+              <folding>
+                <element signature="e#55#59#0" expanded="false" />
+                <element signature="e#107#489#0" expanded="false" />
+                <element signature="e#548#998#0" expanded="false" />
+                <element signature="e#1064#1342#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="function_amit_slack.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/slack_function/function_amit_slack.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2100">
+              <caret line="242" column="15" lean-forward="false" selection-start-line="242" selection-start-column="15" selection-end-line="242" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+                <element signature="e#573#784#0" expanded="false" />
+                <element signature="e#857#1028#0" expanded="false" />
+                <element signature="e#1096#1232#0" expanded="false" />
+                <element signature="e#1260#1398#0" expanded="false" />
+                <element signature="e#1439#1837#0" expanded="false" />
+                <element signature="e#1866#2014#0" expanded="false" />
+                <element signature="e#6344#6755#0" expanded="false" />
+                <element signature="e#6792#6978#0" expanded="false" />
+                <element signature="e#7021#7161#0" expanded="false" />
+                <element signature="e#7187#7266#0" expanded="false" />
+                <element signature="e#7294#7377#0" expanded="false" />
+                <element signature="e#7414#7843#0" expanded="false" />
+                <element signature="e#7882#8074#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>color</find>
-      <find>e.style</find>
-      <find>image</find>
-      <find>table_mapping</find>
-      <find>get_table_name_model_pair</find>
-      <find>get_our_table_name()</find>
-      <find>action_</find>
-      <find>Factor</find>
-      <find>attr(id</find>
-      <find>attr(id)</find>
-      <find>l</find>
-      <find>blank=True</find>
-      <find>N/A</find>
-      <find>col-sm-1</find>
-      <find>col-sm-2</find>
-      <find>col-lg-2</find>
-      <find>success</find>
-      <find>responce</find>
-      <find>$('.input input').setAttribute('disabled', 'false');</find>
-      <find>integ</find>
-      <find>high</find>
-      <find>?</find>
+      <find>5863830</find>
+      <find>prin</find>
+      <find>standard</find>
       <find>print</find>
-      <find>well</find>
-      <find>mapping_er</find>
-      <find>cl</find>
-      <find>cltv</find>
-      <find>list</find>
-      <find>cu_id</find>
-      <find>type</find>
+      <find>5863210</find>
+      <find>check</find>
+      <find>fgh</find>
+      <find>conevert_string_in_integer</find>
+      <find>convert_unicode_to_string</find>
+      <find>change_to_string</find>
+      <find>value</find>
+      <find>##### hello ######</find>
+      <find>print &quot;##### hello ######&quot;</find>
+      <find>hello</find>
+      <find>high</find>
+      <find>, ,</find>
+      <find>,,</find>
+      <find>get</find>
+      <find>limit 40</find>
+      <find>voice</find>
+      <find>n9</find>
+      <find>n10</find>
+      <find>slack_master_input</find>
+      <find>PersonalTable</find>
+      <find>from_master_table_id_to_find_personal_object</find>
+      <find>email_list_for_slack_1</find>
+      <find>my_1</find>
+      <find>list_match</find>
+      <find>get_list_0</find>
+      <find>get_string</find>
     </findStrings>
     <replaceStrings>
       <replace>server</replace>
@@ -211,65 +209,75 @@
       <replace>col-lg-1</replace>
       <replace>response</replace>
       <replace>$('.input input').removeAttr('disabled');</replace>
+      <replace>db_source.</replace>
+      <replace>personal_table</replace>
+      <replace>table</replace>
+      <replace>master_table</replace>
+      <replace>,</replace>
+      <replace>convert_strTo_int</replace>
+      <replace>changeToInt</replace>
+      <replace>list_match</replace>
+      <replace>afterRegular_match</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/build_mailchimp/views.py" />
+        <option value="$PROJECT_DIR$/custom_library/RScript.py" />
+        <option value="$PROJECT_DIR$/custom_library/mapping_skeleton.yml" />
+        <option value="$PROJECT_DIR$/custom_library/MappingBuffer.py" />
         <option value="$PROJECT_DIR$/tuple_client/settings.py" />
-        <option value="$PROJECT_DIR$/slack_bot/startbot.py" />
-        <option value="$PROJECT_DIR$/tuple_client/urls.py" />
-        <option value="$PROJECT_DIR$/slack_bot/urls.py" />
-        <option value="$PROJECT_DIR$/static/assets/custom/overrides.css" />
-        <option value="$PROJECT_DIR$/static/assets/material/css/bootstrap-material-design.css" />
-        <option value="$PROJECT_DIR$/templates/dashboard/dashboard.html" />
-        <option value="$PROJECT_DIR$/static/assets/custom/style.css" />
-        <option value="$PROJECT_DIR$/static/assets/material/css/bootstrap-material-design.css.map" />
-        <option value="$PROJECT_DIR$/static/assets/chatbot/js/chatbot.js" />
-        <option value="$PROJECT_DIR$/static/assets/chatbot/css/chatbot-material.css" />
-        <option value="$PROJECT_DIR$/static/assets/chatbot/js/chatbot-function.js" />
-        <option value="$PROJECT_DIR$/templates/chatbot/index.html" />
-        <option value="$PROJECT_DIR$/database_management/tasks.py" />
-        <option value="$PROJECT_DIR$/team/input_check_value.py" />
-        <option value="$PROJECT_DIR$/team/Universal_function_master.py" />
-        <option value="$PROJECT_DIR$/team/Universal_function_personal.py" />
-        <option value="$PROJECT_DIR$/team/check_high_low_medium.py" />
-        <option value="$PROJECT_DIR$/slack_function/function_amit_slack.py" />
-        <option value="$PROJECT_DIR$/slack_function/slack_personal.py" />
-        <option value="$PROJECT_DIR$/slack_function/slack_master.py" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Trans/CLTV_Final_Trans_Score.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Trans/Churn_Trans_Score.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Event/CLTV_Final_Event_Score.R" />
-        <option value="$PROJECT_DIR$/R_Scripts/Scoring/Event/Churn_Event_Score.R" />
-        <option value="&lt;e69dc430-bd08-4d15-a8df-adabfefdd32c&gt;/tuple_client/templates/connect_client_db/form.html" />
-        <option value="$PROJECT_DIR$/templates/connect_client_db/form.html" />
-        <option value="$PROJECT_DIR$/templates/connect_client_db/connected.html" />
-        <option value="$PROJECT_DIR$/templates/connect_client_db/failed.html" />
-        <option value="$PROJECT_DIR$/templates/dashboard/base.html" />
-        <option value="$PROJECT_DIR$/static/assets/custom/components.css" />
-        <option value="$PROJECT_DIR$/templates/mapper/table-mapping.html" />
-        <option value="&lt;e69dc430-bd08-4d15-a8df-adabfefdd32c&gt;/tuple_client/templates/mapper/mapping-review.html" />
-        <option value="&lt;e69dc430-bd08-4d15-a8df-adabfefdd32c&gt;/tuple_client/mapper/views.py" />
-        <option value="&lt;e69dc430-bd08-4d15-a8df-adabfefdd32c&gt;/tuple_client/R_Scripts/RScript.R" />
-        <option value="$PROJECT_DIR$/slack_function/break_in_input_in_slack.py" />
-        <option value="$PROJECT_DIR$/slack_function/slack_input_check_and_go.py" />
-        <option value="$PROJECT_DIR$/team/function_two_table.py" />
-        <option value="dbtable:/4ed8e0da/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.team_personal" />
-        <option value="&lt;e69dc430-bd08-4d15-a8df-adabfefdd32c&gt;/tuple_client/database_management/tasks.py" />
-        <option value="dbtable:/4ed8e0da/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.team_master_table" />
-        <option value="$PROJECT_DIR$/team/models.py" />
-        <option value="$PROJECT_DIR$/team/from_view_to_output.py" />
-        <option value="$PROJECT_DIR$/dashboard/views.py" />
-        <option value="$PROJECT_DIR$/team/views.py" />
-        <option value="$PROJECT_DIR$/team/function_input.py" />
-        <option value="&lt;e69dc430-bd08-4d15-a8df-adabfefdd32c&gt;/tuple_client/templates/dashboard/dashboard-table.html" />
-        <option value="&lt;e69dc430-bd08-4d15-a8df-adabfefdd32c&gt;/tuple_client/R_Scripts/Scoring/Event/CLTV_Final_Event_Score.R" />
-        <option value="&lt;e69dc430-bd08-4d15-a8df-adabfefdd32c&gt;/tuple_client/R_Scripts/Scoring/Trans/CLTV_Final_Trans_Score.R" />
+        <option value="$PROJECT_DIR$/database_management/scheduled_tasks.py" />
+        <option value="$PROJECT_DIR$/database_management/views.py" />
+        <option value="$PROJECT_DIR$/R_Scripts/yml.R" />
         <option value="$PROJECT_DIR$/templates/dashboard/dashboard-table.html" />
+        <option value="$PROJECT_DIR$/team/function_two_table.py" />
+        <option value="$PROJECT_DIR$/team/input_check_value.py" />
+        <option value="$PROJECT_DIR$/team/model_personal_master.py" />
+        <option value="$PROJECT_DIR$/team/model_extras.py" />
+        <option value="$PROJECT_DIR$/custom_library/MasterPersonal.py" />
+        <option value="$PROJECT_DIR$/team/admin.py" />
+        <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/custom_library/CreateModel.py" />
+        <option value="$PROJECT_DIR$/custom_django_library/CreateModel.py" />
+        <option value="$PROJECT_DIR$/tuple_client/initialize.py" />
+        <option value="$PROJECT_DIR$/tuple_client/urls.py" />
+        <option value="$PROJECT_DIR$/team/models.py" />
+        <option value="$PROJECT_DIR$/custom_django_library/DatabaseConnect.py" />
+        <option value="$PROJECT_DIR$/custom_django_library/Demo.py" />
+        <option value="$PROJECT_DIR$/team/check_high_low_medium.py" />
+        <option value="$PROJECT_DIR$/team/Universal_function_personal.py" />
+        <option value="$PROJECT_DIR$/dashboard/all_value_like_cltv_churn_etc.py" />
+        <option value="$PROJECT_DIR$/dashboard/cltv_value.py" />
+        <option value="$PROJECT_DIR$/dashboard/views.py" />
+        <option value="dbtable:/1792cbcb/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.personal_table" />
+        <option value="$PROJECT_DIR$/tuple_client/views.py" />
+        <option value="$PROJECT_DIR$/test_op.py" />
+        <option value="$PROJECT_DIR$/dfghjkl.py" />
+        <option value="$PROJECT_DIR$/slack_bot/startbot.py" />
+        <option value="dbtable:/1792cbcb/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.master_table" />
+        <option value="$PROJECT_DIR$/team/Universal_function_master.py" />
+        <option value="$PROJECT_DIR$/team/views.py" />
+        <option value="$PROJECT_DIR$/static/assets/chatbot/js/chatbot-function.js" />
+        <option value="$PROJECT_DIR$/slack_bot/urls.py" />
+        <option value="$PROJECT_DIR$/slack_function/slack_personal.py" />
+        <option value="$PROJECT_DIR$/slack_function/slack_input_check_and_go.py" />
+        <option value="$PROJECT_DIR$/team/regular_part.py" />
+        <option value="$PROJECT_DIR$/team/function_input.py" />
+        <option value="$PROJECT_DIR$/team/from_view_to_output.py" />
+        <option value="$PROJECT_DIR$/slack_function/break_in_input_in_slack.py" />
+        <option value="$PROJECT_DIR$/slack_function/function_amit_slack.py" />
+        <option value="$PROJECT_DIR$/NewP.py" />
+        <option value="$PROJECT_DIR$/hello1.py" />
+        <option value="$PROJECT_DIR$/class_base/first_class.py" />
+        <option value="$PROJECT_DIR$/class_base/convert_string.py" />
+        <option value="$PROJECT_DIR$/custom_class/convert_string.py" />
+        <option value="$PROJECT_DIR$/slack_function/function_for_slack.py" />
+        <option value="$PROJECT_DIR$/slack_function/slack_master.py" />
       </list>
     </option>
   </component>
@@ -280,9 +288,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="30" />
+    <option name="y" value="24" />
     <option name="width" value="1366" />
-    <option name="height" value="738" />
+    <option name="height" value="699" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -300,6 +308,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -315,6 +324,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -329,14 +340,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="/media/adnan/T/pagal/tuple_client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="CommandLine" />
-    <property name="settings.editor.selected.configurable" value="database.main" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
@@ -349,123 +358,22 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/templates/mapper/mapping-review.html" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/R_Scripts/Scoring/Event" />
-      <recent name="$PROJECT_DIR$/R_Scripts/Scoring/Trans" />
-      <recent name="$PROJECT_DIR$/static/assets/images" />
-      <recent name="$PROJECT_DIR$/tuple_client" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/custom_class" />
       <recent name="$PROJECT_DIR$/static/assets/images" />
       <recent name="$PROJECT_DIR$/static/assets/jquery" />
       <recent name="$PROJECT_DIR$/static/assets" />
       <recent name="$PROJECT_DIR$/rowstextio" />
-      <recent name="$PROJECT_DIR$/mapper" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/mappings" />
+      <recent name="$PROJECT_DIR$/R_Scripts/Scoring/Event" />
+      <recent name="$PROJECT_DIR$/R_Scripts/Scoring/Trans" />
+      <recent name="$PROJECT_DIR$/static/assets/images" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.CombineR">
-    <configuration default="false" name="ConnectDatabase" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mapper" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuple_client" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/database_management/ConnectDatabase.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ColumnMapper" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mapper" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuple_client" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mapper/ColumnMapper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TableMapper" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mapper" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuple_client" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mapper/TableMapper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Mapper" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mapper" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuple_client" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mapper/Mapper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="CombineR" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/custom_library" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tuple_client" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/custom_library/CombineR.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -680,22 +588,6 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.ConnectDatabase" />
-      <item index="1" class="java.lang.String" itemvalue="Python.ColumnMapper" />
-      <item index="2" class="java.lang.String" itemvalue="Python.TableMapper" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Mapper" />
-      <item index="4" class="java.lang.String" itemvalue="Python.CombineR" />
-    </list>
-    <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.CombineR" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Mapper" />
-        <item index="2" class="java.lang.String" itemvalue="Python.TableMapper" />
-        <item index="3" class="java.lang.String" itemvalue="Python.ColumnMapper" />
-        <item index="4" class="java.lang.String" itemvalue="Python.ConnectDatabase" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -714,54 +606,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1366" height="738" extended-state="0" />
+    <frame x="0" y="24" width="1366" height="699" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14242424" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27878788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5060606" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.4939394" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29288027" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.4939394" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23560606" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1280303" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09621212" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7936772" sideWeight="0.4939394" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.4939394" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273906" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294509" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967638" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5060606" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273906" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.4939394" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29342327" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.4939394" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23409091" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19924243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40075758" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -785,927 +654,429 @@
           <line>18</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/manage.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="60" />
+      <option name="time" value="82" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/team/views.py">
+    <entry file="file://$PROJECT_DIR$/custom_library/MasterPersonal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="70" column="78" lean-forward="false" selection-start-line="70" selection-start-column="78" selection-end-line="70" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/team/function_input.py">
+    <entry file="file://$PROJECT_DIR$/tuple_client/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="337" column="17" lean-forward="false" selection-start-line="337" selection-start-column="17" selection-end-line="337" selection-end-column="17" />
-          <folding>
-            <element signature="e#9454#9594#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tuple_client/initialize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="69" lean-forward="false" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_management/ConnectDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/custom_django_library/DatabaseConnect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapper/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4860">
+          <caret line="400" column="0" lean-forward="false" selection-start-line="400" selection-start-column="0" selection-end-line="446" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/model_extras.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/custom_django_library/Demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database_management/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tuple_client/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1336">
+          <caret line="177" column="33" lean-forward="true" selection-start-line="177" selection-start-column="33" selection-end-line="177" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2016.3/system/python_stubs/1794306644/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="2057" column="8" lean-forward="false" selection-start-line="2057" selection-start-column="8" selection-end-line="2057" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/check_high_low_medium.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="127" column="27" lean-forward="false" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/Universal_function_personal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="37" column="83" lean-forward="false" selection-start-line="37" selection-start-column="83" selection-end-line="37" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/all_value_like_cltv_churn_etc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/cltv_value.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="76" column="8" lean-forward="true" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_op.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tuple_client/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dfghjkl.py" />
+    <entry file="file://$PROJECT_DIR$/dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/1792cbcb/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.mapper_transactionmastermappingmodel">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/chatbot/js/chatbot-function.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="84" column="32" lean-forward="false" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_function/slack_personal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_function/slack_input_check_and_go.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/regular_part.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/from_view_to_output.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="20" column="86" lean-forward="false" selection-start-line="20" selection-start-column="86" selection-end-line="20" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/function_two_table.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/function_input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/1792cbcb/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.personal_table">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="firstname='abcabc'" />
+            <filter text="firstname='abc'" />
+            <filter text="cu_id='5863830'" />
+            <filter text="cu_id='5863210'" />
+          </filtering>
+          <column-attributes>
+            <column name="ctid" enabled="false" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/1792cbcb/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.team_master_table">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/1792cbcb/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.master_table">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" text="churn = 0">
+            <filter text="churn = 0" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_function/break_in_input_in_slack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="48" lean-forward="false" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_bot/startbot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_bot/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NewP.py" />
+    <entry file="file://$PROJECT_DIR$/hello1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/1792cbcb/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.master_table">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" text="cltv &gt; 80 AND cltv &lt; 1">
+            <filter text="cltv &gt; 80 AND cltv &lt; 1" />
+            <filter text="cltv &gt; 80 or cltv &lt; 1" />
+            <filter text="churn = 0" />
+            <filter text="cltv&gt;80" />
+            <filter text="cltv &gt; 80 AND churn = 0" />
+            <filter text="cltv &gt; 80" />
+            <filter text="80 &lt; cltv AND churn = 0" />
+            <filter text="80 &lt; cltv AND 0 = churn" />
+            <filter text="80 &lt; cltv AND 0 &lt; churn" />
+            <filter text="80 &lt;&lt; cltv AND 0 &lt; churn" />
+          </filtering>
+          <column-attributes>
+            <column name="ctid" enabled="false" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/Universal_function_master.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team/team_input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_bot/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_bot/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="55" lean-forward="false" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class_base/first_class.py" />
+    <entry file="file://$PROJECT_DIR$/slack_function/function_for_slack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="77" lean-forward="false" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/custom_class/convert_string.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="37" column="52" lean-forward="false" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
           <folding>
-            <marker date="1483527251874" expanded="true" signature="3681:3698" ph="insert into table... " />
-            <marker date="1483527251874" expanded="true" signature="15266:15304" ph="DROP TABLE I... " />
-            <marker date="1483527251874" expanded="true" signature="18891:19031" ph="CREATE TABLE... IF" />
-            <marker date="1483527251874" expanded="true" signature="19076:19183" ph="INSERT INTO churn_engagement... " />
-            <marker date="1483527251874" expanded="true" signature="19107:19182" ph="SELECT missi... missing_value" />
-            <marker date="1483527251874" expanded="true" signature="19269:19397" ph="CREATE TABLE... IF" />
-            <marker date="1483527251874" expanded="true" signature="19442:19543" ph="INSERT INTO cltv_value... " />
-            <marker date="1483527251874" expanded="true" signature="19467:19542" ph="SELECT missi... missing_value" />
-            <marker date="1483527251874" expanded="true" signature="19628:19723" ph="CREATE TABLE... IF" />
-            <marker date="1483527251874" expanded="true" signature="19768:19868" ph="INSERT INTO high_conv... " />
-            <marker date="1483527251874" expanded="true" signature="19792:19867" ph="SELECT missi... missing_value" />
-            <marker date="1483527251874" expanded="true" signature="19960:20066" ph="CREATE TABLE... IF" />
-            <marker date="1483527251874" expanded="true" signature="20111:20221" ph="INSERT INTO profile_clusters... " />
-            <marker date="1483527251874" expanded="true" signature="20142:20220" ph="SELECT missi... missing_value" />
-            <marker date="1483527251874" expanded="true" signature="22373:22407" ph="DROP TABLE I... " />
+            <element signature="e#55#59#0" expanded="false" />
+            <element signature="e#107#489#0" expanded="false" />
+            <element signature="e#548#998#0" expanded="false" />
+            <element signature="e#1064#1342#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.team_master_table">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.team_master_table">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.team_master_table">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.team_master_table">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/fd6783f9-bb4f-4e87-bbb7-199fddbcb97f/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.churn_engagement">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_summary">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4ed8e0da/c069f73d-b97a-4ad6-bfac-854c9bb6a7f3/postgres_db.public.cltv_value">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="cltv &gt; ">
-            <filter text="cltv &gt; 100" />
-            <filter text="cltv &gt; 29" />
-            <filter text="cltv = 29" />
-            <filter text="cltv = 29.98063" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard/dashboard-table.html">
+    <entry file="file://$PROJECT_DIR$/slack_function/function_amit_slack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="164" column="35" lean-forward="false" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="2100">
+          <caret line="242" column="15" lean-forward="false" selection-start-line="242" selection-start-column="15" selection-end-line="242" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#573#784#0" expanded="false" />
+            <element signature="e#857#1028#0" expanded="false" />
+            <element signature="e#1096#1232#0" expanded="false" />
+            <element signature="e#1260#1398#0" expanded="false" />
+            <element signature="e#1439#1837#0" expanded="false" />
+            <element signature="e#1866#2014#0" expanded="false" />
+            <element signature="e#6344#6755#0" expanded="false" />
+            <element signature="e#6792#6978#0" expanded="false" />
+            <element signature="e#7021#7161#0" expanded="false" />
+            <element signature="e#7187#7266#0" expanded="false" />
+            <element signature="e#7294#7377#0" expanded="false" />
+            <element signature="e#7414#7843#0" expanded="false" />
+            <element signature="e#7882#8074#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack_function/slack_master.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#87#0" expanded="true" />
+            <marker date="1484899727902" expanded="true" signature="1365:1398" ph="SELECT * FRO... master_table" />
+          </folding>
         </state>
       </provider>
     </entry>

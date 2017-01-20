@@ -20,20 +20,32 @@
     <link href="{% static 'assets/custom/style.css' %}" rel="stylesheet">
     <link href="{% static 'assets/chatbot/css/chatbot.css' %}" rel="stylesheet">
     <link href="{% static 'assets/chatbot/css/chatbot-material.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/custom/login_form.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/custom/anisha1.css' %}" rel="stylesheet">
     <link href="{% static 'assets/custom/overrides.css' %}" rel="stylesheet">
     <link href="{% static 'assets/custom/components.css' %}" rel="stylesheet">
-
 
     <!-- JS -->
 
     <!-- Frameworks And Libraries-->
     <script src="{% static 'assets/jquery/jquery-1.12.4.js' %}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--<script src="{% static 'assets/dashboard/assending_d_order.js' %}"></script>-->
+    <!--<script src="{% static 'assets/dashboard/assending_d_order.js' %}"></script>-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <style>
+        .pagal{
+            /*background-image: url({% static 'assets/images/table_dashboard5.jpg' %});*/
+            background-size: 100% 100%;
+            background-color: white;
+            background-repeat: no-repeat;
+        }
 
+    </style>
 
 </head>
 
-<body>
+<body class="pagal img-responsive">
 <section>
     <nav class="navbar navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -49,24 +61,25 @@
             <div id="navbar" class="collapse navbar-collapse">
                 {% if request.user.is_authenticated %}
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{% url 'dashboard' %}">Dashboard</a></li>
-                    <li><a href="{% url 'connect_client_db' %}">Connect Database</a></li>
-                    <li><a href="{% url 'table_mapping' %}">Mapping</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Integrations<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a style="border: none;border-radius: 0;" class="list-group-item" href="https://slack.com/oauth/authorize?scope=bot&client_id=14632386742.108610646339">
-                                    <div class="row-picture">
-                                        <img class="circle" src="{% static 'assets/images/slack_image.png' %}" alt="icon">
-                                    </div>
-                                    <div class="row-content">
-                                        <p class="list-group-item-text">Slack Integration</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+
+                    <li id="data_active"><a href="{% url 'connect_client_db' %}">CONNECTION</a></li>
+                    <li id="map_active"><a href="{% url 'table_mapping' %}">MAPPING</a></li>
+                    <li id ="dash_active"><a href="{% url 'dashboard' %}">DASHBOARD</a></li>
+                    <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Integrations<span class="caret"></span></a>-->
+                        <!--<ul class="dropdown-menu">-->
+                            <!--<li>-->
+                                <!--<a style="border: none;border-radius: 0;" class="list-group-item" href="https://slack.com/oauth/authorize?scope=bot&client_id=14632386742.108610646339">-->
+                                    <!--<div class="row-picture">-->
+                                        <!--<img class="circle" src="{% static 'assets/images/slack_image.png' %}" alt="icon">-->
+                                    <!--</div>-->
+                                    <!--<div class="row-content">-->
+                                        <!--<p class="list-group-item-text">INTEGRATION</p>-->
+                                    <!--</div>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><p class="navbar-text navbar-right">Signed in as&nbsp&nbsp&nbsp&nbsp&nbsp</p></li>

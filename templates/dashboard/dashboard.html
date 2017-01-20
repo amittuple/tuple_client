@@ -3,43 +3,201 @@
 {% block content %}
 {% load static %}
 
-
 <input type="button" id="btnChange" value="  Change ID " style ="display:none;"/>
 <input type="button" id="btncircle" value="CircleFill" style="display: none;"/>
+<style>
+    .thumbnail-panel-primary-pagal {
+        display: block;
 
+        transition: border .2s ease-in-out;
+
+        position: relative;
+
+        margin: 20px auto;
+
+        /*border: 1px solid lightseagreen;*/
+        text-align: center;
+
+        border-top-color: rgba(48,48,48,1);
+        border-left-color: rgba(48,48,48,1);
+        border-bottom-color: rgba(48,48,48,1);
+        border-right-color: rgba(48,48,48,1);
+    }
+    .icon_max{
+        /*height: 99px;*/
+        font-size: 70px;
+        width: 89px;
+    }
+</style>
+
+<style>
+    .contain_box{
+        margin: 5px;
+        width: 275px;
+        height: 100px;
+        border: 2px solid;
+    }
+    .contain_box_graph{
+
+        margin: 5px;
+        width: 368px;
+        height: 200px;
+        /*border: 1px solid;*/
+    }
+
+</style>
 <section class="container" style="padding-top: 50px;">
     <div class="row">
         <div class="col col-lg-12">
-            <div class="panel-heading">
-                <div class="row seven-cols" style="font-size: 16px;text-align: center; background-color: #545454; color: white;">
-                    <div class="col-lg-1">
-                        FULLNAME
-                    </div>
-                    <div class="col-lg-1">
-                        CLTV
-                    </div>
-                    <div class="col-lg-1">
-                        CHURN
-                    </div>
-                    <div class="col-lg-1">
-                        HIGH CONV
-                    </div>
-                    <div class="col-lg-1">
-                        VALUE
-                    </div>
-                    <div class="col-lg-1">
-                        CLUSTER
-                    </div>
-                    <div class="col-lg-1">
-                        ENGAGEMENT
-                    </div>
+            <div class="row">
+                <div class="col col-lg-12" style="color: white">
+                    <!--<div >-->
+                    <table class="contain_box col-lg-3" style="background-color: #ffa05d;text-align: center">
+                        <tr>
+                            <td style="height: 100px;width: 90px">
+                                <i class="icon_max glyphicon glyphicon-signal"></i>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr><td style="height: 68px;width: 185px;font-size: 40px">
+                                        $1000
+                                    </td></tr>
+                                    <tr><td style="height: 30px;width: 185px">
+                                        CLTV
+                                    </td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!--</div>-->
+                    <!--<div >-->
+                    <table class="contain_box col-lg-3" style="background-color: #1dc8c1;text-align: center">
+                        <tr>
+                            <td style="height: 100px;width: 90px">
+                                <i class="icon_max glyphicon glyphicon-log-out"></i>
+                                <!--<img height="99px" width="89px" src="{% static 'demo/churn.png' %}">-->
+                            </td>
+                            <td>
+                                <table>
+                                    <tr><td style="height: 68px;width: 185px;font-size: 40px">$1000</td></tr>
+                                    <tr><td style="height: 30px;width: 185px">
+                                        CHURN
+                                    </td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!--</div>-->
+                    <!--<div class="contain_box col-lg-3" style="background-color: lightcoral;text-align: center">-->
+                    <table class="contain_box col-lg-3" style="background-color: lightcoral;text-align: center">
+                        <tr>
+                            <td style="height: 100px;width: 90px"><i class="icon_max glyphicon glyphicon-user"></i></td>
+                            <td>
+                                <table>
+                                    <tr><td style="height: 68px;width: 185px;font-size: 40px">
+                                        $1000
+                                    </td></tr>
+                                    <tr><td style="height: 30px;width: 185px">
+                                        CUSTOMERS
+                                    </td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!--</div>-->
+                    <!--<div class="contain_box col-lg-3" style="background-color: blueviolet;text-align: center">-->
+                    <table class="contain_box col-lg-3" style="background-color: blueviolet;text-align: center">
+                        <tr>
+                            <td style="height: 100px;width: 90px"><i class="icon_max glyphicon glyphicon-usd"></i></td>
+                            <td>
+                                <table>
+                                    <tr><td style="height: 68px;width: 185px;font-size: 40px">$1000</td></tr>
+                                    <tr><td style="height: 30px;width: 185px">
+                                        REVENUE
+                                    </td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--</div>-->
                 </div>
             </div>
-            <div id="master_table" class="well">
+            <div class="row">
+                <div class="col col-lg-12">
+                    <table class="contain_box_graph col col-lg-4">
+                        <tr>
+                            <td>
+                                {% autoescape off %}
+                                {{ ploty_cltv }}
+                                {% endautoescape %}
+                            </td>
+                            <td>
+                                <table class="contain_box_graph col col-lg-4">
+                                    <tr class="row">
+                                        <td style="width: 183px;height: 30px; border: 1px solid;background-color: lightseagreen;text-align: center">
+                                            <a onclick="myFunction1()" style="color: white;">
+                                                <!--<img src="{% static 'demo/image9.png' %}" id="bg2" />-->
+                                                VALUE
+                                            </a>
+                                        </td>
+                                        <td style="width: 183px;height: 30px; border: 1px solid;background-color: lightpink;text-align: center;">
+                                            <a onclick="myFunction()" style="color: white;">
+                                                <!--<img src="{% static 'demo/image10.png' %}" id="bg2" />-->
+                                                <!--<img id="myImage" src="pic_bulboff.gif" style="width:100px">-->
+                                                ENGAGEMENT
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr class="row">
+                                        <td colspan="2" id="picture_here">
+                                            <!--<img id ="myImg" width="250px" height="168px" src="{% static 'demo/image10.png' %}">-->
+                                            {% autoescape off %}
+                                            {{ ploty_value }}
+                                            {% endautoescape %}
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                            <td>
+                                <div class="contain_box_graph col col-lg-4">
+
+
+                                    <img width="250px" height="198px" src="{% static 'demo/image9.png' %}">
+                                </div>
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+
+            <div id="master_table" class="thumbnail-panel-primary thumbnail-panel-primary-pagal">
+
                 {% include 'dashboard/dashboard-table.html' %}
             </div>
         </div>
     </div>
 </section>
+<script>
+    $(document).ready(function () {
+        $("#dash_active").css("color","#ffa05d");
+    })
+</script>
+<script>
+    function myFunction() {
+        document.getElementById("myImg").src = "{% static 'demo/image9.png' %}";
+    }
+</script>
+<script>
+    function myFunction1() {
+        document.getElementById("myImg").src = "{% static 'demo/image10.png' %}";
+    }
+</script>
 
 {% endblock %}

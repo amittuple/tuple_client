@@ -2,18 +2,40 @@
 {% load i18n %}
 {% block content %}
 {% load static %}
-
+<script>
+    $(document).on('click', '#p1', function(e) {
+        var time = 1000;
+        var elements = $('#pv1 p');
+        if( $(this).hasClass('shown') ) {
+//           $('#'+elements[4].id).delay(time).fadeOut();
+//           $('#'+elements[3].id).delay(time*2).fadeOut();
+            $('#'+elements[2].id).delay(time*3).fadeOut();
+            $('#'+elements[1].id).delay(time*4).fadeOut();
+            $('#'+elements[0].id).delay(time*5).fadeOut();
+            $(this).removeClass('shown')
+        }
+        else {
+            $('#'+elements[0].id).delay(time).fadeIn();
+            $('#'+elements[1].id).delay(time*2).fadeIn();
+            $('#'+elements[2].id).delay(time*3).fadeIn();
+//           $('#'+elements[3].id).delay(time*4).fadeIn();
+//           $('#'+elements[4].id).delay(time*5).fadeIn();
+            $(this).addClass('shown')
+        }
+    });
+</script>
 <style>
-    .border {
-        border: 1px solid black;
-    }
+
     .list-group {
         margin-top: 60px;
     }
     .box {
-        min-height: 50px;
+        /*background-color: #1DC8C1;*/
+        color: #1DC8C1;
     }
 </style>
+<link href="{% static 'assets/custom/subnav.css' %}" rel="stylesheet">
+
 <script>
     window.onload = function() {
         list = document.getElementsByTagName('span');
@@ -54,19 +76,37 @@
 </script>
 
 <div class="col-lg-10 col-lg-offset-1" style="padding-top: 50px;">
-    <ol class="breadcrumb">
-        <li class="active">Table Mapping</li>
-        <li><a href="{% url 'column_mapping' %}">Column Mapping</a></li>
-        <li><a href="{% url 'mapping_review' %}">Mapping Review</a></li>
-        <li><a href="{% url 'transfer_database' %}">Transfer Database</a></li>
-    </ol>
+    <ul class="subnav" id="mysubnav">
+        <li class="center" id="tbl_map">Table Mapping</li>
+        <li class="center"><a  href="{% url 'column_mapping' %}">Column Mapping</a></li>
+        <li class="center"><a href="{% url 'mapping_review' %}">Mapping Review</a></li>
+        <li class="center"><a href="{% url 'transfer_database' %}">Transfer Database</a></li>
+    </ul>
 </div>
-
 <form name="table_mapping_form" method="post" class="container-fluid" onsubmit="return validate();">
     {% csrf_token %}
-    <div class="row well well-custom-default">
-        <div class="col-lg-3 custom-scrollbar" style="z-index: 99; max-height: 500px; overflow-y: scroll;">
-            <div class="page-header">
+    <div class="row">
+        <!--<div class="col col-lg-10 col-lg-offset-1">-->
+        <!--<div class="alert alert-success" style="background-color: #1dc8c1 ">-->
+        <!--<h4>Here Is Some Instraction !</h4>-->
+        <!--<p>1:- Drop and Drag.</p>-->
+        <!--<p>2:- Mandatory feild.</p>-->
+        <!--<p>3:- Mouse on over can see the demo of the your future table go in system table section. </p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="col col-lg-10 col-lg-offset-1" style="padding: 15px;">
+            <a id="p1" class="list-group-item" style="background-color: #ea5395;color: white ">Instruction<span class="caret caret-down"></span></a>
+            <div id="pv1" style="display: block;">
+                <p style="display: none" id="list1"><a href="" class="list-group-item">1: Drop and Drag.</a></p>
+                <p style="display: none" id="list2"><a href="" class="list-group-item">2: Mandatory feild..</a></p>
+                <p style="display: none" id="list3"><a href="" class="list-group-item">3: Mouse on over can see the demo of the your future table go in system table section..</a></p>
+                <!--<p style="display: none" id="list4"><a href="" class="list-group-item">4: Be Sure To Map All Mandatory Columns Before Proceeding Else The Page Will Reset And You Will Lose All Column Mapping Done So Far.</a></p>-->
+                <!--<p style="display: none" id="list5"><a href="" class="list-group-item">5:  After Successfull Submit, Column Mapping Will Be Temporary Stored For Convenience Until You Transfer Your Database.</a></p>-->
+            </div>
+
+        </div>
+        <div class="col-lg-3 well well-lg text-center" style="z-index: 99; height: 100vh; overflow-y: scroll;">
+            <div class="page-header text-center color">
                 <h3>Client Tables</h3>
             </div>
             <div class="row">
@@ -80,7 +120,7 @@
             <div class="row">
                 <div class="list-group">
                     {% for item in list_of_tables %}
-                    <div class="list-group-item border">
+                    <div class="list-group-item">
                         <div class="row-content">
                             <span class="list-group-item-heading drag">{{item}}</span>
                         </div>
@@ -89,8 +129,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 custom-scrollbar" style="max-height: 500px; overflow-y: scroll;">
-            <div class="page-header">
+        <div class="col-lg-4 well well-lg" style="height: 100vh; overflow-y: scroll;">
+            <div class="page-header text-center color">
                 <h3>System Tables</h3>
             </div>
             <div class="col-lg-12">
@@ -107,13 +147,15 @@
                                 {{heading}}
                             </label>
                             {% if is_table_name_mandatory|get_item:heading %}
-                                <i style="color: red">*</i>
+                            <span>
+                                    <i style="color: red"><sub>*</sub></i>
+                            </span>
                             {% endif %}
                             <div class="col-md-7">
                                 {% if is_table_name_mandatory|get_item:heading %}
-                                    <input id="{{heading}}" name="{{heading}}" type="text" class="form-control drop" readonly required>
+                                <input id="{{heading}}" name="{{heading}}" type="text-box" class="drop box" readonly required>
                                 {% else %}
-                                    <input id="{{heading}}" name="{{heading}}" type="text" class="form-control drop" readonly>
+                                <input id="{{heading}}" name="{{heading}}" type="text-box" class="drop box" readonly>
                                 {% endif %}
                                 <span id="{{heading}}-error" style="display: none;" class="btn-danger">This Field Is Mandatory</span>
                             </div>
@@ -123,8 +165,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-5 custom-scrollbar" style="max-height: 500px; overflow-y: scroll;">
-            <div id="preview-section">
+        <div class="col-lg-5 well well-lg" style="height: 100vh; overflow-y: scroll;">
+            <div>
                 <img id="preview-transaction_master" src="{% static 'assets/images/table-preview/transaction_master.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
                 <img id="preview-customer_master" src="{% static 'assets/images/table-preview/customer_master.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
                 <img id="preview-customer_secondary" src="{% static 'assets/images/table-preview/customer_secondary.png' %}" style="min-width: 720px; overflow-x: scroll;" alt="">
@@ -136,7 +178,7 @@
         </div>
     </div>
     <div style="position: fixed; right: -10px; top: 45%;">
-        <button class="btn btn-md btn-primary btn-raised" style="border-radius: 15px;" type="submit">Next</button>
+        <button class="btn btn-md btn-primary btn-raised" style="border-radius: 15px; background-color: #1dc8c1" type="submit">Next</button>
     </div>
 </form>
 
@@ -154,18 +196,16 @@
         ];
     }
     function showTable(name) {
-        $('#preview-section > img').hide();
-        $('#'+'preview-'+name.toLowerCase()).show();
-//        var tables = tableNames();
-//        for(var i=0; i<tables.length; i++) {
-//            id = 'preview-' + tables[i].toLowerCase();
-//            if(name.toLowerCase() == tables[i].toLowerCase()) {
-//                $('#'+id).show();
-//            }
-//            else {
-//                $('#'+id).hide();
-//            }
-//        }
+        var tables = tableNames();
+        for(var i=0; i<tables.length; i++) {
+            id = 'preview-' + tables[i].toLowerCase();
+            if(name.toLowerCase() == tables[i].toLowerCase()) {
+                $('#'+id).show();
+            }
+            else {
+                $('#'+id).hide();
+            }
+        }
     }
     function clearFields(e) {
         console.log(e);
@@ -189,6 +229,17 @@
             return true;
         }
     }
+</script>
+<script>
+    $(document).ready(function () {
+        $("#map_active").css("color","#ffa05d");
+        $("#map_active").css('border-bottom','3px solid #ffa05d');
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $("#tbl_map").addClass("border");
+    })
 </script>
 
 {% endblock %}
